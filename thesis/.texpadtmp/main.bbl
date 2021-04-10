@@ -1,0 +1,826 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{RT_RT1}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=AT}{%
+         family={Aila},
+         familyi={A\bibinitperiod},
+         given={Timo},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Laine},
+         familyi={L\bibinitperiod},
+         given={Samuli},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \keyw{SIMD, ray tracing, SIMT}
+    \strng{namehash}{ATLS1}
+    \strng{fullhash}{ATLS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{Proceedings of the Conference on High Performance
+  Graphics 2009}
+    \verb{doi}
+    \verb 10.1145/1572769.1572792
+    \endverb
+    \field{isbn}{9781605586038}
+    \field{pages}{145–149}
+    \field{series}{HPG '09}
+    \field{title}{Understanding the Efficiency of Ray Traversal on GPUs}
+    \verb{url}
+    \verb https://doi.org/10.1145/1572769.1572792
+    \endverb
+    \list{location}{1}{%
+      {New Orleans, Louisiana}%
+    }
+    \field{year}{2009}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
+  \entry{RT_RT2}{book}{}
+    \name{author}{3}{}{%
+      {{hash=AMT}{%
+         family={Akenine-Mller},
+         familyi={A\bibinithyphendelim M\bibinitperiod},
+         given={Tomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=HE}{%
+         family={Haines},
+         familyi={H\bibinitperiod},
+         given={Eric},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=HN}{%
+         family={Hoffman},
+         familyi={H\bibinitperiod},
+         given={Naty},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {A. K. Peters, Ltd.}%
+    }
+    \strng{namehash}{AMTHEHN1}
+    \strng{fullhash}{AMTHEHN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{edition}{4th}
+    \field{isbn}{0134997832}
+    \field{title}{Real-Time Rendering, Fourth Edition}
+    \list{location}{1}{%
+      {USA}%
+    }
+    \field{year}{2018}
+  \endentry
+
+  \entry{INITIAL_RENDERING}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=AA}{%
+         family={Appel},
+         familyi={A\bibinitperiod},
+         given={Arthur},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{AA1}
+    \strng{fullhash}{AA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{Proceedings of the April 30--May 2, 1968, Spring Joint
+  Computer Conference}
+    \verb{doi}
+    \verb 10.1145/1468075.1468082
+    \endverb
+    \field{isbn}{9781450378970}
+    \field{pages}{37–45}
+    \field{series}{AFIPS '68 (Spring)}
+    \field{title}{Some Techniques for Shading Machine Renderings of Solids}
+    \verb{url}
+    \verb https://doi.org/10.1145/1468075.1468082
+    \endverb
+    \list{location}{1}{%
+      {Atlantic City, New Jersey}%
+    }
+    \field{year}{1968}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
+  \entry{bounding_algorithms}{article}{}
+    \name{author}{1}{}{%
+      {{hash=CS}{%
+         family={{Cameron}},
+         familyi={C\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CS1}
+    \strng{fullhash}{CS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{doi}
+    \verb 10.1109/38.79455
+    \endverb
+    \field{number}{3}
+    \field{pages}{68\bibrangedash 74}
+    \field{title}{Efficient bounds in constructive solid geometry}
+    \field{volume}{11}
+    \field{journaltitle}{IEEE Computer Graphics and Applications}
+    \field{year}{1991}
+  \endentry
+
+  \entry{SOLIDREP_5}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=CKH}{%
+         family={Chang},
+         familyi={C\bibinitperiod},
+         given={Kuang-Hua},
+         giveni={K\bibinithyphendelim H\bibinitperiod},
+      }}%
+    }
+    \name{editor}{1}{}{%
+      {{hash=CKH}{%
+         family={Chang},
+         familyi={C\bibinitperiod},
+         given={Kuang-Hua},
+         giveni={K\bibinithyphendelim H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Academic Press}%
+    }
+    \strng{namehash}{CKH1}
+    \strng{fullhash}{CKH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{e-Design}
+    \verb{doi}
+    \verb https://doi.org/10.1016/B978-0-12-382038-9.00003-X
+    \endverb
+    \field{isbn}{978-0-12-382038-9}
+    \field{pages}{125\bibrangedash 167}
+    \field{title}{Chapter 3 - Solid Modeling}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/B978012382038900003
+    \verb X
+    \endverb
+    \list{location}{1}{%
+      {Boston}%
+    }
+    \field{year}{2015}
+  \endentry
+
+  \entry{SOLIDREP_1}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=KP}{%
+         family={Keenan},
+         familyi={K\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \name{editor}{1}{}{%
+      {{hash=BH}{%
+         family={Bidgoli},
+         familyi={B\bibinitperiod},
+         given={Hossein},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{KP1}
+    \strng{fullhash}{KP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{Encyclopedia of Information Systems}
+    \verb{doi}
+    \verb https://doi.org/10.1016/B0-12-227240-4/00077-0
+    \endverb
+    \field{isbn}{978-0-12-227240-0}
+    \field{pages}{421\bibrangedash 432}
+    \field{title}{Geographic Information Systems}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/B0122272404000770
+    \endverb
+    \list{location}{1}{%
+      {New York}%
+    }
+    \field{year}{2003}
+  \endentry
+
+  \entry{kensler_ray_2006}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=KA}{%
+         family={Kensler},
+         familyi={K\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {English}%
+    }
+    \strng{namehash}{KA1}
+    \strng{fullhash}{KA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{title}{Ray {Tracing} {CSG} {Objects} {Using} {Single} {Hit}
+  {Intersections}}
+    \verb{url}
+    \verb http://xrt.wdfiles.com/local--files/doc\%3Acsg/CSG.pdf
+    \endverb
+    \field{month}{10}
+    \field{year}{2006}
+  \endentry
+
+  \entry{hardware_accelerated_image_based_csg.}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=KF}{%
+         family={Kirsch},
+         familyi={K\bibinitperiod},
+         given={Florian},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=DJ}{%
+         family={Döllner},
+         familyi={D\bibinitperiod},
+         given={Jürgen},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KFDJ1}
+    \strng{fullhash}{KFDJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{pages}{221\bibrangedash 228}
+    \field{title}{Rendering Techniques for Hardware-Accelerated Image-Based
+  CSG.}
+    \field{month}{01}
+    \field{year}{2004}
+  \endentry
+
+  \entry{SOLIDREP_2}{misc}{}
+    \name{author}{2}{}{%
+      {{hash=KR}{%
+         family={Klette},
+         familyi={K\bibinitperiod},
+         given={Reinhard},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=RA}{%
+         family={Rosenfeld},
+         familyi={R\bibinitperiod},
+         given={Azriel},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \name{editor}{2}{}{%
+      {{hash=KR}{%
+         family={Klette},
+         familyi={K\bibinitperiod},
+         given={Reinhard},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=RA}{%
+         family={Rosenfeld},
+         familyi={R\bibinitperiod},
+         given={Azriel},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Morgan Kaufmann}%
+    }
+    \strng{namehash}{KRRA1}
+    \strng{fullhash}{KRRA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{Digital Geometry}
+    \verb{doi}
+    \verb https://doi.org/10.1016/B978-155860861-0/50009-2
+    \endverb
+    \field{isbn}{978-1-55860-861-0}
+    \field{pages}{231\bibrangedash 268}
+    \field{series}{The Morgan Kaufmann Series in Computer Graphics}
+    \field{title}{CHAPTER 7 - Curves and Surfaces: Topology}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/B978155860861050009
+    \verb 2
+    \endverb
+    \list{location}{1}{%
+      {San Francisco}%
+    }
+    \field{year}{2004}
+  \endentry
+
+  \entry{lachlan_srebrny_zarach_1977}{book}{}
+    \name{author}{3}{}{%
+      {{hash=LAH}{%
+         family={Lachlan},
+         familyi={L\bibinitperiod},
+         given={Alistair\bibnamedelima H.},
+         giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Srebrny},
+         familyi={S\bibinitperiod},
+         given={Marian},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=ZA}{%
+         family={Zarach},
+         familyi={Z\bibinitperiod},
+         given={Andrzej},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer-Verlag}%
+    }
+    \strng{namehash}{LAHSMZA1}
+    \strng{fullhash}{LAHSMZA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Set theory and hierarchy theory V: Bierutowice, Poland, 1976}
+    \field{year}{1977}
+  \endentry
+
+  \entry{lefebvre:hal-00926861}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=LS}{%
+         family={Lefebvre},
+         familyi={L\bibinitperiod},
+         given={Sylvain},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LS1}
+    \strng{fullhash}{LS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{booktitle}{{AEFA'13, 18th European Forum on Additive Manufacturing}}
+    \field{title}{{IceSL: A GPU Accelerated CSG Modeler and Slicer}}
+    \verb{url}
+    \verb https://hal.inria.fr/hal-00926861
+    \endverb
+    \list{location}{1}{%
+      {Paris, France}%
+    }
+    \field{month}{06}
+    \field{year}{2013}
+  \endentry
+
+  \entry{mansfield_1987}{book}{}
+    \name{author}{1}{}{%
+      {{hash=MMJ}{%
+         family={Mansfield},
+         familyi={M\bibinitperiod},
+         given={Maynard\bibnamedelima J.},
+         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {R.E. Krieger}%
+    }
+    \strng{namehash}{MMJ1}
+    \strng{fullhash}{MMJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Introduction to topology}
+    \field{year}{1987}
+  \endentry
+
+  \entry{SOLIDREP_3}{misc}{}
+    \name{author}{13}{}{%
+      {{hash=PSM}{%
+         family={Pizer},
+         familyi={P\bibinitperiod},
+         given={Stephen\bibnamedelima M.},
+         giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Hong},
+         familyi={H\bibinitperiod},
+         given={Junpyo},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=VJ}{%
+         family={Vicory},
+         familyi={V\bibinitperiod},
+         given={Jared},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LZ}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Zhiyuan},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={Marron},
+         familyi={M\bibinitperiod},
+         given={J.S.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=yCH}{%
+         prefix={young},
+         prefixi={y\bibinitperiod},
+         family={Choi},
+         familyi={C\bibinitperiod},
+         given={Hyo},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=DJ}{%
+         family={Damon},
+         familyi={D\bibinitperiod},
+         given={James},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=JS}{%
+         family={Jung},
+         familyi={J\bibinitperiod},
+         given={Sungkyu},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=PB}{%
+         family={Paniagua},
+         familyi={P\bibinitperiod},
+         given={Beatriz},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Schulz},
+         familyi={S\bibinitperiod},
+         given={Jörn},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Sharma},
+         familyi={S\bibinitperiod},
+         given={Ankur},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=TL}{%
+         family={Tu},
+         familyi={T\bibinitperiod},
+         given={Liyun},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Jiyao},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \name{editor}{3}{}{%
+      {{hash=PX}{%
+         family={Pennec},
+         familyi={P\bibinitperiod},
+         given={Xavier},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Sommer},
+         familyi={S\bibinitperiod},
+         given={Stefan},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=FT}{%
+         family={Fletcher},
+         familyi={F\bibinitperiod},
+         given={Tom},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Academic Press}%
+    }
+    \strng{namehash}{PSM+1}
+    \strng{fullhash}{PSMHJVJLZMJCHyDJJSPBSJSATLWJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{booktitle}{Riemannian Geometric Statistics in Medical Image
+  Analysis}
+    \verb{doi}
+    \verb https://doi.org/10.1016/B978-0-12-814725-2.00014-5
+    \endverb
+    \field{isbn}{978-0-12-814725-2}
+    \field{pages}{233\bibrangedash 271}
+    \field{title}{6 - Object shape representation via skeletal models (s-reps)
+  and statistical analysis}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/B978012814725200014
+    \verb 5
+    \endverb
+    \field{year}{2020}
+  \endentry
+
+  \entry{ray_primitive_intersections}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Ray tracing primitives}
+    \verb{url}
+    \verb https://www.cl.cam.ac.uk/teaching/1999/AGraphHCI/SMAG/node2.html
+    \endverb
+    \field{urlday}{05}
+    \field{urlmonth}{04}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{Requicha1978MathematicalFO}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=RA}{%
+         family={Requicha},
+         familyi={R\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=TR}{%
+         family={Tilove},
+         familyi={T\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RATR1}
+    \strng{fullhash}{RATR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Mathematical Foundations of Constructive Solid Geometry:
+  General Topology of Closed Regular Sets}
+    \field{year}{1978}
+  \endentry
+
+  \entry{COMPUTING_SURVEYS}{article}{}
+    \name{author}{1}{}{%
+      {{hash=RAG}{%
+         family={Requicha},
+         familyi={R\bibinitperiod},
+         given={Aristides\bibnamedelima G.},
+         giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{RAG1}
+    \strng{fullhash}{RAG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \verb{doi}
+    \verb 10.1145/356827.356833
+    \endverb
+    \field{issn}{0360-0300}
+    \field{number}{4}
+    \field{pages}{437–464}
+    \field{title}{Representations for Rigid Solids: Theory, Methods, and
+  Systems}
+    \verb{url}
+    \verb https://doi.org/10.1145/356827.356833
+    \endverb
+    \field{volume}{12}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{ACM Comput. Surv.}
+    \field{month}{12}
+    \field{year}{1980}
+  \endentry
+
+  \entry{ROTH1982109}{article}{}
+    \name{author}{1}{}{%
+      {{hash=RSD}{%
+         family={Roth},
+         familyi={R\bibinitperiod},
+         given={Scott\bibnamedelima D},
+         giveni={S\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RSD1}
+    \strng{fullhash}{RSD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \verb{doi}
+    \verb https://doi.org/10.1016/0146-664X(82)90169-1
+    \endverb
+    \field{issn}{0146-664X}
+    \field{number}{2}
+    \field{pages}{109\bibrangedash 144}
+    \field{title}{Ray casting for modeling solids}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/0146664X82901691
+    \endverb
+    \field{volume}{18}
+    \field{journaltitle}{Computer Graphics and Image Processing}
+    \field{year}{1982}
+  \endentry
+
+  \entry{SOLIDREP_4}{misc}{}
+    \name{author}{2}{}{%
+      {{hash=SAD}{%
+         family={Spence},
+         familyi={S\bibinitperiod},
+         given={Allan\bibnamedelima D.},
+         giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=AY}{%
+         family={Altintas},
+         familyi={A\bibinitperiod},
+         given={Yusuf},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \name{editor}{1}{}{%
+      {{hash=LC}{%
+         family={Leondes},
+         familyi={L\bibinitperiod},
+         given={C.T.},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Academic Press}%
+    }
+    \strng{namehash}{SADAY1}
+    \strng{fullhash}{SADAY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{Digital Control Systems Implementation Techniques}
+    \verb{doi}
+    \verb https://doi.org/10.1016/S0090-5267(06)80031-9
+    \endverb
+    \field{issn}{0090-5267}
+    \field{pages}{243\bibrangedash 289}
+    \field{series}{Control and Dynamic Systems}
+    \field{title}{Modeling Techniques and Control Architectures for Machining
+  Intelligence}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0090526706800319
+    \endverb
+    \field{volume}{70}
+    \field{year}{1995}
+  \endentry
+
+  \entry{steuer_2012}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=SS}{%
+         family={Steuer},
+         familyi={S\bibinitperiod},
+         given={Sebastian},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SS1}
+    \strng{fullhash}{SS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Methods for Polygonalization of a Constructive Solid Geometry
+  Description in Web-based Rendering Environments}
+    \verb{url}
+    \verb https://www.en.pms.ifi.lmu.de/publications/diplomarbeiten/Sebastian.S
+    \verb teuer/DA_Sebastian.Steuer.pdf
+    \endverb
+    \field{journaltitle}{Ludwig Maximilian University of Munich}
+    \field{month}{12}
+    \field{year}{2012}
+  \endentry
+
+  \entry{tilove1977a}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=TR}{%
+         family={Tilove},
+         familyi={T\bibinitperiod},
+         given={R.B.},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \strng{namehash}{TR1}
+    \strng{fullhash}{TR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{title}{A study of GEOMETRIC SET-MEMBERSHIP CLASSIFICATION}
+    \list{institution}{1}{%
+      {University of Rochester}%
+    }
+    \field{type}{(Master's thesis,}
+    \field{year}{1977}
+  \endentry
+
+  \entry{wikipedia_2021_mesh_rep}{book}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \field{title}{Visualization of a polygon mesh}
+    \verb{url}
+    \verb https://en.wikipedia.org/wiki/Polygon_mesh
+    \endverb
+    \field{journaltitle}{Wikipedia}
+    \field{month}{01}
+    \field{year}{2021}
+  \endentry
+
+  \entry{GEOMETRIC_MODELING_1977}{article}{}
+    \name{author}{2}{}{%
+      {{hash=VHB}{%
+         family={{Voelcker}},
+         familyi={V\bibinitperiod},
+         given={H.\bibnamedelima B.},
+         giveni={H\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=RAAG}{%
+         family={{Requicha}},
+         familyi={R\bibinitperiod},
+         given={A.\bibnamedelima A.\bibnamedelima G.},
+         giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
+  G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{VHBRAAG1}
+    \strng{fullhash}{VHBRAAG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \verb{doi}
+    \verb 10.1109/C-M.1977.217601
+    \endverb
+    \field{number}{12}
+    \field{pages}{48\bibrangedash 57}
+    \field{title}{Geometric Modeling of Mechanical Parts and Processes}
+    \field{volume}{10}
+    \field{journaltitle}{Computer}
+    \field{year}{1977}
+  \endentry
+\enddatalist
+\endinput
