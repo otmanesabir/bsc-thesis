@@ -822,5 +822,16 @@
     \field{journaltitle}{Computer}
     \field{year}{1977}
   \endentry
+
+  \entry{csg-xrt-renderer}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{X}
+    \field{sortinithash}{X}
+    \field{title}{XRT Renderer}
+    \verb{url}
+    \verb http://xrt.wikidot.com/doc:csg
+    \endverb
+    \field{journaltitle}{CSG - XRT Renderer}
+  \endentry
 \enddatalist
 \endinput

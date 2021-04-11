@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2021)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: /Volumes/ExtremeSSD/Thesis/.texpadtmp/main.aux
+The top-level auxiliary file: /Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.aux
 The style file: biblatex.bst
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
@@ -22,44 +22,44 @@ Database file #2: ../references.bib
 Biblatex version: 3.16
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 23 entries,
+You've used 24 entries,
             6393 wiz_defined-function locations,
-            1387 strings with 13893 characters,
-and the built_in function-call counts, 141091 in all, are:
-= -- 9745
+            1391 strings with 14005 characters,
+and the built_in function-call counts, 142648 in all, are:
+= -- 9780
 > -- 3222
-< -- 954
-+ -- 3860
-- -- 1512
-* -- 9592
-:= -- 14411
+< -- 968
++ -- 3861
+- -- 1514
+* -- 9662
+:= -- 14438
 add.period$ -- 0
-call.type$ -- 23
-change.case$ -- 559
+call.type$ -- 24
+change.case$ -- 563
 chr.to.int$ -- 123
-cite$ -- 44
-duplicate$ -- 14779
-empty$ -- 12745
+cite$ -- 46
+duplicate$ -- 15001
+empty$ -- 13008
 format.name$ -- 1356
-if$ -- 28792
+if$ -- 29159
 int.to.chr$ -- 0
-int.to.str$ -- 69
+int.to.str$ -- 70
 missing$ -- 0
-newline$ -- 815
+newline$ -- 826
 num.names$ -- 1239
-pop$ -- 7645
+pop$ -- 7967
 preamble$ -- 1
-purify$ -- 659
+purify$ -- 662
 quote$ -- 0
-skip$ -- 4746
+skip$ -- 4812
 stack$ -- 0
-substring$ -- 16243
-swap$ -- 3793
-text.length$ -- 640
-text.prefix$ -- 22
+substring$ -- 16253
+swap$ -- 3868
+text.length$ -- 653
+text.prefix$ -- 23
 top$ -- 1
-type$ -- 766
+type$ -- 800
 warning$ -- 0
-while$ -- 1942
+while$ -- 1945
 width$ -- 0
-write$ -- 793
+write$ -- 803

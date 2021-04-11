@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.5)  10 APR 2021 13:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.5)  11 APR 2021 19:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -476,6 +476,10 @@ Package caption Info: Standard document class detected.
 )
 \c@caption@flags=\count408
 \c@continuedfloat=\count409
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
+\c@subfigure=\count410
+\c@subtable=\count411
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen177
@@ -488,12 +492,12 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen184
 \cmidrulekern=\dimen185
 \defaultaddspace=\dimen186
-\@cmidla=\count410
-\@cmidlb=\count411
+\@cmidla=\count412
+\@cmidlb=\count413
 \@aboverulesep=\dimen187
 \@belowrulesep=\dimen188
-\@thisruleclass=\count412
-\@lastruleclass=\count413
+\@thisruleclass=\count414
+\@lastruleclass=\count415
 \@thisrulewidth=\dimen189
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
@@ -524,8 +528,8 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen192
-\Hy@linkcounter=\count414
-\Hy@pagecounter=\count415
+\Hy@linkcounter=\count416
+\Hy@pagecounter=\count417
  (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -537,7 +541,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (/usr/local/texlive/2021/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count416
+\Hy@SavedSpaceFactor=\count418
  (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -550,7 +554,7 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count417
+\c@Hy@tempcnt=\count419
 LaTeX Info: Redefining \url on input line 4804.
 \XeTeXLinkMargin=\dimen193
  (/usr/local/texlive/2021/texmf-dist/tex/generic/bitset/bitset.sty
@@ -558,7 +562,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/usr/local/texlive/2021/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count418
+\Fld@menulength=\count420
 \Field@Width=\dimen194
 \Fld@charsize=\dimen195
 Package hyperref Info: Hyper figures OFF on input line 6075.
@@ -574,20 +578,20 @@ LaTeX Info: Redefining \pageref on input line 6149.
 Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi package
 with kernel methods
 )
-\Hy@abspage=\count419
-\c@Item=\count420
-\c@Hfootnote=\count421
+\Hy@abspage=\count421
+\c@Item=\count422
+\c@Hfootnote=\count423
 )
 Package hyperref Info: Driver: hpdftex.
- (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2021-02-27 v7.00k Hyperref driver for pdfTeX
 
-(/usr/local/texlive/2021/texmf-dist/tex/latex/base/atveryend-ltx.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2021-02-27 v7.00k Hyperref driver for pdfTeX
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery package
 with kernel methods
 )
-\Fld@listcount=\count422
-\c@bookmark@seq@number=\count423
+\Fld@listcount=\count424
+\c@bookmark@seq@number=\count425
  (/usr/local/texlive/2021/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
  (/usr/local/texlive/2021/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -597,39 +601,43 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip98
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 37.
+Package hyperref Info: Option `colorlinks' set `true' on input line 40.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 41.
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 44.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count424
+\l__color_backend_stack_int=\count426
 \l__pdf_internal_box=\box59
-) (/Volumes/ExtremeSSD/Thesis/.texpadtmp/main.aux)
+) (/Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.aux
+
+LaTeX Warning: Label `sec3.4:difference_algo' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -691,7 +699,7 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (/Volumes/ExtremeSSD/Thesis/.texpadtmp/main.bbl
+ (/Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.bbl
 
 Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                with 'RT_RT1':
@@ -703,23 +711,23 @@ Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                - Can't use 'location' + 'address'.
 
 )
-Package biblatex Info: Reference section=0 on input line 41.
-Package biblatex Info: Reference segment=0 on input line 41.
+Package biblatex Info: Reference section=0 on input line 44.
+Package biblatex Info: Reference segment=0 on input line 44.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count425
+\scratchcounter=\count427
 \scratchdimen=\dimen196
 \scratchbox=\box60
-\nofMPsegments=\count426
-\nofMParguments=\count427
+\nofMPsegments=\count428
+\nofMParguments=\count429
 \everyMPshowfont=\toks33
-\MPscratchCnt=\count428
+\MPscratchCnt=\count430
 \MPscratchDim=\dimen197
-\MPnumerator=\count429
-\makeMPintoPDFobject=\count430
+\MPnumerator=\count431
+\makeMPintoPDFobject=\count432
 \everyMPtoPDFconversion=\toks34
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -733,7 +741,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
-Package hyperref Info: Link coloring ON on input line 41.
+Package hyperref Info: Link coloring ON on input line 44.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/local/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
@@ -741,168 +749,243 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count431
+\c@section@level=\count433
 )
-LaTeX Info: Redefining \ref on input line 41.
-LaTeX Info: Redefining \pageref on input line 41.
-LaTeX Info: Redefining \nameref on input line 41.
- (/Volumes/ExtremeSSD/Thesis/.texpadtmp/main.out) (/Volumes/ExtremeSSD/Thesis/.texpadtmp/main.out)
+LaTeX Info: Redefining \ref on input line 44.
+LaTeX Info: Redefining \pageref on input line 44.
+LaTeX Info: Redefining \nameref on input line 44.
+ (/Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.out) (/Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-<bsc-logo.pdf, id=104, 233.87375pt x 84.315pt>
+<bsc-logo.pdf, id=124, 233.87375pt x 84.315pt>
 File: bsc-logo.pdf Graphic file (type pdf)
 <use bsc-logo.pdf>
-Package pdftex.def Info: bsc-logo.pdf  used on input line 47.
+Package pdftex.def Info: bsc-logo.pdf  used on input line 50.
 (pdftex.def)             Requested size: 187.09923pt x 67.45207pt.
  [1
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./bsc-logo.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 109.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 112.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
-) [2] [3] (/Volumes/ExtremeSSD/Thesis/.texpadtmp/main.toc)
+) [2] [3] (/Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.toc)
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
  [4]
-<intro-figures/figure1.png, id=163, 10454.05624pt x 3189.9175pt>
+<intro-figures/figure1.png, id=189, 10454.05624pt x 3189.9175pt>
 File: intro-figures/figure1.png Graphic file (type png)
 <use intro-figures/figure1.png>
-Package pdftex.def Info: intro-figures/figure1.png  used on input line 140.
+Package pdftex.def Info: intro-figures/figure1.png  used on input line 143.
 (pdftex.def)             Requested size: 256.07741pt x 78.12202pt.
  [1
 
  <./intro-figures/figure1.png>]
-<intro-figures/brep-overview.png, id=185, 722.7pt x 272.01625pt>
+<intro-figures/brep-overview.png, id=210, 722.7pt x 272.01625pt>
 File: intro-figures/brep-overview.png Graphic file (type png)
 <use intro-figures/brep-overview.png>
-Package pdftex.def Info: intro-figures/brep-overview.png  used on input line 171.
+Package pdftex.def Info: intro-figures/brep-overview.png  used on input line 174.
 (pdftex.def)             Requested size: 256.07741pt x 96.38588pt.
  [2 <./intro-figures/brep-overview.png>]
-<intro-figures/figure3.png, id=205, 6611.45897pt x 5801.53654pt>
+<intro-figures/figure3.png, id=230, 6611.45897pt x 5801.53654pt>
 File: intro-figures/figure3.png Graphic file (type png)
 <use intro-figures/figure3.png>
-Package pdftex.def Info: intro-figures/figure3.png  used on input line 183.
+Package pdftex.def Info: intro-figures/figure3.png  used on input line 186.
 (pdftex.def)             Requested size: 341.43437pt x 299.56592pt.
-<intro-figures/figure4.png, id=207, 12676.35875pt x 3377.61874pt>
+<intro-figures/figure4.png, id=232, 12676.35875pt x 3377.61874pt>
 File: intro-figures/figure4.png Graphic file (type png)
 <use intro-figures/figure4.png>
-Package pdftex.def Info: intro-figures/figure4.png  used on input line 193.
+Package pdftex.def Info: intro-figures/figure4.png  used on input line 196.
 (pdftex.def)             Requested size: 341.43437pt x 90.965pt.
  [3 <./intro-figures/figure3.png>] [4 <./intro-figures/figure4.png>] [5]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 264.
-<section3/3.2/intersection_cases.png, id=241, 1452.42625pt x 411.5375pt>
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 267.
+
+
+LaTeX Warning: Reference `sec3.2:fig1' on page 6 undefined on input line 270.
+
+<section3/3.2/intersection_cases.png, id=265, 1452.42625pt x 411.5375pt>
 File: section3/3.2/intersection_cases.png Graphic file (type png)
 <use section3/3.2/intersection_cases.png>
-Package pdftex.def Info: section3/3.2/intersection_cases.png  used on input line 277.
+Package pdftex.def Info: section3/3.2/intersection_cases.png  used on input line 280.
 (pdftex.def)             Requested size: 341.43437pt x 96.74272pt.
- [6 <./section3/3.2/intersection_cases.png>]
-<section3/3.2/ray_intersection.png, id=260, 684.5575pt x 491.8375pt>
-File: section3/3.2/ray_intersection.png Graphic file (type png)
-<use section3/3.2/ray_intersection.png>
-Package pdftex.def Info: section3/3.2/ray_intersection.png  used on input line 288.
-(pdftex.def)             Requested size: 170.71393pt x 122.65137pt.
-\c@definition=\count432
+[6 <./section3/3.2/intersection_cases.png>]
+\c@definition=\count434
 
 
-Package amsthm Warning: Unknown theoremstyle `property' on input line 303.
+Package amsthm Warning: Unknown theoremstyle `property' on input line 298.
 
-\c@property=\count433
-[7 <./section3/3.2/ray_intersection.png>]
-<section3/3.1/open.png, id=294, 10379.77875pt x 3905.59125pt>
+\c@property=\count435
+[7]
+<section3/3.1/open.png, id=317, 10379.77875pt x 3905.59125pt>
 File: section3/3.1/open.png Graphic file (type png)
 <use section3/3.1/open.png>
-Package pdftex.def Info: section3/3.1/open.png  used on input line 399.
+Package pdftex.def Info: section3/3.1/open.png  used on input line 394.
 (pdftex.def)             Requested size: 341.43437pt x 128.42603pt.
- [8 <./section3/3.1/open.png>]
-<section3/3.1/closed.png, id=316, 10379.77875pt x 3905.59125pt>
+<section3/3.1/closed.png, id=323, 10379.77875pt x 3905.59125pt>
 File: section3/3.1/closed.png Graphic file (type png)
 <use section3/3.1/closed.png>
-Package pdftex.def Info: section3/3.1/closed.png  used on input line 422.
+Package pdftex.def Info: section3/3.1/closed.png  used on input line 417.
 (pdftex.def)             Requested size: 341.43437pt x 128.42603pt.
-<section3/3.1/interior.png, id=318, 3905.59125pt x 3905.59125pt>
+<section3/3.1/interior.png, id=325, 3905.59125pt x 3905.59125pt>
 File: section3/3.1/interior.png Graphic file (type png)
 <use section3/3.1/interior.png>
-Package pdftex.def Info: section3/3.1/interior.png  used on input line 436.
+Package pdftex.def Info: section3/3.1/interior.png  used on input line 431.
 (pdftex.def)             Requested size: 128.0387pt x 128.00887pt.
-<section3/3.1/boundary.png, id=320, 3905.59125pt x 3905.59125pt>
+ [8 <./section3/3.1/open.png>]
+<section3/3.1/boundary.png, id=344, 3905.59125pt x 3905.59125pt>
 File: section3/3.1/boundary.png Graphic file (type png)
 <use section3/3.1/boundary.png>
-Package pdftex.def Info: section3/3.1/boundary.png  used on input line 450.
+Package pdftex.def Info: section3/3.1/boundary.png  used on input line 445.
 (pdftex.def)             Requested size: 128.0387pt x 128.00887pt.
-<section3/3.1/closure.png, id=322, 4915.36375pt x 3905.59125pt>
+<section3/3.1/closure.png, id=346, 4915.36375pt x 3905.59125pt>
 File: section3/3.1/closure.png Graphic file (type png)
 <use section3/3.1/closure.png>
-Package pdftex.def Info: section3/3.1/closure.png  used on input line 464.
+Package pdftex.def Info: section3/3.1/closure.png  used on input line 459.
 (pdftex.def)             Requested size: 128.0387pt x 101.72772pt.
- [9 <./section3/3.1/closed.png> <./section3/3.1/interior.png>]
-<section3/3.1/regularization.png, id=339, 14762.15125pt x 4561.04pt>
-File: section3/3.1/regularization.png Graphic file (type png)
-<use section3/3.1/regularization.png>
-Package pdftex.def Info: section3/3.1/regularization.png  used on input line 491.
-(pdftex.def)             Requested size: 341.43437pt x 105.43759pt.
- [10 <./section3/3.1/boundary.png> <./section3/3.1/closure.png> <./section3/3.1/regularization.png>]
-Overfull \hbox (3.50337pt too wide) in paragraph at lines 503--506
+ [9 <./section3/3.1/closed.png> <./section3/3.1/interior.png> <./section3/3.1/boundary.png>]
+<section3/3.2/regularization-initial.png, id=362, 260.975pt x 199.74625pt>
+File: section3/3.2/regularization-initial.png Graphic file (type png)
+<use section3/3.2/regularization-initial.png>
+Package pdftex.def Info: section3/3.2/regularization-initial.png  used on input line 489.
+(pdftex.def)             Requested size: 128.0387pt x 97.99843pt.
+<section3/3.2/regularization-non-regular.png, id=363, 260.975pt x 199.74625pt>
+File: section3/3.2/regularization-non-regular.png Graphic file (type png)
+<use section3/3.2/regularization-non-regular.png>
+Package pdftex.def Info: section3/3.2/regularization-non-regular.png  used on input line 496.
+(pdftex.def)             Requested size: 128.0387pt x 97.99843pt.
+<section3/3.2/regularization-regular.png, id=364, 260.975pt x 199.74625pt>
+File: section3/3.2/regularization-regular.png Graphic file (type png)
+<use section3/3.2/regularization-regular.png>
+Package pdftex.def Info: section3/3.2/regularization-regular.png  used on input line 503.
+(pdftex.def)             Requested size: 128.0387pt x 97.99843pt.
+
+Overfull \hbox (3.50337pt too wide) in paragraph at lines 517--520
 [] 
  []
 
-[11]
-<section3/3.2/membership_classification.png, id=368, 676.5275pt x 380.42125pt>
+[10 <./section3/3.1/closure.png> <./section3/3.2/regularization-initial.png> <./section3/3.2/regularization-non-regular.png> <./section3/3.2/regularization-regular.png>]
+<section3/3.2/membership_classification.png, id=382, 676.5275pt x 380.42125pt>
 File: section3/3.2/membership_classification.png Graphic file (type png)
 <use section3/3.2/membership_classification.png>
-Package pdftex.def Info: section3/3.2/membership_classification.png  used on input line 558.
+Package pdftex.def Info: section3/3.2/membership_classification.png  used on input line 572.
 (pdftex.def)             Requested size: 213.39568pt x 119.99585pt.
-<section3/3.2/halfplane-csg.png, id=370, 574.145pt x 232.87pt>
+<section3/3.2/halfplane-csg.png, id=384, 574.145pt x 232.87pt>
 File: section3/3.2/halfplane-csg.png Graphic file (type png)
 <use section3/3.2/halfplane-csg.png>
-Package pdftex.def Info: section3/3.2/halfplane-csg.png  used on input line 572.
+Package pdftex.def Info: section3/3.2/halfplane-csg.png  used on input line 586.
 (pdftex.def)             Requested size: 341.43437pt x 138.48651pt.
- [12 <./section3/3.2/membership_classification.png> <./section3/3.2/halfplane-csg.png>]
+ [11] [12 <./section3/3.2/membership_classification.png> <./section3/3.2/halfplane-csg.png>]
+<section3/3.3/ray-classifications.png, id=409, 696.6025pt x 696.6025pt>
+File: section3/3.3/ray-classifications.png Graphic file (type png)
+<use section3/3.3/ray-classifications.png>
+Package pdftex.def Info: section3/3.3/ray-classifications.png  used on input line 622.
+(pdftex.def)             Requested size: 341.43437pt x 341.43387pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13] [14]
-Overfull \hbox (2.53119pt too wide) in paragraph at lines 652--652
+[13 <./section3/3.3/ray-classifications.png>] [14]
+<section3/3.4/sphere_union_case1.png, id=426, 373.395pt x 248.93pt>
+File: section3/3.4/sphere_union_case1.png Graphic file (type png)
+<use section3/3.4/sphere_union_case1.png>
+Package pdftex.def Info: section3/3.4/sphere_union_case1.png  used on input line 670.
+(pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
+<section3/3.4/sphere_union_case2.png, id=427, 373.395pt x 248.93pt>
+File: section3/3.4/sphere_union_case2.png Graphic file (type png)
+<use section3/3.4/sphere_union_case2.png>
+Package pdftex.def Info: section3/3.4/sphere_union_case2.png  used on input line 677.
+(pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
+<section3/3.4/sphere_union_case3.png, id=428, 373.395pt x 248.93pt>
+File: section3/3.4/sphere_union_case3.png Graphic file (type png)
+<use section3/3.4/sphere_union_case3.png>
+Package pdftex.def Info: section3/3.4/sphere_union_case3.png  used on input line 684.
+(pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
+ [15 <./section3/3.4/sphere_union_case1.png> <./section3/3.4/sphere_union_case2.png> <./section3/3.4/sphere_union_case3.png>]
+<section3/3.4/sphere_intersection_case1.png, id=445, 373.395pt x 248.93pt>
+File: section3/3.4/sphere_intersection_case1.png Graphic file (type png)
+<use section3/3.4/sphere_intersection_case1.png>
+Package pdftex.def Info: section3/3.4/sphere_intersection_case1.png  used on input line 762.
+(pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
+<section3/3.4/sphere_intersection_case2.png, id=446, 373.395pt x 248.93pt>
+File: section3/3.4/sphere_intersection_case2.png Graphic file (type png)
+<use section3/3.4/sphere_intersection_case2.png>
+Package pdftex.def Info: section3/3.4/sphere_intersection_case2.png  used on input line 769.
+(pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
+<section3/3.4/sphere_intersection_case3.png, id=447, 373.395pt x 248.93pt>
+File: section3/3.4/sphere_intersection_case3.png Graphic file (type png)
+<use section3/3.4/sphere_intersection_case3.png>
+Package pdftex.def Info: section3/3.4/sphere_intersection_case3.png  used on input line 776.
+(pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
+ [16]
+<section3/3.4/sphere_difference_case2.png, id=461, 374.39874pt x 248.93pt>
+File: section3/3.4/sphere_difference_case2.png Graphic file (type png)
+<use section3/3.4/sphere_difference_case2.png>
+Package pdftex.def Info: section3/3.4/sphere_difference_case2.png  used on input line 836.
+(pdftex.def)             Requested size: 128.0387pt x 85.12886pt.
+<section3/3.4/sphere_difference_case1.png, id=462, 374.39874pt x 248.93pt>
+File: section3/3.4/sphere_difference_case1.png Graphic file (type png)
+<use section3/3.4/sphere_difference_case1.png>
+Package pdftex.def Info: section3/3.4/sphere_difference_case1.png  used on input line 843.
+(pdftex.def)             Requested size: 128.0387pt x 85.12886pt.
+<section3/3.4/sphere_difference_case3.png, id=463, 373.395pt x 249.93375pt>
+File: section3/3.4/sphere_difference_case3.png Graphic file (type png)
+<use section3/3.4/sphere_difference_case3.png>
+Package pdftex.def Info: section3/3.4/sphere_difference_case3.png  used on input line 850.
+(pdftex.def)             Requested size: 128.0387pt x 85.70094pt.
+ [17 <./section3/3.4/sphere_intersection_case1.png> <./section3/3.4/sphere_intersection_case2.png> <./section3/3.4/sphere_intersection_case3.png>] [18] [19 <./section3/3.4/sphere_difference_case2.png> <./section3/3.4/sphere_difference_case1.png> <./section3/3.4/sphere_difference_case3.png>] [20]
+<section4/4.2/box-enclosure-points.png, id=502, 217.81375pt x 163.61125pt>
+File: section4/4.2/box-enclosure-points.png Graphic file (type png)
+<use section4/4.2/box-enclosure-points.png>
+Package pdftex.def Info: section4/4.2/box-enclosure-points.png  used on input line 922.
+(pdftex.def)             Requested size: 213.39568pt x 160.29298pt.
+ [21 <./section4/4.2/box-enclosure-points.png>] [22]
+Overfull \hbox (2.53119pt too wide) in paragraph at lines 967--967
 []\OT1/phv/m/n/10.95 Tomas Akenine-Mller, Eric Haines, and Naty Hoff-man. \OT1/phv/m/sl/10.95 Real-Time Ren-der-ing, Fourth
  []
 
 
-Overfull \hbox (7.87502pt too wide) in paragraph at lines 652--652
+Overfull \hbox (7.87502pt too wide) in paragraph at lines 967--967
 [][]$\OT1/cmtt/m/n/10.95 https : / / www . sciencedirect . com / science / article / pii / B978012382038900003X$[][]\OT1/phv/m/n/10.95 . 
  []
 
 
-Overfull \hbox (4.65993pt too wide) in paragraph at lines 652--652
+Overfull \hbox (4.65993pt too wide) in paragraph at lines 967--967
 []\OT1/phv/m/n/10.95 Florian Kirsch and J[]urgen D[]oll-ner. \  Ren-der-ing Tech-niques for Hardware-Accelerated
  []
 
 
-Overfull \hbox (4.51805pt too wide) in paragraph at lines 652--652
+Overfull \hbox (4.51805pt too wide) in paragraph at lines 967--967
 []\OT1/phv/m/n/10.95 Sylvain Lefeb-vre. \  IceSL: A GPU Ac-cel-er-ated CSG Mod-eler and Slicer". In: \OT1/phv/m/sl/10.95 AEFA'13,
  []
 
-[15] [16] (/Volumes/ExtremeSSD/Thesis/.texpadtmp/main.aux)
+[23] [24] (/Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CA58EDF785AC03F02FA425D48381CF5B;3711.
+(rerunfilecheck)             Checksum: D8B5D0249CE37F149A7F3FE5B0379E7B;4632.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 20311 strings out of 478994
- 346930 string characters out of 5858185
- 898043 words of memory out of 5000000
- 37388 multiletter control sequences out of 15000+600000
- 432325 words of font info for 74 fonts, out of 8000000 for 9000
+ 20528 strings out of 478994
+ 352940 string characters out of 5858185
+ 902733 words of memory out of 5000000
+ 37557 multiletter control sequences out of 15000+600000
+ 434085 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,16n,74p,1884b,1714s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,19n,74p,1884b,1714s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on /Volumes/ExtremeSSD/Thesis/.texpadtmp/main.pdf (20 pages, 3847095 bytes).
+Output written on /Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.pdf (28 pages, 3262414 bytes).
 PDF statistics:
- 514 PDF objects out of 1000 (max. 8388607)
- 444 compressed objects within 5 object streams
- 123 named destinations out of 1000 (max. 500000)
- 276 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 642 PDF objects out of 1000 (max. 8388607)
+ 539 compressed objects within 6 object streams
+ 154 named destinations out of 1000 (max. 500000)
+ 376 words of extra memory for PDF output out of 10000 (max. 10000000)
 

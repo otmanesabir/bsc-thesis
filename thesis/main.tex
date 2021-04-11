@@ -14,17 +14,20 @@
 \usepackage[backend=bibtex,style=numeric,language=english]{biblatex}
 \usepackage{parskip}		%% blank lines between paragraphs, no indent
 \usepackage[margin=1cm]{caption}%% give long captions a margin
+\usepackage{subcaption}
 \usepackage{booktabs}           %% typesetting nice tables
 \usepackage[pdftex]{graphicx}	%% include graphics, preferrably pdf
 \usepackage[pdftex]{hyperref}	%% many PDF options can be set here
 \pdfadjustspacing=1		%% force LaTeX-like character spacing
+
+\newcommand{\minus}{\scalebox{0.9}[1.0]{$-$}} %% my custom minus sign
 
 \newenvironment{conditions}
   {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
   {\end{tabular}\par\vspace{\belowdisplayskip}}
 
 \newcommand{\myname}{Otmane Sabir}
-\newcommand{\mytitle}{Constructive Solid Geometry}
+\newcommand{\mytitle}{Ray Tracing of an Accelerated Constructive Solid Geometry Algorithm }
 \newcommand{\mysupervisor}{Prof. Dr. Sergey Kosov}
 
 \hypersetup{
@@ -133,7 +136,7 @@ Date, Signature
 
 \section{Introduction}
   
-Constructive Solid Geometry (CSG) is a method used in computer graphics, computer-aided design, generic modeling languages, and numerous other applications to construct complex geometries from simple primitives or polyhedral solids through the use of boolean operators, namely union ($\cup$),  difference ($\ominus$), and intersection ($\cap$). Figure \ref{fig1:set_operations_examples}a through \ref{fig1:set_operations_examples}c respectively show intersection, union, and difference operations. The approach grows especially appealing when implemented in a ray tracing system as the core intricacy renders performing arithmetic logic on a pair of uni-dimensional rays. Nonetheless, most current ray tracing systems generally suffer from the detriment of the expensive object space intersection computation, and the generic CSG algorithms suffer immensely from their computational complexity, making it very difficult to integrate into operating rendering engines. Therefore, this research concentrates on constructive solid geometry and possible means of acceleration.
+Constructive Solid Geometry (CSG) is a method used in computer graphics, computer-aided design, generic modeling languages, and numerous other applications to construct complex geometries from simple primitives or polyhedral solids through the use of boolean operators, namely union ($\cup$),  difference ($\minus$), and intersection ($\cap$). Figure \ref{fig1:set_operations_examples}a through \ref{fig1:set_operations_examples}c respectively show intersection, union, and difference operations. The approach grows especially appealing when implemented in a ray tracing system as the core intricacy renders performing arithmetic logic on a pair of uni-dimensional rays. Nonetheless, most current ray tracing systems generally suffer from the detriment of the expensive object space intersection computation, and the generic CSG algorithms suffer immensely from their computational complexity, making it very difficult to integrate into operating rendering engines. Therefore, this research concentrates on constructive solid geometry and possible means of acceleration.
   
 \begin{figure}[ht]
 	\begin{center}
@@ -281,15 +284,7 @@ The ray-solid intersection test has four possible outcomes (also see Figure \ref
 \end{figure}
 
 
-The first case is self-evident. The second case is also considered as a no intersection result. In case 3, we compute both the entering and exiting points. Case 4 is more interesting as we automatically consider the intersection as "double in", this has some interesting implications which will be discussed in Section 3.4. Since we can now retrieve both $[in, out]$ ray-solid intersection, see figure \ref{sec3.2:fig1}, we can move to the second essential part of our CSG evaluation.
-
-\begin{figure}[ht]
-	\begin{center}
-		\includegraphics[width=0.4\textwidth]{section3/3.2/ray_intersection.png}
-	\end{center}
-	\caption{Ray intersection of a solid $S$ with a ray. Where in and out represent the intersection points of this solid.}
-	\label{sec3.2:fig1}
-\end{figure}
+The first case is self-evident. The second case is also considered as a no intersection result. In case 3, we compute both the entering and exiting points. Case 4 is more interesting as we automatically consider the intersection as "double in", this has some interesting implications which will be discussed in Section 3.4. Since we can now retrieve both $[in, out]$ ray-solid intersection, we can move to the second essential part of our CSG evaluation.
 
 \subsection{Mathematical Formulations}
   
@@ -316,7 +311,7 @@ We will be treating a few mathematical formulations as one cannot design a relia
 		X \cap Y
 	\end{equation}
 	\begin{equation} \label{eq:difference}
-		X \ominus Y
+		X \minus Y
 	\end{equation}
 	        
 	Where \eqref{eq:union}, \eqref{eq:intersection}, and \eqref{eq:difference} denote the union, intersection, and difference of the subsets $X$     and $Y$ respectively. \cite{mansfield_1987}
@@ -371,7 +366,7 @@ We will be treating a few mathematical formulations as one cannot design a relia
 
     
 \begin{definition}
-	A set of elements from the universe $W$ plus the three operators $\cup$, $\cap$, and $\ominus$ that satisfy the properties \eqref{prop:3.1} to \eqref{prop:3.4} is called boolean algebra \cite{Requicha1978MathematicalFO}.
+	A set of elements from the universe $W$ plus the three operators $\cup$, $\cap$, and $\minus$ that satisfy the properties \eqref{prop:3.1} to \eqref{prop:3.4} is called boolean algebra \cite{Requicha1978MathematicalFO}.
 \end{definition}
     
 \subsubsection{Topological Spaces}
@@ -481,19 +476,38 @@ Topological spaces are a generalization of metric spaces in which the notion of 
 	\begin{align*} 
 		X \cup^* Y   & = r(X \cup Y)    \\
 		X \cap^* Y   & = r(X \cap Y)    \\
-		X \ominus^*Y & = r(X \ominus Y) \\
+		X \minus^*Y & = r(X \minus Y) \\
 		c{^x}X       & = rcX            
 	\end{align*}
 \end{definition}
     
+ 
 \begin{figure}[ht]
-	\begin{center}
-		\includegraphics[width=0.8\textwidth]{section3/3.1/regularization.png}
-	\end{center}
-	\caption{Normal polygon intersection versus regularized intersection.}
-	\label{sect3:regularization}
+     \centering
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section3/3.2/regularization-initial.png}
+         \caption{Initial Polygons}
+         \label{section3.2:initial-intersection}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section3/3.2/regularization-non-regular.png}
+         \caption{Normal Intersection}
+          \label{section3.2:normal-intersection}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section3/3.2/regularization-regular.png}
+         \caption{Regular Intersection}
+         \label{section3.2:regular-intersection}
+     \end{subfigure}
+        \caption{Normal polygon intersection versus regularized intersection.}
+        \label{section3.2:regularity}
 \end{figure}
-
+   
 \subsubsection{Membership Classification Function}
 The membership classification function allows to segment a candidate set into three subsets which are the "inside", "outside", and "on the" of the reference set. Here, we will abstractly define what membership classification before moving to the practical implementations and implications of the more specific ray classification.
 This theory depends heavily on the previously defined notions of interior, closure, boundary, and regularity. For a brief recapitulation, a point $p$ is an element of the interior of a set $X$, denoted $iX$, if there exists a neighborhood of $p$ that is contained in $X$; $p$ is an element of the closure of $X$, $kX$, if every neighborhood of $p$ contains a point of $X$; $p$ is an element of the boundary of $X$, $bX$, if $p$ is an element of both $kX$ and $k(cX)$, where $c$ denotes the complement. A set is said to be regular if $X = kiX$.
@@ -516,9 +530,9 @@ Primed symbols will be used	in order to denote operations on the subspace $W'$ w
 		$\emptyset$                                  & Empty Set                                           \\
 		$W$                                          & Reference Set Universe                              \\
 		$W'$                                         & Candidate Set Universe                              \\
-		$\cup, \cap, \ominus, c$                     & Set Operators                                       \\
-		$\cup^*, \cap^*, \ominus^*, c^*$             & Regularized Set Operators in $W$                    \\
-		$\cup^{*'}, \cap^{*'}, \ominus^{*'}, c^{*'}$ & Regularized Set Operators in $W'$                   \\
+		$\cup, \cap, \minus, c$                     & Set Operators                                       \\
+		$\cup^*, \cap^*, \minus^*, c^*$             & Regularized Set Operators in $W$                    \\
+		$\cup^{*'}, \cap^{*'}, \minus^{*'}, c^{*'}$ & Regularized Set Operators in $W'$                   \\
 		$i, b, k, r$                                 & interior, boundary, closure, and regularity in $W$  \\
 		$i', b', k', r'$                             & interior, boundary, closure, and regularity in $W'$ \\
 		\bottomrule
@@ -601,39 +615,339 @@ To customize this general definition to be used in a specific domain, one must d
 
 \subsection{Ray classification}
 
-Given a ray and a solid composition tree, our procedure classifies the ray with respect to the solid and returns the classification to the caller. As previously defined, the classification of a ray with respect to a solid is the information describing the closest and furthest ray-solid intersection, $[in, out]$. The procedure starts at the top of the solid composition tree, recursively descends to the terminal nodes, classifies the ray with respect to the primitives, and then returns the tree combining the classifications of the left and right subtrees. As illustrated in \ref{ray-classification:boolean_algebra}, combining classifications is a matter of boolean algebra. \cite{ROTH1982109}
+Given a ray and a solid composition tree, our procedure classifies the ray with respect to the solid and returns the classification to the caller. As previously defined, the classification of a ray with respect to a solid is the information describing the closest and furthest ray-solid intersection, $[in, out]$. The procedure starts at the top of the solid composition tree, recursively descends to the terminal nodes, classifies the ray with respect to the primitives, and then returns the tree combining the classifications of the left and right subtrees. Therefore, if our classification runs on a tree with depth 1, we would receive an $[in, out]$ for each of the solids in the root nodes. Depending on which case operation it is, we might or might not receive either or both the $in$ and the $out$. (E.g: if the ray is tangent to a solid, then one only receives the $in$). As illustrated in \ref{sect3.3:classification}, we can compute the combinations of the pair of intersections we have which in its core is a matter of boolean algebra, see table \ref{section3:boolean_algebra}. An important note is that in the case of matching $in$s or $out$s, one must always pick the one that is closest to the origin of the ray.
+
+\begin{figure}[ht]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{section3/3.3/ray-classifications.png}
+	\end{center}
+	\caption{Example of combining ray classifications.}
+	\label{sect3.3:classification}
+\end{figure}
 
 \begin{table}[h]
 	\centering
-	\label{ray-classification:boolean_algebra}
+	\caption{Boolean operations table}
+	\label{section3:boolean_algebra}
 	\begin{tabular}{||c c c c||} 
 		\hline
 		Set Operator & Left Solid & Right Solid  & Composite \\ [0.5ex] 
 		\hline\hline
-		$\cup$    & IN & IN & IN  \\
-		    	  & IN & OUT & IN  \\
-		    	  & OUT & IN & IN  \\
-		 	   	  & OUT & OUT & OUT  \\
-		\\
-		$\cap$    & IN & IN & IN  \\
-		    	  & IN & OUT & OUT  \\
-		    	  & OUT & IN & OUT  \\
-		 	   	  & OUT & OUT & OUT  \\
-		\\
-		$\ominus$ & IN & IN & OUT  \\
-		    	  & IN & OUT & IN  \\
-		    	  & OUT & IN & OUT  \\
-		 	   	  & OUT & OUT & OUT  \\		 	   	
+		$\cup$    & $in$ & $in$ & $in$  \\
+		    	  & $in$ & $out$ & $in$  \\
+		    	  & $out$ & $int$ & $in$  \\
+		 	   	  & $out$ & $out$ & $out$  \\
+		& & & \\
+		$\cap$    & $in$ & $in$ & $in$  \\
+		    	  & $in$ & $out$ & $out$  \\
+		    	  & $out$ & $in$ & $out$  \\
+		 	   	  & $out$ & $out$ & $out$  \\
+		& & & \\
+		$\minus$ & $in$ & $in$ & $out$  \\
+		    	  & $in$ & $out$ & $in$  \\
+		    	  & $out$ & $in$ & $out$  \\
+		 	   	  & $out$ & $out$ & $out$  \\		 	   	
 		\hline
 	\end{tabular}
 \end{table}
 
-
 \section{Optimization}
 
-This section discusses criteria that are used to evaluate the
-research results. Make sure your results can be used to published
-research results, i.e., to the already known state-of-the-art.
+In this section, we will introduce the state-of-the-art CSG algorithm that is implemented in the OpenRT framework. Here we expose all the adjustments and changes we have made to the algorithm in order to maximize its performance and results. First, we will discuss box enclosures, their limitations, and how we simple techniques such as "early-outs" can increase the performance. We will discuss the binary space partition tree acceleration and spatial indexing structure, including a modified version in order to optimally reverse the tree traversal. Finally, we will put it all together in our version of the CSG algorithm.
+
+\subsection{Minimal hit CSG classification}
+
+What we have introduced in the previous section is the typical approach to rendering CSG. However, this approach could be very costly as we nest more geometries in the tree and requires a lot of memory to store, classify, and combine a long chain of operations and primitives. Therefore, we introduce a new approach which we refer to as minimal hit CSG classifications. The approach described here computes intersections with binary CSG objects using the single nearest intersections whenever possible. Though it may need to do several of these per sub-object, the number needed is quite low. To our knowledge, this approach was entirely developed in OpenRT and no resources found describe this type of ray classifications. Though a relatively similar algorithm has been introduced in \cite{kensler_ray_2006}, it was proven in \cite{csg-xrt-renderer} to not be functional for the intersection and difference operations. Additionally, the previously mentioned algorithm also heavily relies on surface normals in order to determine the position of the ray. However, one could argue that normals are not always a reliable measure especially when allowing the use of BREPs in the tree since meshes tend to suffer from degeneracy and badly oriented normals.
+
+\subsubsection{Union Classification}
+
+Consider the case of a simple union of two sphere shown in Figure \ref{sec3.4:sphere_union}. The union of these two spheres is the the boundary of each of the spheres without their interior. Therefore, to find the correct classification results we must find the closest intersection from our ray origin such that it does not belong to the interior of the sphere. Our ray tracer can find this out by shooting a ray at each of the objects. Let us denote the intersection distance from the ray origin to the point as $t_A$ such that $t_A > min_A$ and $t_A < max_A$. $\vec{P_A}$ is the intersection point which we can compute through the general ray equation $\vec{P_A} = \vec{o} + t\vec{d}$, see Table \ref{table:notations2}. Initially, $min_A$ is set to $+\inf$, and $max_A$ is set to $-\inf$. Additionally, $min_A$ takes the value of $t_A$ if and only if $t_A < min_A$. Meanwhile, $max_A$ takes the value of $t_A$ if and only if $t_A > max_A$.
+
+\begin{figure}[ht]
+     \centering
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section3/3.4/sphere_union_case1.png}
+         \caption{Ray goes through both spheres.}
+         \label{sec3.4:union_case1}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section3/3.4/sphere_union_case2.png}
+         \caption{Ray misses one of the spheres.}
+          \label{sec3.4:union_case2}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section3/3.4/sphere_union_case3.png}
+         \caption{Ray is inside one of the spheres.}
+         \label{sec3.4:union_case3}
+     \end{subfigure}
+        \caption{Union ray classification cases.}
+        \label{sec3.4:sphere_union}
+\end{figure}
+
+\begin{table}
+	\caption{Notation}
+	\label{table:notations2}
+	\begin{tabularx}{\textwidth}{p{0.22\textwidth}X}
+		\toprule
+		$A, B$									     & left sphere, right sphere. 						   \\
+		$t_A, t_B$                                   & Current ray intersection distance with $A$, $B$.   \\
+		$min_A, min_B$                               & Closest ray intersection distance with $A$, $B$.   \\
+		$max_A, max_B$                               & Furthest ray intersection distance with $A$, $B$.  \\
+		$P_A, P_B$                                   & Intersection point such that $\vec{P} = \vec{o} + t\vec{d}$ for $A$, $B$.. \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+For the case in Figure \ref{sec3.4:union_case1}, one would simply have to find $MIN(min_A, min_B)$ in order to determine which one of the spheres boundaries is closest.
+
+Let us now consider the case where no intersection is found with one or all of the solids as shows in Figure \ref{sec3.4:union_case2}. In case the ray only hits one of the boundaries, then the previous evaluation $MIN(min_A, min_B)$ still holds as it would return the closest of the two distances, $min_A$, since $t_B$ was initially set to $+\inf$. Of course, if there was no intersection with both $A$ or $B$, then there can't be an intersection with their union.
+
+As illustrated in \ref{sec3.4:union_case3}, the last case is if the ray is shot from inside of the solid. This is more complicated since we have to teach our ray tracer to ignore the interior sides and only get the outer sides. Since so far we only check for the $min$ intersections, we will now have to also find the furthest intersection of $A$ and $B$. This can lead to 2 cases. If the ray only misses the boundary of solid $A$ but intersects every other interior and boundary, then we must check if $max_A > min_B$. In that case, we can return $max_B$ as the correct intersection point since that means the two spheres do actually share interior area. However, if $max_A < min_B$ then the spheres are far away from each other and we can automatically pick $max_A$ as our intersection. The algorithm defined below summarizes the minimal hit classification for the union operation \ref{sec3.4:union_algo}. 
+
+\begin{algorithm}
+	\SetAlgoLined
+	\KwResult{$t$ intersection distance}
+	$min_A$ = intersectMin($A$)\;
+	$min_B$ = intersectMin($B$)\;
+	\uIf{$min_A != \inf$ and $min_B != \inf$}{
+		return $MIN(min_A, min_B)$\;
+	}
+	\uIf{$min_A != \inf$ and $min_B == \inf$}{
+		$max_B$ = intersectMax($B$)\;
+		\uIf{$max_B = -\inf$}{
+			return $min_A$\;
+		}
+		\uIf{$max_B < min_A$}{
+			return $max_B$\;
+		}
+		$max_A$ = intersectMax($B$)\;
+		return $max_A$\;
+	}
+	\uIf{$min_a == \inf$ and $min_b != \inf$}{
+		$max_A$ = intersectMax($A$)\;
+		\uIf{$max_A == -\inf$}{
+			return $min_B$;
+		}
+		\uIf{$max_A < min_B$}{
+			return $max_A$\;
+		}
+		$max_B$ = intersectMax($B$)\;
+		return $max_B$\;
+	}
+	\uIf{$min_A == \inf$ and $min_B == \inf$}{
+		$max_A$ = intersectMax($A$)\;
+		$max_B$ = intersectMax($B$)\;
+		\uIf{$max_A == -\inf$ and $max_B == -\inf$}{
+			return $miss$\;
+		}
+		return $MAX(max_A, max_B);$
+	}
+	\caption{Minimal hit classification for union.}
+	\label{sec3.4:union_algo}
+\end{algorithm}
+
+\subsubsection{Intersection Classification}
+
+We will stick to the same general example; however, we will be performing the intersection of two spheres as shown in Figure \ref{sec3.4:sphere_intersection}.
+
+\begin{figure}[ht]
+     \centering
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section3/3.4/sphere_intersection_case1.png}
+         \caption{Ray goes through both spheres.}
+         \label{sec3.4:intersection_case1}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section3/3.4/sphere_intersection_case2.png}
+         \caption{Ray misses one of the spheres.}
+          \label{sec3.4:intersection_case2}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section3/3.4/sphere_intersection_case3.png}
+         \caption{Ray is inside one or both spheres.}
+         \label{sec3.4:intersection_case3}
+     \end{subfigure}
+        \caption{Intersection ray classification cases.}
+        \label{sec3.4:sphere_intersection}
+\end{figure}
+
+Contrary to the union, the intersection of two spheres is their interior without the boundary of each of the spheres. We will use the same previously defined notations shown in Table \ref{table:notations2}. First, we will start with the obvious case where a ray completely goes through both $A$ and $B$, as shown in Figure \ref{sec3.4:intersection_case1}. We first only compute the $min_A$ and $min_B$ as it is the first case we generally would like to check for. If both $min_A$ and $min_B$ are their default values, $+\inf$, then that means the ray completely misses both of the spheres and need not to compute the intersection. However, if both $min_A$ and $min_B$ have values different to the default then we are sure our ray is indeed going through both the spheres; therefore, we would check for the furthest one of both and return that as we are only interested in the interior.
+
+The second case is when a ray only intersects with one of the spheres, as illustrated in Figure \ref{sec3.4:intersection_case2}. By definition, the intersection operation is the shared section of the sets; therefore, if a ray only intersects one the two spheres then an intersection doesn't exist and we should return a miss. However, in the case where the ray enters $A$ but doesn't enter $B$, an edge case might arise. If the ray is shot in the direction from $B$ to $A$, and the ray lies inside of the sphere $B$, then this case would also initially return that the ray enters $A$ but doesn't enter $B$, this case will be dealt with in the next paragraph but for now this means that we are obliged to check if the ray intersects with $B$ at all. Therefore, we must now compute the furthest intersection, $max_B$. If $B$ doesn't have a furthest intersection, then we can be sure that the ray entirely misses that sphere and return a miss. Otherwise, we move to the next case.
+
+The last case is when the sphere is inside one or both of the solids. The first case arises when the ray doesn't enter $A$ but enters $B$. As this could also be mistaken for the case where a ray following the direction from $B$ to $A$ enters $B$ but misses $A$, we must again check if this ray hits $A$ at all by computing the furthest intersection. If it exists, then we return the entering ray intersection from $A$. If it doesn't, then we must return a miss. Another case is when the ray is shot from inside the shared interior of $A$ and $B$. This means the ray doesn't enter $A$ and $B$ but only exits both of them. Here we must compute the exits of $A$ and $B$ and return the closest one of both. If the ray misses one of the exits then the ray entirely misses one the spheres and we can consider this as a miss (we already know it didn't enter any of them). Algorithm \ref{sec3.4:intersection_algo} showcases the different cases in pseudo code.
+
+\begin{algorithm}
+	\SetAlgoLined
+	\KwResult{$t$ intersection distance}
+	$min_A$ = intersectMin($A$)\;
+	$min_B$ = intersectMin($B$)\;
+	\uIf{$min_A != \inf$ and $min_B != \inf$}{
+		return $MAX(min_A, min_B)$\;
+	}
+	\uIf{$min_A != \inf$ and $min_B == \inf$}{
+		$max_B$ = intersectMax($B$)\;
+		\uIf{$min_A < max_B$}{
+			return $min_A$\;
+		}
+		return $miss$\;
+	}
+	\uIf{$min_A == \inf$ and $min_B != \inf$}{
+		$max_A$ = intersectMax($A$)\;
+		\uIf{$min_B < max_A$}{
+			return $min_B$\;
+		}
+		return $miss$\;
+	}
+	\uIf{$min_A == \inf$ and $min_B == \inf$}{
+		\tcc{Note that the choice of which $max$ to compute first is arbitrary.}
+		$max_A$ = intersectMax($A$)\;
+		\uIf{$max_A == -\inf$}{
+			return $miss$\;
+		}
+		$max_B$ = intersectMax($B$)\;
+		\uIf{$max_B == -\inf$}{
+			return $miss$\;
+		}
+		return $MIN(max_A, max_B)$\;
+	}
+	\caption{Minimal hit classification for the intersection.}
+	\label{sec3.4:intersection_algo}
+\end{algorithm} 
+
+\subsubsection{Difference Classification}
+
+Difference remains the most complex and least optimizable operation out of all three due to several factors. First, the minimal knowledge of the scene is higher than both previously mentioned operations. Second, the difference operations are not commutative nor distributive; therefore, the direction of the ray renders completely different results. We shall stick to the same example as the previous two cases and with similar notations. See Figure \ref{sec3.4:sphere_difference}. We introduce two new notations $d1$ and $d2$, a reference to the direction of the rays. Such that $d1$ is the direction of the ray going from $A$ to $B$ and vice-versa. The difference highlighted in this section is $A \minus B$; thus, we are interested in the boundary of $A$ that is not part of the interior of $B$, and the interior of $B$ with respect to $A$.
+
+\begin{figure}[ht]
+     \centering
+      \begin{subfigure}[b]{0.3\textwidth}
+      	\centering
+        \includegraphics[width=\textwidth]{section3/3.4/sphere_difference_case2.png}
+        \caption{Ray misses one of the spheres.}
+        \label{sec3.4:difference_case1}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section3/3.4/sphere_difference_case1.png}
+         \caption{Ray goes through both spheres.}
+         \label{sec3.4:difference_case2}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section3/3.4/sphere_difference_case3.png}
+         \caption{Ray is inside one or both spheres.}
+         \label{sec3.4:difference_case3}
+     \end{subfigure}
+        \caption{Intersection ray classification cases.}
+        \label{sec3.4:sphere_difference}
+\end{figure}
+
+
+We will first consider the case where a ray misses one of the two spheres, as shown in Figure \ref{sec3.4:difference_case1}.  
+Contrary to union and intersection, we always get both the closest and furthest intersection points of $A$. If the ray does not enter or exit $A$, we can already consider this a miss ($d2$ in Fig. \ref{sec3.4:difference_case1}). However, if it either enters or exits $A$, we must already review if it enters $B$, thus we compute $min_B$. If the ray doesn't enter $B$, we return the shortest of the two distances $min_A$ and $max_A$. Otherwise, we move to the next case.
+
+As illustrated in \ref{sec3.4:difference_case2}, this case heavily depends on the direction of the ray. Starting with ray $d1$, if we have completed the first check of entering and exit of $A$ we can move to check $B$. We now need both the entrance and exit points of $B$. Assuming $B$s points are both not the default values ($\pm\inf$), we must first check if $min_A < min_B < max_B$. If this holds, then we can already return the entry point of $B$ as our intersection. If it doesn't,$d2$ in Fig \ref{sec3.4:difference_case2}, and we must then check if $min_B < min_A < max_B < max_A$, then we can return the exit of $B$ as the intersection. This case only stands if all enter and exit points of both $A$ and $B$ are valid.
+
+The last and most complicated case is when the ray lies somewhere inside one of these two spheres. Starting with $d1$, we already understand that the ray doesn't enter but only exists $A$, thanks to the calculation from the first case. We verify if the ray enters or exits $B$. If the ray enters and exists $B$, then we can return $min_B$. If it only exits $B$, then we necessitate checking if $max_A < max_B$. If that holds, it is a miss. If it doesn't, we return $max_B$. However, in the $d2$ case, the ray both enters and exists $A$ but only exits $B$. We now need to examine if $max_B < min_A$. If that is untrue, then the spheres don't share an interior and are separate from each other; consequently, we return a miss. Nevertheless, if it is true, then we return $max_B$. Algorithm \ref{sec3.4:difference_algo} with all the cases is detailed introduced. 
+
+\begin{algorithm}
+	\SetAlgoLined
+	\KwResult{$t$ intersection distance}
+	$min_A$ = intersectMin($A$)\;
+	$max_A$ = intersectMax($A$)\;
+	\uIf{$min_A == \inf$ and $max_A == -\inf$}{
+		return $miss$\;
+	}
+	$min_B$ = intersectMin($B$)\;
+	$max_B$ = intersectMax($B$)\;
+	\uIf{$min_B == \inf$ and $max_A == -\inf$}{
+		return $MIN(min_A, max_A)$\;
+	}
+	\uIf {$max_A != -\inf$ and $max_B != -\inf$}{
+		\uIf{$min_A != \inf$}{
+			\uIf{$min_B != \inf$}{
+				\uIf{$min_A < min_B$ and $min_B < max_A$}{
+					return $min_A$\;
+				}
+				\uIf{$min_B < min_A$ and $max_B < max_A$}{
+					return $max_B$\;
+				}
+			}
+			\uIf{$min_B == \inf$}{
+				\uIf{$min_A < max_B$ and $max_B < max_A$}{
+					return $max_B$\;
+				}
+			}
+		}
+		\uIf{$min_A == \inf$}{
+			\uIf{$min_B != \inf$}{
+				\uIf{$min_B < max_A$}{
+					return $min_B$\;
+				}
+			}
+			\uIf{$min_B == \inf$}{
+				\uIf{$max_B < max_A$}{
+					return $max_B$\;
+				}
+			}
+		}
+	}
+	return $miss$\;
+	\caption{Minimal hit classification for the intersection.}
+	\label{sec3.4:difference_algo}
+\end{algorithm} 
+
+
+\subsection{Bounding Boxes}
+
+Bounding boxes are the simplest way to cut down on the number of ray intersection operations and thus reduce the rendering time in general. When used in the context of CSG, the solution implicitly turns into an efficient binary tree traversal. While many other types of enclosures can be used, we use box enclosures for the many advantages they bring. First, an abstract box can be defined by only two points, a maximum and minimum point. Because the enclosure definition will be added to every node in the CSG tree, then we must make sure that we do not increase the needed memory per node. Second, boxes are arguably the tightest types of bounding volumes. Meaning that if a ray-enclosure intersection test is to be done, there is a high chance the ray will also intersect whatever geometry is inside of bounding volume. Lastly, it is relatively straightforward to apply the boolean operations on the bounding boxes while still maintaining a tight boundary around the box and thus also ignoring cases where rays do intersect the primitives in the terminal nodes of the CSG tree but not the composite geometries that are made on a higher level. 
+
+An abstract bounding box is a rectangular parallelepiped defined by exactly two points, a minimum point and a maximum point, see Figure \ref{sec4.2:box-points}. Each primitive, solid, and composite must be able to define its own bounding box. For primitive cases, the bounding box is case specific. For example, the bounding box of a primitive sphere of radius $r = 1$ and located at center point $\vec{o} = (0, 0, 0)$ has a bounding box whose min point is $(r, r, r)$ and max point $(-r, -r, r)$. Solids are a little more complicated since they are composed of many primitives. However, one simply has to create a collapsed bounding box (a bounding box whose min coordinates are $-\inf$ and max coordinates are set to $\inf$) and slowly start inflating by the primitive's predefined boxes. The inflation step is as simple as checking if the value of  a coordinate of the current bounding box is smaller or bigger than that of the primitive's bounding box and either picking the smallest or the greatest value depending on the coordinate. For instance, if our current bounding box has $min(0, 0, 0)$ and $max(1, 1, 3)$ and the current primitives bounding box has $min2(-1, -1, 1)$ and $max2(2, 2, 2)$ then the new values of the points of our bounding box become $min(-1, -1, 0)$ and $max(2, 2, 3)$.
+
+\begin{figure}[ht]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{section4/4.2/box-enclosure-points.png}
+	\end{center}
+	\caption{Bounding box.}
+	\label{sec4.2:box-points}
+\end{figure}
+
+Combining the boxes on the composite level is also very important to achieve. This can be done trivially using the usual rules of algebra defined in the previous section, except in the case of the difference operation since its results are not as easily predictable and the cost of analyzing the entire composition could be counter-productive in our scenario. In order to apply boolean set operations on a box, we can use the procedure defined in \cite{ROTH1982109}:
+
+\begin{algorithm}
+	\SetAlgoLined
+	\KwResult{$t$ intersection distance}
+	initialization\;
+	\For{$i$ = 1, 2, 3}{
+		\uIf{Operator is $\cup$}{
+			min[$i$] = MIN(leftMin[$i$], rightMin[$i$])\;
+			max[$i$] = MAX(leftMax[$i$], rightMax[$i$])\;
+		}
+		\uIf{Operator is $\cap$}{
+			min[$i$] = MAX(leftMin[$i$], rightMin[$i$])\;
+			max[$i$] = MIN(leftMax[$i$], rightMax[$i$])\;
+		}
+		\uIf{Operator is $\minus$}{
+			min[$i$] = leftMin[$i$]\;
+			max[$i$] = leftMax[$i$]\;
+		}
+	}
+	\caption{.}
+	\label{sec3.4:difference_algo}
+\end{algorithm} 
 
 (target size: 5-10 pages)
 
