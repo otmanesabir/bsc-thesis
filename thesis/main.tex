@@ -810,14 +810,15 @@ We will stick to the same general example; however, we will be performing the in
          \label{sec3.4:intersection-case-3}
      \end{subfigure}
         \caption{Intersection ray classification cases.}
-        \label{sec3.4:sphere_intersection}
+        \label{sec3.4:sphere-intersection}
 \end{figure}
 
-Contrary to the union, the intersection of two spheres is their interior without the boundary of each of the spheres. We will use the same previously defined notations shown in Table \ref{table:notations2}. First, we will start with the obvious case where a ray completely goes through both $A$ and $B$, as shown in Figure \ref{sec3.4:intersection_case1}. We first only compute the $min_A$ and $min_B$ as it is the first case we generally would like to check for. If both $min_A$ and $min_B$ are their default values, $+\inf$, then that means the ray completely misses both of the spheres and need not to compute the intersection. However, if both $min_A$ and $min_B$ have values different to the default then we are sure our ray is indeed going through both the spheres; therefore, we would check for the furthest one of both and return that as we are only interested in the interior.
+Contrary to the union, the intersection of two spheres is their interior without the boundary of each of the spheres. We will use the same previously defined notations shown in Table \ref{table:notations2}. First, we will start with the obvious case where a ray completely goes through both $A$ and $B$, as shown in Figure \ref{sec3.4:intersection-case-1}. We first only compute the $min_A$ and $min_B$ as it is the first case we generally would like to check for. If both $min_A$ and $min_B$ have values different to the default then we are sure our ray is indeed going through both the spheres; therefore, we would check for the furthest one of both and return that as we are only interested in the interior.
 
-The second case is when a ray only intersects with one of the spheres, as illustrated in Figure \ref{sec3.4:intersection_case2}. By definition, the intersection operation is the shared section of the sets; therefore, if a ray only intersects one the two spheres then an intersection doesn't exist and we should return a miss. However, in the case where the ray enters $A$ but doesn't enter $B$, an edge case might arise. If the ray is shot in the direction from $B$ to $A$, and the ray lies inside of the sphere $B$, then this case would also initially return that the ray enters $A$ but doesn't enter $B$, this case will be dealt with in the next paragraph but for now this means that we are obliged to check if the ray intersects with $B$ at all. Therefore, we must now compute the furthest intersection, $max_B$. If $B$ doesn't have a furthest intersection, then we can be sure that the ray entirely misses that sphere and return a miss. Otherwise, we move to the next case.
+The second case is when a ray only intersects with one of the spheres, as illustrated in Figure \ref{sec3.4:intersection-case-2}. By definition, the intersection operation is the shared section of the sets; therefore, if a ray only intersects one the two spheres then an intersection doesn't exist and we should return a miss. This is the case where one of the previously computed entries has a default value. In this case, we must check if the sphere with no $min$ has an exit point. If it doesn't, then this means the ray entirely misses one of the spheres and we return a miss ($r^1$ and $r^2$ in Figure \ref{sec3.4:intersection-case-2}, and $r^3$ in Figure \ref{sec3.4:intersection-case-3}). 
 
-The last case is when the sphere is inside one or both of the solids. The first case arises when the ray doesn't enter $A$ but enters $B$. As this could also be mistaken for the case where a ray following the direction from $B$ to $A$ enters $B$ but misses $A$, we must again check if this ray hits $A$ at all by computing the furthest intersection. If it exists, then we return the entering ray intersection from $A$. If it doesn't, then we must return a miss. Another case is when the ray is shot from inside the shared interior of $A$ and $B$. This means the ray doesn't enter $A$ and $B$ but only exits both of them. Here we must compute the exits of $A$ and $B$ and return the closest one of both. If the ray misses one of the exits then the ray entirely misses one the spheres and we can consider this as a miss (we already know it didn't enter any of them). Algorithm \ref{sec3.4:intersection_algo} showcases the different cases in pseudo code.
+
+The last cases are when the sphere is inside one or both of the solids. The first case arises when the ray doesn't enter doesn't enter one of the spheres but continues to have all other exits too. Here we must check if values of all the intersections are in the following order $min < max < max$. If that's the case, then we return the first $min$. Otherwise, this hints to the fact that the spheres are disjoint and the intersection of two disjoint sets is the empty set; therefore, we return a miss. If the spheres lie within the interior area shared by the two spheres ($r^2$ in Figure \ref{sec3.4:intersection-case-3}), we return the closest of both the exit points.
 
 \begin{algorithm}
 	\SetAlgoLined
@@ -827,31 +828,13 @@ The last case is when the sphere is inside one or both of the solids. The first 
 	\uIf{$min_A != \inf$ and $min_B != \inf$}{
 		return $MAX(min_A, min_B)$\;
 	}
-	\uIf{$min_A != \inf$ and $min_B == \inf$}{
+	\uIf{$min_A != \inf$ and $min_B != \inf$}{
 		$max_B$ = intersectMax($B$)\;
-		\uIf{$min_A < max_B$}{
-			return $min_A$\;
-		}
-		return $miss$\;
-	}
-	\uIf{$min_A == \inf$ and $min_B != \inf$}{
-		$max_A$ = intersectMax($A$)\;
-		\uIf{$min_B < max_A$}{
-			return $min_B$\;
-		}
-		return $miss$\;
-	}
-	\uIf{$min_A == \inf$ and $min_B == \inf$}{
-		\tcc{Note that the choice of which $max$ to compute first is arbitrary.}
-		$max_A$ = intersectMax($A$)\;
-		\uIf{$max_A == -\inf$}{
+		\uIf{$max_b == -\inf$}{
 			return $miss$\;
 		}
-		$max_B$ = intersectMax($B$)\;
-		\uIf{$max_B == -\inf$}{
-			return $miss$\;
-		}
-		return $MIN(max_A, max_B)$\;
+		$max_A$ = intersectMax($A$)\;
+		\uIf{$min_A < max_B < max_A$}{}
 	}
 	\caption{Minimal hit classification for the intersection.}
 	\label{sec3.4:intersection_algo}
