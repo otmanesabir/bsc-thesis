@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.5)  16 APR 2021 02:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.5)  16 APR 2021 03:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -812,120 +812,117 @@ LaTeX Warning: Reference `fig3:sample_csg_tree' on page 2 undefined on input lin
 File: section1/sample-csg-tree.png Graphic file (type png)
 <use section1/sample-csg-tree.png>
 Package pdftex.def Info: section1/sample-csg-tree.png  used on input line 208.
-(pdftex.def)             Requested size: 341.43437pt x 293.68062pt.
- [3 <./section1/brep-overview.png>] [4 <./section1/sample-csg-tree.png>] [5]
+(pdftex.def)             Requested size: 213.39568pt x 183.51828pt.
+ [3 <./section1/brep-overview.png> <./section1/sample-csg-tree.png>] [4] [5]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 280.
-<section3/3.1/intersection-miss.png, id=300, 401.5pt x 401.5pt>
+<section3/3.1/intersection-miss.png, id=302, 401.5pt x 401.5pt>
 File: section3/3.1/intersection-miss.png Graphic file (type png)
 <use section3/3.1/intersection-miss.png>
 Package pdftex.def Info: section3/3.1/intersection-miss.png  used on input line 296.
 (pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
-<section3/3.1/intersection-tangent.png, id=301, 401.5pt x 401.5pt>
+<section3/3.1/intersection-tangent.png, id=303, 401.5pt x 401.5pt>
 File: section3/3.1/intersection-tangent.png Graphic file (type png)
 <use section3/3.1/intersection-tangent.png>
 Package pdftex.def Info: section3/3.1/intersection-tangent.png  used on input line 303.
 (pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
-<section3/3.1/intersection-in-out.png, id=302, 401.5pt x 401.5pt>
+<section3/3.1/intersection-in-out.png, id=304, 401.5pt x 401.5pt>
 File: section3/3.1/intersection-in-out.png Graphic file (type png)
 <use section3/3.1/intersection-in-out.png>
 Package pdftex.def Info: section3/3.1/intersection-in-out.png  used on input line 310.
 (pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
-<section3/3.1/intersection-out.png, id=303, 401.5pt x 401.5pt>
+<section3/3.1/intersection-out.png, id=305, 401.5pt x 401.5pt>
 File: section3/3.1/intersection-out.png Graphic file (type png)
 <use section3/3.1/intersection-out.png>
 Package pdftex.def Info: section3/3.1/intersection-out.png  used on input line 317.
 (pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
- [6]
 \c@definition=\count434
 
 
 Package amsthm Warning: Unknown theoremstyle `property' on input line 337.
 
 \c@property=\count435
-[7 <./section3/3.1/intersection-miss.png> <./section3/3.1/intersection-tangent.png> <./section3/3.1/intersection-in-out.png> <./section3/3.1/intersection-out.png>]
-<section3/3.2/open-interval.png, id=358, 401.5pt x 401.5pt>
+[6] [7 <./section3/3.1/intersection-miss.png> <./section3/3.1/intersection-tangent.png> <./section3/3.1/intersection-in-out.png> <./section3/3.1/intersection-out.png>]
+<section3/3.2/open-interval.png, id=359, 401.5pt x 401.5pt>
 File: section3/3.2/open-interval.png Graphic file (type png)
 <use section3/3.2/open-interval.png>
 Package pdftex.def Info: section3/3.2/open-interval.png  used on input line 433.
-(pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
-<section3/3.2/open-disk.png, id=359, 401.5pt x 401.5pt>
+(pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
+<section3/3.2/open-disk.png, id=360, 401.5pt x 401.5pt>
 File: section3/3.2/open-disk.png Graphic file (type png)
 <use section3/3.2/open-disk.png>
 Package pdftex.def Info: section3/3.2/open-disk.png  used on input line 439.
-(pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
-<section3/3.2/open-sphere.png, id=360, 401.5pt x 401.5pt>
+(pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
+<section3/3.2/open-sphere.png, id=361, 401.5pt x 401.5pt>
 File: section3/3.2/open-sphere.png Graphic file (type png)
 <use section3/3.2/open-sphere.png>
 Package pdftex.def Info: section3/3.2/open-sphere.png  used on input line 445.
-(pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
- [8 <./section3/3.2/open-interval.png> <./section3/3.2/open-disk.png> <./section3/3.2/open-sphere.png>]
-<section3/3.2/closed-interval.png, id=383, 401.5pt x 401.5pt>
+(pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
+<section3/3.2/closed-interval.png, id=368, 401.5pt x 401.5pt>
 File: section3/3.2/closed-interval.png Graphic file (type png)
 <use section3/3.2/closed-interval.png>
 Package pdftex.def Info: section3/3.2/closed-interval.png  used on input line 474.
-(pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
-<section3/3.2/closed-disk.png, id=384, 401.5pt x 401.5pt>
+(pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
+<section3/3.2/closed-disk.png, id=369, 401.5pt x 401.5pt>
 File: section3/3.2/closed-disk.png Graphic file (type png)
 <use section3/3.2/closed-disk.png>
 Package pdftex.def Info: section3/3.2/closed-disk.png  used on input line 480.
-(pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
-<section3/3.2/closed-sphere.png, id=385, 401.5pt x 401.5pt>
+(pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
+<section3/3.2/closed-sphere.png, id=370, 401.5pt x 401.5pt>
 File: section3/3.2/closed-sphere.png Graphic file (type png)
 <use section3/3.2/closed-sphere.png>
 Package pdftex.def Info: section3/3.2/closed-sphere.png  used on input line 486.
-(pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
-<section3/3.2/interior.png, id=388, 305.14pt x 359.3425pt>
+(pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
+ [8 <./section3/3.2/open-interval.png> <./section3/3.2/open-disk.png> <./section3/3.2/open-sphere.png>]
+<section3/3.2/interior.png, id=393, 305.14pt x 359.3425pt>
 File: section3/3.2/interior.png Graphic file (type png)
 <use section3/3.2/interior.png>
 Package pdftex.def Info: section3/3.2/interior.png  used on input line 502.
-(pdftex.def)             Requested size: 128.0387pt x 150.78574pt.
- [9 <./section3/3.2/closed-interval.png> <./section3/3.2/closed-disk.png> <./section3/3.2/closed-sphere.png> <./section3/3.2/interior.png>]
-<section3/3.2/boundary.png, id=409, 305.14pt x 359.3425pt>
+(pdftex.def)             Requested size: 85.35696pt x 100.51651pt.
+<section3/3.2/boundary.png, id=398, 305.14pt x 359.3425pt>
 File: section3/3.2/boundary.png Graphic file (type png)
 <use section3/3.2/boundary.png>
 Package pdftex.def Info: section3/3.2/boundary.png  used on input line 522.
-(pdftex.def)             Requested size: 128.0387pt x 150.78574pt.
-<section3/3.2/closure.png, id=412, 508.90125pt x 444.66125pt>
+(pdftex.def)             Requested size: 85.35696pt x 100.51651pt.
+<section3/3.2/closure.png, id=401, 508.90125pt x 444.66125pt>
 File: section3/3.2/closure.png Graphic file (type png)
 <use section3/3.2/closure.png>
 Package pdftex.def Info: section3/3.2/closure.png  used on input line 536.
-(pdftex.def)             Requested size: 170.71393pt x 149.16089pt.
- [10 <./section3/3.2/boundary.png> <./section3/3.2/closure.png>]
-<section3/3.2/regularization-initial.png, id=428, 260.975pt x 199.74625pt>
+(pdftex.def)             Requested size: 128.0387pt x 111.87746pt.
+ [9 <./section3/3.2/closed-interval.png> <./section3/3.2/closed-disk.png> <./section3/3.2/closed-sphere.png> <./section3/3.2/interior.png>]
+<section3/3.2/regularization-initial.png, id=421, 260.975pt x 199.74625pt>
 File: section3/3.2/regularization-initial.png Graphic file (type png)
 <use section3/3.2/regularization-initial.png>
 Package pdftex.def Info: section3/3.2/regularization-initial.png  used on input line 566.
 (pdftex.def)             Requested size: 128.0387pt x 97.99843pt.
-<section3/3.2/regularization-non-regular.png, id=429, 260.975pt x 199.74625pt>
+<section3/3.2/regularization-non-regular.png, id=422, 260.975pt x 199.74625pt>
 File: section3/3.2/regularization-non-regular.png Graphic file (type png)
 <use section3/3.2/regularization-non-regular.png>
 Package pdftex.def Info: section3/3.2/regularization-non-regular.png  used on input line 573.
 (pdftex.def)             Requested size: 128.0387pt x 97.99843pt.
-<section3/3.2/regularization-regular.png, id=430, 260.975pt x 199.74625pt>
+<section3/3.2/regularization-regular.png, id=423, 260.975pt x 199.74625pt>
 File: section3/3.2/regularization-regular.png Graphic file (type png)
 <use section3/3.2/regularization-regular.png>
 Package pdftex.def Info: section3/3.2/regularization-regular.png  used on input line 580.
 (pdftex.def)             Requested size: 128.0387pt x 97.99843pt.
-
+ [10 <./section3/3.2/boundary.png> <./section3/3.2/closure.png> <./section3/3.2/regularization-initial.png> <./section3/3.2/regularization-non-regular.png> <./section3/3.2/regularization-regular.png>]
 Overfull \hbox (3.50337pt too wide) in paragraph at lines 594--597
 [] 
  []
 
-[11 <./section3/3.2/regularization-initial.png> <./section3/3.2/regularization-non-regular.png> <./section3/3.2/regularization-regular.png>]
-<section3/3.2/membership-classification.png, id=449, 575.14874pt x 330.23375pt>
+[11]
+<section3/3.2/membership-classification.png, id=453, 575.14874pt x 330.23375pt>
 File: section3/3.2/membership-classification.png Graphic file (type png)
 <use section3/3.2/membership-classification.png>
 Package pdftex.def Info: section3/3.2/membership-classification.png  used on input line 648.
 (pdftex.def)             Requested size: 213.39568pt x 122.52217pt.
- [12 <./section3/3.2/membership-classification.png>]
-<section3/3.2/halfplane-csg.png, id=462, 574.145pt x 232.87pt>
+<section3/3.2/halfplane-csg.png, id=456, 574.145pt x 232.87pt>
 File: section3/3.2/halfplane-csg.png Graphic file (type png)
 <use section3/3.2/halfplane-csg.png>
 Package pdftex.def Info: section3/3.2/halfplane-csg.png  used on input line 662.
 (pdftex.def)             Requested size: 341.43437pt x 138.48651pt.
- [13 <./section3/3.2/halfplane-csg.png>]
-<section3/3.3/ray-classifications.png, id=477, 621.32124pt x 661.47125pt>
+ [12 <./section3/3.2/membership-classification.png> <./section3/3.2/halfplane-csg.png>]
+<section3/3.3/ray-classifications.png, id=470, 621.32124pt x 661.47125pt>
 File: section3/3.3/ray-classifications.png Graphic file (type png)
 <use section3/3.3/ray-classifications.png>
 Package pdftex.def Info: section3/3.3/ray-classifications.png  used on input line 701.
@@ -934,58 +931,59 @@ Package pdftex.def Info: section3/3.3/ray-classifications.png  used on input lin
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[13]
+
+LaTeX Warning: Reference `sec3.4:sphere_union' on page 14 undefined on input line 743.
+
 [14 <./section3/3.3/ray-classifications.png>]
-
-LaTeX Warning: Reference `sec3.4:sphere_union' on page 15 undefined on input line 743.
-
-<section3/3.4/union-case-1.png, id=489, 373.395pt x 248.93pt>
+<section3/3.4/union-case-1.png, id=490, 373.395pt x 248.93pt>
 File: section3/3.4/union-case-1.png Graphic file (type png)
 <use section3/3.4/union-case-1.png>
 Package pdftex.def Info: section3/3.4/union-case-1.png  used on input line 749.
 (pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
-<section3/3.4/union-case-2.png, id=490, 373.395pt x 248.93pt>
+<section3/3.4/union-case-2.png, id=491, 373.395pt x 248.93pt>
 File: section3/3.4/union-case-2.png Graphic file (type png)
 <use section3/3.4/union-case-2.png>
 Package pdftex.def Info: section3/3.4/union-case-2.png  used on input line 756.
 (pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
-<section3/3.4/union-case-3.png, id=491, 373.395pt x 248.93pt>
+<section3/3.4/union-case-3.png, id=492, 373.395pt x 248.93pt>
 File: section3/3.4/union-case-3.png Graphic file (type png)
 <use section3/3.4/union-case-3.png>
 Package pdftex.def Info: section3/3.4/union-case-3.png  used on input line 763.
 (pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
-[15]
-<section3/3.4/intersection-case-1.png, id=507, 373.395pt x 248.93pt>
+ [15 <./section3/3.4/union-case-1.png> <./section3/3.4/union-case-2.png> <./section3/3.4/union-case-3.png>]
+<section3/3.4/intersection-case-1.png, id=511, 373.395pt x 248.93pt>
 File: section3/3.4/intersection-case-1.png Graphic file (type png)
 <use section3/3.4/intersection-case-1.png>
 Package pdftex.def Info: section3/3.4/intersection-case-1.png  used on input line 841.
 (pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
-<section3/3.4/intersection-case-2.png, id=508, 373.395pt x 248.93pt>
+<section3/3.4/intersection-case-2.png, id=512, 373.395pt x 248.93pt>
 File: section3/3.4/intersection-case-2.png Graphic file (type png)
 <use section3/3.4/intersection-case-2.png>
 Package pdftex.def Info: section3/3.4/intersection-case-2.png  used on input line 848.
 (pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
-<section3/3.4/intersection-case-3.png, id=509, 373.395pt x 248.93pt>
+<section3/3.4/intersection-case-3.png, id=513, 373.395pt x 248.93pt>
 File: section3/3.4/intersection-case-3.png Graphic file (type png)
 <use section3/3.4/intersection-case-3.png>
 Package pdftex.def Info: section3/3.4/intersection-case-3.png  used on input line 855.
 (pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
- [16 <./section3/3.4/union-case-1.png> <./section3/3.4/union-case-2.png> <./section3/3.4/union-case-3.png>] [17]
-<section3/3.4/difference-case-2.png, id=533, 374.39874pt x 248.93pt>
+ [16 <./section3/3.4/intersection-case-1.png> <./section3/3.4/intersection-case-2.png> <./section3/3.4/intersection-case-3.png>] [17]
+<section3/3.4/difference-case-2.png, id=536, 374.39874pt x 248.93pt>
 File: section3/3.4/difference-case-2.png Graphic file (type png)
 <use section3/3.4/difference-case-2.png>
 Package pdftex.def Info: section3/3.4/difference-case-2.png  used on input line 909.
 (pdftex.def)             Requested size: 128.0387pt x 85.12886pt.
-<section3/3.4/difference-case-1.png, id=534, 374.39874pt x 248.93pt>
+<section3/3.4/difference-case-1.png, id=537, 374.39874pt x 248.93pt>
 File: section3/3.4/difference-case-1.png Graphic file (type png)
 <use section3/3.4/difference-case-1.png>
 Package pdftex.def Info: section3/3.4/difference-case-1.png  used on input line 916.
 (pdftex.def)             Requested size: 128.0387pt x 85.12886pt.
-<section3/3.4/difference-case-3.png, id=535, 373.395pt x 249.93375pt>
+<section3/3.4/difference-case-3.png, id=538, 373.395pt x 249.93375pt>
 File: section3/3.4/difference-case-3.png Graphic file (type png)
 <use section3/3.4/difference-case-3.png>
 Package pdftex.def Info: section3/3.4/difference-case-3.png  used on input line 923.
 (pdftex.def)             Requested size: 128.0387pt x 85.70094pt.
- [18 <./section3/3.4/intersection-case-1.png> <./section3/3.4/intersection-case-2.png> <./section3/3.4/intersection-case-3.png>] [19 <./section3/3.4/difference-case-2.png> <./section3/3.4/difference-case-1.png> <./section3/3.4/difference-case-3.png>] [20]
+ [18] [19 <./section3/3.4/difference-case-2.png> <./section3/3.4/difference-case-1.png> <./section3/3.4/difference-case-3.png>] [20]
 <section4/4.2/box-enclosure-points.png, id=566, 217.81375pt x 163.61125pt>
 File: section4/4.2/box-enclosure-points.png Graphic file (type png)
 <use section4/4.2/box-enclosure-points.png>
@@ -996,13 +994,12 @@ Overfull \hbox (3.60399pt too wide) in paragraph at lines 1004--1005
 \OT1/phv/m/n/10.95 achieve this triv-ially with the usual rules of al-ge-bra de-fined in the pre-vi-ous sec-tion. Though,
  []
 
-[21]
-<section4/4.2/composite-box-enclosure.png, id=576, 918.43124pt x 399.4925pt>
+<section4/4.2/composite-box-enclosure.png, id=570, 918.43124pt x 399.4925pt>
 File: section4/4.2/composite-box-enclosure.png Graphic file (type png)
 <use section4/4.2/composite-box-enclosure.png>
 Package pdftex.def Info: section4/4.2/composite-box-enclosure.png  used on input line 1008.
 (pdftex.def)             Requested size: 426.79135pt x 185.64627pt.
- [22 <./section4/4.2/box-enclosure-points.png> <./section4/4.2/composite-box-enclosure.png>] [23]
+[21 <./section4/4.2/box-enclosure-points.png>] [22 <./section4/4.2/composite-box-enclosure.png>] [23]
 Overfull \hbox (2.53119pt too wide) in paragraph at lines 1061--1061
 []\OT1/phv/m/n/10.95 Tomas Akenine-Mller, Eric Haines, and Naty Hoff-man. \OT1/phv/m/sl/10.95 Real-Time Ren-der-ing, Fourth
  []
@@ -1035,13 +1032,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  20632 strings out of 478994
  355766 string characters out of 5858185
- 903638 words of memory out of 5000000
+ 902638 words of memory out of 5000000
  37642 multiletter control sequences out of 15000+600000
  434085 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,19n,74p,1884b,1714s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on /Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.pdf (29 pages, 1193875 bytes).
+Output written on /Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.pdf (29 pages, 1193701 bytes).
 PDF statistics:
  727 PDF objects out of 1000 (max. 8388607)
  604 compressed objects within 7 object streams
