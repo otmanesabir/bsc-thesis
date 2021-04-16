@@ -442,6 +442,68 @@
     \field{year}{1987}
   \endentry
 
+  \entry{hidden-surface-problem}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=NME}{%
+         family={Newell},
+         familyi={N\bibinitperiod},
+         given={M.\bibnamedelima E.},
+         giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=NRG}{%
+         family={Newell},
+         familyi={N\bibinitperiod},
+         given={R.\bibnamedelima G.},
+         giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+      {{hash=STL}{%
+         family={Sancha},
+         familyi={S\bibinitperiod},
+         given={T.\bibnamedelima L.},
+         giveni={T\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \keyw{greyscale, half-tone, curved surfaces, graphics, video-disc, computer
+  art, visible-surface, computer-aided design, hidden-line, hidden-surface,
+  raster scan, shading}
+    \strng{namehash}{NMENRGSTL1}
+    \strng{fullhash}{NMENRGSTL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{abstract}{%
+    A method for producing half-tone pictures by computer is presented. The
+  basic method, which is very simple, works well in most cases, but does not
+  handle all objects correctly. The extended method, which copes with all
+  cases, is also described. The functions used for calculating the intensity of
+  parts of objects, and the method for handling transparency, are discussed.
+  Examples of pictures produced by this method are included, and the times
+  taken to generate them are tabulated. The extended algorithm compares
+  favourably in speed and storage requirements with other published
+  algorithms.%
+    }
+    \field{booktitle}{Proceedings of the ACM Annual Conference - Volume 1}
+    \verb{doi}
+    \verb 10.1145/800193.569954
+    \endverb
+    \field{isbn}{9781450374910}
+    \field{pages}{443–450}
+    \field{series}{ACM '72}
+    \field{title}{A Solution to the Hidden Surface Problem}
+    \verb{url}
+    \verb https://doi.org/10.1145/800193.569954
+    \endverb
+    \list{location}{1}{%
+      {Boston, Massachusetts, USA}%
+    }
+    \field{year}{1972}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
   \entry{SOLIDREP_3}{misc}{}
     \name{author}{13}{}{%
       {{hash=PSM}{%
@@ -675,6 +737,29 @@
     \field{volume}{18}
     \field{journaltitle}{Computer Graphics and Image Processing}
     \field{year}{1982}
+  \endentry
+
+  \entry{rasterization_scratch_pixel}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={Scratchapixel},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{S1}
+    \strng{fullhash}{S1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Rasterization: a Practical Implementation}
+    \verb{url}
+    \verb https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterizatio
+    \verb n-practical-implementation
+    \endverb
+    \field{journaltitle}{Scratchapixel}
+    \field{year}{2015}
+    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{SOLIDREP_4}{misc}{}

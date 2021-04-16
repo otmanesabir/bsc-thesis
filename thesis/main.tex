@@ -27,7 +27,7 @@
   {\end{tabular}\par\vspace{\belowdisplayskip}}
 
 \newcommand{\myname}{Otmane Sabir}
-\newcommand{\mytitle}{Ray Tracing of an Accelerated Constructive Solid Geometry Algorithm }
+\newcommand{\mytitle}{Accelerated Ray Tracing of Constructive Solid Geometry}
 \newcommand{\mysupervisor}{Prof. Dr. Sergey Kosov}
 
 \hypersetup{
@@ -136,23 +136,43 @@ Date, Signature
 
 \section{Introduction}
   
-Constructive Solid Geometry (CSG) is a method used in computer graphics, computer-aided design, generic modeling languages, and numerous other applications to construct complex geometries from simple primitives or polyhedral solids through the use of boolean operators, namely union ($\cup$),  difference ($\minus$), and intersection ($\cap$). Figure \ref{fig1:set_operations_examples}a through \ref{fig1:set_operations_examples}c respectively show intersection, union, and difference operations. The approach grows especially appealing when implemented in a ray tracing system as the core intricacy renders performing arithmetic logic on a pair of uni-dimensional rays. Nonetheless, most current ray tracing systems generally suffer from the detriment of the expensive object space intersection computation, and the generic CSG algorithms suffer immensely from their computational complexity, making it very difficult to integrate into operating rendering engines. Therefore, this research concentrates on constructive solid geometry and possible means of acceleration.
+Constructive Solid Geometry (CSG) is a method used in computer graphics, computer-aided design, generic modeling languages, and numerous other applications to construct complex geometries from simple primitives or polyhedral solids through the use of boolean operators, namely union ($\cup$),  intersection ($\cap$), and difference ($\minus$). Figure \ref{sec1:set-operations-examples}) respectively shows union, intersection, and difference operations. The approach grows especially appealing when implemented in a ray tracing system as the core intricacy renders performing arithmetic logic on a pair of uni-dimensional rays. Nonetheless, most current ray tracing systems generally suffer from the detriment of the expensive object space intersection computation, and the generic CSG algorithms suffer immensely from their computational complexity, making it very difficult to integrate into operating rendering engines. Therefore, this research concentrates on constructive solid geometry and possible means of acceleration.
   
 \begin{figure}[ht]
-	\begin{center}
-		\includegraphics[width=.6\textwidth]{intro-figures/figure1.png}
-	\end{center}
-	\caption{Examples of set operations on a mesh sphere and box.}
-	\label{fig1:set_operations_examples}
+     \centering
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section1/union.png}
+         \caption{Union.}
+         \label{sec1:union}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section1/intersection.png}
+         \caption{Intersection.}
+          \label{sec1:intersection}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section1/difference.png}
+         \caption{Difference.}
+         \label{sec1:difference}
+     \end{subfigure}
+     \hfill
+        \caption{Examples of set operations on a mesh sphere and box.}
+        \label{sec1:set-operations-examples}
 \end{figure}
+
   
 \subsection{Rendering Algorithms}
   
-Rendering digital photorealistic or non-photorealistic images has been a topic of study since the late 1960s \cite{INITIAL_RENDERING}. Since then, various algorithms came forth that allow achieving different results depending on the required conditions. Inherently all these algorithms strive to solve the same underlying problem by trading-off different aspects, namely speed and realism. This problem is known as the hidden surface problem. The hidden surface problem is determining the visible objects in space from a certain point of view. There are two general methods, object-space methods, which try to start from the object space and project the geometries onto the 2D raster, or the image-space ones, which perform the opposite by tracing a ray through each pixel and attempting to locate the closest intersection of that ray with the geometries in the scene. The two methods then give birth to the pair of most famous and widely adopted rendering algorithms: rasterization and ray tracing.
+Rendering digital photorealistic or non-photorealistic images has been a topic of study since the late 1960s \cite{INITIAL_RENDERING}. Since then, various algorithms came forth that allow achieving different results depending on the required conditions. Inherently all these algorithms strive to solve the same underlying problem by trading-off different aspects, namely speed and realism. This problem is known as the hidden surface problem \cite{hidden-surface-problem}. The hidden surface problem is determining the visible objects in space from a certain point of view. There are two general methods, object-space methods, which try to start from the object space and project the geometries onto the 2D raster, or the image-space ones, which perform the opposite by tracing a ray through each pixel and attempting to locate the closest intersection of that ray with the geometries in the scene. The two methods then give birth to the pair of most famous and widely adopted rendering algorithms: rasterization and ray tracing.
   
 \subsubsection{Rasterization}
     
-Rasterization has very quickly become the dominant approach for interactive applications because of its initially low computational requirements, its massive adoption in most hardware solutions, and later by the ever-increasing performance of dedicated graphics hardware. The use of local, per-triangle computation makes it well suited for a feed-forward pipeline. However, the rasterization algorithm has many trade-offs. To name a few: the handling of global effects such as reflections and realistic shading; limitations to scenes with meshed geometries.
+Rasterization has very quickly become the dominant approach for interactive applications because of its initially low computational requirements, its massive adoption in most hardware solutions, and later by the ever-increasing performance of dedicated graphics hardware. The use of local, per-triangle computation makes it well suited for a feed-forward pipeline. However, the rasterization algorithm has many trade-offs. To name a few: the handling of global effects such as reflections and realistic shading; limitations to scenes with meshed geometries \cite{rasterization_scratch_pixel}. 
     
 \subsubsection{Ray Tracing}
      
@@ -166,12 +186,12 @@ When it comes to computer graphics, we can find numerous types of geometry descr
     
 \subsubsection{Boundary Representation}
     
-Boundary representations are indirect definitions of solids in space using their boundary or limit. This representation is usually a hierarchical composition of different dimensionally complex parts. On the very top, we have definitions of two-dimensional faces, which build on uni-dimensional edges that are subsequently built on dimensionless vertices (See Figure \ref{fig2:brep_3d_rect}). A BREP with non-curvilinear edges and planar faces is called a polygon mesh. The points representing the edges shared by a single face must always be co-planar. A triangle is the simplest polygon and has the excellent property of always being co-planar. Additionally, polygons of any complexity are representable by a set of triangles. These qualities make triangular meshes a fundamental component in BREPs. The representations built on triangles are also highly optimized for fast operations. Therefore, we will mainly deal with triangular meshes in OpenRT, though it does offer descriptions for tetragon (quadrilateral) meshes.
+Boundary representations are indirect definitions of solids in space using their boundary or limit. This representation is usually a hierarchical composition of different dimensionally complex parts. On the very top, we have definitions of two-dimensional faces, which build on uni-dimensional edges that are subsequently built on dimensionless vertices (See Figure \ref{fig2:brep_3d_rect}). A BREP with non-curvilinear edges and planar faces is called a polygon mesh. A triangle is the simplest polygon and has the excellent property of always being co-planar. Additionally, polygons of any complexity are representable by a set of triangles. These qualities make triangular meshes a fundamental component in BREPs. The representations built on triangles are also highly optimized for fast operations. Therefore, we will mainly deal with triangular meshes in OpenRT, though it does offer descriptions for tetragon (quadrilateral) meshes.
     
     
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=.6\textwidth]{intro-figures/brep-overview.png}
+		\includegraphics[width=.8\textwidth]{section1/brep-overview.png}
 	\end{center}
 	\caption{Sample BREP of a 3D hyper-rectangle \cite{wikipedia_2021_mesh_rep}}
 	\label{fig2:brep_3d_rect}
@@ -179,21 +199,13 @@ Boundary representations are indirect definitions of solids in space using their
     
 \subsubsection{Constructive Solid Geometry}
 
-Constructive solid geometry takes basis on the fundamental premise that any complex physical object is obtainable from a set of primitive geometries and the base boolean operations. CSG is radically different from BREPs as it does not collect any topological information but instead evaluates the geometries as needed by the case scenario. In other words, there is no explicit description of the boundary of the solid. Contrary to BREPs,  CSG representations are quickly modified and manipulated since incremental changes do not trigger re-computation and evaluation of the boundary of a geometry. Therefore, no topological changes occur when adjusting the geometries. The latter makes it an attractive solution as it provides a high-level specification of the objects in space and permits significantly more straightforward modification and manipulation. In the general constructive solid geometry description, the solids are put in a binary tree, referred to as the CSG tree, see Figure \ref{fig3:sample_csg_tree}. The root node is the complete composite geometry. The leaf nodes depict the base geometries (cubes, spheres, cylinders, tori, cones, and polygon meshes\footnote{Polygon meshes are usually not considered in CSG algorithms; however, the implementation discussed here allows such flexibility with a few tweaks.}) used in the composition. Every node in the tree, besides the leaf nodes, expresses another complete solid and contains information of the set operation of that node.
+Constructive solid geometry takes basis on the fundamental premise that any complex physical object is obtainable from a set of primitive geometries and the base boolean operations. CSG is radically different from BREPs as it does not collect any topological information but instead evaluates the geometries as needed by the case scenario. In other words, there is no explicit description of the boundary of the solid. Contrary to BREPs,  CSG representations are quickly modified and manipulated since incremental changes do not trigger re-computation and evaluation of the boundary of a geometry. Therefore, no topological changes occur when adjusting the geometries. The latter makes it an attractive solution as it provides a high-level specification of the objects in space and permits significantly more straightforward modification and manipulation. In the general constructive solid geometry description, the solids are put in a binary tree, referred to as the CSG tree (Figure \ref{fig3:sample_csg_tree}). The root node is the complete composite geometry. The leaf nodes depict the base geometries (cubes, spheres, cylinders, tori, cones, and polygon meshes\footnote{Polygon meshes are usually not considered in CSG algorithms; however, the implementation discussed here allows such flexibility.}) used in the composition. Every node in the tree, besides the leaf nodes, expresses another complete solid and contains information of the set operation of that node.
     
-\begin{figure}[ht]
-	\begin{center}
-		\includegraphics[width=.8\textwidth]{intro-figures/figure3.png}
-	\end{center}
-	\caption{Basic CSG Tree}
-	\label{fig3:sample_csg_tree}
-\end{figure}
-  
 In the OpenRT library implementation, we follow a different approach to allow the use of BREPs as leaf nodes. This gives the flexibility of creating more complex geometries and allowing for nesting of combinatorial geometries inside each other. In a naive implementation, this operation can be costly; however, by using certain spatial indexing structures, each node can be represented as a binary space partitioning tree (See Figure \ref{fig4:sample_bsp_tree}).
   
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=0.8\textwidth]{intro-figures/figure4.png}
+		\includegraphics[width=0.8\textwidth]{section1/sample-csg-tree.png}
 	\end{center}
 	\caption{Sample representation of a binary space partitioning (BSP) tree.}
 	\label{fig4:sample_bsp_tree}
@@ -201,20 +213,20 @@ In the OpenRT library implementation, we follow a different approach to allow th
   
 \subsection{Overview}
   
-Following this introduction, we present this CSG implementation in five sections. 2. Related Works; 3. Constructive Solid Geometry; 4. Optimization; 5. Evaluation of the results; 6. Extensions \& Conclusions.
+We present this CSG implementation in six sections. 1. Introduction;  2. Related Works; 3. Constructive Solid Geometry; 4. Optimization; 5. Evaluation of the results; 6. Extensions \& Conclusions.
   
 The second section presents works already done, the limitations of the proposed implementations, and solutions to problems related to CSG.
   
 Section 3 defines the algorithm that performs the logic in the ray-tracing framework. We first introduce the ideas behind ray intersection. We then lay a mathematical foundation to boolean algebra and ray classification. Additionally, we dive into the detail of ray classification for constructively generated geometries. 
   
-Section 4 discusses efficiency and optimizations. The visible surface problem in ray tracing requires a lot of CPU time, and without any optimizations, the CSG algorithm significantly increases the CPU pressure. Therefore, optimizations are much needed to make this method usable and suitable for real-life applications. The speed is a function of the screen resolution and the geometry complexity (how many primitives are in the solid, and the number of nested geometries).
+Section 4 discusses efficiency and optimizations. The visible surface problem in ray tracing requires a lot of CPU time, and without any optimizations, the CSG algorithm significantly increases the CPU payload. Therefore, optimization is much needed to make this method usable and suitable for real-life applications. The speed is a function of the screen resolution and the geometry complexity (the number primitives (e.g., triangles) in the solid, and the number of nested geometries).
   
-Section 5 describes the results received from running various tests on the 3 different implementations of the algorithm. The first is the naive implementation which we refer to as NaiCSG. The second is a variant that uses a Binary Space Partition tree to solve the visible surface problem but still naively finds intersections inside the combinatorial geometry, which we will refer to as BinCSG. Lastly, we'll introduce our optimized algorithm which uses a binary space partition tree on the outside (solving the visible surface problem) and also inside each composite geometry to direct the rays towards the correct geometries, which we will refer to as OptiCSG. We conduct three types tests. The primary one is a function of time and complexity of the geometry, as we monitor the rendering time following gradual increases in the detail level of two sphere meshes. The second computes the time taken to render a scene after covering different amounts of the view port. The third computes the time variations after increasing the number of nested geometries present in the composite solid while crucially maintaining a consistent view port fill rate.
+Section 5 describes the different implementations of the CSG algorithm with the various optimization techniques. The first is the naive implementation which we refer to as NaiCSG. The second is a variant that uses a Binary Space Partition tree to solve the visible surface problem but still naively finds intersections inside the combinatorial geometry, which we will refer to as BinCSG. Lastly, we'll introduce our optimized algorithm which uses a binary space partition tree on the outside (solving the visible surface problem) and also inside each composite geometry to direct the rays towards the correct geometries, which we will refer to as OptiCSG. We conduct three types of tests. The primary one is a function of time and complexity of the geometry, as we monitor the rendering time following gradual increases in the detail level of two sphere meshes. The second computes the time taken to render a scene after covering different amounts of the view port. The third computes the time variations after increasing the number of nested geometries present in the composite solid while crucially maintaining a consistent view port fill rate.
   
   
-\section{Related Works}
+\section{Related Work}
   
-We discuss below the techniques most related to ours. However, there is a tremendous body of work in this area and we; therefore, cannot possibly provide an absolute overview. Our goal is instead to outline similarities and differences with some of the widely adopted approaches for CSG modeling.
+I discuss below the techniques most related to ours. However, there is a tremendous body of work in this area and I cannot possibly provide an absolute overview. The goal is instead to outline similarities and differences with some of the widely adopted approaches for CSG modeling.
 
 Constructive solid geometry has been a subject of study since the late 1970s. It was initially introduced in \cite{GEOMETRIC_MODELING_1977} as a digital solution to help in the design and production activities in the discrete goods industry, this marked the basis for formalizing the method.
   
@@ -222,7 +234,7 @@ A rigorous mathematical foundation of constructive solid geometry was later laid
   
 A few years later it was revisited in \cite{ROTH1982109} where \citeauthor{ROTH1982109} et al. (\citeyear{ROTH1982109}) introduced ray casting as a basis for CAD solid modeling systems. Challenges of adequacy and efficiency of ray casting are addressed, and fast picture methods for interactive modeling are introduced to meet the challenges.
   
-The focus then turned towards different optimizations of CSG algorithms in the setting of ray tracing. A simplistic single hit intersection algorithm is introduced in \cite{kensler_ray_2006}. This suggested mechanism reduces memory load and the number of computations performed to perform ray classification. Though limitations have to be respected since sub-objects must closed, non-self-intersecting, and have consistently oriented normals. However, this was later to be a specific solution that does not gracefully handle edge cases (especially for the difference and intersection operations.
+The focus then turned towards different optimizations of CSG algorithms in the setting of ray tracing. A simplistic single hit intersection algorithm is introduced in \cite{kensler_ray_2006}. This suggested mechanism reduces memory load and the number of computations performed to perform ray classification. Though limitations have to be respected since sub-objects must closed, non-self-intersecting, and have consistently oriented normals. However, this was later proven to be a specific solution that does not gracefully handle edge cases (especially for the difference and intersection operations.
   
 A "slicing" approach is also proposed in \cite{lefebvre:hal-00926861}. Similar to our proposed solution combinations of meshes and analytical primitives through CSG operations are permissible. Nevertheless, this approach requires one boolean per primitive and a complete evaluation of the CSG expression in each step; therefore, making it simple but limited, and much better approaches are imaginable.
 
@@ -236,22 +248,24 @@ Techniques that optimize various CSG rendering algorithms, namely the Goldfeathe
 \subsection{Ray Intersection}
 \label{section:ray-intersection}
 
-Ray intersection is the essence of all ray tracing systems. We supply the system a ray as input and obtain knowledge on how the ray intersects solids in the scene as an output. In ray casting engines, one only necessitates computing the nearest intersection to assess the given scene. However, when evaluating CSG models, we require both the closest and furthest intersections to arrange the ray intersections. With knowledge of all the information in the scene - essentially the camera model and the solids - an evaluation of the closest and most distant intersection is executed with each returning the latter information:
+Ray intersection is the essence of all ray tracing systems. We supply the system a ray as input and obtain knowledge on how the ray intersects solids in the scene as an output. In ray tracing engines, one only necessitates computing the nearest intersection to assess the given scene. However, when evaluating CSG models, we require both the closest and furthest intersections to arrange the ray intersections. With knowledge of all the information in the scene - essentially the camera model and the solids - an evaluation of the closest and most distant intersection is executed with each returning the latter information:
 
 \begin{conditions}
-	\vec{o}     &  is the origin of the ray (i.e: origin of the camera model). \\
-	\vec{d}     &  is the direction of the ray (i.e: direction from camera origin to pixel in screen). \\
+	\vec{o}     &  is the origin of the ray (e.g., origin of the camera model). \\
+	\vec{d}     &  is the direction of the ray (e.g., direction from camera origin to pixel in raster). \\
 	t     &  the distance to either the closest or furthest intersection. \\
 	prim    &  a pointer holding surface information of the intersected primitive. 
 \end{conditions}
 
-We can distinguish two types of ray intersections. Firstly, ray-primitive intersection tests on convex primitives such as blocks, cylinders, cones, and spheres. Because the primitives are analytically defined, the solution is solving the analytic intersection equation. Consequently, this means that the intersection solution is primitive-specific. Many resources providing the analytical solutions are available \cite{ray_primitive_intersections}.
-Second, we encounter the more generic solid-primitive intersection. As we have previously defined in the introduction, a solid is often a boundary representation composed of several triangles. Hence, the main intricacy in ray-solid intersection renders iterating over all primitives and reducing the problem to $n$ ray-primitive intersection tests with $n$ being the number of primitives in the solid and the primitives being polygons (mostly triangles in this case).
+We can distinguish two types of ray intersections \cite{rasterization_scratch_pixel}. Firstly, ray-primitive intersection tests on convex primitives such as blocks, cylinders, cones, and spheres. Because the primitives are analytically defined, the solution is solving the analytic intersection equation. Consequently, this means that the intersection solution is primitive-specific. Many resources providing the analytical solutions are available \cite{ray_primitive_intersections}.
+Second, we encounter the more generic solid-primitive intersection. As we have previously defined in the introduction, a solid is often a boundary representation composed of several triangles. Hence, the main intricacy in ray-solid intersection renders iterating over all primitives and reducing the problem to $n$ ray-primitive intersection tests with $n$ being the number of primitives in the solid (e.g., triangles).
 We can consider the ray-solid intersection as a more general form of ray-primitive intersection since a primitive is always representable as a solid bearing a single surface. The interesting consequence of such an abstraction is that if we fire a ray in the scene, the computation for determining ray intersection can be generalized to:
 
 \begin{algorithm}[H]
 	\SetAlgoLined
 	\KwResult{$[in, out]$ intersection range}
+	set $in$ to $+\inf$\;
+	set $out$ to $-\inf$\;
 	\For{every primitive in the solid}{	
 		solve the ray-primitive equations\;
 		\uIf{intersection exists}{
@@ -294,14 +308,14 @@ The ray-solid intersection test has four possible outcomes:
      \begin{subfigure}[b]{0.3\textwidth}
          \centering
          \includegraphics[width=\textwidth]{section3/3.1/intersection-in-out.png}
-         \caption{Complete Intersection}
+         \caption{Complete intersection.}
          \label{sec3.1:complete-intersection}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.3\textwidth}
          \centering
          \includegraphics[width=\textwidth]{section3/3.1/intersection-out.png}
-         \caption{Complete Intersection}
+         \caption{Inside intersection.}
          \label{sec3.1:inside-intersection}
      \end{subfigure}
         \caption{Different ray intersection cases on a disk.}
@@ -309,11 +323,11 @@ The ray-solid intersection test has four possible outcomes:
 \end{figure}
 
 
-The first case is self-evident. In case 3, we compute both the entering and exiting points normally. The second and fourth case are a little more intricate to determine as we need to understand whether the intersection is inside or outside of the solid. We can find that by checking the orientation of the surface normal, $\vec{N}$, at the intersected point. If $\vec{N}\dot\vec{d} < 0$, then the intersection point is outside. Otherwise, it is inside of the solid.
+The first case is self-evident. In case 3, we compute both the entering and exiting points normally. The second and fourth case are a little more intricate to determine as we need to understand whether the intersection is inside or outside of the solid. We can find that by checking the orientation of the surface normal, $\vec{N}$, at the intersected point. If $\vec{N}\cdot\vec{d} < 0$, then the intersection point is outside. Otherwise, it is inside of the solid.
 
 \subsection{Mathematical Formulations}
   
-Constructive solid geometry is largely grounded in modern Euclidean geometry and the general topology of subsets of three-dimensional Euclidean space $E^3$. As one cannot design a reliable geometric algorithm in the absence of a clear mathematical statement of the problem to be solved, we will be treating a few mathematical formulations. Topology and set theory have been intensively discussed previously in \cite{Requicha1978MathematicalFO}, \cite{tilove1977a},\cite{lachlan_srebrny_zarach_1977}, and many other resources. Hence, we will be mainly focusing on definitions and properties that interest us. Formal proofs of the introduced properties are also available in the before-mentioned resources.
+Constructive solid geometry is largely grounded in modern Euclidean geometry and the general topology of subsets of three-dimensional Euclidean space $E^3$. As one cannot design a reliable geometric algorithm in the absence of a clear mathematical statement of the problem to be solved, I will be treating a few mathematical formulations. Topology and set theory have been intensively discussed previously in \cite{Requicha1978MathematicalFO}, \cite{tilove1977a},\cite{lachlan_srebrny_zarach_1977}, and many other resources. Hence, I will be mainly focusing on definitions and properties that interest us. Formal proofs of the introduced properties are also available in the before-mentioned resources.
   
 \subsubsection{Set Algebra}
   
@@ -389,15 +403,15 @@ Constructive solid geometry is largely grounded in modern Euclidean geometry and
 
     
 \begin{definition}
-	Conducting the three operations $\cup$, $\cap$, and $\minus$ set of elements from the universe $W$ while satisfying the properties \eqref{prop:3.1} to \eqref{prop:3.4} is called boolean algebra \cite{Requicha1978MathematicalFO}.
+	Conducting the three operations $\cup$, $\cap$, and $\minus$ on a set of elements from the universe $W$ while satisfying the properties \eqref{prop:3.1} to \eqref{prop:3.4} is called boolean algebra \cite{Requicha1978MathematicalFO}.
 \end{definition}
     
 \subsubsection{Topological Spaces}
     
-Topological spaces are a generalization of metric spaces in which the notion of "nearness" is introduced but not in any quantifiable way that requires a direct distance definition.
+Topological spaces are a generalization of metric spaces in which the notion of "nearness" is introduced but not in any quantifiable way that requires a direct distance definition \cite{mansfield_1987}.
     
 \begin{definition}[Topological Space]
-	A topological space is a pair $(W, T)$ where $W$ is a set and $T$ is a class of subsets of $W$ called the open sets and satisfying the following three properties \ref{ts:3.5}, \ref{ts:3.6}, and \ref{ts:3.7}. (Figure \ref{sec3.2:open_sets})
+	A topological space is a pair $(W, T)$ where $W$ is a set and $T$ is a class of subsets of $W$ called the open sets and satisfying the following three properties \ref{ts:3.5}, \ref{ts:3.6}, and \ref{ts:3.7}. (Figure \ref{sec3.2:open-sets})
 	\begin{property}
 		\label{ts:3.5}
 		The empty set $\emptyset$ and the universe $W$ are open.\cite{mansfield_1987}
@@ -411,18 +425,36 @@ Topological spaces are a generalization of metric spaces in which the notion of 
 		The union of any collection of open sets is an open set. \cite{mansfield_1987}
 	\end{property}
 \end{definition}
-    
+
 \begin{figure}[ht]
-	\begin{center}
-		\includegraphics[width=0.8\textwidth]{section3/3.2/open-sets.png}
-	\end{center}
-	\caption{A representation of different open sets of varying dimensional order.}
-	\label{sec3.2:open_sets}
+     \centering
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section3/3.2/open-interval.png}
+         \caption{Open interval.}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section3/3.2/open-disk.png}
+         \caption{Open disk.}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section3/3.2/open-sphere.png}
+         \caption{Open "sphere".}
+     \end{subfigure}
+     \hfill
+        \caption{A representation of different open sets varying in dimensional order.}
+        \label{sec3.2:open-sets}
 \end{figure}
+
+   
     
 \subsubsection{Closed Sets}
 \begin{definition}[Closed Sets]
-	A subset $X$ of a topological space $(W, T)$ is closed if its complement is open. However, this don't mean that closed sets are the opposite of open sets (e.g. the universe $W$ and the null set $\emptyset$ are both open and closed). Closed sets hold the following properties which are duals of properties \eqref{ts:3.5} to \eqref{ts:3.7}. (Figure \ref{sec3.2:closed_sets})
+	A subset $X$ of a topological space $(W, T)$ is closed if its complement is open. However, this don't mean that closed sets are the opposite of open sets (e.g. the universe $W$ and the null set $\emptyset$ are both open and closed). Closed sets hold the following properties which are duals of properties \eqref{ts:3.5} to \eqref{ts:3.7}. (Figure \ref{sec3.2:closed-sets})
 		    
 	\begin{property}
 		The empty set $\emptyset$ and the universe $W$ are closed. \cite{mansfield_1987}
@@ -436,11 +468,27 @@ Topological spaces are a generalization of metric spaces in which the notion of 
 \end{definition}
     
 \begin{figure}[ht]
-	\begin{center}
-		\includegraphics[width=0.8\textwidth]{section3/3.2/closed-sets.png}
-	\end{center}
-	\caption{A representation of different closed sets of varying dimensional order.}
-	\label{sec3.2:closed_sets}
+     \centering
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section3/3.2/closed-interval.png}
+         \caption{Closed interval.}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section3/3.2/closed-disk.png}
+         \caption{Closed disk.}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section3/3.2/closed-sphere.png}
+         \caption{Closed sphere.}
+     \end{subfigure}
+     \hfill
+        \caption{A representation of different closed sets varying in dimensional order.}
+        \label{sec3.2:closed-sets}
 \end{figure}
 
 \subsubsection{Neighborhood}
@@ -548,7 +596,7 @@ The membership classification function works on a pair of point sets:
 	X     &  The candidate regular set $X$, classified with respect to $S$, in a subspace $W'$ of $W$. \\
 \end{conditions}
 
-Primed symbols will be used	in order to denote operations on the subspace $W'$ while normal symbols will be used to denote the subspace $W$, see Table \ref{table:notations}.
+Primed symbols will be used	in order to denote operations on the subspace $W'$ while normal symbols will be used to denote the subspace $W$ (Table \ref{table:notations}).
  
 \begin{table}
 	\caption{Notation}
@@ -581,7 +629,7 @@ Primed symbols will be used	in order to denote operations on the subspace $W'$ w
 	\end{align*}
 \end{definition}
 
-The results obtained from this classification ($XinS, XonS, XoutS$) are the regular portions of the candidate set, $X$, in the interior, boundary, and the exterior of the reference set $W$, see Figure \ref{sec3.2:membership_classification}. The produced results are a quasi-disjoint decomposition of the candidate; therefore:
+The results obtained from this classification ($XinS, XonS, XoutS$) are the regular portions of the candidate set, $X$, in the interior, boundary, and the exterior of the reference set $W$ (Figure \ref{sec3.2:membership_classification}). The produced results are a quasi-disjoint decomposition of the candidate; therefore:
 \begin{equation}
 	X = XinS \cup XonS \cup XoutS
 \end{equation}
@@ -605,9 +653,9 @@ We say almost since the subsets are generally not disjoint in the conventional s
 
 \subsubsection{Classification by constructive geometry}
 
-Constructive geometry representations are binary trees whose nonterminal nodes designate regularized set operators and whose terminal nodes designate primitives.  We refer to the specific case of constructive geometry in $E^3$ where regularized compositions are constructed of solid primitives as Constructive Solid Geometry. Regular sets are closed under the regularized set operators thus a class of regular sets can be represented constructively as a combination of other more simple (regular) sets.
+Constructive geometry representations are binary trees whose nonterminal nodes designate regularized set operators and whose terminal nodes designate primitives.  We refer to the specific case of constructive geometry in $E^3$ where regularized compositions are constructed of solid primitives as constructive \textit{solid} geometry. Regular sets are closed under the regularized set operators thus a class of regular sets can be represented constructively as a combination of other more simple (regular) sets \cite{Requicha1978MathematicalFO}. 
 
-For example, as illustrated in Fig. \ref{sect3:halfplane-csg}, if the universe $W$ is in $E^2$ and we select the class of closed half-planes as our primitives, we could construct any regular set in $E^2$ given that it is bounded by a finite number of straight line segments.
+For example, as illustrated in Figure \ref{sect3:halfplane-csg}, if the universe $W$ is in $E^2$ and we select the class of closed half-planes as our primitives, we could construct any regular set in $E^2$ given that it is bounded by a finite number of straight line segments.
 
 \begin{figure}[ht]
 	\begin{center}
@@ -646,7 +694,7 @@ To customize this general definition to be used in a specific domain, one must d
 \subsection{Ray classification}
 \label{sec3.3:ray-classification}
 
-Given a ray and a solid composition tree, our procedure classifies the ray with respect to the solid and returns the classification to the caller. As previously defined, the classification of a ray with respect to a solid is the information describing the closest and furthest ray-solid intersection, $[in, out]$. The procedure starts at the top of the solid composition tree, recursively descends to the terminal nodes, classifies the ray with respect to the primitives, then returns the tree combining the classifications of the left and right subtrees. Therefore, if our classification runs on a tree with depth 1, we would receive an $[in, out]$ for each of the solids in the root nodes. As previously discussed in \ref{section:ray-intersection}, we might not receive either or both the $in$ and the $out$. (E.g: if the ray is tangent to a solid, then one only receives the $in$). As illustrated in Figure \ref{sec3.3:classification}, we can compute the combinations of the pair of intersections we have which in its core is a matter of boolean algebra, see table \ref{section3:boolean_algebra}.
+Given a ray and a solid composition tree, our procedure classifies the ray with respect to the solid and returns the classification to the caller. As previously defined, the classification of a ray with respect to a solid is the information describing the closest and furthest ray-solid intersection, $[in, out]$. The procedure starts at the top of the solid composition tree, recursively descends to the terminal nodes, classifies the ray with respect to the primitives, then returns the tree combining the classifications of the left and right subtrees. Therefore, if our classification runs on a tree with depth 1, we would receive an $[in, out]$ for each of the solids in the leaf nodes. As previously discussed in \ref{section:ray-intersection}, we might not receive either or both the $in$ and the $out$. (E.g: if the ray is tangent to a solid, then one only receives the $in$). As illustrated in Figure \ref{sec3.3:classification}, we can compute the combinations of the pair of intersections using boolean algebra (Table \ref{section3:boolean_algebra}).
 
 \begin{figure}[ht]
 	\begin{center}
@@ -684,15 +732,15 @@ Given a ray and a solid composition tree, our procedure classifies the ray with 
 
 \section{Optimization}
 
-In this section, we will introduce the state-of-the-art CSG algorithm that is implemented in the OpenRT framework. Here we expose all the adjustments and changes we have made to the algorithm in order to maximize its performance and results. We will discuss a minimal hit classification algorithm, box enclosures, and how we simple techniques such as "early-outs" can increase the performance, and also the limitations of all these methods. We will discuss the binary space partition tree acceleration and spatial indexing structure, including a modified version in order to optimally reverse the tree traversal. Finally, we will put it all together in our version of the CSG algorithm.
+In this section, we will introduce the state-of-the-art CSG algorithm that is implemented in the OpenRT framework. Here we expose all the adjustments and changes we have made to the algorithm in order to maximize its performance and results. We will discuss a minimal hit classification algorithm, box enclosures, and how we simple techniques such as "early-outs" can increase the performance. Additionally, we propose the limitations of all these methods. We will discuss the binary space partition tree acceleration and spatial indexing structure, including a modified version in order to optimally reverse the tree traversal. Finally, we will put it all together in our version of the CSG algorithm.
 
 \subsection{Minimal hit CSG classification}
 
-What we have introduced in the Section \ref{sec3.3:ray-classification} is the typical approach to rendering CSG. However, this approach could be very costly as we nest more geometries in the tree and requires a lot of memory to store, classify, and combine a long chain of operations and primitives. Therefore, we introduce a new approach which we refer to as minimal hit CSG classifications. The approach described here computes intersections with binary CSG objects using the single nearest intersections whenever possible. Though it may need to do several of these per sub-object, the number needed is quite low and is never higher than that of the first method. To our knowledge, this approach was entirely developed in OpenRT and no resources found describe this type of ray classifications. Though a relatively similar algorithm has been introduced in \cite{kensler_ray_2006}, it was proven in \cite{csg-xrt-renderer} to not be functional for the intersection and difference operations. Additionally, the previously mentioned algorithm also heavily relies on surface normals in order to determine the position of the ray.
+What we have introduced in the Section \ref{sec3.3:ray-classification} is the typical approach to rendering CSG. However, this approach could be very costly as we nest more geometries in the tree and require lots of memory to store, classify, and combine a long chain of operations and primitives. Therefore, we introduce a new approach which we refer to as minimal hit CSG classifications. The approach described here computes intersections with binary CSG objects using the single nearest intersections whenever possible. Though it may need to do several of these per sub-object, the number needed is quite low and is never higher than that of the first method. To our knowledge, this approach was entirely developed in OpenRT and no resources found describe this type of ray classifications. Though a relatively similar algorithm has been introduced in \cite{kensler_ray_2006}, it was proven in \cite{csg-xrt-renderer} to not be functional for the intersection and difference operations.
 
 \subsubsection{Union Classification}
 
-Consider the case of a union of two spheres shown in Figure \ref{sec3.4:sphere_union}. The union of these two spheres is the boundary of each of the spheres without their interior. Therefore, to find the correct classification results we must find the closest intersection from our ray origin such that it does not belong to the interior of the sphere. Our ray tracer can find this out by shooting a ray at each of the objects. Let us denote the intersection distance from the ray origin to the point as $t_A$. $\vec{P_A}$ is the intersection point which we can compute through the general ray equation $\vec{P_A} = \vec{o} + t_{A}\vec{d}$, see Table \ref{table:notations2}. Initially, $min_A$ is set to $+\inf$, and $max_A$ is set to $-\inf$. Additionally, $min_A$ takes the value of $t_A$ if and only if $t_A \leq min_A$. Meanwhile, $max_A$ takes the value of $t_A$ if and only if $t_A \geq max_A$. all of the minimum and maximum values keep their default values if their respective intersections don't exist. 
+Consider the case of two the spheres shown in Figure \ref{sec3.4:sphere_union}. The union of these two solids is the boundary of each of the spheres without their interior. Therefore, to find the correct classification results we must find the closest intersection from our ray origin such that it does not belong to the interior of the sphere. Our ray tracer can find this out by shooting a ray at each of the objects. Let us denote the intersection distance from the ray origin to the point as $t_A$. $\vec{P_A}$ is the intersection point which we can compute through the general ray equation $\vec{P_A} = \vec{o} + t_{A}\vec{d}$ (see Table \ref{table:notations2}). Originally, $min_A$ is set to $+\inf$, and $max_A$ is set to $-\inf$. Additionally, $min_A$ takes the value of $t_A$ if and only if $t_A \leq min_A$. Meanwhile, $max_A$ takes the value of $t_A$ if and only if $t_A \geq max_A$. all of the minimum and maximum values keep their default values if their corresponding intersections don't exist. 
 
 \begin{figure}[ht]
      \centering
@@ -734,12 +782,11 @@ Consider the case of a union of two spheres shown in Figure \ref{sec3.4:sphere_u
 	\end{tabularx}
 \end{table}
 
-For the case where the ray enters and exits both spheres (Figure \ref{sec3.4:union-case1}), one would simply have to find $MIN(min_A, min_B)$ in order to determine which one of the spheres boundaries is closest.
+For the case where the ray enters and exits both spheres (Figure \ref{sec3.4:union-case1}), one would only have to find $MIN(min_A, min_B)$ in order to conclude which one of the boundaries of the sphere is closest.
 
-Let us now consider the case where no intersection is found with one or all of the solids as shown in Figure \ref{sec3.4:union-case2}. In case the ray only hits one of the entries, then we need to check if the ray exits the boundary of the sphere that was initially missed. If the ray doesn't exit the second sphere, then we are sure the ray misses the second sphere and can return $min_A$. Otherwise, this leads to the $r^3$ case of \ref{sec3.4:union-case3}.
+Let us now examine the case where no intersection is found with one or all of the solids as shown in Figure \ref{sec3.4:union-case2}. In case the ray only hits one of the entries, we need to check if the ray exits the boundary of the missed sphere. If the ray doesn't exit the second sphere, we are sure the ray misses the second sphere and can return $min_A$. Otherwise, this leads to the $r^1$ case of \ref{sec3.4:union-case3}.
 
-The last set of cases comes when a ray is shot from the inside of the solids.
-As illustrated in \ref{sec3.4:union-case3}, the last set of cases arise when the ray is shot from inside of spheres. This is more complicated since we have to teach our ray tracer to ignore the interior sides and only get the outer sides. The first scenario can occur when the ray only misses one of the entries but still exits both solids. Here, we must make sure that the order of the evaluation in terms of distance is $in < out < out$. If so, then we can return the furthest $out$ as our intersection ($r^2$ and $r^3$ from Figure \ref{sec3.4:union-case3}). If not, then this means the spheres are disjoint from each other, leading to $out < in < out$, and we return the closest $out$. If the ray is shot from the shared interior of the two spheres ($r^2$ from Figure \ref{sec3.4:union-case3}), this means the ray has missed both entries and one has to return the furthest of the two exit intersections. This solution is also valid for the last case ($r^3$ from Figure \ref{sec3.4:union-case3}) since the value of $max$ is set to $-\inf$; therefore, the biggest of the two would still be the current intersection.
+As illustrated in \ref{sec3.4:union-case3}, the last set of cases arise when the ray is shot from the interior of the spheres. This is more intricate since we have to teach our ray tracer to neglect the inner sides and only get the outer sides. The first scenario can occur when the ray only misses one of the entries but nevertheless exits both solids. Here, we must ensure that the order of the evaluation in terms of distance is $in < out < out$. If so, then we can render the furthest $out$ as our intersection ($r^1$ from Figure \ref{sec3.4:union-case3}). If not, this means the spheres are disjoint from each other, leading to $out < in < out$, and we return the closest $out$. If the ray is shot from the shared interior of the two spheres ($r^2$ from Figure \ref{sec3.4:union-case3}), this means the ray has missed both entries and one has to return the furthest of the two exit intersections. This solution is also valid for the last case ($r^3$ from Figure \ref{sec3.4:union-case3}) since the value of $max$ is set to $-\inf$; therefore, the greatest of the two would be the current intersection.
 
 \begin{algorithm}
 	\SetAlgoLined
@@ -785,7 +832,7 @@ As illustrated in \ref{sec3.4:union-case3}, the last set of cases arise when the
 
 \subsubsection{Intersection Classification}
 
-We will stick to the same general example; however, we will be performing the intersection of two spheres as shown in Figure \ref{sec3.4:sphere_intersection}.
+We will stick to the same general example; however, we will be performing the intersection of two spheres. (Figure \ref{sec3.4:sphere-intersection})
 
 \begin{figure}[ht]
      \centering
@@ -813,12 +860,11 @@ We will stick to the same general example; however, we will be performing the in
         \label{sec3.4:sphere-intersection}
 \end{figure}
 
-Contrary to the union, the intersection of two spheres is their interior without the boundary of each of the spheres. We will use the same previously defined notations shown in Table \ref{table:notations2}. First, we will start with the obvious case where a ray completely goes through both $A$ and $B$, as shown in Figure \ref{sec3.4:intersection-case-1}. We first only compute the $min_A$ and $min_B$ as it is the first case we generally would like to check for. If both $min_A$ and $min_B$ have values different to the default then we are sure our ray is indeed going through both the spheres; therefore, we would check for the furthest one of both and return that as we are only interested in the interior.
+The intersection of two spheres is their interior without the boundary of each of the spheres. We will apply the same previously defined notations shown in Table \ref{table:notations2}. First, we will begin with the obvious case where a ray goes through both $A$ and $B$, as shown in Figure \ref{sec3.4:intersection-case-1}. We first only compute the $min_A$ and $min_B$ as it is the first case we ordinarily would like to check. In case $min_A$ and $min_B$ have values deviating from $\pm\inf$, then we are guaranteed our ray is going through both the spheres. But we still need to verify if the spheres have a shared interior (the intersection of two disjoint sets is the empty set $\emptyset$). Therefore, we must analyze the exit point of the closest entry. If that exit point doesn't lie between the two entry points, then we must return this as a miss. However, if the out point lies between the two spheres. Then we return the furthest $min$ as the intersection. 
 
-The second case is when a ray only intersects with one of the spheres, as illustrated in Figure \ref{sec3.4:intersection-case-2}. By definition, the intersection operation is the shared section of the sets; therefore, if a ray only intersects one the two spheres then an intersection doesn't exist and we should return a miss. This is the case where one of the previously computed entries has a default value. In this case, we must check if the sphere with no $min$ has an exit point. If it doesn't, then this means the ray entirely misses one of the spheres and we return a miss ($r^1$ and $r^2$ in Figure \ref{sec3.4:intersection-case-2}, and $r^3$ in Figure \ref{sec3.4:intersection-case-3}). 
+The second case is when a ray only intersects with one of the spheres, as depicted in Figure \ref{sec3.4:intersection-case-2}. In case one of the previously computed entries has a default value, we must check if the sphere with no $min$ has an exit point. If it doesn't, then this means the ray completely misses one of the spheres and we return a miss ($r^1$ and $r^2$ in Figure \ref{sec3.4:intersection-case-2}, and $r^3$ in Figure \ref{sec3.4:intersection-case-3}). 
 
-
-The last cases are when the sphere is inside one or both of the solids. The first case arises when the ray doesn't enter doesn't enter one of the spheres but continues to have all other exits too. Here we must check if values of all the intersections are in the following order $min < max < max$. If that's the case, then we return the first $min$. Otherwise, this hints to the fact that the spheres are disjoint and the intersection of two disjoint sets is the empty set; therefore, we return a miss. If the spheres lie within the interior area shared by the two spheres ($r^2$ in Figure \ref{sec3.4:intersection-case-3}), we return the closest of both the exit points.
+The last cases are when the sphere is inside one or both of the solids. The first case arises when the ray doesn't enter one of the spheres but continues to have all other exits. Here we must check if the values of all the intersections are in the following order $min < max < max$. If that's the case, then we return the first $min$. Otherwise, this hints that the spheres are disjoint; therefore, we classify them as a miss. If the spheres lie within the interior area shared by the two spheres ($r^2$ in Figure \ref{sec3.4:intersection-case-3}), we return the closest of both the exit points.
 
 \begin{algorithm}
 	\SetAlgoLined
@@ -826,7 +872,19 @@ The last cases are when the sphere is inside one or both of the solids. The firs
 	$min_A$ = intersectMin($A$)\;
 	$min_B$ = intersectMin($B$)\;
 	\uIf{$min_A != \inf$ and $min_B != \inf$}{
-		return $MAX(min_A, min_B)$\;
+		\uIf{$min_A < min_B$}{
+			$max_A$ = intersectMax($A$)\;
+			\uIf{$min_B < max_A$}{
+				return $min_B$\;
+			}
+		}
+		\uIf{$min_B < min_A$}{
+			$max_B$ = intersectMax($B$)\;
+			\uIf{$min_A < max_B$}{
+				return $min_A$\;
+			}
+		}
+		return $miss$\;
 	}
 	\uIf{$min_A != \inf$ and $min_B != \inf$}{
 		$max_B$ = intersectMax($B$)\;
@@ -838,45 +896,45 @@ The last cases are when the sphere is inside one or both of the solids. The firs
 	}
 	\caption{Minimal hit classification for the intersection.}
 	\label{sec3.4:intersection_algo}
-\end{algorithm} 
+\end{algorithm}
 
 \subsubsection{Difference Classification}
 
-Difference remains the most complex and least optimizable operation out of all three due to several factors. First, the minimal knowledge of the scene is higher than both previously mentioned operations. Second, the difference operations are not commutative nor distributive; therefore, the direction of the ray renders completely different results. We shall stick to the same example as the previous two cases and with similar notations. See Figure \ref{sec3.4:sphere_difference}. We introduce two new notations $d1$ and $d2$, a reference to the direction of the rays. Such that $d1$ is the direction of the ray going from $A$ to $B$ and vice-versa. The difference highlighted in this section is $A \minus B$; thus, we are interested in the boundary of $A$ that is not part of the interior of $B$, and the interior of $B$ with respect to $A$.
+Difference remains the most complex and least optimizable operation out of all three due to several factors. First, the minimal knowledge of the scene is higher than both previously mentioned operations. Second, the difference operations are not commutative nor distributive; therefore, the direction of the ray renders completely different results. We shall stick to the same example as the previous two cases and with similar notations (Figure \ref{sec3.4:sphere-difference}).
 
 \begin{figure}[ht]
      \centering
       \begin{subfigure}[b]{0.3\textwidth}
       	\centering
-        \includegraphics[width=\textwidth]{section3/3.4/sphere_difference_case2.png}
+        \includegraphics[width=\textwidth]{section3/3.4/difference-case-2.png}
         \caption{Ray misses one of the spheres.}
-        \label{sec3.4:difference_case1}
+        \label{sec3.4:difference-case-1}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.3\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{section3/3.4/sphere_difference_case1.png}
+         \includegraphics[width=\textwidth]{section3/3.4/difference-case-1.png}
          \caption{Ray goes through both spheres.}
-         \label{sec3.4:difference_case2}
+         \label{sec3.4:difference-case-2}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.3\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{section3/3.4/sphere_difference_case3.png}
+         \includegraphics[width=\textwidth]{section3/3.4/difference-case-3.png}
          \caption{Ray is inside one or both spheres.}
-         \label{sec3.4:difference_case3}
+         \label{sec3.4:difference-case-3}
      \end{subfigure}
         \caption{Difference ray classification cases.}
-        \label{sec3.4:sphere_difference}
+        \label{sec3.4:sphere-difference}
 \end{figure}
 
 
-We will first consider the case where a ray misses one of the two spheres, as shown in Figure \ref{sec3.4:difference_case1}.  
-Contrary to union and intersection, we always get both the closest and furthest intersection points of $A$. If the ray does not enter or exit $A$, we can already consider this a miss ($d2$ in Fig. \ref{sec3.4:difference_case1}). However, if it either enters or exits $A$, we must already review if it enters $B$, thus we compute $min_B$. If the ray doesn't enter $B$, we return the shortest of the two distances $min_A$ and $max_A$. Otherwise, we move to the next case.
+We will first consider the case where a ray misses one of the two spheres, as shown in Figure \ref{sec3.4:difference-case-1}.  
+Contrary to union and intersection, we always get both the closest and furthest intersection points of $A$. If the ray does not enter or exit $A$, we can already consider this a miss ($r^2$ in Fig. \ref{sec3.4:difference-case-1}). However, if it either enters or exits $A$, we must already review if it enters $B$, thus we compute $min_B$. If the ray does enter $B$, we return the shortest of the two distances $min_A$ and $max_A$. Otherwise, we move to the next case.
 
-As illustrated in \ref{sec3.4:difference_case2}, this case heavily depends on the direction of the ray. Starting with ray $d1$, if we have completed the first check of entering and exit of $A$ we can move to check $B$. We now need both the entrance and exit points of $B$. Assuming $B$s points are both not the default values ($\pm\inf$), we must first check if $min_A < min_B < max_B$. If this holds, then we can already return the entry point of $B$ as our intersection. If it doesn't,$d2$ in Fig \ref{sec3.4:difference_case2}, and we must then check if $min_B < min_A < max_B < max_A$, then we can return the exit of $B$ as the intersection. This case only stands if all enter and exit points of both $A$ and $B$ are valid.
+As illustrated in \ref{sec3.4:difference-case-2}, this case heavily depends on the direction of the ray and only stands if all enter and exit points of both sphere are valid. Starting with ray $r^1$, if we have completed the first check of entering and exit of $A$ we can move to check $B$. We now need both the entrance and exit points of $B$. Assuming $B$s points are both not the default values ($\pm\inf$), we must first check if $min_A < min_B < max_A$. If this holds, then we can already return the entry point of $A$ as our intersection. If it doesn't ($r^2$ in Fig \ref{sec3.4:difference-case-2}) we must then check if $min_B < min_A < max_B < max_A$, then we can return the exit of $B$ as the intersection.
 
-The last and most complicated case is when the ray lies somewhere inside one of these two spheres. Starting with $d1$, we already understand that the ray doesn't enter but only exists $A$, thanks to the calculation from the first case. We verify if the ray enters or exits $B$. If the ray enters and exists $B$, then we can return $min_B$. If it only exits $B$, then we necessitate checking if $max_A < max_B$. If that holds, it is a miss. If it doesn't, we return $max_B$. However, in the $d2$ case, the ray both enters and exists $A$ but only exits $B$. We now need to examine if $max_B < min_A$. If that is untrue, then the spheres don't share an interior and are separate from each other; consequently, we return a miss. Nevertheless, if it is true, then we return $max_B$. Algorithm \ref{sec3.4:difference_algo} with all the cases is detailed introduced. 
+The last and most complicated case is when the ray lies somewhere inside one of these two spheres. Starting with $r^1$, we already understand that the ray doesn't enter but only exists $A$, thanks to the calculation from the first case. We verify if the ray enters or exits $B$. If the ray enters and exists $B$, then we can return $MIN(max_{A}, max_{B})$. If it only exits $B$, then we necessitate checking if $max_A < max_B$. If that holds, it is a miss. If it doesn't, we return $max_B$.
 
 \begin{algorithm}
 	\SetAlgoLined
@@ -928,11 +986,12 @@ The last and most complicated case is when the ray lies somewhere inside one of 
 
 \subsection{Bounding Boxes}
 
-Bounding boxes are the simplest way to cut down on the number of ray intersection operations and thus reduce the rendering time in general. When used in the context of CSG, the solution implicitly turns into an efficient binary tree traversal. Let's imagine the scenario where the union of two spheres composed of 100 triangles lies in the middle of a (500x500px) view; however, the sphere only covers 100x100 pixels. In the previous approach we would check each and every single ray with the entire composite. This results in a staggering $25.000.000$ intersection checks though ideally we only need a fifth of that. A box enclosure is then introduced in order to do a preliminary check before proceeding to test the rest of the composition. Therefore, with a tight enough enclosure that covers 110x110 pixels, the ray tracer would only need to check for $1.460.000$ intersections such that $250.000$ checks are box enclosure ones and the rest $1.210.000$ are ray-solid tests - a decrease of approximately $80\%$. In the worst case, when an enclosure fills the entire view, then the box enclosure will add additional operations of ray-box intersections on top of performing all the ray-intersection checks. However, ray-box intersection are very fast so one could dismiss the additional costs of those operations.
+Bounding boxes are the simplest way to cut down on the number of ray intersection operations and reducing overall rendering time. Let's visualize the situation where a union of two spheres composed of 100 triangles lies in the middle of a 500x500px view of which the composite covers 100x100 pixels. In the former approach, we would examine every single ray with the complete composite. Resulting in a staggering $25.000.000$ intersection checks; though,  we solely necessitate a fifth of that. We introduce a box enclosure to do a prefatory examination before testing the rest of the composite. Hence, with a tight enough box (covering 110x110), the ray tracer would only need to check for $1.460.000$ intersections such that $250.000$ tests are box enclosure ones and the rest $1.210.000$ are for ray-solid tests - a decrease of roughly $80\%$. In the worst case, when an enclosure stretches across the entire view, the box enclosure will add additional operations of ray-box intersections on top of completing all the ray-intersection checks. Nevertheless, ray-box tests are fast, and one could dismiss the additional costs of those operations. When used in the context of CSG, this solution essentially turns into an efficient binary tree traversal. 
 
-While many other types of enclosures can be used, we use box enclosures for the many advantages they bring. First, an abstract box can be defined by only two points, a minimum and maximum point. Because the enclosure definition will be added to every node in the CSG tree, then we must make sure that we do not tremendously increase the needed memory per node. Second, boxes are arguably the tightest types of bounding volumes. Meaning that if a ray-enclosure intersection test is to be done, there is a high chance the ray will also intersect whatever geometry is inside of the bounding volume. Lastly, it is relatively straightforward to apply the boolean operations on the bounding boxes while still maintaining a tight boundary around the box and thus also ignoring cases where rays do intersect the primitives in the terminal nodes of the CSG tree but not the composite geometries that are constructed on a higher level. 
+We can also use many other types of enclosures; however, we choose box enclosures for their many advantages. First, one can define an abstract box by only two points (a minimum and maximum point). Because the enclosure definition lies inside every node in the CSG tree, we must ensure that we do not excessively increase the required memory per node. Second, boxes are arguably the tightest types of bounding volumes. Implying that if a ray-box intersection test is positive, there is a high probability the ray will too intersect the geometry inside of the bounding box. Lastly, applying boolean operations on bounding boxes is straightforward. Therefore, if an object is part of a CSG tree, but the precomputed bounding box is smaller than the object (e.g., the case of a subtraction operation), the rest of the geometry piercing outward will also be neglected when performing ray-composite intersection tests.
 
-An abstract bounding box is a rectangular parallelepiped defined by exactly two points, see Figure \ref{sec4.2:box-points}. Each primitive, solid, and composite must be able to define its own bounding box. For primitive cases, the bounding box is case specific. For example, the bounding box of a primitive sphere of radius $r = 1$ and located at center point $\vec{o} = (0, 0, 0)$ has a bounding box whose maximum point is $(r, r, r)$ and minimum point $(-r, -r, r)$. Solids are more complicated as they are composed of many primitives. However, one simply has to create a collapsed bounding box (a bounding box whose min coordinates are $+\inf$ and max coordinates are set to $-\inf$) and slowly start inflating by the primitive's predefined boxes. The inflation step is as simple as checking if the value of  a coordinate of the current bounding box is smaller or bigger than that of the primitive's bounding box and either picking the smallest or the greatest value depending on the coordinate. For instance, if our current bounding box has $min(0, 0, 0)$ and $max(1, 1, 3)$ and the current primitives bounding box has $min2(-1, -1, 1)$ and $max2(2, 2, 2)$ then the new values of the points of our bounding box become $min(-1, -1, 0)$ and $max(2, 2, 3)$.
+A bounding box is a rectangular parallelepiped defined by exactly two points (Figure \ref{sec4.2:box-points}). Each primitive, solid, and composite must be able to define its bounding box. For primitive cases, the bounding box is case-specific. For example, the bounding box of a primitive sphere of radius $r = 1$ located at center point $\vec{o} = (0, 0, 0)$ has a bounding box whose maximum point is $(r, r, r)$ and minimum point $(-r, -r, -r)$. Solids are more complicated as they are composed of many primitives. Hence, one has to create a collapsed bounding box (a bounding box whose min and max coordinates are respectively $+\inf$ and $-\inf$) and slowly start inflating by the primitive's predefined boxes. The inflation step is as simple as checking if the value of a coordinate of the current bounding box is smaller or bigger than that of the primitive's bounding box and either picking the smallest or the greatest value depending on the coordinate. For instance, if our current bounding box has $min(0, 0, 0)$ and $max(1, 1, 3)$ and the current primitives bounding box has $min2(-1, -1, 1)$ and $max2(2, 2, 2)$ then the current values of the points of our bounding box become $min(-1, -1, 0)$ and $max(2, 2, 3)$.
+
 
 \begin{figure}[ht]
 	\begin{center}
@@ -942,11 +1001,11 @@ An abstract bounding box is a rectangular parallelepiped defined by exactly two 
 	\label{sec4.2:box-points}
 \end{figure}
 
-Combining the boxes on the composite level is also very important to achieve. This can be done trivially using the usual rules of algebra defined in the previous section, except in the case of the difference operation since its results are not as easily predictable and the cost of analyzing the entire composition could be counter-productive in our use.\cite{ROTH1982109}. Generally speaking, for the union operation, we always pick the smallest value from the left and right boxes per coordinate for the minimum, and vice-versa for the maximum. For the intersection case, we pick the highest value from the left and right boxes per coordinate for the minimum (opposite to the union), and the dual of that operation for the maximum. For the difference, we have previously said that it's not possible to generalize using boolean algebra; therefore, we simply keep the minimum and maximum of the left box since we are sure that whatever comes out of the subtraction operation will never be bigger than the left bounding box, $A - B \leq A$. Figure \ref{sec4.2:composite-box-figure}, shows the different operations on 2D boxes. The exact same logic holds for 3D except we check for an additional coordinate. The algorithm \ref{sec4.2:composite-box} defines the procedure for composite boxes for points with 3 coordinates. 
+Combining the boxes on the composite level is also very important to realize. We can achieve this trivially with the usual rules of algebra defined in the previous section. Though, the difference operation can't since its results are not foreseeable, and the cost of analyzing the entire composition is counter-productive in this use case \cite{ROTH1982109}. When dealing with the union operation, we select the smallest value from both boxes per coordinate for the minimum and vice-versa. In an intersection case, we pick the highest value from both boxes per coordinate for the minimum (opposite to the union) and the dual for the maximum.  For the difference, we have previously mentioned that it's not possible to generalize using boolean algebra; therefore, we keep the minimum and maximum of the left box as we are sure that the result of the subtraction operation will never be bigger than the left geometry, $A - B \leq A$. Figure \ref{sec4.2:composite-box-figure} shows the different operations on rectangles. The same logic holds for the three dimensional space as we only check for an additional coordinate. Algorithm \ref{sec4.2:composite-box} defines the procedure for composite boxes. 
 
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{section4/4.2/composite-box-enclosure.png}
+		\includegraphics[width=\textwidth]{section4/4.2/composite-box-enclosure.png}
 	\end{center}
 	\caption{Boolean algebra on composite boxes.}
 	\label{sec4.2:composite-box-figure}
@@ -970,11 +1029,21 @@ Combining the boxes on the composite level is also very important to achieve. Th
 			max[$i$] = leftMax[$i$]\;
 		}
 	}
-	\caption{.}
+	\caption{Composite solid box enclosure estimation algorithm.}
 	\label{sec4.2:composite-box}
 \end{algorithm} 
 
-(target size: 5-10 pages)
+\subsection{Binary Space Partitioning Trees}
+
+%todo: the reasons why KD-trees are so much more adopted.
+%todo: reference a lot lot
+One of the most fundamental concepts in ray tracing is binary space subdivision as spatial or hierarchical data structures for efficiently searching for objects in the scene. A predominant concept in these data structures is binary space partitioning which refers to the successive subdivision of a scene's bounding box with planes until we reach termination criteria. The resulting data structure is called a binary space partition tree or a BSP tree. BSP trees offer the flexibility of using arbitrarily oriented planes to accommodate complex scenes and uneven spatial distributions. Therefore, in theory, BSP trees are a simple, elegant, and efficient solution to our visible-surface problems. In our implementation, we use a variant called KD-trees. These are a more "restricted" type of BSP trees in which only axis-aligned splitting planes are allowed. These trees conform much better with computational advantages and memory needs but do not adapt very well to scene complexities. It is relatively easy to generate an inefficient binary tree with non-axis-aligned geometry (e.g., a long skinny cylinder oriented diagonally). All variations of the algorithms are generally composed of two fundamental parts, building and traversing the tree. How we choose these two core procedures tremendously affects the amount of acceleration achievable. We will discuss our building and traversing procedures and a custom traversal to find the furthest intersection. Because the main focus of the paper doesn't align with the improvement of building or traversal procedures, the BSP algorithm is unoptimized. However, many algorithms such as surface area heuristic, local greedy SAH, automatic termination criteria, and many more have proved to optimize KD trees.
+
+\subsubsection{Building BSP trees}
+
+\subsubsection{Traversing BSP trees}
+
+\subsubsection{Modified Traversal}
 
 \section{Evaluation of the results}
 
