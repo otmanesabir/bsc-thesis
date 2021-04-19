@@ -163,6 +163,40 @@
     \field{year}{1991}
   \endentry
 
+  \entry{sbounds_csg}{article}{}
+    \name{author}{1}{}{%
+      {{hash=CS}{%
+         family={Cameron},
+         familyi={C\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE Computer Society}%
+    }
+    \strng{namehash}{CS2}
+    \strng{fullhash}{CS2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{doi}
+    \verb 10.1109/38.79455
+    \endverb
+    \field{issn}{1558-1756}
+    \field{number}{03}
+    \field{pages}{68\bibrangedash 74}
+    \field{title}{Efficient Bounds in Constructive Solid Geometry}
+    \field{volume}{11}
+    \list{location}{1}{%
+      {Los Alamitos, CA, USA}%
+    }
+    \field{journaltitle}{IEEE Computer Graphics and Applications}
+    \field{year}{1991}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{SOLIDREP_5}{misc}{}
     \name{author}{1}{}{%
       {{hash=CKH}{%
@@ -797,6 +831,62 @@
     \field{journaltitle}{Scratchapixel}
     \field{month}{01}
     \field{year}{2015}
+  \endentry
+
+  \entry{efficient_csg_meshes}{article}{}
+    \name{author}{5}{}{%
+      {{hash=SB}{%
+         family={Sheng},
+         familyi={S\bibinitperiod},
+         given={Bin},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=LP}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Ping},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=FH}{%
+         family={Fu},
+         familyi={F\bibinitperiod},
+         given={Hongbo},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=ML}{%
+         family={Ma},
+         familyi={M\bibinitperiod},
+         given={Lizhuang},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=WE}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Enhua},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \keyw{Boolean operations, Plane-based geometry, CSG evaluation, Hybrid
+  representation}
+    \strng{namehash}{SB+1}
+    \strng{fullhash}{SBLPFHMLWE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.gmod.2018.03.001
+    \endverb
+    \field{issn}{1524-0703}
+    \field{pages}{1\bibrangedash 16}
+    \field{title}{Efficient non-incremental constructive solid geometry
+  evaluation for triangular meshes}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S1524070318300067
+    \endverb
+    \field{volume}{97}
+    \field{journaltitle}{Graphical Models}
+    \field{year}{2018}
   \endentry
 
   \entry{parallel_kd_tree_construction}{article}{}
