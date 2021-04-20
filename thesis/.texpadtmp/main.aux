@@ -280,6 +280,7 @@
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Example of combining ray classifications.\relax }}{14}{figure.caption.18}\protected@file@percent }
 \newlabel{sec3.3:classification}{{13}{14}{Example of combining ray classifications.\relax }{figure.caption.18}{}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Minimal hit CSG classification}{14}{subsection.4.1}\protected@file@percent }
+\newlabel{section:classification-optimization}{{4.1}{14}{Minimal hit CSG classification}{subsection.4.1}{}}
 \@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Boolean operations table\relax }}{15}{table.caption.19}\protected@file@percent }
 \newlabel{section3:boolean_algebra}{{2}{15}{Boolean operations table\relax }{table.caption.19}{}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Union Classification}{15}{subsubsection.4.1.1}\protected@file@percent }
@@ -305,6 +306,7 @@
 \@writefile{loa}{\defcounter {refsection}{0}\relax }\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Minimal hit classification for union.\relax }}{17}{algocf.2}\protected@file@percent }
 \newlabel{sec3.4:union-algo}{{2}{17}{Union Classification}{algocf.2}{}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}Difference Classification}{18}{subsubsection.4.1.3}\protected@file@percent }
+\newlabel{section:minimal_difference_classficiation}{{4.1.3}{18}{Difference Classification}{subsubsection.4.1.3}{}}
 \newlabel{sec3.4:difference-case-1}{{16a}{18}{Ray misses one of the spheres.\relax }{figure.caption.25}{}}
 \newlabel{sub@sec3.4:difference-case-1}{{a}{18}{Ray misses one of the spheres.\relax }{figure.caption.25}{}}
 \newlabel{sec3.4:difference-case-2}{{16b}{18}{Ray goes through both spheres.\relax }{figure.caption.25}{}}
@@ -324,6 +326,7 @@
 \@writefile{loa}{\defcounter {refsection}{0}\relax }\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces Minimal hit classification for the intersection.\relax }}{20}{algocf.4}\protected@file@percent }
 \newlabel{sec3.4:difference_algo}{{4}{20}{Difference Classification}{algocf.4}{}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Bounding Boxes}{20}{subsection.4.2}\protected@file@percent }
+\newlabel{section:bounding-boxes-optimization}{{4.2}{20}{Bounding Boxes}{subsection.4.2}{}}
 \citation{ROTH1982109}
 \abx@aux@cite{ROTH1982109}
 \abx@aux@segm{0}{0}{ROTH1982109}
@@ -360,11 +363,37 @@
 \@writefile{loa}{\defcounter {refsection}{0}\relax }\@writefile{loa}{\contentsline {algocf}{\numberline {5}{\ignorespaces Composite solid box enclosure estimation algorithm.\relax }}{22}{algocf.5}\protected@file@percent }
 \newlabel{sec4.2:composite-box}{{5}{22}{Bounding Boxes}{algocf.5}{}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Binary Space Partitioning Trees}{23}{subsection.4.3}\protected@file@percent }
+\newlabel{section:bsp-optimization}{{4.3}{23}{Binary Space Partitioning Trees}{subsection.4.3}{}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Building BSP trees}{23}{subsubsection.4.3.1}\protected@file@percent }
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Traversing BSP trees}{23}{subsubsection.4.3.2}\protected@file@percent }
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}Modified Traversal}{23}{subsubsection.4.3.3}\protected@file@percent }
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {5}Evaluation of the results}{23}{section.5}\protected@file@percent }
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{23}{section.6}\protected@file@percent }
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Simple scene with a few triangles and a corresponding tree. Leaves are boxes and inner nodes are circles.\relax }}{24}{figure.caption.29}\protected@file@percent }
+\newlabel{sec4.3:example-kd-tree}{{19}{24}{Simple scene with a few triangles and a corresponding tree. Leaves are boxes and inner nodes are circles.\relax }{figure.caption.29}{}}
+\newlabel{sec4.3:near-child}{{20a}{24}{Ray goes through near child only.\relax }{figure.caption.30}{}}
+\newlabel{sub@sec4.3:near-child}{{a}{24}{Ray goes through near child only.\relax }{figure.caption.30}{}}
+\newlabel{sec4.3:both-children}{{20b}{24}{Ray goes through both children.\relax }{figure.caption.30}{}}
+\newlabel{sub@sec4.3:both-children}{{b}{24}{Ray goes through both children.\relax }{figure.caption.30}{}}
+\newlabel{sec4.3:far-child}{{20c}{24}{Ray goes through near child only.\relax }{figure.caption.30}{}}
+\newlabel{sub@sec4.3:far-child}{{c}{24}{Ray goes through near child only.\relax }{figure.caption.30}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Ray traversal cases.\relax }}{24}{figure.caption.30}\protected@file@percent }
+\newlabel{sec4.3:ray-traversal-cases}{{20}{24}{Ray traversal cases.\relax }{figure.caption.30}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Optimized CSG}{24}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {5}Evaluation of the results}{25}{section.5}\protected@file@percent }
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Geometry Complexity Tests}{25}{subsection.5.1}\protected@file@percent }
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Rendering time of the naive algorithm after gradual increases in the number of triangles in the meshes for all three operations.\relax }}{26}{figure.caption.31}\protected@file@percent }
+\newlabel{sec5.1:naive-csg-operations}{{21}{26}{Rendering time of the naive algorithm after gradual increases in the number of triangles in the meshes for all three operations.\relax }{figure.caption.31}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Rendering time of the BSP algorithm after gradual increases in the number of triangles in the meshes for all three operations.\relax }}{26}{figure.caption.32}\protected@file@percent }
+\newlabel{sec5.1:bsp-csg-operations}{{22}{26}{Rendering time of the BSP algorithm after gradual increases in the number of triangles in the meshes for all three operations.\relax }{figure.caption.32}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Rendering time of the optimized algorithm after gradual increases in the number of triangles in the meshes for all three operations.\relax }}{27}{figure.caption.33}\protected@file@percent }
+\newlabel{sec5.1:optim-csg-operations}{{23}{27}{Rendering time of the optimized algorithm after gradual increases in the number of triangles in the meshes for all three operations.\relax }{figure.caption.33}{}}
+\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Boolean operations table\relax }}{27}{table.caption.34}\protected@file@percent }
+\newlabel{section3:boolean_algebra}{{4}{27}{Boolean operations table\relax }{table.caption.34}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Average rendering time of each of the algorithms after gradual increases in the number of triangles in the meshes.\relax }}{28}{figure.caption.35}\protected@file@percent }
+\newlabel{sec5.1:comparative-csg-operations}{{24}{28}{Average rendering time of each of the algorithms after gradual increases in the number of triangles in the meshes.\relax }{figure.caption.35}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Rendering time of all 3 algorithms following increases nesting multiple constructive geometries.\relax }}{28}{figure.caption.36}\protected@file@percent }
+\newlabel{sec5.1:comparative-csg-operations}{{25}{28}{Rendering time of all 3 algorithms following increases nesting multiple constructive geometries.\relax }{figure.caption.36}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Closure $kX$ of a subset $X$.\relax }}{28}{figure.caption.37}\protected@file@percent }
+\newlabel{sec5.1:closure}{{26}{28}{Closure $kX$ of a subset $X$.\relax }{figure.caption.37}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{29}{section.6}\protected@file@percent }
 \abx@aux@read@bbl@mdfivesum{842C626158325C7D8DF14ED76A186E07}
 \abx@aux@refcontextdefaultsdone
 \abx@aux@defaultrefcontext{0}{RT_RT1}{nty/global//global/global}
@@ -429,4 +458,4 @@
 \abx@aux@defaultlabelprefix{0}{GEOMETRIC_MODELING_1977}{}
 \abx@aux@defaultlabelprefix{0}{fast_building_kd_trees}{}
 \abx@aux@defaultlabelprefix{0}{csg-xrt-renderer}{}
-\gdef \@abspage@last{30}
+\gdef \@abspage@last{36}

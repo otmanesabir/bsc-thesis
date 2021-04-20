@@ -6,6 +6,7 @@
 \usepackage{helvet}
 \usepackage[ruled,vlined]{algorithm2e}
 \usepackage{amsmath}
+\usepackage{float}
 \usepackage{amsthm}
 \usepackage{csquotes}
 \usepackage{tabularx}
@@ -737,6 +738,8 @@ Given a ray and a solid composition tree, our procedure classifies the ray with 
 In this section, we will introduce the state-of-the-art CSG algorithm that is implemented in the OpenRT framework. Here we expose all the adjustments and changes we have made to the algorithm in order to maximize its performance and results. We will discuss a minimal hit classification algorithm, box enclosures, and how simple techniques such as "early-outs" can increase performance. Additionally, we propose the limitations of all these methods. We will discuss the binary space partition tree acceleration and spatial indexing structure, including a modified version in order to optimally reverse the tree traversal. Finally, we will put it all together in our version of the CSG algorithm.
 
 \subsection{Minimal hit CSG classification}
+\label{section:classification-optimization}
+
 
 What we have introduced in the Section \ref{sec3.3:ray-classification} is the typical approach to rendering CSG. However, this approach could be very costly as we nest more geometries in the tree and require lots of memory to store, classify, and combine a long chain of operations and primitives. Therefore, we introduce a new approach which we refer to as minimal hit CSG classifications. The approach described here computes intersections with binary CSG objects using the single nearest intersections whenever possible. Though it may need to do several of these per sub-object, the number needed is quite low and is never higher than that of the first method. To our knowledge, this approach was entirely developed in OpenRT and no resources found describe this type of ray classification. Though a relatively similar algorithm has been introduced in \cite{kensler_ray_2006}, it was proven in \cite{csg-xrt-renderer} to not be functional for the intersection and difference operations.
 
@@ -923,6 +926,7 @@ The last cases are when the sphere is inside one or both of the solids. The firs
 \end{algorithm}
 
 \subsubsection{Difference Classification}
+\label{section:minimal_difference_classficiation}
 
 The difference operation remains the most complex and least optimizable operation out of all three due to several factors. First, the minimal knowledge of the scene is higher than both previously mentioned operations. Second, the difference operations are not commutative nor distributive; therefore, the direction of the ray renders completely different results. We shall stick to the same example as the previous two cases and with similar notations (Figure \ref{sec3.4:sphere-difference}).
 
@@ -1009,6 +1013,7 @@ The last and most complicated case is when the ray lies somewhere inside one of 
 
 
 \subsection{Bounding Boxes}
+\label{section:bounding-boxes-optimization}
 
 Bounding boxes are the simplest way to cut down on the number of ray intersection operations and reduce overall rendering time \cite{efficient_csg_meshes}. Let's visualize the situation where a union of two spheres composed of 100 triangles lies in the middle of a 500x500px view of which the composite covers 100x100 pixels. In the former approach, we would examine every single ray with the complete composite. Resulting in a staggering $25.000.000$ intersection checks; though,  we solely necessitate a fifth of that. We introduce a box enclosure to do a preliminary examination before testing the rest of the composite. Hence, with a tight enough box (covering 110x110), the ray tracer would only need to check for $1.460.000$ intersections such that $250.000$ tests are box enclosure ones and the rest $1.210.000$ are ray-solid tests - a decrease of roughly $80\%$. In the worst case, when an enclosure stretches across the entire view, the box enclosure will add additional operations of ray-box intersections on top of completing all the ray-intersection checks. Nevertheless, ray-box tests are fast, and one could dismiss the additional costs of those operations. When this method is used in the context of CSG, this solution essentially turns into an efficient binary tree traversal \cite{ROTH1982109}. 
 
@@ -1083,18 +1088,157 @@ Combining the boxes on the composite level is also very important to realize. We
 \end{algorithm} 
 
 \subsection{Binary Space Partitioning Trees}
+\label{section:bsp-optimization}
 
 %todo: the reasons why KD-trees are so much more adopted.
 %todo: reference a lot lot
-One of the most fundamental concepts in ray tracing is the use of spatial or hierarchical data structures built using binary space subdivision to efficiently search for objects in the scene \cite{ray_tracing_BSP2}. A predominant concept in these data structures is binary space partitioning which refers to the successive subdivision of a scene's bounding box with planes until we reach termination criteria. The resulting data structure is called a binary space partition tree or a BSP tree. BSP trees offer the flexibility of using arbitrarily oriented planes to accommodate complex scenes and uneven spatial distributions. Therefore, in theory, BSP trees are a simple, elegant, and efficient solution to our visible-surface problems. In our implementation, we use a variant called KD-trees. These are a more "restricted" type of BSP trees in which only axis-aligned splitting planes are allowed. These trees conform much better with computational advantages and memory needs but do not adapt very well to scene complexities. It is relatively easy to generate an inefficient binary tree with non-axis-aligned geometry (e.g., a long skinny cylinder oriented diagonally) \cite{ray_tracing_BSP}. All variations of the algorithms are generally composed of two fundamental parts, building and traversing the tree. How we choose these two core procedures tremendously affects the amount of acceleration achievable. We will discuss our building and traversing procedures and a custom traversal to find the furthest intersection. Because the main focus of the work doesn't align with the improvement of building or traversal procedures, the BSP algorithm is unoptimized. However, many algorithms such as surface area heuristic, local greedy SAH, automatic termination criteria, and many more have proved to optimize KD trees \cite{fast_building_kd_trees, parallel_kd_tree_construction}.
+One of the most fundamental concepts in ray tracing is the use of spatial or hierarchical data structures built using binary space subdivision to efficiently search for objects in the scene \cite{ray_tracing_BSP2}. A predominant concept in these data structures is binary space partitioning which refers to the successive subdivision of a scene's bounding box with planes until we reach termination criteria. The resulting data structure is called a binary space partition tree or a BSP tree. BSP trees offer the flexibility of using arbitrarily oriented planes to accommodate complex scenes and uneven spatial distributions. Therefore, in theory, BSP trees are a simple, elegant, and efficient solution to our visible-surface problems. In our implementation, we use a variant called KD-trees (we refer to KD-tree as BSP here). These are a more "restricted" type of BSP trees in which only axis-aligned splitting planes are allowed. These trees conform much better with computational advantages and memory needs but do not adapt very well to scene complexities. It is relatively easy to generate an inefficient binary tree with non-axis-aligned geometry (e.g., a long skinny cylinder oriented diagonally) \cite{ray_tracing_BSP}. All variations of the algorithms are generally composed of two fundamental parts, building and traversing the tree. How we choose these two core procedures tremendously affects the amount of acceleration achievable. We will discuss our building and traversing procedures and a custom traversal to find the furthest intersection. Because the main focus of the work doesn't align with the improvement of building or traversal procedures, the BSP algorithm is unoptimized. However, many algorithms such as surface area heuristic, local greedy SAH, automatic termination criteria, and many more have proved to optimize KD trees \cite{fast_building_kd_trees, parallel_kd_tree_construction}.
 
 \subsubsection{Building BSP trees}
 
+The tree in our case is constructed recursively in a top-down manner, making local greedy decision about the choice of the splitting planes. We use axis-aligned bounding boxes in order to wrap the nodes. The split dimension is chosen using the current largest dimension (i.e., if the box is biggest in its $x$ direction then we will pick that as our splitting plane.). The plane is then positioned at the spatial median of the dimension. Usually, this subdivision is performed until either the number of primitives in a single node falls below a predefined threshold or until the subdivision depth exceeds a certain maximum value. Both these stopping criteria could be provided by the user. To better illustrate the algorithm, we will utilize the simple two-dimensional kd-tree and the triangles in Figure \ref{sec4.3:example-kd-tree}. Each node in the tree represents a triangle, and each internal node represents an axis-aligned rectangular region with an axis-aligned plane that separates the regions of its two children.
+
+\begin{figure}[ht]
+	\begin{center}
+		\includegraphics[width=\textwidth]{section4/4.3/bsp-tree-example.png}
+	\end{center}
+	\caption{Simple scene with a few triangles and a corresponding tree. Leaves are boxes and inner nodes are circles.}
+	\label{sec4.3:example-kd-tree}
+\end{figure}
+
 \subsubsection{Traversing BSP trees}
 
-\subsubsection{Modified Traversal}
+A ray traverses a BSP tree by intersecting the ray with the split plane; therefore, giving a ray distance to the plane, allowing us to divide it into segments. The initial ray segment is computed by clipping the ray with the axis-aligned bounding box. We traverse a node if the ray segment overlays the node. Since the two-child nodes do not overlap, we can trivially classify which node is closer to the ray direction and traverse that node first. For the traversal algorithm, the children should be labeled as \textit{near} and \textit{far} child nodes, giving us three possible cases of traversal:
+
+\begin{enumerate}
+	\item Ray goes through near child only. (Figure \ref{sec4.3:near-child})
+	\item Ray goes through far child only. (Figure \ref{sec4.3:far-child})
+	\item Ray goes through the near child first followed by the far child. (Figure \ref{sec4.3:far-child})
+\end{enumerate}
+
+The near and far classification uses the direction of the ray and the position of the splitting plane. Therefore, it classifies the left node as near and the right node as far if the sign of the ray direction in the splitting axis is positive and vice versa if negative. Once the terminal nodes are reached, we can then search for the intersection of all the primitives in the node, if any.
+
+\begin{figure}[ht]
+     \centering
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section4/4.3/near-intersection.png}
+         \caption{Ray goes through near child only.}
+         \label{sec4.3:near-child}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section4/4.3/middle-intersection.png}
+         \caption{Ray goes through both children.}
+          \label{sec4.3:both-children}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{section4/4.3/far-intersection.png}
+         \caption{Ray goes through near child only.}
+         \label{sec4.3:far-child}
+     \end{subfigure}
+     \hfill
+        \caption{Ray traversal cases.}
+        \label{sec4.3:ray-traversal-cases}
+\end{figure}
+
+
+An important thing we must also achieve is to traverse the tree but search for the furthest intersection instead. In this case, the traversal remains mostly the same, except that in case where a ray hits both the near and far node, we start with the far node as that's what we're actually interested in. The rest of the modifications are all implemented in the leaf nodes where we instead look for out exit intersections. 
+
+\subsection{Optimized CSG}
+
+With all three optimizations from Sections \ref{section:classification-optimization}, \ref{section:bounding-boxes-optimization}, \ref{section:bsp-optimization}, we now have the building blocks for the optimized CSG algorithm. We can deconstruct this algorithm to a hierarchical pipeline of 4 elements. On the very top, we have our entire scene enclosed with all the geometries in the scene in a BSP tree. We then have constructively constructed geometries inside of this scene represented using two other BSP trees for their respective left and right geometries\footnote{In case the constructive solid only contains single primitive elements, then the tree is a simple tree of depth 1}. These trees are then capable of efficiently retrieving the $[in, out]$ of their respective nodes and have bounding boxes which allow for quick tests of ray-solid intersections. Finally upon retrieval of the ray intersections, the minimal hit algorithm allows for efficient and robust classification of these intersections. This means that even when nesting constructively generated geometries, we are still able to hold definitions of each sub-tree for each sub-object therefore allowing for very fast evaluation of complex and nested geometries such that each solid is responsible for its own evaluation and can always feed the correct intersection information to its parents nodes. Therefore, skipping the step of gathering all evaluations and only processing them on the leaf nodes.
 
 \section{Evaluation of the results}
+
+There are three variants of the CSG method implemented in OpenRT. The first is the naive and brute force implementation which we refer to as $NaiCSG$. The second uses a binary space partition tree to solve the visible surface problem but still naively finds intersections inside the combinatorial geometry, which we will refer to as $BinCSG$. Lastly, we'll introduce our optimized algorithm, which uses a binary space partition tree on the outside (solving the visible surface problem) and also inside each composite geometry to direct the rays towards the correct geometries, which we will refer to as $OptiCSG$. Every algorithm is checked for each operation - meaning we carry a total of 9 simulations per test type. We conduct three main tests. First, we assess how the rendering time develops to the complexity of the geometry. In this case, the complexity of the geometry is the number of polygons in the sphere meshes. The second test is based on the reaction of the different algorithms to a different number of nested geometries while maintaining a relevantly similar viewport fill rate (how much of the image contains geometries). The third test explains how the spatial distribution of the scene affects the times for each of the algorithms. Therefore, helping us grasp how significant the viewport fill percentage changes each of these algorithms individually.
+
+\subsection{Geometry Complexity Tests}
+
+Starting with naive implementation, we can see that the increase in rendering in time is linear (Figure \ref{sec5.1:naive-csg-operations}). This is expected because as we increase the complexity of the geometries, the only part that is affected is the loop in our ray intersection procedure inside of the composite solid.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{section5/NaiCSG-OPS.png}
+	\end{center}
+	\caption{Rendering time of the naive algorithm after gradual increases in the number of triangles in the meshes for all three operations.}
+	\label{sec5.1:naive-csg-operations}
+\end{figure}
+
+
+The second implementation which uses a binary tree in order to efficiently find objects in the scene  (BinCSG) is also linear (Figure \ref{sec5.1:bsp-csg-operations}) except that here we save iterations over the classification loop since the algorithm will opt out of the solid-intersection computation in case the preliminary ray-box test is negative. Though, this is a big improvement over the linear algorithm, the time taken heavily depends on the amount filled by the bounding box of the geometry. Meaning, that if the bounding box were the take the majority of the viewport, we will notice that both variants perform similarly. Figure \textbf{XX} demonstrates how the rendering time of an identical scene using this implementation exponentially grows and becomes the same as the naive implementation. Figure \textbf{YY} compares the rendering time of NaiCSG and BinCSG when an object takes up the entirety of the viewport.
+ 
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{section5/BinCSG-OPS.png}
+	\end{center}
+	\caption{Rendering time of the BSP algorithm after gradual increases in the number of triangles in the meshes for all three operations.}
+	\label{sec5.1:bsp-csg-operations}
+\end{figure}
+
+The final implementation, OptimCSG, uses a BSP tree to find objects in the scene and represents each mesh in its separate binary tree. Therefore, even when a ray enters the first check through the solid, we do not naively iterate over all primitives to find the intersection but rather try to traverse their respective trees. This also means that when a ray only intersects one of the meshes, we don't check for the other as its ray-box test is negative. The time complexity here is that of traversing the binary tree ($n\log n$) with an additional constant which we can omit. Consequently, we can explain the logarithmic nature of the Figure \ref{sec5.1:optim-csg-operations}. We can also notice here the optimization of the minimal hit classification algorithm. As previously mentioned in Section \ref{section:minimal_difference_classficiation}, the difference operation is the most difficult to enhance; therefore, explaining the slight increase in rendering time. The union and intersection cases are somewhat similar. The generated geometry and bounding box from the intersection operation is also smaller than that of the union, which reveals why the intersection operation demands the least cost of time. 
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{section5/OptimCSG-OPS.png}
+	\end{center}
+	\caption{Rendering time of the optimized algorithm after gradual increases in the number of triangles in the meshes for all three operations.}
+	\label{sec5.1:optim-csg-operations}
+\end{figure}
+
+Figure \ref{section5/Performance-OPS.png} compares the variants to the same payload with a relatively low viewport fill rate. We can see how box enclosures can help bring down the rendering time significantly. We also notice how the OptiCSG algorithm outperforms all of the other variants. Figure \textbf{XX} shows how the curves of NaiCSG and BinCSG are seemingly identical after entirely filling the view port. Table \textbf{XX} shows the mean time for conducting these tests per operation and various view port fill rates. Table \textbf{YY} shows the achieved speedups between operations. 
+
+\begin{table}[h]
+	\centering
+	\caption{Boolean operations table}
+	\label{section3:boolean_algebra}
+	\begin{tabular}{||c c c||} 
+		\hline
+		Variant & View Port Fill & Mean Time \\ [0.6ex] 
+		\hline\hline
+		NaiCSG    & 33.33\% & 895725.64ms\\	 
+		NaiCSG    & 66.66\% & TBD\\	   
+		NaiCSG    & 99.99\% & TBD\\	 
+		& & \\  	
+		BinCSG    & 33.33\% & 97903.80ms\\	 
+		BinCSG    & 66.66\% & TBD\\	   
+		BinCSG    & 99.99\% & TBD\\
+		& & \\ 
+		OptiCSG    & 33.33\% & 1603.03ms\\	 
+		OptiCSG    & 66.66\% & TBD\\	   
+		OptiCSG    & 99.99\% & TBD\\	
+		\hline
+	\end{tabular}
+\end{table}
+
+%todo add heat map/confusion matrix here
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{section5/Performance-OPS.png}
+	\end{center}
+	\caption{Average rendering time of each of the algorithms after gradual increases in the number of triangles in the meshes.}
+	\label{sec5.1:comparative-csg-operations}
+\end{figure}
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{section5/nest-performance.png}
+	\end{center}
+	\caption{Rendering time of all 3 algorithms following increases nesting multiple constructive geometries.}
+	\label{sec5.1:comparative-csg-operations}
+\end{figure}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{section5/viewport-performance.png}
+	\end{center}
+	\caption{Closure $kX$ of a subset $X$.}
+	\label{sec5.1:closure}
+\end{figure}
+
 
 Summarize the main aspects and results of the research
 project. Provide an answer to the research questions stated earlier.

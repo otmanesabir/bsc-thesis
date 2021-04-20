@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.5)  19 APR 2021 11:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.5)  20 APR 2021 00:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -154,30 +154,37 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count273
+\float@exts=\toks24
+\float@box=\box57
+\@float@everytoks=\toks25
+\@floatcapt=\box58
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks24
-\thm@bodyfont=\toks25
-\thm@headfont=\toks26
-\thm@notefont=\toks27
-\thm@headpunct=\toks28
+\thm@style=\toks26
+\thm@bodyfont=\toks27
+\thm@headfont=\toks28
+\thm@notefont=\toks29
+\thm@headpunct=\toks30
 \thm@preskip=\skip71
 \thm@postskip=\skip72
 \thm@headsep=\skip73
-\dth@everypar=\toks29
+\dth@everypar=\toks31
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2021-02-22 v5.2l context-sensitive quotations (JAW)
  (/usr/local/texlive/2021/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count273
+\etb@tempcnta=\count274
 )
-\csq@reset=\count274
-\csq@gtype=\count275
-\csq@glevel=\count276
-\csq@qlevel=\count277
-\csq@maxlvl=\count278
-\csq@tshold=\count279
-\csq@ltx@everypar=\toks30
+\csq@reset=\count275
+\csq@gtype=\count276
+\csq@glevel=\count277
+\csq@qlevel=\count278
+\csq@maxlvl=\count279
+\csq@tshold=\count280
+\csq@ltx@everypar=\toks32
  (/usr/local/texlive/2021/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2021-02-22 v5.2l csquotes generic definitions (JAW)
 )
@@ -190,31 +197,31 @@ Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
  (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/array.sty
 Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
 \col@sep=\dimen162
-\ar@mcellbox=\box57
+\ar@mcellbox=\box59
 \extrarowheight=\dimen163
-\NC@list=\toks31
+\NC@list=\toks33
 \extratabsurround=\skip74
 \backup@length=\skip75
-\ar@cellbox=\box58
+\ar@cellbox=\box60
 )
 \TX@col@width=\dimen164
 \TX@old@table=\dimen165
 \TX@old@col=\dimen166
 \TX@target=\dimen167
 \TX@delta=\dimen168
-\TX@cols=\count280
-\TX@ftn=\toks32
+\TX@cols=\count281
+\TX@ftn=\toks34
 ) (/usr/local/texlive/2021/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2021/03/24 3.56 The Babel package
  (/usr/local/texlive/2021/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2021/03/24 3.56 Babel common definitions
-\babel@savecnt=\count281
+\babel@savecnt=\count282
 \U@D=\dimen169
 \l@babelnohyphens=\language87
  (/usr/local/texlive/2021/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
 )
-\bbl@dirlevel=\count282
+\bbl@dirlevel=\count283
  (/usr/local/texlive/2021/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: \l@canadian = using hyphenrules for english
@@ -241,55 +248,55 @@ Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )) (/usr/local/texlive/2021/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count283
+\lrq@indent=\count284
  (/usr/local/texlive/2021/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) (/usr/local/texlive/2021/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count284
-\c@listtotal=\count285
-\c@listcount=\count286
-\c@liststart=\count287
-\c@liststop=\count288
-\c@citecount=\count289
-\c@citetotal=\count290
-\c@multicitecount=\count291
-\c@multicitetotal=\count292
-\c@instcount=\count293
-\c@maxnames=\count294
-\c@minnames=\count295
-\c@maxitems=\count296
-\c@minitems=\count297
-\c@citecounter=\count298
-\c@maxcitecounter=\count299
-\c@savedcitecounter=\count300
-\c@uniquelist=\count301
-\c@uniquename=\count302
-\c@refsection=\count303
-\c@refsegment=\count304
-\c@maxextratitle=\count305
-\c@maxextratitleyear=\count306
-\c@maxextraname=\count307
-\c@maxextradate=\count308
-\c@maxextraalpha=\count309
-\c@abbrvpenalty=\count310
-\c@highnamepenalty=\count311
-\c@lownamepenalty=\count312
-\c@maxparens=\count313
-\c@parenlevel=\count314
-\blx@tempcnta=\count315
-\blx@tempcntb=\count316
-\blx@tempcntc=\count317
-\blx@maxsection=\count318
-\blx@maxsegment@0=\count319
-\blx@notetype=\count320
-\blx@parenlevel@text=\count321
-\blx@parenlevel@foot=\count322
-\blx@sectionciteorder@0=\count323
-\blx@entrysetcounter=\count324
-\blx@biblioinstance=\count325
+\c@tabx@nest=\count285
+\c@listtotal=\count286
+\c@listcount=\count287
+\c@liststart=\count288
+\c@liststop=\count289
+\c@citecount=\count290
+\c@citetotal=\count291
+\c@multicitecount=\count292
+\c@multicitetotal=\count293
+\c@instcount=\count294
+\c@maxnames=\count295
+\c@minnames=\count296
+\c@maxitems=\count297
+\c@minitems=\count298
+\c@citecounter=\count299
+\c@maxcitecounter=\count300
+\c@savedcitecounter=\count301
+\c@uniquelist=\count302
+\c@uniquename=\count303
+\c@refsection=\count304
+\c@refsegment=\count305
+\c@maxextratitle=\count306
+\c@maxextratitleyear=\count307
+\c@maxextraname=\count308
+\c@maxextradate=\count309
+\c@maxextraalpha=\count310
+\c@abbrvpenalty=\count311
+\c@highnamepenalty=\count312
+\c@lownamepenalty=\count313
+\c@maxparens=\count314
+\c@parenlevel=\count315
+\blx@tempcnta=\count316
+\blx@tempcntb=\count317
+\blx@tempcntc=\count318
+\blx@maxsection=\count319
+\blx@maxsegment@0=\count320
+\blx@notetype=\count321
+\blx@parenlevel@text=\count322
+\blx@parenlevel@foot=\count323
+\blx@sectionciteorder@0=\count324
+\blx@entrysetcounter=\count325
+\blx@biblioinstance=\count326
 \labelnumberwidth=\skip76
 \labelalphawidth=\skip77
 \biblabelsep=\skip78
@@ -301,9 +308,9 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \blx@bcfin=\read3
 \blx@bcfout=\write3
 \blx@langwohyphens=\language88
-\c@mincomprange=\count326
-\c@maxcomprange=\count327
-\c@mincompwidth=\count328
+\c@mincomprange=\count327
+\c@maxcomprange=\count328
+\c@mincompwidth=\count329
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/blx-dm.def
@@ -313,74 +320,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count329
-\c@savedafterword=\count330
-\c@annotator=\count331
-\c@savedannotator=\count332
-\c@author=\count333
-\c@savedauthor=\count334
-\c@bookauthor=\count335
-\c@savedbookauthor=\count336
-\c@commentator=\count337
-\c@savedcommentator=\count338
-\c@editor=\count339
-\c@savededitor=\count340
-\c@editora=\count341
-\c@savededitora=\count342
-\c@editorb=\count343
-\c@savededitorb=\count344
-\c@editorc=\count345
-\c@savededitorc=\count346
-\c@foreword=\count347
-\c@savedforeword=\count348
-\c@holder=\count349
-\c@savedholder=\count350
-\c@introduction=\count351
-\c@savedintroduction=\count352
-\c@namea=\count353
-\c@savednamea=\count354
-\c@nameb=\count355
-\c@savednameb=\count356
-\c@namec=\count357
-\c@savednamec=\count358
-\c@translator=\count359
-\c@savedtranslator=\count360
-\c@shortauthor=\count361
-\c@savedshortauthor=\count362
-\c@shorteditor=\count363
-\c@savedshorteditor=\count364
-\c@labelname=\count365
-\c@savedlabelname=\count366
-\c@institution=\count367
-\c@savedinstitution=\count368
-\c@lista=\count369
-\c@savedlista=\count370
-\c@listb=\count371
-\c@savedlistb=\count372
-\c@listc=\count373
-\c@savedlistc=\count374
-\c@listd=\count375
-\c@savedlistd=\count376
-\c@liste=\count377
-\c@savedliste=\count378
-\c@listf=\count379
-\c@savedlistf=\count380
-\c@location=\count381
-\c@savedlocation=\count382
-\c@organization=\count383
-\c@savedorganization=\count384
-\c@origlocation=\count385
-\c@savedoriglocation=\count386
-\c@origpublisher=\count387
-\c@savedorigpublisher=\count388
-\c@publisher=\count389
-\c@savedpublisher=\count390
-\c@language=\count391
-\c@savedlanguage=\count392
-\c@origlanguage=\count393
-\c@savedoriglanguage=\count394
-\c@pageref=\count395
-\c@savedpageref=\count396
+\c@afterword=\count330
+\c@savedafterword=\count331
+\c@annotator=\count332
+\c@savedannotator=\count333
+\c@author=\count334
+\c@savedauthor=\count335
+\c@bookauthor=\count336
+\c@savedbookauthor=\count337
+\c@commentator=\count338
+\c@savedcommentator=\count339
+\c@editor=\count340
+\c@savededitor=\count341
+\c@editora=\count342
+\c@savededitora=\count343
+\c@editorb=\count344
+\c@savededitorb=\count345
+\c@editorc=\count346
+\c@savededitorc=\count347
+\c@foreword=\count348
+\c@savedforeword=\count349
+\c@holder=\count350
+\c@savedholder=\count351
+\c@introduction=\count352
+\c@savedintroduction=\count353
+\c@namea=\count354
+\c@savednamea=\count355
+\c@nameb=\count356
+\c@savednameb=\count357
+\c@namec=\count358
+\c@savednamec=\count359
+\c@translator=\count360
+\c@savedtranslator=\count361
+\c@shortauthor=\count362
+\c@savedshortauthor=\count363
+\c@shorteditor=\count364
+\c@savedshorteditor=\count365
+\c@labelname=\count366
+\c@savedlabelname=\count367
+\c@institution=\count368
+\c@savedinstitution=\count369
+\c@lista=\count370
+\c@savedlista=\count371
+\c@listb=\count372
+\c@savedlistb=\count373
+\c@listc=\count374
+\c@savedlistc=\count375
+\c@listd=\count376
+\c@savedlistd=\count377
+\c@liste=\count378
+\c@savedliste=\count379
+\c@listf=\count380
+\c@savedlistf=\count381
+\c@location=\count382
+\c@savedlocation=\count383
+\c@organization=\count384
+\c@savedorganization=\count385
+\c@origlocation=\count386
+\c@savedoriglocation=\count387
+\c@origpublisher=\count388
+\c@savedorigpublisher=\count389
+\c@publisher=\count390
+\c@savedpublisher=\count391
+\c@language=\count392
+\c@savedlanguage=\count393
+\c@origlanguage=\count394
+\c@savedoriglanguage=\count395
+\c@pageref=\count396
+\c@savedpageref=\count397
 \shorthandwidth=\skip84
 \shortjournalwidth=\skip85
 \shortserieswidth=\skip86
@@ -414,19 +421,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
-\c@textcitecount=\count397
-\c@textcitetotal=\count398
-\c@textcitemaxnames=\count399
-\c@biburlbigbreakpenalty=\count400
-\c@biburlbreakpenalty=\count401
-\c@biburlnumpenalty=\count402
-\c@biburlucpenalty=\count403
-\c@biburllcpenalty=\count404
+\c@textcitecount=\count398
+\c@textcitetotal=\count399
+\c@textcitemaxnames=\count400
+\c@biburlbigbreakpenalty=\count401
+\c@biburlbreakpenalty=\count402
+\c@biburlnumpenalty=\count403
+\c@biburlucpenalty=\count404
+\c@biburllcpenalty=\count405
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count405
+\c@smartand=\count406
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -436,8 +443,8 @@ Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count406
-\c@bbx:relatedtotal=\count407
+\c@bbx:relatedcount=\count407
+\c@bbx:relatedtotal=\count408
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -474,12 +481,13 @@ Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
 \caption@hangindent=\dimen176
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count408
-\c@continuedfloat=\count409
+\c@caption@flags=\count409
+\c@continuedfloat=\count410
+Package caption Info: float package is loaded.
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
-\c@subfigure=\count410
-\c@subtable=\count411
+\c@subfigure=\count411
+\c@subtable=\count412
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen177
@@ -492,12 +500,12 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen184
 \cmidrulekern=\dimen185
 \defaultaddspace=\dimen186
-\@cmidla=\count412
-\@cmidlb=\count413
+\@cmidla=\count413
+\@cmidlb=\count414
 \@aboverulesep=\dimen187
 \@belowrulesep=\dimen188
-\@thisruleclass=\count414
-\@lastruleclass=\count415
+\@thisruleclass=\count415
+\@lastruleclass=\count416
 \@thisrulewidth=\dimen189
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
@@ -528,8 +536,8 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen192
-\Hy@linkcounter=\count416
-\Hy@pagecounter=\count417
+\Hy@linkcounter=\count417
+\Hy@pagecounter=\count418
  (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -541,7 +549,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (/usr/local/texlive/2021/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count418
+\Hy@SavedSpaceFactor=\count419
  (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -554,7 +562,7 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count419
+\c@Hy@tempcnt=\count420
 LaTeX Info: Redefining \url on input line 4804.
 \XeTeXLinkMargin=\dimen193
  (/usr/local/texlive/2021/texmf-dist/tex/generic/bitset/bitset.sty
@@ -562,7 +570,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/usr/local/texlive/2021/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count420
+\Fld@menulength=\count421
 \Field@Width=\dimen194
 \Fld@charsize=\dimen195
 Package hyperref Info: Hyper figures OFF on input line 6075.
@@ -578,9 +586,9 @@ LaTeX Info: Redefining \pageref on input line 6149.
 Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi package
 with kernel methods
 )
-\Hy@abspage=\count421
-\c@Item=\count422
-\c@Hfootnote=\count423
+\Hy@abspage=\count422
+\c@Item=\count423
+\c@Hfootnote=\count424
 )
 Package hyperref Info: Driver: hpdftex.
 
@@ -590,8 +598,8 @@ File: hpdftex.def 2021-02-27 v7.00k Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery package
 with kernel methods
 )
-\Fld@listcount=\count424
-\c@bookmark@seq@number=\count425
+\Fld@listcount=\count425
+\c@bookmark@seq@number=\count426
  (/usr/local/texlive/2021/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
  (/usr/local/texlive/2021/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -601,39 +609,46 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip98
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 40.
+Package hyperref Info: Option `colorlinks' set `true' on input line 41.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 44.
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 45.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count426
-\l__pdf_internal_box=\box59
-) (/Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.aux)
+\l__color_backend_stack_int=\count427
+\l__pdf_internal_box=\box61
+) (/Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.aux
+
+LaTeX Warning: Label `section3:boolean_algebra' multiply defined.
+
+
+LaTeX Warning: Label `sec5.1:comparative-csg-operations' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -717,24 +732,24 @@ Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                - Can't use 'location' + 'address'.
 
 )
-Package biblatex Info: Reference section=0 on input line 44.
-Package biblatex Info: Reference segment=0 on input line 44.
+Package biblatex Info: Reference section=0 on input line 45.
+Package biblatex Info: Reference segment=0 on input line 45.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count427
+\scratchcounter=\count428
 \scratchdimen=\dimen196
-\scratchbox=\box60
-\nofMPsegments=\count428
-\nofMParguments=\count429
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count430
+\scratchbox=\box62
+\nofMPsegments=\count429
+\nofMParguments=\count430
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count431
 \MPscratchDim=\dimen197
-\MPnumerator=\count431
-\makeMPintoPDFobject=\count432
-\everyMPtoPDFconversion=\toks34
+\MPnumerator=\count432
+\makeMPintoPDFobject=\count433
+\everyMPtoPDFconversion=\toks36
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -747,7 +762,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
-Package hyperref Info: Link coloring ON on input line 44.
+Package hyperref Info: Link coloring ON on input line 45.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/local/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
@@ -755,24 +770,24 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count433
+\c@section@level=\count434
 )
-LaTeX Info: Redefining \ref on input line 44.
-LaTeX Info: Redefining \pageref on input line 44.
-LaTeX Info: Redefining \nameref on input line 44.
+LaTeX Info: Redefining \ref on input line 45.
+LaTeX Info: Redefining \pageref on input line 45.
+LaTeX Info: Redefining \nameref on input line 45.
  (/Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.out) (/Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-<bsc-logo.pdf, id=144, 233.87375pt x 84.315pt>
+<bsc-logo.pdf, id=148, 233.87375pt x 84.315pt>
 File: bsc-logo.pdf Graphic file (type pdf)
 <use bsc-logo.pdf>
-Package pdftex.def Info: bsc-logo.pdf  used on input line 50.
+Package pdftex.def Info: bsc-logo.pdf  used on input line 51.
 (pdftex.def)             Requested size: 187.09923pt x 67.45207pt.
  [1
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./bsc-logo.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 112.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 113.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 ) [2] [3] (/Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.toc)
@@ -780,274 +795,340 @@ File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 \openout5 = `main.toc'.
 
  [4]
-<section1/union.png, id=213, 501.875pt x 501.875pt>
+<section1/union.png, id=218, 501.875pt x 501.875pt>
 File: section1/union.png Graphic file (type png)
 <use section1/union.png>
-Package pdftex.def Info: section1/union.png  used on input line 145.
+Package pdftex.def Info: section1/union.png  used on input line 146.
 (pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
-<section1/intersection.png, id=215, 501.875pt x 501.875pt>
+<section1/intersection.png, id=220, 501.875pt x 501.875pt>
 File: section1/intersection.png Graphic file (type png)
 <use section1/intersection.png>
-Package pdftex.def Info: section1/intersection.png  used on input line 152.
+Package pdftex.def Info: section1/intersection.png  used on input line 153.
 (pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
-<section1/difference.png, id=216, 501.875pt x 501.875pt>
+<section1/difference.png, id=221, 501.875pt x 501.875pt>
 File: section1/difference.png Graphic file (type png)
 <use section1/difference.png>
-Package pdftex.def Info: section1/difference.png  used on input line 159.
+Package pdftex.def Info: section1/difference.png  used on input line 160.
 (pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
  [1
 
  <./section1/union.png> <./section1/intersection.png> <./section1/difference.png>]
-<section1/brep-overview.png, id=241, 1268.74pt x 491.8375pt>
+<section1/brep-overview.png, id=246, 1268.74pt x 491.8375pt>
 File: section1/brep-overview.png Graphic file (type png)
 <use section1/brep-overview.png>
-Package pdftex.def Info: section1/brep-overview.png  used on input line 194.
+Package pdftex.def Info: section1/brep-overview.png  used on input line 195.
 (pdftex.def)             Requested size: 341.43437pt x 132.3551pt.
  [2]
-<section1/sample-csg-tree.png, id=261, 6521.74448pt x 5609.64725pt>
+<section1/sample-csg-tree.png, id=266, 6521.74448pt x 5609.64725pt>
 File: section1/sample-csg-tree.png Graphic file (type png)
 <use section1/sample-csg-tree.png>
-Package pdftex.def Info: section1/sample-csg-tree.png  used on input line 208.
+Package pdftex.def Info: section1/sample-csg-tree.png  used on input line 209.
 (pdftex.def)             Requested size: 213.39568pt x 183.51828pt.
  [3 <./section1/brep-overview.png> <./section1/sample-csg-tree.png>] [4] [5]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 282.
-<section3/3.1/intersection-miss.png, id=304, 401.5pt x 401.5pt>
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 283.
+<section3/3.1/intersection-miss.png, id=309, 401.5pt x 401.5pt>
 File: section3/3.1/intersection-miss.png Graphic file (type png)
 <use section3/3.1/intersection-miss.png>
-Package pdftex.def Info: section3/3.1/intersection-miss.png  used on input line 298.
+Package pdftex.def Info: section3/3.1/intersection-miss.png  used on input line 299.
 (pdftex.def)             Requested size: 170.71393pt x 170.71794pt.
-<section3/3.1/intersection-tangent.png, id=305, 401.5pt x 401.5pt>
+<section3/3.1/intersection-tangent.png, id=310, 401.5pt x 401.5pt>
 File: section3/3.1/intersection-tangent.png Graphic file (type png)
 <use section3/3.1/intersection-tangent.png>
-Package pdftex.def Info: section3/3.1/intersection-tangent.png  used on input line 305.
+Package pdftex.def Info: section3/3.1/intersection-tangent.png  used on input line 306.
 (pdftex.def)             Requested size: 170.71393pt x 170.71794pt.
-<section3/3.1/intersection-in-out.png, id=306, 401.5pt x 401.5pt>
+<section3/3.1/intersection-in-out.png, id=311, 401.5pt x 401.5pt>
 File: section3/3.1/intersection-in-out.png Graphic file (type png)
 <use section3/3.1/intersection-in-out.png>
-Package pdftex.def Info: section3/3.1/intersection-in-out.png  used on input line 312.
+Package pdftex.def Info: section3/3.1/intersection-in-out.png  used on input line 313.
 (pdftex.def)             Requested size: 170.71393pt x 170.71794pt.
-<section3/3.1/intersection-out.png, id=307, 401.5pt x 401.5pt>
+<section3/3.1/intersection-out.png, id=312, 401.5pt x 401.5pt>
 File: section3/3.1/intersection-out.png Graphic file (type png)
 <use section3/3.1/intersection-out.png>
-Package pdftex.def Info: section3/3.1/intersection-out.png  used on input line 319.
+Package pdftex.def Info: section3/3.1/intersection-out.png  used on input line 320.
 (pdftex.def)             Requested size: 170.71393pt x 170.71794pt.
  [6]
-\c@definition=\count434
+\c@definition=\count435
 
 
-Package amsthm Warning: Unknown theoremstyle `property' on input line 339.
+Package amsthm Warning: Unknown theoremstyle `property' on input line 340.
 
-\c@property=\count435
+\c@property=\count436
 [7 <./section3/3.1/intersection-miss.png> <./section3/3.1/intersection-tangent.png> <./section3/3.1/intersection-in-out.png> <./section3/3.1/intersection-out.png>]
-<section3/3.2/open-interval.png, id=361, 401.5pt x 401.5pt>
+<section3/3.2/open-interval.png, id=366, 401.5pt x 401.5pt>
 File: section3/3.2/open-interval.png Graphic file (type png)
 <use section3/3.2/open-interval.png>
-Package pdftex.def Info: section3/3.2/open-interval.png  used on input line 435.
+Package pdftex.def Info: section3/3.2/open-interval.png  used on input line 436.
 (pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
-<section3/3.2/open-disk.png, id=362, 401.5pt x 401.5pt>
+<section3/3.2/open-disk.png, id=367, 401.5pt x 401.5pt>
 File: section3/3.2/open-disk.png Graphic file (type png)
 <use section3/3.2/open-disk.png>
-Package pdftex.def Info: section3/3.2/open-disk.png  used on input line 441.
+Package pdftex.def Info: section3/3.2/open-disk.png  used on input line 442.
 (pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
-<section3/3.2/open-sphere.png, id=363, 401.5pt x 401.5pt>
+<section3/3.2/open-sphere.png, id=368, 401.5pt x 401.5pt>
 File: section3/3.2/open-sphere.png Graphic file (type png)
 <use section3/3.2/open-sphere.png>
-Package pdftex.def Info: section3/3.2/open-sphere.png  used on input line 447.
+Package pdftex.def Info: section3/3.2/open-sphere.png  used on input line 448.
 (pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
  [8 <./section3/3.2/open-interval.png> <./section3/3.2/open-disk.png> <./section3/3.2/open-sphere.png>]
-<section3/3.2/closed-interval.png, id=388, 401.5pt x 401.5pt>
+<section3/3.2/closed-interval.png, id=393, 401.5pt x 401.5pt>
 File: section3/3.2/closed-interval.png Graphic file (type png)
 <use section3/3.2/closed-interval.png>
-Package pdftex.def Info: section3/3.2/closed-interval.png  used on input line 476.
+Package pdftex.def Info: section3/3.2/closed-interval.png  used on input line 477.
 (pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
-<section3/3.2/closed-disk.png, id=389, 401.5pt x 401.5pt>
+<section3/3.2/closed-disk.png, id=394, 401.5pt x 401.5pt>
 File: section3/3.2/closed-disk.png Graphic file (type png)
 <use section3/3.2/closed-disk.png>
-Package pdftex.def Info: section3/3.2/closed-disk.png  used on input line 482.
+Package pdftex.def Info: section3/3.2/closed-disk.png  used on input line 483.
 (pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
-<section3/3.2/closed-sphere.png, id=390, 401.5pt x 401.5pt>
+<section3/3.2/closed-sphere.png, id=395, 401.5pt x 401.5pt>
 File: section3/3.2/closed-sphere.png Graphic file (type png)
 <use section3/3.2/closed-sphere.png>
-Package pdftex.def Info: section3/3.2/closed-sphere.png  used on input line 488.
+Package pdftex.def Info: section3/3.2/closed-sphere.png  used on input line 489.
 (pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
-<section3/3.2/interior.png, id=393, 305.14pt x 359.3425pt>
+<section3/3.2/interior.png, id=398, 305.14pt x 359.3425pt>
 File: section3/3.2/interior.png Graphic file (type png)
 <use section3/3.2/interior.png>
-Package pdftex.def Info: section3/3.2/interior.png  used on input line 504.
+Package pdftex.def Info: section3/3.2/interior.png  used on input line 505.
 (pdftex.def)             Requested size: 85.35696pt x 100.51651pt.
  [9 <./section3/3.2/closed-interval.png> <./section3/3.2/closed-disk.png> <./section3/3.2/closed-sphere.png> <./section3/3.2/interior.png>]
-<section3/3.2/boundary.png, id=419, 305.14pt x 359.3425pt>
+<section3/3.2/boundary.png, id=424, 305.14pt x 359.3425pt>
 File: section3/3.2/boundary.png Graphic file (type png)
 <use section3/3.2/boundary.png>
-Package pdftex.def Info: section3/3.2/boundary.png  used on input line 524.
+Package pdftex.def Info: section3/3.2/boundary.png  used on input line 525.
 (pdftex.def)             Requested size: 85.35696pt x 100.51651pt.
-<section3/3.2/closure.png, id=422, 508.90125pt x 444.66125pt>
+<section3/3.2/closure.png, id=427, 508.90125pt x 444.66125pt>
 File: section3/3.2/closure.png Graphic file (type png)
 <use section3/3.2/closure.png>
-Package pdftex.def Info: section3/3.2/closure.png  used on input line 538.
+Package pdftex.def Info: section3/3.2/closure.png  used on input line 539.
 (pdftex.def)             Requested size: 128.0387pt x 111.87746pt.
-<section3/3.2/regularization-initial.png, id=426, 260.975pt x 199.74625pt>
+<section3/3.2/regularization-initial.png, id=431, 260.975pt x 199.74625pt>
 File: section3/3.2/regularization-initial.png Graphic file (type png)
 <use section3/3.2/regularization-initial.png>
-Package pdftex.def Info: section3/3.2/regularization-initial.png  used on input line 568.
+Package pdftex.def Info: section3/3.2/regularization-initial.png  used on input line 569.
 (pdftex.def)             Requested size: 128.0387pt x 97.99843pt.
-<section3/3.2/regularization-non-regular.png, id=427, 260.975pt x 199.74625pt>
+<section3/3.2/regularization-non-regular.png, id=432, 260.975pt x 199.74625pt>
 File: section3/3.2/regularization-non-regular.png Graphic file (type png)
 <use section3/3.2/regularization-non-regular.png>
-Package pdftex.def Info: section3/3.2/regularization-non-regular.png  used on input line 575.
+Package pdftex.def Info: section3/3.2/regularization-non-regular.png  used on input line 576.
 (pdftex.def)             Requested size: 128.0387pt x 97.99843pt.
-<section3/3.2/regularization-regular.png, id=428, 260.975pt x 199.74625pt>
+<section3/3.2/regularization-regular.png, id=433, 260.975pt x 199.74625pt>
 File: section3/3.2/regularization-regular.png Graphic file (type png)
 <use section3/3.2/regularization-regular.png>
-Package pdftex.def Info: section3/3.2/regularization-regular.png  used on input line 582.
+Package pdftex.def Info: section3/3.2/regularization-regular.png  used on input line 583.
 (pdftex.def)             Requested size: 128.0387pt x 97.99843pt.
  [10 <./section3/3.2/boundary.png> <./section3/3.2/closure.png>]
-Overfull \hbox (3.50337pt too wide) in paragraph at lines 596--599
+Overfull \hbox (3.50337pt too wide) in paragraph at lines 597--600
 [] 
  []
 
 [11 <./section3/3.2/regularization-initial.png> <./section3/3.2/regularization-non-regular.png> <./section3/3.2/regularization-regular.png>]
-<section3/3.2/membership-classification.png, id=461, 575.14874pt x 330.23375pt>
+<section3/3.2/membership-classification.png, id=466, 575.14874pt x 330.23375pt>
 File: section3/3.2/membership-classification.png Graphic file (type png)
 <use section3/3.2/membership-classification.png>
-Package pdftex.def Info: section3/3.2/membership-classification.png  used on input line 650.
+Package pdftex.def Info: section3/3.2/membership-classification.png  used on input line 651.
 (pdftex.def)             Requested size: 213.39568pt x 122.52217pt.
-<section3/3.2/halfplane-csg.png, id=464, 574.145pt x 232.87pt>
+<section3/3.2/halfplane-csg.png, id=469, 574.145pt x 232.87pt>
 File: section3/3.2/halfplane-csg.png Graphic file (type png)
 <use section3/3.2/halfplane-csg.png>
-Package pdftex.def Info: section3/3.2/halfplane-csg.png  used on input line 664.
+Package pdftex.def Info: section3/3.2/halfplane-csg.png  used on input line 665.
 (pdftex.def)             Requested size: 341.43437pt x 138.48651pt.
  [12 <./section3/3.2/membership-classification.png>]
-<section3/3.3/ray-classifications.png, id=479, 621.32124pt x 661.47125pt>
+<section3/3.3/ray-classifications.png, id=484, 621.32124pt x 661.47125pt>
 File: section3/3.3/ray-classifications.png Graphic file (type png)
 <use section3/3.3/ray-classifications.png>
-Package pdftex.def Info: section3/3.3/ray-classifications.png  used on input line 703.
+Package pdftex.def Info: section3/3.3/ray-classifications.png  used on input line 704.
 (pdftex.def)             Requested size: 341.43437pt x 363.49742pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [13 <./section3/3.2/halfplane-csg.png>] [14 <./section3/3.3/ray-classifications.png>]
-<section3/3.4/union-case-1.png, id=498, 373.395pt x 248.93pt>
+<section3/3.4/union-case-1.png, id=503, 373.395pt x 248.93pt>
 File: section3/3.4/union-case-1.png Graphic file (type png)
 <use section3/3.4/union-case-1.png>
-Package pdftex.def Info: section3/3.4/union-case-1.png  used on input line 751.
+Package pdftex.def Info: section3/3.4/union-case-1.png  used on input line 754.
 (pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
-<section3/3.4/union-case-2.png, id=499, 373.395pt x 248.93pt>
+<section3/3.4/union-case-2.png, id=504, 373.395pt x 248.93pt>
 File: section3/3.4/union-case-2.png Graphic file (type png)
 <use section3/3.4/union-case-2.png>
-Package pdftex.def Info: section3/3.4/union-case-2.png  used on input line 758.
+Package pdftex.def Info: section3/3.4/union-case-2.png  used on input line 761.
 (pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
-<section3/3.4/union-case-3.png, id=500, 373.395pt x 248.93pt>
+<section3/3.4/union-case-3.png, id=505, 373.395pt x 248.93pt>
 File: section3/3.4/union-case-3.png Graphic file (type png)
 <use section3/3.4/union-case-3.png>
-Package pdftex.def Info: section3/3.4/union-case-3.png  used on input line 765.
+Package pdftex.def Info: section3/3.4/union-case-3.png  used on input line 768.
 (pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
  [15 <./section3/3.4/union-case-1.png> <./section3/3.4/union-case-2.png> <./section3/3.4/union-case-3.png>]
-<section3/3.4/intersection-case-1.png, id=519, 373.395pt x 248.93pt>
+<section3/3.4/intersection-case-1.png, id=525, 373.395pt x 248.93pt>
 File: section3/3.4/intersection-case-1.png Graphic file (type png)
 <use section3/3.4/intersection-case-1.png>
-Package pdftex.def Info: section3/3.4/intersection-case-1.png  used on input line 843.
+Package pdftex.def Info: section3/3.4/intersection-case-1.png  used on input line 846.
 (pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
-<section3/3.4/intersection-case-2.png, id=520, 373.395pt x 248.93pt>
+<section3/3.4/intersection-case-2.png, id=526, 373.395pt x 248.93pt>
 File: section3/3.4/intersection-case-2.png Graphic file (type png)
 <use section3/3.4/intersection-case-2.png>
-Package pdftex.def Info: section3/3.4/intersection-case-2.png  used on input line 850.
+Package pdftex.def Info: section3/3.4/intersection-case-2.png  used on input line 853.
 (pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
-<section3/3.4/intersection-case-3.png, id=521, 373.395pt x 248.93pt>
+<section3/3.4/intersection-case-3.png, id=527, 373.395pt x 248.93pt>
 File: section3/3.4/intersection-case-3.png Graphic file (type png)
 <use section3/3.4/intersection-case-3.png>
-Package pdftex.def Info: section3/3.4/intersection-case-3.png  used on input line 857.
+Package pdftex.def Info: section3/3.4/intersection-case-3.png  used on input line 860.
 (pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
  [16 <./section3/3.4/intersection-case-1.png> <./section3/3.4/intersection-case-2.png> <./section3/3.4/intersection-case-3.png>] [17]
-<section3/3.4/difference-case-2.png, id=544, 374.39874pt x 248.93pt>
+<section3/3.4/difference-case-2.png, id=550, 374.39874pt x 248.93pt>
 File: section3/3.4/difference-case-2.png Graphic file (type png)
 <use section3/3.4/difference-case-2.png>
-Package pdftex.def Info: section3/3.4/difference-case-2.png  used on input line 933.
+Package pdftex.def Info: section3/3.4/difference-case-2.png  used on input line 937.
 (pdftex.def)             Requested size: 128.0387pt x 85.12886pt.
-<section3/3.4/difference-case-1.png, id=545, 374.39874pt x 248.93pt>
+<section3/3.4/difference-case-1.png, id=551, 374.39874pt x 248.93pt>
 File: section3/3.4/difference-case-1.png Graphic file (type png)
 <use section3/3.4/difference-case-1.png>
-Package pdftex.def Info: section3/3.4/difference-case-1.png  used on input line 940.
+Package pdftex.def Info: section3/3.4/difference-case-1.png  used on input line 944.
 (pdftex.def)             Requested size: 128.0387pt x 85.12886pt.
-<section3/3.4/difference-case-3.png, id=546, 373.395pt x 249.93375pt>
+<section3/3.4/difference-case-3.png, id=552, 373.395pt x 249.93375pt>
 File: section3/3.4/difference-case-3.png Graphic file (type png)
 <use section3/3.4/difference-case-3.png>
-Package pdftex.def Info: section3/3.4/difference-case-3.png  used on input line 947.
+Package pdftex.def Info: section3/3.4/difference-case-3.png  used on input line 951.
 (pdftex.def)             Requested size: 128.0387pt x 85.70094pt.
  [18 <./section3/3.4/difference-case-2.png> <./section3/3.4/difference-case-1.png> <./section3/3.4/difference-case-3.png>] [19] [20]
-<section4/4.2/box-enclosure-points.png, id=578, 217.81375pt x 163.61125pt>
+<section4/4.2/box-enclosure-points.png, id=584, 217.81375pt x 163.61125pt>
 File: section4/4.2/box-enclosure-points.png Graphic file (type png)
 <use section4/4.2/box-enclosure-points.png>
-Package pdftex.def Info: section4/4.2/box-enclosure-points.png  used on input line 1022.
+Package pdftex.def Info: section4/4.2/box-enclosure-points.png  used on input line 1027.
 (pdftex.def)             Requested size: 213.39568pt x 160.29298pt.
 
-Overfull \hbox (0.56pt too wide) in paragraph at lines 1028--1029
+Overfull \hbox (0.56pt too wide) in paragraph at lines 1033--1034
 \OT1/phv/m/n/10.95 achieve this triv-ially with the usual rules of al-ge-bra de-fined in the pre-vi-ous sec-tion. Though
  []
 
 [21 <./section4/4.2/box-enclosure-points.png>]
-<section4/4.2/box-enclosure-initial.png, id=591, 501.875pt x 348.30125pt>
+<section4/4.2/box-enclosure-initial.png, id=597, 501.875pt x 348.30125pt>
 File: section4/4.2/box-enclosure-initial.png Graphic file (type png)
 <use section4/4.2/box-enclosure-initial.png>
-Package pdftex.def Info: section4/4.2/box-enclosure-initial.png  used on input line 1034.
+Package pdftex.def Info: section4/4.2/box-enclosure-initial.png  used on input line 1039.
 (pdftex.def)             Requested size: 170.71393pt x 118.474pt.
-<section4/4.2/box-enclosure-union.png, id=592, 501.875pt x 348.30125pt>
+<section4/4.2/box-enclosure-union.png, id=598, 501.875pt x 348.30125pt>
 File: section4/4.2/box-enclosure-union.png Graphic file (type png)
 <use section4/4.2/box-enclosure-union.png>
-Package pdftex.def Info: section4/4.2/box-enclosure-union.png  used on input line 1041.
+Package pdftex.def Info: section4/4.2/box-enclosure-union.png  used on input line 1046.
 (pdftex.def)             Requested size: 170.71393pt x 118.474pt.
-<section4/4.2/box-enclosure-intersection.png, id=593, 501.875pt x 348.30125pt>
+<section4/4.2/box-enclosure-intersection.png, id=599, 501.875pt x 348.30125pt>
 File: section4/4.2/box-enclosure-intersection.png Graphic file (type png)
 <use section4/4.2/box-enclosure-intersection.png>
-Package pdftex.def Info: section4/4.2/box-enclosure-intersection.png  used on input line 1048.
+Package pdftex.def Info: section4/4.2/box-enclosure-intersection.png  used on input line 1053.
 (pdftex.def)             Requested size: 170.71393pt x 118.474pt.
-<section4/4.2/box-enclosure-difference.png, id=594, 501.875pt x 348.30125pt>
+<section4/4.2/box-enclosure-difference.png, id=600, 501.875pt x 348.30125pt>
 File: section4/4.2/box-enclosure-difference.png Graphic file (type png)
 <use section4/4.2/box-enclosure-difference.png>
-Package pdftex.def Info: section4/4.2/box-enclosure-difference.png  used on input line 1055.
+Package pdftex.def Info: section4/4.2/box-enclosure-difference.png  used on input line 1060.
 (pdftex.def)             Requested size: 170.71393pt x 118.474pt.
- [22 <./section4/4.2/box-enclosure-initial.png> <./section4/4.2/box-enclosure-union.png> <./section4/4.2/box-enclosure-intersection.png> <./section4/4.2/box-enclosure-difference.png>] [23]
-Overfull \hbox (2.53119pt too wide) in paragraph at lines 1110--1110
+ [22 <./section4/4.2/box-enclosure-initial.png> <./section4/4.2/box-enclosure-union.png> <./section4/4.2/box-enclosure-intersection.png> <./section4/4.2/box-enclosure-difference.png>]
+<section4/4.3/bsp-tree-example.png, id=618, 1025.8325pt x 382.42876pt>
+File: section4/4.3/bsp-tree-example.png Graphic file (type png)
+<use section4/4.3/bsp-tree-example.png>
+Package pdftex.def Info: section4/4.3/bsp-tree-example.png  used on input line 1103.
+(pdftex.def)             Requested size: 426.79135pt x 159.1076pt.
+ [23]
+<section4/4.3/near-intersection.png, id=633, 339.2675pt x 348.30125pt>
+File: section4/4.3/near-intersection.png Graphic file (type png)
+<use section4/4.3/near-intersection.png>
+Package pdftex.def Info: section4/4.3/near-intersection.png  used on input line 1125.
+(pdftex.def)             Requested size: 128.0387pt x 131.44704pt.
+<section4/4.3/middle-intersection.png, id=634, 339.2675pt x 348.30125pt>
+File: section4/4.3/middle-intersection.png Graphic file (type png)
+<use section4/4.3/middle-intersection.png>
+Package pdftex.def Info: section4/4.3/middle-intersection.png  used on input line 1132.
+(pdftex.def)             Requested size: 128.0387pt x 131.44704pt.
+<section4/4.3/far-intersection.png, id=635, 339.2675pt x 348.30125pt>
+File: section4/4.3/far-intersection.png Graphic file (type png)
+<use section4/4.3/far-intersection.png>
+Package pdftex.def Info: section4/4.3/far-intersection.png  used on input line 1139.
+(pdftex.def)             Requested size: 128.0387pt x 131.44704pt.
+ [24 <./section4/4.3/bsp-tree-example.png> <./section4/4.3/near-intersection.png> <./section4/4.3/middle-intersection.png> <./section4/4.3/far-intersection.png>]
+<section5/NaiCSG-OPS.png, id=651, 433.62pt x 289.08pt>
+File: section5/NaiCSG-OPS.png Graphic file (type png)
+<use section5/NaiCSG-OPS.png>
+Package pdftex.def Info: section5/NaiCSG-OPS.png  used on input line 1164.
+(pdftex.def)             Requested size: 256.07741pt x 170.72774pt.
+ [25]
+<section5/BinCSG-OPS.png, id=659, 433.62pt x 289.08pt>
+File: section5/BinCSG-OPS.png Graphic file (type png)
+<use section5/BinCSG-OPS.png>
+Package pdftex.def Info: section5/BinCSG-OPS.png  used on input line 1175.
+(pdftex.def)             Requested size: 256.07741pt x 170.72774pt.
+ [26 <./section5/NaiCSG-OPS.png> <./section5/BinCSG-OPS.png>]
+<section5/OptimCSG-OPS.png, id=669, 433.62pt x 289.08pt>
+File: section5/OptimCSG-OPS.png Graphic file (type png)
+<use section5/OptimCSG-OPS.png>
+Package pdftex.def Info: section5/OptimCSG-OPS.png  used on input line 1185.
+(pdftex.def)             Requested size: 256.07741pt x 170.72774pt.
+
+
+LaTeX Warning: Reference `section5/Performance-OPS.png' on page 27 undefined on input line 1191.
+
+<section5/Performance-OPS.png, id=670, 433.62pt x 289.08pt>
+File: section5/Performance-OPS.png Graphic file (type png)
+<use section5/Performance-OPS.png>
+Package pdftex.def Info: section5/Performance-OPS.png  used on input line 1218.
+(pdftex.def)             Requested size: 256.07741pt x 170.72774pt.
+[27 <./section5/OptimCSG-OPS.png>]
+<section5/nest-performance.png, id=678, 433.62pt x 289.08pt>
+File: section5/nest-performance.png Graphic file (type png)
+<use section5/nest-performance.png>
+Package pdftex.def Info: section5/nest-performance.png  used on input line 1227.
+(pdftex.def)             Requested size: 256.07741pt x 170.72774pt.
+<section5/viewport-performance.png, id=679, 433.62pt x 289.08pt>
+File: section5/viewport-performance.png Graphic file (type png)
+<use section5/viewport-performance.png>
+Package pdftex.def Info: section5/viewport-performance.png  used on input line 1234.
+(pdftex.def)             Requested size: 256.07741pt x 170.72774pt.
+ [28 <./section5/Performance-OPS.png> <./section5/nest-performance.png> <./section5/viewport-performance.png>] [29]
+Overfull \hbox (2.53119pt too wide) in paragraph at lines 1252--1252
 []\OT1/phv/m/n/10.95 Tomas Akenine-Mller, Eric Haines, and Naty Hoff-man. \OT1/phv/m/sl/10.95 Real-Time Ren-der-ing, Fourth
  []
 
 
-Overfull \hbox (7.87502pt too wide) in paragraph at lines 1110--1110
+Overfull \hbox (7.87502pt too wide) in paragraph at lines 1252--1252
 [][]$\OT1/cmtt/m/n/10.95 https : / / www . sciencedirect . com / science / article / pii / B978012382038900003X$[][]\OT1/phv/m/n/10.95 . 
  []
 
 
-Overfull \hbox (4.65993pt too wide) in paragraph at lines 1110--1110
+Overfull \hbox (4.65993pt too wide) in paragraph at lines 1252--1252
 []\OT1/phv/m/n/10.95 Florian Kirsch and J[]urgen D[]oll-ner. \  Ren-der-ing Tech-niques for Hardware-Accelerated
  []
 
 
-Overfull \hbox (4.51805pt too wide) in paragraph at lines 1110--1110
+Overfull \hbox (4.51805pt too wide) in paragraph at lines 1252--1252
 []\OT1/phv/m/n/10.95 Sylvain Lefeb-vre. \  IceSL: A GPU Ac-cel-er-ated CSG Mod-eler and Slicer". In: \OT1/phv/m/sl/10.95 AEFA'13,
  []
 
-[24] [25] [26] (/Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.aux)
+[30] [31] [32] (/Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 50A5D68CC1FD6E9AC6C6DF99CD42D78F;5477.
+(rerunfilecheck)             Checksum: 9028D87858CEBC7AC722E82DC6244C47;5631.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 20688 strings out of 478994
- 358081 string characters out of 5858185
- 904495 words of memory out of 5000000
- 37688 multiletter control sequences out of 15000+600000
+ 20841 strings out of 478994
+ 361423 string characters out of 5858185
+ 907255 words of memory out of 5000000
+ 37805 multiletter control sequences out of 15000+600000
  434085 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,19n,74p,1958b,1714s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,19n,74p,1992b,1714s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on /Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.pdf (30 pages, 1222147 bytes).
+Output written on /Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.pdf (36 pages, 1384351 bytes).
 PDF statistics:
- 782 PDF objects out of 1000 (max. 8388607)
- 650 compressed objects within 7 object streams
- 171 named destinations out of 1000 (max. 500000)
- 476 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 862 PDF objects out of 1000 (max. 8388607)
+ 703 compressed objects within 8 object streams
+ 191 named destinations out of 1000 (max. 500000)
+ 534 words of extra memory for PDF output out of 10000 (max. 10000000)
 
