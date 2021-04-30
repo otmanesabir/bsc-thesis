@@ -121,6 +121,16 @@ Date, Signature
 
 \newpage
 
+\section*{Acknowledgements}
+
+The journey towards this thesis has been circuitous. Its completion is thanks to the special people who challenged, supported, directed, and drove me along the way.
+
+I am tremendously fortunate for my supervisor, Professor Dr. Sergey Kosov, whose expertise was invaluable in the progress of this research. Your theoretical and practical experience remains a central part in understanding the research, architecting the implementation, and analyzing the results.  Your stellar feedback pushed me to sharpen my thinking and opened up different perspectives concerning several matters. I am grateful for the inspiration you have been able to instill in all steps of this study.
+
+Additionally, I am deeply indebted to my parents, my sister, and grandmother for their wise guidance, thoughtful words, and tender care. You are always there for me. Finally, I could not have completed this dissertation without the support of my friends who continuously taught me how to embrace change and strive for the best.  
+
+\newpage
+
 \section*{Abstract}
   
 % TODO: add this reference
@@ -140,30 +150,30 @@ Date, Signature
 Constructive Solid Geometry (CSG) is a method used in computer graphics, computer-aided design, generic modeling languages, and numerous other applications to construct complex geometries from simple primitives or polyhedral solids through the use of boolean operators, namely union ($\cup$),  intersection ($\cap$), and difference ($\minus$). Figure \ref{sec1:set-operations-examples} respectively shows union, intersection, and difference operations. The approach grows especially appealing when implemented in a ray tracing system as the core intricacy renders performing arithmetic logic on a pair of uni-dimensional rays. Nonetheless, most current ray tracing systems generally suffer from the detriment of the expensive object space intersection computation, and the generic CSG algorithms suffer immensely from their computational complexity, making it very difficult to integrate into operating rendering engines. Therefore, this research concentrates on constructive solid geometry and possible means of acceleration.
   
 \begin{figure}[ht]
-     \centering
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section1/union.png}
-         \caption{Union.}
-         \label{sec1:union}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section1/intersection.png}
-         \caption{Intersection.}
-          \label{sec1:intersection}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section1/difference.png}
-         \caption{Difference.}
-         \label{sec1:difference}
-     \end{subfigure}
-     \hfill
-        \caption{Examples of set operations on a mesh sphere and box.}
-        \label{sec1:set-operations-examples}
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section1/union.png}
+		\caption{Union.}
+		\label{sec1:union}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section1/intersection.png}
+		\caption{Intersection.}
+		\label{sec1:intersection}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section1/difference.png}
+		\caption{Difference.}
+		\label{sec1:difference}
+	\end{subfigure}
+	\hfill
+	\caption{Examples of set operations on a mesh sphere and box.}
+	\label{sec1:set-operations-examples}
 \end{figure}
 
   
@@ -293,36 +303,36 @@ The ray-solid intersection test has four possible outcomes:
 
 
 \begin{figure}[ht]
-     \centering
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\linewidth]{section3/3.1/intersection-miss.png}
-         \caption{Miss intersection.}
-         \label{sec3.1:miss-intersection}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\linewidth]{section3/3.1/intersection-tangent.png}
-         \caption{Tangent intersection.}
-          \label{sec3.1:tangent-intersection}
-     \end{subfigure}
-     \medskip
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\linewidth]{section3/3.1/intersection-in-out.png}
-         \caption{Complete intersection.}
-         \label{sec3.1:complete-intersection}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\linewidth]{section3/3.1/intersection-out.png}
-         \caption{Inside intersection.}
-         \label{sec3.1:inside-intersection}
-     \end{subfigure}
-        \caption{Different ray intersection cases on a disk.}
-        \label{sec3.1:intersection-cases}
+	\centering
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{section3/3.1/intersection-miss.png}
+		\caption{Miss intersection.}
+		\label{sec3.1:miss-intersection}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{section3/3.1/intersection-tangent.png}
+		\caption{Tangent intersection.}
+		\label{sec3.1:tangent-intersection}
+	\end{subfigure}
+	\medskip
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{section3/3.1/intersection-in-out.png}
+		\caption{Complete intersection.}
+		\label{sec3.1:complete-intersection}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{section3/3.1/intersection-out.png}
+		\caption{Inside intersection.}
+		\label{sec3.1:inside-intersection}
+	\end{subfigure}
+	\caption{Different ray intersection cases on a disk.}
+	\label{sec3.1:intersection-cases}
 \end{figure}
 
 
@@ -345,7 +355,7 @@ Constructive solid geometry is largely grounded in modern Euclidean geometry and
       
 \begin{definition}[Set Operations]
 	Assume that $X$ and $Y$ are subsets of a universe $W$. We can use the following standard notations:
-	      
+		      
 	\begin{equation} \label{eq:union}
 		X \cup Y
 	\end{equation}
@@ -355,7 +365,7 @@ Constructive solid geometry is largely grounded in modern Euclidean geometry and
 	\begin{equation} \label{eq:difference}
 		X \minus Y
 	\end{equation}
-	        
+		        
 	Where \eqref{eq:union}, \eqref{eq:intersection}, and \eqref{eq:difference} respectively denote the union, intersection, and difference of the subsets $X$ and $Y$.	        
 \end{definition}
 
@@ -430,27 +440,27 @@ Topological spaces are a generalization of metric spaces in which the notion of 
 \end{definition}
 
 \begin{figure}[ht]
-     \centering
-     \begin{subfigure}[b]{0.2\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section3/3.2/open-interval.png}
-         \caption{Open interval.}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.2\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section3/3.2/open-disk.png}
-         \caption{Open disk.}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.2\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section3/3.2/open-sphere.png}
-         \caption{Open "sphere".}
-     \end{subfigure}
-     \hfill
-        \caption{Representation of different open sets varying in dimensional order.}
-        \label{sec3.2:open-sets}
+	\centering
+	\begin{subfigure}[b]{0.2\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section3/3.2/open-interval.png}
+		\caption{Open interval.}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.2\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section3/3.2/open-disk.png}
+		\caption{Open disk.}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.2\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section3/3.2/open-sphere.png}
+		\caption{Open "sphere".}
+	\end{subfigure}
+	\hfill
+	\caption{Representation of different open sets varying in dimensional order.}
+	\label{sec3.2:open-sets}
 \end{figure}
 
    
@@ -458,7 +468,7 @@ Topological spaces are a generalization of metric spaces in which the notion of 
 \subsubsection{Closed Sets}
 \begin{definition}[Closed Sets]
 	A subset $X$ of a topological space $(W, T)$ is closed if its complement is open\footnote{However, this don't mean that closed sets are the opposite of open sets (e.g. the universe $W$ and the null set $\emptyset$ are both open and closed)\cite{mansfield_1987}.}. Closed sets hold the following properties which are duals of properties \eqref{ts:3.5} to \eqref{ts:3.7}. (Figure \ref{sec3.2:closed-sets})
-		    
+			    
 	\begin{property}
 		The empty set $\emptyset$ and the universe $W$ are closed. \cite{mansfield_1987}
 	\end{property}
@@ -466,32 +476,32 @@ Topological spaces are a generalization of metric spaces in which the notion of 
 		The union of a finite number of closed sets is a closed set. \cite{mansfield_1987}
 	\end{property}
 	\begin{property}
-		The union of a finite number of closed sets is a closed set. \cite{mansfield_1987}
+		The union of any collection of closed sets is a closed set. \cite{mansfield_1987}
 	\end{property}
 \end{definition}
     
 \begin{figure}[ht]
-     \centering
-     \begin{subfigure}[b]{0.2\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section3/3.2/closed-interval.png}
-         \caption{Closed interval.}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.2\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section3/3.2/closed-disk.png}
-         \caption{Closed disk.}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.2\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section3/3.2/closed-sphere.png}
-         \caption{Closed sphere.}
-     \end{subfigure}
-     \hfill
-        \caption{Representation of different closed sets varying in dimensional order.}
-        \label{sec3.2:closed-sets}
+	\centering
+	\begin{subfigure}[b]{0.2\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section3/3.2/closed-interval.png}
+		\caption{Closed interval.}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.2\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section3/3.2/closed-disk.png}
+		\caption{Closed disk.}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.2\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section3/3.2/closed-sphere.png}
+		\caption{Closed sphere.}
+	\end{subfigure}
+	\hfill
+	\caption{Representation of different closed sets varying in dimensional order.}
+	\label{sec3.2:closed-sets}
 \end{figure}
 
 \subsubsection{Neighborhood}
@@ -499,6 +509,13 @@ Topological spaces are a generalization of metric spaces in which the notion of 
 \begin{definition}
 	The neighborhood, denoted $N(y)$, of a point $y$ in a topological space $(W, T)$ is any subset of $W$ which contains an open set which contains $y$. If $N(y)$ is an open set, it is called an open neighborhood \cite{Requicha1978MathematicalFO}. (Figure \ref{sec3.2:interior-neighborhood})
 \end{definition}
+    
+\subsubsection{Interior}
+     
+\begin{definition}
+	A point of $y$ of $W$ is an interior point of a subset $X$ of $W$ if $X$ is a neighborhood of $y$. The interior of a subset $X$ of $W$, denoted $iX$, is the set of all the interior points of $X$ \cite{Requicha1978MathematicalFO}.(Figure \ref{sec3.2:interior-neighborhood})
+\end{definition}
+    
 
 \begin{figure}[ht]
 	\begin{center}
@@ -507,13 +524,7 @@ Topological spaces are a generalization of metric spaces in which the notion of 
 	\caption{Interior point $y$ on a subset $X$. The disc around $y$ is the neighborhood of $y$.}
 	\label{sec3.2:interior-neighborhood}
 \end{figure}
-    
-\subsubsection{Interior}
-     
-\begin{definition}
-	A point of $y$ of $W$ is an interior point of a subset $X$ of $W$ if $X$ is a neighborhood of $y$. The interior of a subset $X$ of $W$, denoted $iX$, is the set of all the interior points of $X$ \cite{Requicha1978MathematicalFO}.(Figure \ref{sec3.2:interior-neighborhood})
-\end{definition}
-    
+
 \subsubsection{Boundary}
     
 \begin{definition}
@@ -554,38 +565,38 @@ Topological spaces are a generalization of metric spaces in which the notion of 
 \begin{definition}[Regularized Set Operators]
 	The regularized union, intersection, difference and complement are defined per:
 	\begin{align*} 
-		X \cup^* Y   & = r(X \cup Y)    \\
-		X \cap^* Y   & = r(X \cap Y)    \\
+		X \cup^* Y  & = r(X \cup Y)   \\
+		X \cap^* Y  & = r(X \cap Y)   \\
 		X \minus^*Y & = r(X \minus Y) \\
-		c{^*}X       & = rcX            
+		c{^*}X      & = rcX           
 	\end{align*}
 \end{definition}
     
  
 \begin{figure}[ht]
-     \centering
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section3/3.2/regularization-initial.png}
-         \caption{Initial polygons.}
-         \label{sec3.2:initial-intersection}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section3/3.2/regularization-non-regular.png}
-         \caption{Typical intersection with dangling edge.}
-          \label{sec3.2:normal-intersection}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section3/3.2/regularization-regular.png}
-         \caption{Regularized intersection.}
-         \label{sec3.2:regular-intersection}
-     \end{subfigure}
-        \caption{Typical polygon intersection versus regularized intersection.}
-        \label{sec3.2:regularity}
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section3/3.2/regularization-initial.png}
+		\caption{Initial polygons.}
+		\label{sec3.2:initial-intersection}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section3/3.2/regularization-non-regular.png}
+		\caption{Typical intersection with dangling edge.}
+		\label{sec3.2:normal-intersection}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section3/3.2/regularization-regular.png}
+		\caption{Regularized intersection.}
+		\label{sec3.2:regular-intersection}
+	\end{subfigure}
+	\caption{Typical polygon intersection versus regularized intersection.}
+	\label{sec3.2:regularity}
 \end{figure}
    
 \subsubsection{Membership Classification Function}
@@ -606,15 +617,15 @@ Primed symbols will be used	in order to denote operations on the subspace $W'$ w
 	\label{table:notations}
 	\begin{tabularx}{\textwidth}{p{0.22\textwidth}X}
 		\toprule
-		$E^n$                                        & Euclidean n-space                                   \\
-		$\emptyset$                                  & Empty Set                                           \\
-		$W$                                          & Reference Set Universe                              \\
-		$W'$                                         & Candidate Set Universe                              \\
+		$E^n$                                       & Euclidean n-space                                   \\
+		$\emptyset$                                 & Empty Set                                           \\
+		$W$                                         & Reference Set Universe                              \\
+		$W'$                                        & Candidate Set Universe                              \\
 		$\cup, \cap, \minus, c$                     & Set Operators                                       \\
 		$\cup^*, \cap^*, \minus^*, c^*$             & Regularized Set Operators in $W$                    \\
 		$\cup^{*'}, \cap^{*'}, \minus^{*'}, c^{*'}$ & Regularized Set Operators in $W'$                   \\
-		$i, b, k, r$                                 & interior, boundary, closure, and regularity in $W$  \\
-		$i', b', k', r'$                             & interior, boundary, closure, and regularity in $W'$ \\
+		$i, b, k, r$                                & interior, boundary, closure, and regularity in $W$  \\
+		$i', b', k', r'$                            & interior, boundary, closure, and regularity in $W'$ \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -673,7 +684,7 @@ We choose to define the constructively represented regular sets using the divide
 \begin{align}
 	M[X,S]= 
 	\begin{cases}
-	eM(X, S),                                                        & \text{if } S \subset A \\
+	eM(X, S),                                                                & \text{if } S \subset A \\
 	g(M[X, \text{l-subtree}(S)], M[X, \text{r-subtree}(S)], \text{root}(S)), & \text{otherwise}       
 	\end{cases}
 \end{align}
@@ -713,22 +724,22 @@ Given a ray and a solid composition tree, our procedure classifies the ray with 
 	\label{section3:boolean_algebra}
 	\begin{tabular}{||c c c c||} 
 		\hline
-		Set Operator & Left Solid & Right Solid  & Composite \\ [0.5ex] 
+		Set Operator & Left Solid & Right Solid & Composite \\ [0.5ex] 
 		\hline\hline
-		$\cup$    & $in$ & $in$ & $in$  \\
-		    	  & $in$ & $out$ & $in$  \\
-		    	  & $out$ & $int$ & $in$  \\
-		 	   	  & $out$ & $out$ & $out$  \\
-		& & & \\
-		$\cap$    & $in$ & $in$ & $in$  \\
-		    	  & $in$ & $out$ & $out$  \\
-		    	  & $out$ & $in$ & $out$  \\
-		 	   	  & $out$ & $out$ & $out$  \\
-		& & & \\
-		$\minus$ & $in$ & $in$ & $out$  \\
-		    	  & $in$ & $out$ & $in$  \\
-		    	  & $out$ & $in$ & $out$  \\
-		 	   	  & $out$ & $out$ & $out$  \\		 	   	
+		$\cup$       & $in$       & $in$        & $in$      \\
+		             & $in$       & $out$       & $in$      \\
+		             & $out$      & $int$       & $in$      \\
+		             & $out$      & $out$       & $out$     \\
+		             &            &             &           \\
+		$\cap$       & $in$       & $in$        & $in$      \\
+		             & $in$       & $out$       & $out$     \\
+		             & $out$      & $in$        & $out$     \\
+		             & $out$      & $out$       & $out$     \\
+		             &            &             &           \\
+		$\minus$     & $in$       & $in$        & $out$     \\
+		             & $in$       & $out$       & $in$      \\
+		             & $out$      & $in$        & $out$     \\
+		             & $out$      & $out$       & $out$     \\		 	   	
 		\hline
 	\end{tabular}
 \end{table}
@@ -745,32 +756,32 @@ What we have introduced in the Section \ref{sec3.3:ray-classification} is the ty
 
 \subsubsection{Union Classification}
 
-Consider the case of two the spheres shown in Figure \ref{sec3.4:sphere-union}. The union of these two solids is the boundary of each of the spheres without their interior. Therefore, to find the correct classification results we must find the closest intersection from our ray origin such that it does not belong to the interior of the sphere. Let us denote the intersection distance from the ray origin to the point as $t_A$. $\vec{P_A}$ is the intersection point which we can compute through the general ray equation $\vec{P_A} = \vec{o} + t_{A}\vec{d}$. Originally, $min_A$ is set to $+\inf$, and $max_A$ is set to $-\inf$. Additionally, $min_A$ takes the value of $t_A$ if and only if $t_A \leq min_A$. Meanwhile, $max_A$ takes the value of $t_A$ if and only if $t_A \geq max_A$. All the minimum and maximum values keep their default values if their corresponding intersections don't exist. (see Table \ref{table:notations2})
+Consider the case of two the spheres shown in Figure \ref{sec3.4:sphere-union}. The union of these two solids is the boundary of each of the spheres without their interior. Therefore, to find the correct classification results we must find the closest intersection from our ray origin such that it does not belong to the interior of the sphere. Let us denote the intersection distance from the ray origin to the point as $t_A$. $\vec{P_A}$ is the intersection point which we can compute through the general ray equation $\vec{P_A} = \vec{o} + t_{A}\vec{d}$. Originally, $min_A$ is set to $+\inf$, and $max_A$ is set to $-\inf$. Additionally, $min_A$ takes the value of $t_A$ if and only if $t_A \leq min_A$. Meanwhile, $max_A$ takes the value of $t_A$ if and only if $t_A \geq max_A$. All the minimum and maximum values keep their default values if their corresponding intersections don't exist. (Table \ref{table:notations2})
 
 \begin{figure}[ht]
-     \centering
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section3/3.4/union-case-1.png}
-         \caption{Ray goes through both spheres.}
-         \label{sec3.4:union-case1}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section3/3.4/union-case-2.png}
-         \caption{Ray misses one of the spheres.}
-          \label{sec3.4:union-case2}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section3/3.4/union-case-3.png}
-         \caption{Ray is inside one of the spheres.}
-         \label{sec3.4:union-case3}
-     \end{subfigure}
-        \caption{Union ray classification cases.}
-        \label{sec3.4:sphere-union}
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section3/3.4/union-case-1.png}
+		\caption{Ray goes through both spheres.}
+		\label{sec3.4:union-case1}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section3/3.4/union-case-2.png}
+		\caption{Ray misses one of the spheres.}
+		\label{sec3.4:union-case2}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section3/3.4/union-case-3.png}
+		\caption{Ray is inside one of the spheres.}
+		\label{sec3.4:union-case3}
+	\end{subfigure}
+	\caption{Union ray classification cases.}
+	\label{sec3.4:sphere-union}
 \end{figure}
 
 \begin{table}
@@ -778,11 +789,11 @@ Consider the case of two the spheres shown in Figure \ref{sec3.4:sphere-union}. 
 	\label{table:notations2}
 	\begin{tabularx}{\textwidth}{p{0.22\textwidth}X}
 		\toprule
-		$A, B$									     & left sphere, right sphere. 						   \\
-		$t_A, t_B$                                   & Current ray intersection distance with $A$, $B$.   \\
-		$min_A, min_B$                               & Closest ray intersection distance with $A$, $B$.   \\
-		$max_A, max_B$                               & Furthest ray intersection distance with $A$, $B$.  \\
-		$P_A, P_B$                                   & Intersection point for $A$, $B$. \\
+		$A, B$         & left sphere, right sphere.                        \\
+		$t_A, t_B$     & Current ray intersection distance with $A$, $B$.  \\
+		$min_A, min_B$ & Closest ray intersection distance with $A$, $B$.  \\
+		$max_A, max_B$ & Furthest ray intersection distance with $A$, $B$. \\
+		$P_A, P_B$     & Intersection point for $A$, $B$.                  \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -840,29 +851,29 @@ The last set of cases arise when the ray is shot from the interior of the sphere
 We will stick to the same general example; however, we will be performing the intersection of two spheres. (Figure \ref{sec3.4:sphere-intersection})
 
 \begin{figure}[ht]
-     \centering
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section3/3.4/intersection-case-1.png}
-         \caption{Ray goes through both spheres.}
-         \label{sec3.4:intersection-case-1}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section3/3.4/intersection-case-2.png}
-         \caption{Ray misses one of the spheres.}
-          \label{sec3.4:intersection-case-2}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section3/3.4/intersection-case-3.png}
-         \caption{Ray is inside one or both spheres.}
-         \label{sec3.4:intersection-case-3}
-     \end{subfigure}
-        \caption{Intersection ray classification cases.}
-        \label{sec3.4:sphere-intersection}
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section3/3.4/intersection-case-1.png}
+		\caption{Ray goes through both spheres.}
+		\label{sec3.4:intersection-case-1}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section3/3.4/intersection-case-2.png}
+		\caption{Ray misses one of the spheres.}
+		\label{sec3.4:intersection-case-2}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section3/3.4/intersection-case-3.png}
+		\caption{Ray is inside one or both spheres.}
+		\label{sec3.4:intersection-case-3}
+	\end{subfigure}
+	\caption{Intersection ray classification cases.}
+	\label{sec3.4:sphere-intersection}
 \end{figure}
 
 The intersection of two spheres is their interior without the boundaries. We will apply the same previously defined notations shown in Table \ref{table:notations2}. First, we will begin with the obvious case where a ray goes through both $A$ and $B$, as shown in Figure \ref{sec3.4:intersection-case-1}. We first only compute $min_A$ and $min_B$. In case $min_A$ and $min_B$ have values deviating from $\pm\inf$, then we are guaranteed our ray is going through both the spheres. But we still need to verify if the spheres have a shared interior (the intersection of two disjoint sets is the empty set $\emptyset$). Therefore, we must analyze the exit point of the closest entry. If that exit point doesn't lie between the two entry points, then we must return this as a miss. However, if the out point lies between the two spheres. Then we return the furthest $min$ as the intersection. 
@@ -931,29 +942,29 @@ The last cases are when the sphere is inside one or both of the solids. The firs
 The difference operation remains the most complex and least optimizable operation out of all three due to several factors. First, the minimal knowledge of the scene is higher than both previously mentioned operations. Second, the difference operations are not commutative nor distributive; therefore, the direction of the ray renders completely different results. We shall stick to the same example as the previous two cases and with similar notations (Figure \ref{sec3.4:sphere-difference}).
 
 \begin{figure}[ht]
-     \centering
-      \begin{subfigure}[b]{0.3\textwidth}
-      	\centering
-        \includegraphics[width=\textwidth]{section3/3.4/difference-case-2.png}
-        \caption{Ray misses one of the spheres.}
-        \label{sec3.4:difference-case-1}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section3/3.4/difference-case-1.png}
-         \caption{Ray goes through both spheres.}
-         \label{sec3.4:difference-case-2}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section3/3.4/difference-case-3.png}
-         \caption{Ray is inside one or both spheres.}
-         \label{sec3.4:difference-case-3}
-     \end{subfigure}
-        \caption{Difference ray classification cases.}
-        \label{sec3.4:sphere-difference}
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section3/3.4/difference-case-2.png}
+		\caption{Ray misses one of the spheres.}
+		\label{sec3.4:difference-case-1}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section3/3.4/difference-case-1.png}
+		\caption{Ray goes through both spheres.}
+		\label{sec3.4:difference-case-2}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section3/3.4/difference-case-3.png}
+		\caption{Ray is inside one or both spheres.}
+		\label{sec3.4:difference-case-3}
+	\end{subfigure}
+	\caption{Difference ray classification cases.}
+	\label{sec3.4:sphere-difference}
 \end{figure}
 
 
@@ -1030,45 +1041,45 @@ A bounding box is a rectangular parallelepiped defined by exactly two points (Fi
 	\label{sec4.2:box-points}
 \end{figure}
 
-Combining the boxes on the composite level is also very important to realize. We can achieve this trivially with the usual rules of algebra defined in the previous section. Though that doesn't hold for the difference operation as its results are not easily foreseeable, and the cost of analyzing the entire composition is counter-productive in this use case \cite{ROTH1982109}. When dealing with the union operation, we select the smallest value from both boxes per coordinate for the minimum and vice-versa. In an intersection case, we pick the highest value from both boxes per coordinate for the minimum (opposite to the union) and the dual for the maximum.  For the difference, we have previously mentioned that it's not possible to generalize using boolean algebra; therefore, we keep the minimum and maximum of the left box as we are sure that the result of the subtraction operation will never be bigger than the left geometry, $A - B \leq A$. Figure \ref{sec4.2:composite-bounding-box} shows the different operations on rectangles. The same logic holds for the three dimensional solids as we only check for an additional coordinate. Algorithm \ref{sec4.2:composite-bounding-box} defines the procedure for composite boxes \cite{sbounds_csg}.
+Combining the boxes on the composite level is also very important to realize. We can achieve this trivially with the usual rules of algebra defined in the previous section. Though that doesn't hold for the difference operation as its results are not trivially foreseeable, and the cost of analyzing the entire composition is counter-productive in this use case \cite{ROTH1982109}. When dealing with the union operation, we select the smallest value from both boxes per coordinate for the minimum and vice-versa. For the intersection operation, we pick the highest value from both boxes per coordinate for the minimum - opposite to the union.
+The dual for the maximum.  For the difference, we have previously mentioned that it's not possible to generalize using boolean algebra; therefore, we keep the minimum and maximum of the left box as we are sure that the result of the subtraction operation will never be bigger than the left geometry, $A - B \leq A$. Figure \ref{sec4.2:composite-bounding-box} shows the different operations on rectangles. The same logic holds for the three-dimensional solids as we only check for an additional coordinate. Algorithm \ref{sec4.2:composite-bounding-box} defines the procedure for composite boxes \cite{sbounds_csg}.
 
 \begin{figure}[ht]
 	\centering
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\linewidth]{section4/4.2/box-enclosure-initial.png}
-         \caption{Initial bounding boxes.}
-         \label{sec4.2:composite-box-base}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\linewidth]{section4/4.2/box-enclosure-union.png}
-         \caption{Union of bounding boxes.}
-         \label{sec4.2:composite-box-union}
-     \end{subfigure}
-     \medskip
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\linewidth]{section4/4.2/box-enclosure-intersection.png}
-         \caption{Intersection of bounding boxes.}
-         \label{sec4.2:composite-box-intersection}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\linewidth]{section4/4.2/box-enclosure-difference.png}
-         \caption{Difference of bounding boxes.}
-         \label{sec4.2:composite-box-difference}
-     \end{subfigure}
-        \caption{Composite bounding boxes.}
-        \label{sec4.2:composite-bounding-box}
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{section4/4.2/box-enclosure-initial.png}
+		\caption{Initial bounding boxes.}
+		\label{sec4.2:composite-box-base}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{section4/4.2/box-enclosure-union.png}
+		\caption{Union of bounding boxes.}
+		\label{sec4.2:composite-box-union}
+	\end{subfigure}
+	\medskip
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{section4/4.2/box-enclosure-intersection.png}
+		\caption{Intersection of bounding boxes.}
+		\label{sec4.2:composite-box-intersection}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{section4/4.2/box-enclosure-difference.png}
+		\caption{Difference of bounding boxes.}
+		\label{sec4.2:composite-box-difference}
+	\end{subfigure}
+	\caption{Composite bounding boxes.}
+	\label{sec4.2:composite-bounding-box}
 \end{figure}
 
 \begin{algorithm}[H]
 	\SetAlgoLined
-	\KwResult{$t$ intersection distance}
-	initialization\;
+	\KwResult{Composite bounding box}
 	\For{$i$ = 1, 2, 3}{
 		\uIf{Operator is $\cup$}{
 			min[$i$] = MIN(leftMin[$i$], rightMin[$i$])\;
@@ -1090,13 +1101,11 @@ Combining the boxes on the composite level is also very important to realize. We
 \subsection{Binary Space Partitioning Trees}
 \label{section:bsp-optimization}
 
-%todo: the reasons why KD-trees are so much more adopted.
-%todo: reference a lot lot
-One of the most fundamental concepts in ray tracing is the use of spatial or hierarchical data structures built using binary space subdivision to efficiently search for objects in the scene \cite{ray_tracing_BSP2}. A predominant concept in these data structures is binary space partitioning which refers to the successive subdivision of a scene's bounding box with planes until we reach termination criteria. The resulting data structure is called a binary space partition tree or a BSP tree. BSP trees offer the flexibility of using arbitrarily oriented planes to accommodate complex scenes and uneven spatial distributions. Therefore, in theory, BSP trees are a simple, elegant, and efficient solution to our visible-surface problems. In our implementation, we use a variant called KD-trees (we refer to KD-tree as BSP here). These are a more "restricted" type of BSP trees in which only axis-aligned splitting planes are allowed. These trees conform much better with computational advantages and memory needs but do not adapt very well to scene complexities. It is relatively easy to generate an inefficient binary tree with non-axis-aligned geometry (e.g., a long skinny cylinder oriented diagonally) \cite{ray_tracing_BSP}. All variations of the algorithms are generally composed of two fundamental parts, building and traversing the tree. How we choose these two core procedures tremendously affects the amount of acceleration achievable. We will discuss our building and traversing procedures and a custom traversal to find the furthest intersection. Because the main focus of the work doesn't align with the improvement of building or traversal procedures, the BSP algorithm is unoptimized. However, many algorithms such as surface area heuristic, local greedy SAH, automatic termination criteria, and many more have proved to optimize KD trees \cite{fast_building_kd_trees, parallel_kd_tree_construction}.
+One of the most fundamental concepts in ray tracing is spatial or hierarchical data structures built using binary space subdivision to efficiently search for objects in the scene \cite{ray_tracing_BSP2}. A predominant concept in these data structures is binary space partitioning which refers to the successive subdivision of a scene's bounding box with planes until we reach termination criteria. The resulting data structure is called a binary space partition tree or a BSP tree. BSP trees offer the flexibility of using arbitrarily oriented planes to accommodate complex scenes and uneven spatial distributions. Therefore, in theory, BSP trees are a simple, elegant, and efficient solution to our visible-surface problems. In our implementation, we use a variant called KD-trees - which we refer to as BSP here). These are a more "restricted" type of BSP trees in which only axis-aligned splitting planes are allowed. These trees conform much better with computational advantages and memory needs but do not adapt very well to scene complexities. It is relatively easy to generate an inefficient binary tree with non-axis-aligned geometry (e.g., a long skinny cylinder oriented diagonally) \cite{ray_tracing_BSP}. All variations of the algorithms are generally composed of two fundamental parts, building and traversing the tree. How we choose these two core procedures tremendously affects the amount of acceleration achievable. We will discuss our building and traversing procedures and a custom traversal to find the furthest intersection. Because the main focus of the work doesn't align with the improvement of building or traversal procedures, the BSP algorithm is unoptimized. However, many algorithms such as surface area heuristic, local greedy SAH, automatic termination criteria, and many more have proved to optimize KD trees \cite{fast_building_kd_trees, parallel_kd_tree_construction}.
 
 \subsubsection{Building BSP trees}
 
-The tree in our case is constructed recursively in a top-down manner, making local greedy decision about the choice of the splitting planes. We use axis-aligned bounding boxes in order to wrap the nodes. The split dimension is chosen using the current largest dimension (i.e., if the box is biggest in its $x$ direction then we will pick that as our splitting plane.). The plane is then positioned at the spatial median of the dimension. Usually, this subdivision is performed until either the number of primitives in a single node falls below a predefined threshold or until the subdivision depth exceeds a certain maximum value. Both these stopping criteria could be provided by the user. To better illustrate the algorithm, we will utilize the simple two-dimensional kd-tree and the triangles in Figure \ref{sec4.3:example-kd-tree}. Each node in the tree represents a triangle, and each internal node represents an axis-aligned rectangular region with an axis-aligned plane that separates the regions of its two children.
+The tree is constructed recursively in a top-down manner, making a local greedy decision about the splitting planes. We use axis-aligned bounding boxes to wrap the nodes. We choose the split dimension using the current largest dimension (i.e., if the box is biggest in its $x$ axis then we will pick that as our splitting plane.). We then position the plane is positioned at the spatial median of the dimension. The subdivision is performed until either the number of primitives in a single node falls below a predefined threshold or the tree depth exceeds a maximum value.  The user provides these stopping criteria. To better illustrate the algorithm, we will utilize the simple two-dimensional KD-tree and the triangles in Figure \ref{sec4.3:example-kd-tree}. Each node in the tree represents a triangle, and each internal node represents an axis-aligned rectangular region with an axis-aligned plane that separates the regions of its two children.
 
 \begin{figure}[ht]
 	\begin{center}
@@ -1116,136 +1125,252 @@ A ray traverses a BSP tree by intersecting the ray with the split plane; therefo
 	\item Ray goes through the near child first followed by the far child. (Figure \ref{sec4.3:far-child})
 \end{enumerate}
 
-The near and far classification uses the direction of the ray and the position of the splitting plane. Therefore, it classifies the left node as near and the right node as far if the sign of the ray direction in the splitting axis is positive and vice versa if negative. Once the terminal nodes are reached, we can then search for the intersection of all the primitives in the node, if any.
+The near and far classification uses the direction of the ray and the position of the splitting plane. Therefore, it classifies the left node as near and the right node as far if the sign of the ray direction in the splitting axis is positive and vice versa if negative. Once we reach the terminal nodes, we can then search for the intersection of all the primitives in the node, if any.
 
 \begin{figure}[ht]
-     \centering
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section4/4.3/near-intersection.png}
-         \caption{Ray goes through near child only.}
-         \label{sec4.3:near-child}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section4/4.3/middle-intersection.png}
-         \caption{Ray goes through both children.}
-          \label{sec4.3:both-children}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{section4/4.3/far-intersection.png}
-         \caption{Ray goes through near child only.}
-         \label{sec4.3:far-child}
-     \end{subfigure}
-     \hfill
-        \caption{Ray traversal cases.}
-        \label{sec4.3:ray-traversal-cases}
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section4/4.3/near-intersection.png}
+		\caption{Ray goes through near child only.}
+		\label{sec4.3:near-child}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section4/4.3/middle-intersection.png}
+		\caption{Ray goes through both children.}
+		\label{sec4.3:both-children}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{section4/4.3/far-intersection.png}
+		\caption{Ray goes through near child only.}
+		\label{sec4.3:far-child}
+	\end{subfigure}
+	\hfill
+	\caption{Ray traversal cases.}
+	\label{sec4.3:ray-traversal-cases}
 \end{figure}
 
 
-An important thing we must also achieve is to traverse the tree but search for the furthest intersection instead. In this case, the traversal remains mostly the same, except that in case where a ray hits both the near and far node, we start with the far node as that's what we're actually interested in. The rest of the modifications are all implemented in the leaf nodes where we instead look for out exit intersections. 
+An important thing to achieve is the traversal of the tree for the furthest intersection. The traversal remains the same, except when a ray hits both the near and far node, we start with the most distant node. The rest of the modifications are in the leaf-evaluation procedure such that we look for $out$ exit intersections. 
 
 \subsection{Optimized CSG}
 
-With all three optimizations from Sections \ref{section:classification-optimization}, \ref{section:bounding-boxes-optimization}, \ref{section:bsp-optimization}, we now have the building blocks for the optimized CSG algorithm. We can deconstruct this algorithm to a hierarchical pipeline of 4 elements. On the very top, we have our entire scene enclosed with all the geometries in the scene in a BSP tree. We then have constructively constructed geometries inside of this scene represented using two other BSP trees for their respective left and right geometries\footnote{In case the constructive solid only contains single primitive elements, then the tree is a simple tree of depth 1}. These trees are then capable of efficiently retrieving the $[in, out]$ of their respective nodes and have bounding boxes which allow for quick tests of ray-solid intersections. Finally upon retrieval of the ray intersections, the minimal hit algorithm allows for efficient and robust classification of these intersections. This means that even when nesting constructively generated geometries, we are still able to hold definitions of each sub-tree for each sub-object therefore allowing for very fast evaluation of complex and nested geometries such that each solid is responsible for its own evaluation and can always feed the correct intersection information to its parents nodes. Therefore, skipping the step of gathering all evaluations and only processing them on the leaf nodes.
+With all three optimizations from Sections \ref{section:classification-optimization}, \ref{section:bounding-boxes-optimization}, \ref{section:bsp-optimization}, we now have the building blocks for the optimized CSG algorithm. We can deconstruct this algorithm to a hierarchical pipeline of 4 elements. On the very top, we have our entire scene enclosed in a BSP tree. We then have constructively constructed geometries inside of this scene represented using two other BSP trees for their respective left and right geometries\footnote{In case the constructive solid only contains a single primitive element, then the tree is a simple tree of depth 1}. The trees can efficiently retrieve the $[in, out]$ of their respective nodes, and have bounding boxes that allow quick tests of ray-solid intersections. Finally, upon retrieval of the ray intersections, the minimal hit algorithm allows for efficient and robust classification of these intersections. Even when nesting constructively generated geometries, one can hold definitions of each sub-tree for each sub-object. Hence, allowing for efficient evaluation of complex and nested geometries.  Such definition inherently means that each solid is reliable for its evaluation and can continually feed the correct and classified intersection information to its parent nodes. Therefore, skipping the step of gathering all evaluations and only processing them on the leaf nodes.
 
 \section{Evaluation of the results}
 
-There are three variants of the CSG method implemented in OpenRT. The first is the naive and brute force implementation which we refer to as $NaiCSG$. The second uses a binary space partition tree to solve the visible surface problem but still naively finds intersections inside the combinatorial geometry, which we will refer to as $BinCSG$. Lastly, we'll introduce our optimized algorithm, which uses a binary space partition tree on the outside (solving the visible surface problem) and also inside each composite geometry to direct the rays towards the correct geometries, which we will refer to as $OptiCSG$. Every algorithm is checked for each operation - meaning we carry a total of 9 simulations per test type. We conduct three main tests. First, we assess how the rendering time develops to the complexity of the geometry. In this case, the complexity of the geometry is the number of polygons in the sphere meshes. The second test is based on the reaction of the different algorithms to a different number of nested geometries while maintaining a relevantly similar viewport fill rate (how much of the image contains geometries). The third test explains how the spatial distribution of the scene affects the times for each of the algorithms. Therefore, helping us grasp how significant the viewport fill percentage changes each of these algorithms individually.
+There are three variants of the CSG method implemented in OpenRT. The first is the naive and brute force implementation which we refer to as $NaiCSG$. The second uses a binary space partition tree to solve the visible surface problem but still naively finds intersections inside the combinatorial geometry, which we will refer to as $BinCSG$. Finally, we'll introduce our optimized algorithm, which uses a binary space partition tree on the outside (solving the visible surface problem) and also inside each composite geometry to direct the rays towards the correct geometries, which we will refer to as $OptiCSG$. We consider each algorithm for all operations and a low, medium, and high viewport fill rate. We conduct three main tests. First, we assess how the rendering time develops to the complexity of the geometry. In this case, the complexity of the geometry is the number of polygons in the sphere meshes. The second test demonstrates how the spatial distribution of the scene affects the times for each of the algorithms. Therefore, helping us grasp how significant the viewport fill percentage changes each of these algorithms individually. The third test is based on the effect of a different number of nested geometries on the various algorithms while maintaining a relevantly similar viewport fill rate.
 
 \subsection{Geometry Complexity Tests}
 
-Starting with naive implementation, we can see that the increase in rendering in time is linear (Figure \ref{sec5.1:naive-csg-operations}). This is expected because as we increase the complexity of the geometries, the only part that is affected is the loop in our ray intersection procedure inside of the composite solid.
-\begin{figure}[H]
+As previously mentioned, we conduct each of these tests on varying viewport fill rates. Figure \ref{sec5.1:viewport_range} shows the three main viewport ranges the tests. Different operations give different rates (e.g., difference and intersection will generally produce a less voluminous geometry); therefore, we account for this by determining the range in which the viewport fill wavers. We will refer to low, mid, and high viewport tests respectively as LVP, MVP, and HVP.
+
+\begin{figure}[H] 
 	\begin{center}
-		\includegraphics[width=0.6\textwidth]{section5/NaiCSG-OPS.png}
+		\includegraphics[width=0.7\textwidth]{section5/plots/view_port_final.png}
 	\end{center}
-	\caption{Rendering time of the naive algorithm after gradual increases in the number of triangles in the meshes for all three operations.}
-	\label{sec5.1:naive-csg-operations}
+	\caption{Range of view port rates on which the tests are conducted as the complexity of the geomtery increases. The area around the curve signifies the error by which the rate fluctuates.}
+	\label{sec5.1:viewport_range}
 \end{figure}
 
 
-The second implementation which uses a binary tree in order to efficiently find objects in the scene  (BinCSG) is also linear (Figure \ref{sec5.1:bsp-csg-operations}) except that here we save iterations over the classification loop since the algorithm will opt out of the solid-intersection computation in case the preliminary ray-box test is negative. Though, this is a big improvement over the linear algorithm, the time taken heavily depends on the amount filled by the bounding box of the geometry. Meaning, that if the bounding box were the take the majority of the viewport, we will notice that both variants perform similarly. Figure \textbf{XX} demonstrates how the rendering time of an identical scene using this implementation exponentially grows and becomes the same as the naive implementation. Figure \textbf{YY} compares the rendering time of NaiCSG and BinCSG when an object takes up the entirety of the viewport.
- 
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=0.6\textwidth]{section5/BinCSG-OPS.png}
-	\end{center}
-	\caption{Rendering time of the BSP algorithm after gradual increases in the number of triangles in the meshes for all three operations.}
-	\label{sec5.1:bsp-csg-operations}
-\end{figure}
+First, we will start by examining the different operations for the $NaiCSG$ implementation. Figures \ref{sec5.1:naive_operations_lvp} to \ref{sec5.1:naive_operations_hvp} show the performance of each operation in relation to the other. We don't discern any major difference between these operations because the procedure is naive and constantly performs the same amount of checks regardless of the operations. This variant is also insensitive to changing the viewport fill rate (Figure \ref{sec5.1:naive_operations}) since the computational time is not bound to some ray-box tests.
 
-The final implementation, OptimCSG, uses a BSP tree to find objects in the scene and represents each mesh in its separate binary tree. Therefore, even when a ray enters the first check through the solid, we do not naively iterate over all primitives to find the intersection but rather try to traverse their respective trees. This also means that when a ray only intersects one of the meshes, we don't check for the other as its ray-box test is negative. The time complexity here is that of traversing the binary tree ($n\log n$) with an additional constant which we can omit. Consequently, we can explain the logarithmic nature of the Figure \ref{sec5.1:optim-csg-operations}. We can also notice here the optimization of the minimal hit classification algorithm. As previously mentioned in Section \ref{section:minimal_difference_classficiation}, the difference operation is the most difficult to enhance; therefore, explaining the slight increase in rendering time. The union and intersection cases are somewhat similar. The generated geometry and bounding box from the intersection operation is also smaller than that of the union, which reveals why the intersection operation demands the least cost of time. 
 
 \begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=0.6\textwidth]{section5/OptimCSG-OPS.png}
-	\end{center}
-	\caption{Rendering time of the optimized algorithm after gradual increases in the number of triangles in the meshes for all three operations.}
-	\label{sec5.1:optim-csg-operations}
-\end{figure}
-
-Figure \ref{section5/Performance-OPS.png} compares the variants to the same payload with a relatively low viewport fill rate. We can see how box enclosures can help bring down the rendering time significantly. We also notice how the OptiCSG algorithm outperforms all of the other variants. Figure \textbf{XX} shows how the curves of NaiCSG and BinCSG are seemingly identical after entirely filling the view port. Table \textbf{XX} shows the mean time for conducting these tests per operation and various view port fill rates. Table \textbf{YY} shows the achieved speedups between operations. 
-
-\begin{table}[h]
 	\centering
-	\caption{Boolean operations table}
-	\label{section3:boolean_algebra}
-	\begin{tabular}{||c c c||} 
-		\hline
-		Variant & View Port Fill & Mean Time \\ [0.6ex] 
-		\hline\hline
-		NaiCSG    & 33.33\% & 895725.64ms\\	 
-		NaiCSG    & 66.66\% & TBD\\	   
-		NaiCSG    & 99.99\% & TBD\\	 
-		& & \\  	
-		BinCSG    & 33.33\% & 97903.80ms\\	 
-		BinCSG    & 66.66\% & TBD\\	   
-		BinCSG    & 99.99\% & TBD\\
-		& & \\ 
-		OptiCSG    & 33.33\% & 1603.03ms\\	 
-		OptiCSG    & 66.66\% & TBD\\	   
-		OptiCSG    & 99.99\% & TBD\\	
-		\hline
-	\end{tabular}
-\end{table}
-
-%todo add heat map/confusion matrix here
+	\includegraphics[width=0.7\textwidth]{section5/plots/naive_csg_lvp.png}
+	\caption{Rendering time of different operations with respect to gradual increases in geometry complexity in a scene filling a small rate of the view port.}
+	\label{sec5.1:naive_operations_lvp}
+\end{figure}
 
 \begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=0.6\textwidth]{section5/Performance-OPS.png}
-	\end{center}
-	\caption{Average rendering time of each of the algorithms after gradual increases in the number of triangles in the meshes.}
-	\label{sec5.1:comparative-csg-operations}
+	\centering
+	\includegraphics[width=0.7\textwidth]{section5/plots/naive_csg_mvp.png}
+	\caption{Rendering time of different operations with respect to gradual increases in geometry complexity in a scene filling a medium rate of the view port.}
+	\label{sec5.1:naive_operations_mvp}
 \end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{section5/plots/naive_csg_hvp.png}
+	\caption{Rendering time of different operations with respect to gradual increases in geometry complexity in a scene filling a high rate of the view port.}
+	\label{sec5.1:naive_operations_hvp}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{section5/plots/naive_csg_mean.png}
+	\caption{The mean rendering time of the operations for the different view port fill rates.}
+	\label{sec5.1:naive_operations}
+\end{figure}
+
+Second, we compare the rendering time of the $BinCSG$ variant. Figure \ref{sec5.1:bin_operations_lvp} to \ref{sec5.1:bin_operations_hvp} show the performance of each operation in relation to the other. In Figure \ref{sec5.1:bin_operations_lvp}, we notice a much more obvious discrepancy between the union operation and the two others. It is the case since the union operation creates a bigger geometry hence taking up a bigger portion of the viewport. As seen in Figure \ref{sec5.1:bin_operations_mvp} and \ref{sec5.1:bin_operations_hvp}, this gap closes up as the viewport becomes bigger and time gained from the ray-box tests performed in $BinCSG$ become less useful. Figure \ref{sec5.1:bin_operations} demonstrates how the computational time of $BinCSG$ worsens depending on the spatial distribution in the scene.
 
 
 \begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=0.6\textwidth]{section5/nest-performance.png}
-	\end{center}
-	\caption{Rendering time of all 3 algorithms following increases nesting multiple constructive geometries.}
-	\label{sec5.1:comparative-csg-operations}
+	\centering
+	\includegraphics[width=0.7\textwidth]{section5/plots/bin_csg_lvp.png}
+	\caption{Rendering time of different operations with respect to gradual increases in geometry complexity in a scene filling a small rate of the view port.}
+	\label{sec5.1:bin_operations_lvp}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{section5/plots/bin_csg_mvp.png}
+	\caption{Rendering time of different operations with respect to gradual increases in geometry complexity in a scene filling a medium rate of the view port.}
+	\label{sec5.1:bin_operations_mvp}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{section5/plots/bin_csg_hvp.png}
+	\caption{Rendering time of different operations with respect to gradual increases in geometry complexity in a scene filling a high rate of the view port.}
+	\label{sec5.1:bin_operations_hvp}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{section5/plots/bin_csg_mean.png}
+	\caption{The mean rendering time of the operations for the different view port fill rates.}
+	\label{sec5.1:bin_operations}
+\end{figure}
+
+We must also analyze the performance of $OptiCSG$ with the different operations. As we can see in Figures \ref{sec5.1:optim_operations_lvp} to \ref{sec5.1:optim_operations_hvp}, $OptiCSG$ shows a much more different performance in terms of the operations. In this procedure, the difference operation is the least optimal. The latter can explain the extra computations we must perform to evaluate constructive solids. On the other hand, the intersection and union have relatively similar rendering times due to the optimizations coming from the minimal hit classification algorithm. The general curve is also not linear like $NaiCSG$ and $BinCSG$ but follows a rather logarithmic direction. The procedure also increases in time after an increase in the fill rate; however, nowhere as drastic as $BinCSG$.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{section5/plots/optim_csg_lvp.png}
+	\caption{Rendering time of different operations with respect to gradual increases in geometry complexity in a scene filling a small rate of the view port.}
+	\label{sec5.1:optim_operations_lvp}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{section5/plots/optim_csg_mvp.png}
+	\caption{Rendering time of different operations with respect to gradual increases in geometry complexity in a scene filling a medium rate of the view port.}
+	\label{sec5.1:optim_operations_mvp}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{section5/plots/optim_csg_hvp.png}
+	\caption{Rendering time of different operations with respect to gradual increases in geometry complexity in a scene filling a high rate of the view port.}
+	\label{sec5.1:optim_operations_hvp}
 \end{figure}
 \begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=0.6\textwidth]{section5/viewport-performance.png}
-	\end{center}
-	\caption{Closure $kX$ of a subset $X$.}
-	\label{sec5.1:closure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{section5/plots/optim_csg_mean.png}
+	\caption{The mean rendering time of the operations for the different view port fill rates.}
+	\label{sec5.1:bin_operations}
+\end{figure}
+
+Lastly, we compare the performance of these variants to each other. Figures \ref{sec5.1:geo_complexity_lvp} to \ref{sec5.1:geo_complexity_hvp} show the comparison of the different implementations with low, mid, and high viewport fills. As we can see, $OptiCSG$ outperforms both variants in all cases. $BinCSG$ can outperform $NaiCSG$ in a smaller scene; however, scales have the same computational time in complex scenes.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{section5/plots/geo_complexity_lvp.png}
+	\caption{Rendering time of different operations with respect to gradual increases in geometry complexity in a scene filling a small rate of the view port.}
+	\label{sec5.1:geo_complexity_lvp}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{section5/plots/geo_complexity_mvp.png}
+	\caption{Rendering time of different operations with respect to gradual increases in geometry complexity in a scene filling a medium rate of the view port.}
+	\label{sec5.1:geo_complexity_mvp}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{section5/plots/geo_complexity_hvp.png}
+	\caption{Rendering time of different operations with respect to gradual increases in geometry complexity in a scene filling a high rate of the view port.}
+	\label{sec5.1:geo_complexity_hvp}
 \end{figure}
 
 
-Summarize the main aspects and results of the research
-project. Provide an answer to the research questions stated earlier.
+We can explain these variations by the number of ray-primitive intersection tests performed by each variant. In the naive implementation, we check for all primitives for all the rays in the scene, which explains why it is not so case-dependent. In $BinCSG$, if the ray-box test is positive, it naively makes the ray-primitive intersections. $OptiCSG$ has a more directed approach as both the left and right geometries in the composite are also split up into smaller boxes and traversed efficiently. Figures \ref{sec5.1:test_count_naive} to \ref{sec5.1:test_count_optim} represent the number of intersection performed in a $1000 \times 1000$ pixel image with two spheres in the scene (Figure \ref{sec5.1:test_count_render}). The maximum number of intersections is the number of primitives (triangles) in both the left and right mesh spheres. In Figure \ref{sec5.1:test_count_naive} we can see that we continually make the maximum number of ray-primitive tests for each pixel. However, Figure \ref{sec5.1:test_count_bin} reveals how $BinCSG$ is capable of avoiding intersections toward the areas where the bounding box is not defined but still performs all tests in pixels overlapping it. Ultimately, $OptiCSG$ (Figure \ref{sec5.1:test_count_optim}) exhibits a much more efficient approach where the number of ray primitive intersections solely grows in areas dense with primitives. Figure \ref{sec5.1:test_count_density_optim} shows a 2D density map of ray intersections in $OptiCSG$, here we can see how the intersections follow the same shape from the render in Figure \ref{sec5.1:test_count_render}.
 
-(target size: 1/2 page)
 
-\section{Conclusion}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{section5/plots/render_sphere.png}
+	\caption{The scene on which the number of intersections is counted.}
+	\label{sec5.1:test_count_render}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{section5/plots/test_count_naive.png}
+	\caption{Surface plot showing the number of ray-primitive tests on each pixel with $NaiCSG$}
+	\label{sec5.1:test_count_naive}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{section5/plots/test_count_bin.png}
+	\caption{Surface plot showing the number of ray-primitive tests on each pixel with $BinCSG$}
+	\label{sec5.1:test_count_bin}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{section5/plots/test_count_optim.png}
+	\caption{Surface plot showing the number of ray-primitive tests on each pixel with $OptiCSG$}
+	\label{sec5.1:test_count_optim}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{section5/plots/test_count_density_optim.png}
+	\caption{2D map showing the density of intersections performed at each pixel.}
+	\label{sec5.1:test_count_density_optim}
+\end{figure}
+
+
+\subsection{Nesting Tests}
+
+An important aspect to observe is how the algorithms handle the nesting of many geometries together. Here we attempt to maintain a relatively steady viewport fill rate as we increase the number of nests. Figure \ref{sec5.2:test_nesting_rates} shows how the viewport fill rate fluctuates with the mean value while conducting these tests.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{section5/plots/test_nesting_rates.png}
+	\caption{Range of view port rates on which the tests are conducted as the number of nests increases.}
+	\label{sec5.2:test_nesting_rates}
+\end{figure}
+
+
+Figure \ref{sec5.2:test_nesting} portrays the different performances of each variant. As expected, the naive time grows linearly as we use more geometries.  
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{section5/plots/test_nesting.png}
+	\caption{Performance of the different variants in comparison to each other when nesting more geometries together.}
+	\label{sec5.2:test_nesting}
+\end{figure}
+
+
+
+\section{Conclusion \& Future Work}
+
+The observed results in the previous section lay a foundation for accelerating the performance of complex geometrical models for usage in real applications. We have briefly covered the general mathematical foundation of a constructive solid geometry. We then introduced the generic idea behind constructive solid geometry and the algebraic rules applied to it. Later, we introduced different optimizations used to push the performance of each operation. Last, we compared the performance of each variant and understood its time complexity. There are still various means of possibly improving the performance of the proposed solution while still maintaining a balance of generality and robustness. I outline possible future research directions in accelerated ray tracing of constructive solid geometry in this section.
+
+The first improvement is extending the binary space partitioning tree algorithm to be more efficient in building and traversing. Such a change can bring drastic improvements to the performance and handle much more complex scenes. Automated stopping criteria are a way to let each solid deterministically choose which stopping criteria work best, particularly in BREPs.
+
+Second, this research heavily focused on acceleration with CPU-based ray tracing. Many solutions to extend the system to a GPU exist, and such benefits could make the algorithm gain from the ever-increasing performance of the graphics hardware.
+
+Conversion algorithms from constructively defined solids to BREPs are detrimental as well. Conversion allows for faster computations and ease of use. If we can translate a constructively generated geometry to a BREP,  we can increase performance, and final geometries would no longer rely on a recursive procedure. One can then also use the optimized triangle operations for faster computations and rendering. The solution is especially appealing since complex geometries can be divided into smaller models that are stitched together. We would then also be able to use a more dynamic rendering engine where ray tracing CSG is used to generate constructive geometries, then exported to a rasterization engine to benefit from that system. 
+
+Applying textures to constructive solid geometry is also an area of interest. We could achieve the latter with a few different flavors. Automatic texture mapping is one of them. The goal is of automatic texture mapping is to produce texture coordinates for geometries that don't possess any. One could use a sphere, cube, or any other map to generate these texture coordinates. Therefore, enabling the use of different textures on each of the constructively generated geometries.	 The texture coordinate generation function can also be specified separately for each geometry from the user.
+
+Interesting topics such as reconstruction of constructive solid geometry trees using unsupervised neural networks is also interesting. Models have been produced that allow for fast and accurate reconstruction of CSG tree from \cite{ucsgnet_ml}. Such an advancement would make the possibility of combining a multitude of geometrical resources very easy to do. Additionally, combining this with the possibility of conversion to a boundary representation makes such a possibility more appealing.  
+
+
+  
 
 \newpage
 %\bibliographystyle{unsrt}
