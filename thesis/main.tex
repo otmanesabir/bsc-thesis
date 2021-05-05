@@ -352,7 +352,7 @@ Constructive solid geometry is largely grounded in modern Euclidean geometry and
       
 \begin{definition}[Set Operations]
 	Assume that $X$ and $Y$ are subsets of a universe $W$. We can use the following standard notations:
-		      
+			      
 	\begin{equation} \label{eq:union}
 		X \cup Y
 	\end{equation}
@@ -362,7 +362,7 @@ Constructive solid geometry is largely grounded in modern Euclidean geometry and
 	\begin{equation} \label{eq:difference}
 		X \minus Y
 	\end{equation}
-		        
+			        
 	Where \eqref{eq:union}, \eqref{eq:intersection}, and \eqref{eq:difference} respectively denote the union, intersection, and difference of the subsets $X$ and $Y$.	        
 \end{definition}
 
@@ -465,7 +465,7 @@ Topological spaces are a generalization of metric spaces in which the notion of 
 \subsubsection{Closed Sets}
 \begin{definition}[Closed Sets]
 	A subset $X$ of a topological space $(W, T)$ is closed if its complement is open\footnote{This don't mean that closed sets are the opposite of open sets (e.g. the universe $W$ and the null set $\emptyset$ are both open and closed)\cite{mansfield_1987}.}. Closed sets hold the following properties which are duals of properties \eqref{ts:3.5} to \eqref{ts:3.7}. (Figure \ref{sec3.2:closed-sets})
-			    
+				    
 	\begin{property}
 		The empty set $\emptyset$ and the universe $W$ are closed. \cite{mansfield_1987}
 	\end{property}
@@ -614,7 +614,7 @@ Primed symbols will be used	in order to denote operations on the subspace $W'$ w
 	\label{table:notations}
 	\begin{tabularx}{\textwidth}{p{0.22\textwidth}X}
 		\toprule
-		$E^n$                                       & Euclidean $n$-space                                   \\
+		$E^n$                                       & Euclidean $n$-space                                 \\
 		$\emptyset$                                 & Empty Set                                           \\
 		$W$                                         & Reference Set Universe                              \\
 		$W'$                                        & Candidate Set Universe                              \\
@@ -751,34 +751,34 @@ In this section, we will introduce the state-of-the-art CSG algorithm that is im
 What we have introduced in the Section \ref{sec3.3:ray-classification} is the typical approach to rendering CSG. However, this approach could be very costly as we nest more geometries in the tree and require lots of memory to store, classify, and combine a long chain of operations and primitives. Additionally, the algorithm could also perform unnecessary checks when used in combination with BREPs. Therefore, we introduce a new approach which we refer to as minimal hit CSG classification. The approach described here computes intersections with binary CSG objects using the single nearest intersections whenever possible. Though a relatively similar algorithm has been introduced in \cite{kensler_ray_2006}, it was proven in \cite{csg-xrt-renderer} to not be functional for the intersection and difference operations. The following implementation addresses those issues and adds a few optimizations to the classification code. The general idea can be thought of as a simple finite state machine. First, we check for the closest intersections with both solids $A$ and $B$. We then classify those evaluations to three potential states: enter, exit, or miss. The enter and exit cases are checked using the same normal computation from before. The miss case is when the intersection distance remains to be the default value. Then depending on the operation, we evaluate the states and decide if we can already return one of them. If so, then we're done with the procedure. If not, we move the origin of the ray to the current viable intersection point and try the same over again. Figure \ref{sec4.1:fsm} illustrates the general idea behind the procedure.   
 
 \begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=0.2]
-\tikzstyle{every node}+=[inner sep=0pt]
-\draw [black] (40.8,-3.9) circle (3.7);
-\draw (40.8,-3.9) node {$S2$};
-\draw [black] (40.8,-3.9) circle (3.1);
-\draw [black] (41.6,-20.6) circle (3.7);
-\draw (41.6,-20.6) node {$S3$};
-\draw [black] (41.6,-20.6) circle (3.1);
-\draw [black] (4,-14) circle (3.7);
-\draw (4,-14) node {$S0$};
-\draw [black] (23.9,-14) circle (3.7);
-\draw (23.9,-14) node {$S1$};
-\draw [black] (6.445,-11.244) arc (129.44695:50.55305:11.811);
-\fill [black] (6.45,-11.24) -- (7.38,-11.12) -- (6.75,-10.35);
-\draw (13.95,-8.05) node [above] {$proceed$};
-\draw [black] (20.925,-16.183) arc (-61.07091:-118.92909:14.42);
-\fill [black] (20.93,-16.18) -- (19.98,-16.13) -- (20.47,-17.01);
-\draw (13.95,-18.48) node [below] {$evaluate$};
-\draw [black] (27.37,-15.29) -- (38.13,-19.31);
-\fill [black] (38.13,-19.31) -- (37.56,-18.56) -- (37.21,-19.5);
-\draw (31.3,-17.84) node [below] {$hit$};
-\draw [black] (27.08,-12.1) -- (37.62,-5.8);
-\fill [black] (37.62,-5.8) -- (36.68,-5.78) -- (37.19,-6.64);
-\draw (34.68,-9.45) node [below] {$miss$};
-\end{tikzpicture}
-\caption{Sample state diagram of the CSG procedure.}
-\label{sec4.1:fsm}
+	\centering
+	\begin{tikzpicture}[scale=0.2]
+		\tikzstyle{every node}+=[inner sep=0pt]
+		\draw [black] (40.8,-3.9) circle (3.7);
+		\draw (40.8,-3.9) node {$S2$};
+		\draw [black] (40.8,-3.9) circle (3.1);
+		\draw [black] (41.6,-20.6) circle (3.7);
+		\draw (41.6,-20.6) node {$S3$};
+		\draw [black] (41.6,-20.6) circle (3.1);
+		\draw [black] (4,-14) circle (3.7);
+		\draw (4,-14) node {$S0$};
+		\draw [black] (23.9,-14) circle (3.7);
+		\draw (23.9,-14) node {$S1$};
+		\draw [black] (6.445,-11.244) arc (129.44695:50.55305:11.811);
+		\fill [black] (6.45,-11.24) -- (7.38,-11.12) -- (6.75,-10.35);
+		\draw (13.95,-8.05) node [above] {$proceed$};
+		\draw [black] (20.925,-16.183) arc (-61.07091:-118.92909:14.42);
+		\fill [black] (20.93,-16.18) -- (19.98,-16.13) -- (20.47,-17.01);
+		\draw (13.95,-18.48) node [below] {$evaluate$};
+		\draw [black] (27.37,-15.29) -- (38.13,-19.31);
+		\fill [black] (38.13,-19.31) -- (37.56,-18.56) -- (37.21,-19.5);
+		\draw (31.3,-17.84) node [below] {$hit$};
+		\draw [black] (27.08,-12.1) -- (37.62,-5.8);
+		\fill [black] (37.62,-5.8) -- (36.68,-5.78) -- (37.19,-6.64);
+		\draw (34.68,-9.45) node [below] {$miss$};
+	\end{tikzpicture}
+	\caption{Sample state diagram of the CSG procedure.}
+	\label{sec4.1:fsm}
 \end{figure}
 
 There are a few sub-functions that we must also define in this case before introducing the general algorithm (Table \ref{table:procedure-details}).
@@ -788,12 +788,12 @@ There are a few sub-functions that we must also define in this case before intro
 	\label{table:procedure-details}
 	\begin{tabularx}{\textwidth}{p{0.30\textwidth}X}
 		\toprule
-		ReturnClosest  		& Returns the closest of both.                       \\
-		ReturnFurthest  		& Returns the furthest of both.                       \\
-		IfXCloserReturn		& Returns X if closer.  \\
-		IfXFurtherReturn 	& Returns X if further.  \\
-		IfXCloserReturnFlip & Returns X if closer and flips its normal. \\
-		AdvanceToXLoop      & Sets the ray origin to intersection at X then loops.                  \\
+		ReturnClosest        & Returns the closest of both.                                       \\
+		ReturnFurthest       & Returns the furthest of both.                                      \\
+		IfXCloserReturn      & Returns X if closer.                                               \\
+		IfXFurtherReturn     & Returns X if further.                                              \\
+		IfXCloserReturnFlip  & Returns X if closer and flips its normal.                          \\
+		AdvanceToXLoop       & Sets the ray origin to intersection at X then loops.               \\
 		AdvanceToClosestLoop & Sets the ray origin to the closest of both intersection then loops \\
 		\bottomrule
 	\end{tabularx}
