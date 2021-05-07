@@ -277,6 +277,43 @@
     \field{year}{2008}
   \endentry
 
+  \entry{ucsgnet_ml}{misc}{}
+    \name{author}{3}{}{%
+      {{hash=KK}{%
+         family={Kania},
+         familyi={K\bibinitperiod},
+         given={Kacper},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=ZM}{%
+         family={Zięba},
+         familyi={Z\bibinitperiod},
+         given={Maciej},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=KT}{%
+         family={Kajdanowicz},
+         familyi={K\bibinitperiod},
+         given={Tomasz},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KKZMKT1}
+    \strng{fullhash}{KKZMKT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \verb{eprint}
+    \verb 2006.09102
+    \endverb
+    \field{title}{UCSG-Net -- Unsupervised Discovering of Constructive Solid
+  Geometry Tree}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.CV}
+    \field{year}{2020}
+  \endentry
+
   \entry{SOLIDREP_1}{misc}{}
     \name{author}{1}{}{%
       {{hash=KP}{%

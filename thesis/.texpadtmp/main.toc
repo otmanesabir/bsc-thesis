@@ -71,4 +71,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.1}Geometry Complexity Tests}{25}{subsection.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Conclusion}{29}{section.6}%
+\contentsline {subsection}{\numberline {5.2}Nesting Tests}{36}{subsection.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Conclusion \& Future Work}{37}{section.6}%
