@@ -137,30 +137,43 @@
     \warn{\item Can't use 'location' + 'address'}
   \endentry
 
-  \entry{bounding_algorithms}{article}{}
-    \name{author}{1}{}{%
-      {{hash=CS}{%
-         family={{Cameron}},
-         familyi={C\bibinitperiod},
-         given={S.},
-         giveni={S\bibinitperiod},
+  \entry{normal_orientation}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=BP}{%
+         family={Borodin},
+         familyi={B\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=ZG}{%
+         family={Zachmann},
+         familyi={Z\bibinitperiod},
+         given={Gabriel},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=KR}{%
+         family={Klein},
+         familyi={K\bibinitperiod},
+         given={Reinhard},
+         giveni={R\bibinitperiod},
       }}%
     }
-    \strng{namehash}{CS1}
-    \strng{fullhash}{CS1}
+    \strng{namehash}{BPZGKR1}
+    \strng{fullhash}{BPZGKR1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{C}
-    \field{sortinithash}{C}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
     \verb{doi}
-    \verb 10.1109/38.79455
+    \verb 10.1109/CGI.2004.1309188
     \endverb
-    \field{number}{3}
-    \field{pages}{68\bibrangedash 74}
-    \field{title}{Efficient bounds in constructive solid geometry}
-    \field{volume}{11}
-    \field{journaltitle}{IEEE Computer Graphics and Applications}
-    \field{year}{1991}
+    \field{isbn}{0-7695-2171-1}
+    \field{pages}{18 \bibrangedash  25}
+    \field{title}{Consistent normal orientation for polygonal meshes}
+    \field{journaltitle}{Proceedings of Computer Graphics International
+  Conference, CGI}
+    \field{month}{07}
+    \field{year}{2004}
   \endentry
 
   \entry{sbounds_csg}{article}{}
@@ -175,8 +188,8 @@
     \list{publisher}{1}{%
       {IEEE Computer Society}%
     }
-    \strng{namehash}{CS2}
-    \strng{fullhash}{CS2}
+    \strng{namehash}{CS1}
+    \strng{fullhash}{CS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{C}
@@ -193,8 +206,8 @@
       {Los Alamitos, CA, USA}%
     }
     \field{journaltitle}{IEEE Computer Graphics and Applications}
+    \field{month}{05}
     \field{year}{1991}
-    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{SOLIDREP_5}{misc}{}
