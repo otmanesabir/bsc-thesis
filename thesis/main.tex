@@ -174,7 +174,7 @@ Constructive Solid Geometry (CSG) is a method used in computer graphics, compute
 		\label{sec1:difference}
 	\end{subfigure}
 	\hfill
-	\caption{Examples of set operations on a mesh sphere and box.}
+	\caption{Examples of set operations on a mesh torus and box.}
 	\label{sec1:set-operations-examples}
 \end{figure}
 
@@ -218,7 +218,7 @@ In the OpenRT library implementation, we follow a different approach to allow th
   
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=0.5\textwidth]{section1/sample-csg-tree.png}
+		\includegraphics[width=0.7\textwidth]{section1/sample-csg-tree.png}
 	\end{center}
 	\caption{Sample representation of a CSG tree.}
 	\label{sec3.1:sample-csg-tree}
@@ -236,7 +236,7 @@ Section 3 defines the algorithm that performs the logic in the ray-tracing frame
   
 Section 4 discusses efficiency and optimization. The visible surface problem in ray tracing requires a lot of CPU time, and without any optimization, the CSG algorithm significantly increases the payload. Therefore, improvement is much needed to make this method usable and suitable for real-life applications. The speed is a function of the screen resolution and the geometry complexity (the number primitives (e.g., triangles) in the solid, and the number of nested geometries).
   
-Section 5 describes the different implementations of the CSG algorithm with the various optimization techniques. The first is the naive implementation which we refer to as $NaiCSG$. The second is a variant that uses a binary space partitioning tree to solve the visible surface problem but still naively finds intersections inside the combinatorial geometry, which we will refer to as $BinCSG$. Lastly, we'll introduce our optimized algorithm which uses a binary space partition tree on the outside (solving the visible surface problem) and also inside each composite geometry to direct the rays towards the correct geometries, which we will refer to as $OptiCSG$. We conduct three types of tests. The primary one is a function of time and complexity of the geometry, as we monitor the rendering time following gradual increases in the detail level of two sphere meshes. The second computes the time taken to render a scene after covering different amounts of the view port. Third we also conduct a test to check the number of ray tests conducted per pixel. The final test computes the time variations after increasing the number of nested geometries present in the composite solid while crucially maintaining a consistent view port fill rate.
+Section 5 describes the different implementations of the CSG algorithm with the various optimization techniques. The first is the naive implementation which we refer to as $NaiCSG$. The second is a variant that uses a binary space partitioning tree to solve the visible surface problem but still naively finds intersections inside the combinatorial geometry, which we will refer to as $BinCSG$. Lastly, we'll introduce our optimized algorithm which uses a binary space partition tree on the outside (solving the visible surface problem) and also inside each composite geometry to direct the rays towards the correct geometries, which we will refer to as $OptimCSG$. We conduct three types of tests. The primary one is a function of time and complexity of the geometry, as we monitor the rendering time following gradual increases in the detail level of two sphere meshes. The second computes the time taken to render a scene after covering different amounts of the view port. Third we also conduct a test to check the number of ray tests conducted per pixel. The final test computes the time variations after increasing the number of nested geometries present in the composite solid while crucially maintaining a consistent view port fill rate.
   
   
 \section{Related Work}
@@ -1152,7 +1152,7 @@ With all three optimizations from Sections \ref{section:classification-optimizat
 
 \section{Evaluation of the results}
 
-There are three variants of the CSG method implemented in OpenRT. The first is the naive and brute force implementation which we refer to as $NaiCSG$. The second uses a binary space partition tree to solve the visible surface problem but still naively finds intersections inside the combinatorial geometry, which we will refer to as $BinCSG$. Finally, we'll introduce our optimized algorithm, which uses a binary space partition tree on the outside (solving the visible surface problem) and also inside each composite geometry to direct the rays towards the correct geometries, which we will refer to as $OptiCSG$. We consider each algorithm for all operations and a low, medium, and high viewport fill rate. We conduct three main tests. First, we assess how the rendering time develops to the complexity of the geometry. In this case, the complexity of the geometry is the number of polygons in the sphere meshes. The second test demonstrates how the spatial distribution of the scene affects the times for each of the algorithms. Therefore, helping us grasp how significant the viewport fill percentage changes each of these algorithms individually. We also run tests to count the number of intersection-tests performed by each variant at each pixel. The last test is based on the effect of a different number of nested geometries on the various algorithms while maintaining a relevantly similar viewport fill rate.
+There are three variants of the CSG method implemented in OpenRT. The first is the naive and brute force implementation which we refer to as $NaiCSG$. The second uses a binary space partition tree to solve the visible surface problem but still naively finds intersections inside the combinatorial geometry, which we will refer to as $BinCSG$. Finally, we'll introduce our optimized algorithm, which uses a binary space partition tree on the outside (solving the visible surface problem) and also inside each composite geometry to direct the rays towards the correct geometries, which we will refer to as $OptimCSG$. We consider each algorithm for all operations and a low, medium, and high viewport fill rate. We conduct three main tests. First, we assess how the rendering time develops to the complexity of the geometry. In this case, the complexity of the geometry is the number of polygons in the sphere meshes. The second test demonstrates how the spatial distribution of the scene affects the times for each of the algorithms. Therefore, helping us grasp how significant the viewport fill percentage changes each of these algorithms individually. We also run tests to count the number of intersection-tests performed by each variant at each pixel. The last test is based on the effect of a different number of nested geometries on the various algorithms while maintaining a relevantly similar viewport fill rate.
 
 \subsection{Geometry Complexity Tests}
 
@@ -1230,36 +1230,36 @@ Second, we compare the rendering time of the $BinCSG$ variant. Figure \ref{sec5.
 \end{figure}
 
 %todo update to match latest results.
-We must also analyze the performance of $OptiCSG$ with the different operations. As we can see in Figures \ref{sec5.1:optim_operations_lvp} to \ref{sec5.1:optim_operations_hvp}, $OptiCSG$ shows a much more different performance in terms of the operations. The general curve is also not linear like $NaiCSG$ and $BinCSG$ but follows a rather logarithmic curve. The procedure also increases in time after an increase in the fill rate; however, nowhere as drastic as $BinCSG$.
+We must also analyze the performance of $OptimCSG$ with the different operations. As we can see in Figures \ref{sec5.1:optim_operations_lvp} to \ref{sec5.1:optim_operations_hvp}, $OptimCSG$ shows a much more different performance in terms of the operations. The general curve is also not linear like $NaiCSG$ and $BinCSG$ but follows a rather logarithmic curve. The procedure also increases in time after an increase in the fill rate; however, nowhere as drastic as $BinCSG$.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{section5/plots/optim_csg_lvp.png}
-	\caption{$OptiCSG$ rendering time of different operations with respect to gradual increases in geometry complexity in a scene filling a small rate of the view port.}
+	\caption{$OptimCSG$ rendering time of different operations with respect to gradual increases in geometry complexity in a scene filling a small rate of the view port.}
 	\label{sec5.1:optim_operations_lvp}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{section5/plots/optim_csg_mvp.png}
-	\caption{$OptiCSG$ rendering time of different operations with respect to gradual increases in geometry complexity in a scene filling a medium rate of the view port.}
+	\caption{$OptimCSG$ rendering time of different operations with respect to gradual increases in geometry complexity in a scene filling a medium rate of the view port.}
 	\label{sec5.1:optim_operations_mvp}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{section5/plots/optim_csg_hvp.png}
-	\caption{$OptiCSG$ rendering time of different operations with respect to gradual increases in geometry complexity in a scene filling a high rate of the view port.}
+	\caption{$OptimCSG$ rendering time of different operations with respect to gradual increases in geometry complexity in a scene filling a high rate of the view port.}
 	\label{sec5.1:optim_operations_hvp}
 \end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{section5/plots/optim_csg_mean.png}
-	\caption{The $OptiCSG$ mean rendering time of the operations for the different view port fill rates.}
+	\caption{The $OptimCSG$ mean rendering time of the operations for the different view port fill rates.}
 	\label{sec5.1:bin_operations}
 \end{figure}
 
-Lastly, we compare the performance of these variants to each other. Figures \ref{sec5.1:geo_complexity_lvp} to \ref{sec5.1:geo_complexity_hvp} show the comparison of the different implementations with low, mid, and high viewport fills. As we can see, $OptiCSG$ outperforms both variants in all cases. $BinCSG$ does outperform $NaiCSG$ in a smaller scenes; however, it scales to the same computational time in more complex ones.
+Lastly, we compare the performance of these variants to each other. Figures \ref{sec5.1:geo_complexity_lvp} to \ref{sec5.1:geo_complexity_hvp} show the comparison of the different implementations with low, mid, and high viewport fills. As we can see, $OptimCSG$ outperforms both variants in all cases. $BinCSG$ does outperform $NaiCSG$ in a smaller scenes; however, it scales to the same computational time in more complex ones.
 
 \begin{figure}[H]
 	\centering
@@ -1283,42 +1283,34 @@ Lastly, we compare the performance of these variants to each other. Figures \ref
 \end{figure}
 
 
-We can explain these variations by the number of ray-primitive intersection tests performed by each variant. In the naive implementation, we check for all primitives for all the rays in the scene, which explains why it is not so case-dependent. In $BinCSG$, if the ray-box test is positive, it naively makes the ray-primitive intersections. $OptiCSG$ has a more directed approach as both the left and right geometries in the composite are also split up into smaller boxes and traversed efficiently. Figures \ref{sec5.1:test_count_naive} to \ref{sec5.1:test_count_optim} represent the number of intersection performed in a $1000 \times 1000$ pixel image with two spheres in the scene (Figure \ref{sec5.1:test_count_render}). The maximum number of intersections is the number of primitives (triangles) in both the left and right mesh spheres. In Figure \ref{sec5.1:test_count_naive} we can see that we continually make the maximum number of ray-primitive tests for each pixel. However, Figure \ref{sec5.1:test_count_bin} reveals how $BinCSG$ is capable of avoiding intersections toward the areas where the bounding box is not defined but still performs all tests in pixels overlapping it. Ultimately, $OptiCSG$ (Figure \ref{sec5.1:test_count_optim}) exhibits a much more efficient approach where the number of ray primitive intersections solely grows in areas dense with primitives. Figure \ref{sec5.1:test_count_density_optim} shows a 2D density map of ray intersections in $OptiCSG$, here we can see how the intersections follow the same shape from the render in Figure \ref{sec5.1:test_count_render}.
-
+We can explain these variations by the number of ray-primitive intersection tests performed by each variant. In the naive implementation, we check for all primitives for all the rays in the scene, which explains why it is not so case-dependent. In $BinCSG$, if the ray-box test is positive, it naively makes the ray-primitive intersections. $OptimCSG$ has a more directed approach as both the left and right geometries in the composite are also split up into smaller boxes and traversed efficiently. Figures \ref{sec5.1:test_count_naive} to \ref{sec5.1:test_count_optim} represent the number of intersection performed in a $1000 \times 1000$ pixel image with two spheres in the scene (Figure \ref{sec5.1:test_count_render}). In Figure \ref{sec5.1:test_count_naive} we can see that we continually make the same number of ray-primitive tests for each pixel. However, Figure \ref{sec5.1:test_count_bin} reveals how $BinCSG$ is capable of avoiding intersections toward the areas where the bounding box is not defined but still performs all tests in pixels overlapping it. Ultimately, $OptimCSG$ (Figure \ref{sec5.1:test_count_optim}) exhibits a much more efficient approach where the number of ray primitive intersections solely grows in areas dense with primitives.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.3\textwidth]{section5/plots/render_sphere.png}
+	\includegraphics[width=0.6\textwidth]{section5/plots/union.png}
 	\caption{The scene on which the number of intersections is counted.}
 	\label{sec5.1:test_count_render}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{section5/plots/test_count_naive.png}
+	\includegraphics[width=\textwidth]{section5/plots/surface_naive_union.png}
 	\caption{Surface plot showing the number of ray-primitive tests on each pixel with $NaiCSG$}
 	\label{sec5.1:test_count_naive}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{section5/plots/test_count_bin.png}
+	\includegraphics[width=\textwidth]{section5/plots/surface_bin_union.png}
 	\caption{Surface plot showing the number of ray-primitive tests on each pixel with $BinCSG$}
 	\label{sec5.1:test_count_bin}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{section5/plots/test_count_optim.png}
-	\caption{Surface plot showing the number of ray-primitive tests on each pixel with $OptiCSG$}
+	\includegraphics[width=\textwidth]{section5/plots/surface_optim_union.png}
+	\caption{Surface plot showing the number of ray-primitive tests on each pixel with $OptimCSG$}
 	\label{sec5.1:test_count_optim}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.6\textwidth]{section5/plots/test_count_density_optim.png}
-	\caption{2D map showing the density of intersections performed at each pixel.}
-	\label{sec5.1:test_count_density_optim}
 \end{figure}
 
 
@@ -1334,7 +1326,7 @@ An important aspect to observe is how the algorithms handle the nesting of many 
 \end{figure}
 
 
-Figure \ref{sec5.2:test_nesting} portrays the different performances of each variant. As expected, the naive time grows linearly as we use more geometries. $BinCSG$ is also somewhat linear but is expected to scale to the same time as the naive if we increase the viewport fill rate. On the other hand $OptiCSG$ still follows a logarithmic trend when nesting. 
+Figure \ref{sec5.2:test_nesting} portrays the different performances of each variant. As expected, the naive time grows linearly as we use more geometries. $BinCSG$ is also somewhat linear but is expected to scale to the same time as the naive if we increase the viewport fill rate. On the other hand $OptimCSG$ still follows a logarithmic trend when nesting. 
 
 \begin{figure}[H]
 	\centering
