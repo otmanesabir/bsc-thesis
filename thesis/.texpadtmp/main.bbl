@@ -883,6 +883,28 @@
     \field{year}{2015}
   \endentry
 
+  \entry{openrt}{software}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={{Sergey Kosov}},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{S2}
+    \strng{fullhash}{S2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{OpenRT}
+    \verb{url}
+    \verb https://github.com/Project-10/OpenRT
+    \endverb
+    \field{day}{08}
+    \field{month}{05}
+    \field{year}{2021}
+  \endentry
+
   \entry{efficient_csg_meshes}{article}{}
     \name{author}{5}{}{%
       {{hash=SB}{%
