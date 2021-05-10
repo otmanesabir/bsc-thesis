@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.5)  9 MAY 2021 13:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.5)  10 MAY 2021 21:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -983,17 +983,17 @@ File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 <section1/union.png, id=232, 256.96pt x 256.96pt>
 File: section1/union.png Graphic file (type png)
 <use section1/union.png>
-Package pdftex.def Info: section1/union.png  used on input line 169.
+Package pdftex.def Info: section1/union.png  used on input line 170.
 (pdftex.def)             Requested size: 128.0387pt x 128.04054pt.
 <section1/intersection.png, id=234, 256.96pt x 256.96pt>
 File: section1/intersection.png Graphic file (type png)
 <use section1/intersection.png>
-Package pdftex.def Info: section1/intersection.png  used on input line 176.
+Package pdftex.def Info: section1/intersection.png  used on input line 177.
 (pdftex.def)             Requested size: 128.0387pt x 128.04054pt.
 <section1/difference.png, id=235, 251.94125pt x 251.94125pt>
 File: section1/difference.png Graphic file (type png)
 <use section1/difference.png>
-Package pdftex.def Info: section1/difference.png  used on input line 183.
+Package pdftex.def Info: section1/difference.png  used on input line 184.
 (pdftex.def)             Requested size: 128.0387pt x 128.03854pt.
  [1
 
@@ -1001,196 +1001,189 @@ Package pdftex.def Info: section1/difference.png  used on input line 183.
 <section1/brep-overview.png, id=261, 1268.74pt x 481.8pt>
 File: section1/brep-overview.png Graphic file (type png)
 <use section1/brep-overview.png>
-Package pdftex.def Info: section1/brep-overview.png  used on input line 218.
+Package pdftex.def Info: section1/brep-overview.png  used on input line 219.
 (pdftex.def)             Requested size: 341.43437pt x 129.65398pt.
  [2]
 <section1/sample-csg-tree.png, id=283, 1575.8875pt x 1346.02875pt>
 File: section1/sample-csg-tree.png Graphic file (type png)
 <use section1/sample-csg-tree.png>
-Package pdftex.def Info: section1/sample-csg-tree.png  used on input line 230.
+Package pdftex.def Info: section1/sample-csg-tree.png  used on input line 231.
 (pdftex.def)             Requested size: 298.75264pt x 255.17303pt.
- [3 <./section1/brep-overview.png> <./section1/sample-csg-tree.png>] [4]
-
-LaTeX Warning: Reference `openrt' on page 5 undefined on input line 272.
-
-[5]
+ [3 <./section1/brep-overview.png> <./section1/sample-csg-tree.png>] [4] [5]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 301.
-<section3/3.1/intersection-miss.png, id=325, 405.515pt x 401.5pt>
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 303.
+<section3/3.1/intersection-miss.png, id=326, 405.515pt x 401.5pt>
 File: section3/3.1/intersection-miss.png Graphic file (type png)
 <use section3/3.1/intersection-miss.png>
-Package pdftex.def Info: section3/3.1/intersection-miss.png  used on input line 317.
+Package pdftex.def Info: section3/3.1/intersection-miss.png  used on input line 319.
 (pdftex.def)             Requested size: 170.71393pt x 169.02705pt.
-<section3/3.1/intersection-tangent.png, id=326, 401.5pt x 401.5pt>
+<section3/3.1/intersection-tangent.png, id=327, 401.5pt x 401.5pt>
 File: section3/3.1/intersection-tangent.png Graphic file (type png)
 <use section3/3.1/intersection-tangent.png>
-Package pdftex.def Info: section3/3.1/intersection-tangent.png  used on input line 324.
+Package pdftex.def Info: section3/3.1/intersection-tangent.png  used on input line 326.
 (pdftex.def)             Requested size: 170.71393pt x 170.71794pt.
-<section3/3.1/intersection-in-out.png, id=327, 401.5pt x 401.5pt>
+<section3/3.1/intersection-in-out.png, id=328, 401.5pt x 401.5pt>
 File: section3/3.1/intersection-in-out.png Graphic file (type png)
 <use section3/3.1/intersection-in-out.png>
-Package pdftex.def Info: section3/3.1/intersection-in-out.png  used on input line 331.
+Package pdftex.def Info: section3/3.1/intersection-in-out.png  used on input line 333.
 (pdftex.def)             Requested size: 170.71393pt x 170.71794pt.
-<section3/3.1/intersection-out.png, id=328, 401.5pt x 401.5pt>
+<section3/3.1/intersection-out.png, id=329, 401.5pt x 401.5pt>
 File: section3/3.1/intersection-out.png Graphic file (type png)
 <use section3/3.1/intersection-out.png>
-Package pdftex.def Info: section3/3.1/intersection-out.png  used on input line 338.
+Package pdftex.def Info: section3/3.1/intersection-out.png  used on input line 340.
 (pdftex.def)             Requested size: 170.71393pt x 170.71794pt.
  [6]
 \c@definition=\count456
 
 
-Package amsthm Warning: Unknown theoremstyle `property' on input line 358.
+Package amsthm Warning: Unknown theoremstyle `property' on input line 361.
 
 \c@property=\count457
 [7 <./section3/3.1/intersection-miss.png> <./section3/3.1/intersection-tangent.png> <./section3/3.1/intersection-in-out.png> <./section3/3.1/intersection-out.png>]
-<section3/3.2/open-interval.png, id=381, 401.5pt x 401.5pt>
+<section3/3.2/open-interval.png, id=382, 401.5pt x 401.5pt>
 File: section3/3.2/open-interval.png Graphic file (type png)
 <use section3/3.2/open-interval.png>
-Package pdftex.def Info: section3/3.2/open-interval.png  used on input line 454.
+Package pdftex.def Info: section3/3.2/open-interval.png  used on input line 457.
 (pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
-<section3/3.2/open-disk.png, id=382, 401.5pt x 401.5pt>
+<section3/3.2/open-disk.png, id=383, 401.5pt x 401.5pt>
 File: section3/3.2/open-disk.png Graphic file (type png)
 <use section3/3.2/open-disk.png>
-Package pdftex.def Info: section3/3.2/open-disk.png  used on input line 460.
+Package pdftex.def Info: section3/3.2/open-disk.png  used on input line 463.
 (pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
-<section3/3.2/open-sphere.png, id=383, 401.5pt x 401.5pt>
+<section3/3.2/open-sphere.png, id=384, 401.5pt x 401.5pt>
 File: section3/3.2/open-sphere.png Graphic file (type png)
 <use section3/3.2/open-sphere.png>
-Package pdftex.def Info: section3/3.2/open-sphere.png  used on input line 466.
+Package pdftex.def Info: section3/3.2/open-sphere.png  used on input line 469.
 (pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
  [8 <./section3/3.2/open-interval.png> <./section3/3.2/open-disk.png> <./section3/3.2/open-sphere.png>]
-<section3/3.2/closed-interval.png, id=414, 401.5pt x 401.5pt>
+<section3/3.2/closed-interval.png, id=415, 401.5pt x 401.5pt>
 File: section3/3.2/closed-interval.png Graphic file (type png)
 <use section3/3.2/closed-interval.png>
-Package pdftex.def Info: section3/3.2/closed-interval.png  used on input line 498.
+Package pdftex.def Info: section3/3.2/closed-interval.png  used on input line 501.
 (pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
-<section3/3.2/closed-disk.png, id=415, 401.5pt x 401.5pt>
+<section3/3.2/closed-disk.png, id=416, 401.5pt x 401.5pt>
 File: section3/3.2/closed-disk.png Graphic file (type png)
 <use section3/3.2/closed-disk.png>
-Package pdftex.def Info: section3/3.2/closed-disk.png  used on input line 504.
+Package pdftex.def Info: section3/3.2/closed-disk.png  used on input line 507.
 (pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
-<section3/3.2/closed-sphere.png, id=416, 401.5pt x 401.5pt>
+<section3/3.2/closed-sphere.png, id=417, 401.5pt x 401.5pt>
 File: section3/3.2/closed-sphere.png Graphic file (type png)
 <use section3/3.2/closed-sphere.png>
-Package pdftex.def Info: section3/3.2/closed-sphere.png  used on input line 510.
+Package pdftex.def Info: section3/3.2/closed-sphere.png  used on input line 513.
 (pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
-<section3/3.2/interior.png, id=421, 305.47458pt x 359.3425pt>
+<section3/3.2/interior.png, id=422, 305.47458pt x 359.3425pt>
 File: section3/3.2/interior.png Graphic file (type png)
 <use section3/3.2/interior.png>
-Package pdftex.def Info: section3/3.2/interior.png  used on input line 533.
+Package pdftex.def Info: section3/3.2/interior.png  used on input line 536.
 (pdftex.def)             Requested size: 85.35696pt x 100.40685pt.
  [9 <./section3/3.2/closed-interval.png> <./section3/3.2/closed-disk.png> <./section3/3.2/closed-sphere.png> <./section3/3.2/interior.png>]
-<section3/3.2/boundary.png, id=444, 305.47458pt x 359.3425pt>
+<section3/3.2/boundary.png, id=445, 305.47458pt x 359.3425pt>
 File: section3/3.2/boundary.png Graphic file (type png)
 <use section3/3.2/boundary.png>
-Package pdftex.def Info: section3/3.2/boundary.png  used on input line 547.
+Package pdftex.def Info: section3/3.2/boundary.png  used on input line 550.
 (pdftex.def)             Requested size: 85.35696pt x 100.40685pt.
-<section3/3.2/closure.png, id=447, 411.5375pt x 359.3425pt>
+<section3/3.2/closure.png, id=448, 411.5375pt x 359.3425pt>
 File: section3/3.2/closure.png Graphic file (type png)
 <use section3/3.2/closure.png>
-Package pdftex.def Info: section3/3.2/closure.png  used on input line 561.
+Package pdftex.def Info: section3/3.2/closure.png  used on input line 564.
 (pdftex.def)             Requested size: 128.0387pt x 111.80077pt.
-<section3/3.2/regularization-initial.png, id=451, 260.975pt x 199.74625pt>
+<section3/3.2/regularization-initial.png, id=452, 260.975pt x 199.74625pt>
 File: section3/3.2/regularization-initial.png Graphic file (type png)
 <use section3/3.2/regularization-initial.png>
-Package pdftex.def Info: section3/3.2/regularization-initial.png  used on input line 591.
+Package pdftex.def Info: section3/3.2/regularization-initial.png  used on input line 594.
 (pdftex.def)             Requested size: 128.0387pt x 97.99843pt.
-<section3/3.2/regularization-non-regular.png, id=452, 260.975pt x 199.74625pt>
+<section3/3.2/regularization-non-regular.png, id=453, 260.975pt x 199.74625pt>
 File: section3/3.2/regularization-non-regular.png Graphic file (type png)
 <use section3/3.2/regularization-non-regular.png>
-Package pdftex.def Info: section3/3.2/regularization-non-regular.png  used on input line 598.
+Package pdftex.def Info: section3/3.2/regularization-non-regular.png  used on input line 601.
 (pdftex.def)             Requested size: 128.0387pt x 97.99843pt.
-<section3/3.2/regularization-regular.png, id=453, 260.975pt x 199.74625pt>
+<section3/3.2/regularization-regular.png, id=454, 260.975pt x 199.74625pt>
 File: section3/3.2/regularization-regular.png Graphic file (type png)
 <use section3/3.2/regularization-regular.png>
-Package pdftex.def Info: section3/3.2/regularization-regular.png  used on input line 605.
+Package pdftex.def Info: section3/3.2/regularization-regular.png  used on input line 608.
 (pdftex.def)             Requested size: 128.0387pt x 97.99843pt.
  [10 <./section3/3.2/boundary.png> <./section3/3.2/closure.png>]
-Overfull \hbox (3.50337pt too wide) in paragraph at lines 619--622
+Overfull \hbox (3.50337pt too wide) in paragraph at lines 622--625
 [] 
  []
 
 [11 <./section3/3.2/regularization-initial.png> <./section3/3.2/regularization-non-regular.png> <./section3/3.2/regularization-regular.png>]
-<section3/3.2/membership-classification.png, id=486, 575.48334pt x 330.23375pt>
+<section3/3.2/membership-classification.png, id=487, 575.48334pt x 330.23375pt>
 File: section3/3.2/membership-classification.png Graphic file (type png)
 <use section3/3.2/membership-classification.png>
-Package pdftex.def Info: section3/3.2/membership-classification.png  used on input line 673.
+Package pdftex.def Info: section3/3.2/membership-classification.png  used on input line 676.
 (pdftex.def)             Requested size: 213.39568pt x 122.45667pt.
-<section3/3.2/halfplane-csg.png, id=489, 574.145pt x 232.87pt>
+<section3/3.2/halfplane-csg.png, id=490, 574.145pt x 232.87pt>
 File: section3/3.2/halfplane-csg.png Graphic file (type png)
 <use section3/3.2/halfplane-csg.png>
-Package pdftex.def Info: section3/3.2/halfplane-csg.png  used on input line 687.
+Package pdftex.def Info: section3/3.2/halfplane-csg.png  used on input line 690.
 (pdftex.def)             Requested size: 341.43437pt x 138.48651pt.
  [12 <./section3/3.2/membership-classification.png>]
-<section3/3.3/ray-classifications.png, id=503, 621.32124pt x 661.47125pt>
+<section3/3.3/ray-classifications.png, id=504, 621.32124pt x 661.47125pt>
 File: section3/3.3/ray-classifications.png Graphic file (type png)
 <use section3/3.3/ray-classifications.png>
-Package pdftex.def Info: section3/3.3/ray-classifications.png  used on input line 724.
+Package pdftex.def Info: section3/3.3/ray-classifications.png  used on input line 727.
 (pdftex.def)             Requested size: 341.43437pt x 363.49742pt.
- [13 <./section3/3.2/halfplane-csg.png>] [14 <./section3/3.3/ray-classifications.png>] [15]
-<section4/4.1/union-case-1.png, id=529, 373.395pt x 248.93pt>
+ [13 <./section3/3.2/halfplane-csg.png>] [14 <./section3/3.3/ray-classifications.png>]
+<section4/4.1/union-case-1.png, id=523, 373.395pt x 248.93pt>
 File: section4/4.1/union-case-1.png Graphic file (type png)
 <use section4/4.1/union-case-1.png>
-Package pdftex.def Info: section4/4.1/union-case-1.png  used on input line 824.
+Package pdftex.def Info: section4/4.1/union-case-1.png  used on input line 795.
 (pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
-<section4/4.1/union-case-2.png, id=530, 373.395pt x 248.93pt>
+<section4/4.1/union-case-2.png, id=524, 373.395pt x 248.93pt>
 File: section4/4.1/union-case-2.png Graphic file (type png)
 <use section4/4.1/union-case-2.png>
-Package pdftex.def Info: section4/4.1/union-case-2.png  used on input line 831.
+Package pdftex.def Info: section4/4.1/union-case-2.png  used on input line 802.
 (pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
-<section4/4.1/union-case-3.png, id=531, 373.395pt x 248.93pt>
+<section4/4.1/union-case-3.png, id=525, 373.395pt x 248.93pt>
 File: section4/4.1/union-case-3.png Graphic file (type png)
 <use section4/4.1/union-case-3.png>
-Package pdftex.def Info: section4/4.1/union-case-3.png  used on input line 838.
+Package pdftex.def Info: section4/4.1/union-case-3.png  used on input line 809.
 (pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
- [16 <./section4/4.1/union-case-1.png> <./section4/4.1/union-case-2.png> <./section4/4.1/union-case-3.png>]
-<section4/4.1/intersection-case-1.png, id=546, 373.395pt x 248.93pt>
+ [15] [16 <./section4/4.1/union-case-1.png> <./section4/4.1/union-case-2.png> <./section4/4.1/union-case-3.png>]
+<section4/4.1/intersection-case-1.png, id=545, 373.395pt x 248.93pt>
 File: section4/4.1/intersection-case-1.png Graphic file (type png)
 <use section4/4.1/intersection-case-1.png>
-Package pdftex.def Info: section4/4.1/intersection-case-1.png  used on input line 898.
+Package pdftex.def Info: section4/4.1/intersection-case-1.png  used on input line 869.
 (pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
-<section4/4.1/intersection-case-2.png, id=547, 373.89688pt x 248.93pt>
+<section4/4.1/intersection-case-2.png, id=546, 373.89688pt x 248.93pt>
 File: section4/4.1/intersection-case-2.png Graphic file (type png)
 <use section4/4.1/intersection-case-2.png>
-Package pdftex.def Info: section4/4.1/intersection-case-2.png  used on input line 905.
+Package pdftex.def Info: section4/4.1/intersection-case-2.png  used on input line 876.
 (pdftex.def)             Requested size: 128.0387pt x 85.24281pt.
-<section4/4.1/intersection-case-3.png, id=548, 373.395pt x 249.43187pt>
+<section4/4.1/intersection-case-3.png, id=547, 373.395pt x 249.43187pt>
 File: section4/4.1/intersection-case-3.png Graphic file (type png)
 <use section4/4.1/intersection-case-3.png>
-Package pdftex.def Info: section4/4.1/intersection-case-3.png  used on input line 912.
+Package pdftex.def Info: section4/4.1/intersection-case-3.png  used on input line 883.
 (pdftex.def)             Requested size: 128.0387pt x 85.52885pt.
  [17 <./section4/4.1/intersection-case-1.png> <./section4/4.1/intersection-case-2.png> <./section4/4.1/intersection-case-3.png>]
-
-LaTeX Warning: Reference `sec4.1:intersection-algo' on page 18 undefined on input line 924.
-
-<section4/4.1/difference-case-2.png, id=561, 373.395pt x 248.93pt>
-File: section4/4.1/difference-case-2.png Graphic file (type png)
-<use section4/4.1/difference-case-2.png>
-Package pdftex.def Info: section4/4.1/difference-case-2.png  used on input line 967.
-(pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
-<section4/4.1/difference-case-1.png, id=562, 373.395pt x 248.93pt>
+<section4/4.1/difference-case-1.png, id=561, 373.395pt x 248.93pt>
 File: section4/4.1/difference-case-1.png Graphic file (type png)
 <use section4/4.1/difference-case-1.png>
-Package pdftex.def Info: section4/4.1/difference-case-1.png  used on input line 974.
+Package pdftex.def Info: section4/4.1/difference-case-1.png  used on input line 938.
+(pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
+<section4/4.1/difference-case-2.png, id=562, 373.395pt x 248.93pt>
+File: section4/4.1/difference-case-2.png Graphic file (type png)
+<use section4/4.1/difference-case-2.png>
+Package pdftex.def Info: section4/4.1/difference-case-2.png  used on input line 945.
 (pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
 <section4/4.1/difference-case-3.png, id=563, 373.395pt x 248.93pt>
 File: section4/4.1/difference-case-3.png Graphic file (type png)
 <use section4/4.1/difference-case-3.png>
-Package pdftex.def Info: section4/4.1/difference-case-3.png  used on input line 981.
+Package pdftex.def Info: section4/4.1/difference-case-3.png  used on input line 952.
 (pdftex.def)             Requested size: 128.0387pt x 85.35677pt.
-[18 <./section4/4.1/difference-case-2.png> <./section4/4.1/difference-case-1.png> <./section4/4.1/difference-case-3.png>]
+ [18 <./section4/4.1/difference-case-1.png> <./section4/4.1/difference-case-2.png> <./section4/4.1/difference-case-3.png>]
 
-LaTeX Warning: Reference `sec4.1:difference-algo' on page 19 undefined on input line 994.
+LaTeX Warning: Reference `sec4.1:difference-algo' on page 19 undefined on input line 965.
 
 [19]
 <section4/4.2/box-enclosure-points.png, id=587, 294.09875pt x 220.825pt>
 File: section4/4.2/box-enclosure-points.png Graphic file (type png)
 <use section4/4.2/box-enclosure-points.png>
-Package pdftex.def Info: section4/4.2/box-enclosure-points.png  used on input line 1043.
+Package pdftex.def Info: section4/4.2/box-enclosure-points.png  used on input line 1014.
 (pdftex.def)             Requested size: 213.39568pt x 160.23047pt.
 
-Overfull \hbox (0.56pt too wide) in paragraph at lines 1049--1051
+Overfull \hbox (0.56pt too wide) in paragraph at lines 1020--1022
 \T1/phv/m/n/10.95 achieve this triv-ially with the usual rules of al-ge-bra de-fined in the pre-vi-ous sec-tion. Though
  []
 
@@ -1198,218 +1191,218 @@ Overfull \hbox (0.56pt too wide) in paragraph at lines 1049--1051
 <section4/4.2/box-enclosure-initial.png, id=600, 501.875pt x 348.30125pt>
 File: section4/4.2/box-enclosure-initial.png Graphic file (type png)
 <use section4/4.2/box-enclosure-initial.png>
-Package pdftex.def Info: section4/4.2/box-enclosure-initial.png  used on input line 1056.
+Package pdftex.def Info: section4/4.2/box-enclosure-initial.png  used on input line 1027.
 (pdftex.def)             Requested size: 170.71393pt x 118.474pt.
 <section4/4.2/box-enclosure-union.png, id=601, 501.875pt x 348.30125pt>
 File: section4/4.2/box-enclosure-union.png Graphic file (type png)
 <use section4/4.2/box-enclosure-union.png>
-Package pdftex.def Info: section4/4.2/box-enclosure-union.png  used on input line 1063.
+Package pdftex.def Info: section4/4.2/box-enclosure-union.png  used on input line 1034.
 (pdftex.def)             Requested size: 170.71393pt x 118.474pt.
 <section4/4.2/box-enclosure-intersection.png, id=602, 501.875pt x 348.30125pt>
 File: section4/4.2/box-enclosure-intersection.png Graphic file (type png)
 <use section4/4.2/box-enclosure-intersection.png>
-Package pdftex.def Info: section4/4.2/box-enclosure-intersection.png  used on input line 1070.
+Package pdftex.def Info: section4/4.2/box-enclosure-intersection.png  used on input line 1041.
 (pdftex.def)             Requested size: 170.71393pt x 118.474pt.
 <section4/4.2/box-enclosure-difference.png, id=603, 501.875pt x 348.30125pt>
 File: section4/4.2/box-enclosure-difference.png Graphic file (type png)
 <use section4/4.2/box-enclosure-difference.png>
-Package pdftex.def Info: section4/4.2/box-enclosure-difference.png  used on input line 1077.
+Package pdftex.def Info: section4/4.2/box-enclosure-difference.png  used on input line 1048.
 (pdftex.def)             Requested size: 170.71393pt x 118.474pt.
  [21 <./section4/4.2/box-enclosure-initial.png> <./section4/4.2/box-enclosure-union.png> <./section4/4.2/box-enclosure-intersection.png> <./section4/4.2/box-enclosure-difference.png>]
 <section4/4.3/bsp-tree-example.png, id=620, 1025.8325pt x 382.42876pt>
 File: section4/4.3/bsp-tree-example.png Graphic file (type png)
 <use section4/4.3/bsp-tree-example.png>
-Package pdftex.def Info: section4/4.3/bsp-tree-example.png  used on input line 1117.
+Package pdftex.def Info: section4/4.3/bsp-tree-example.png  used on input line 1088.
 (pdftex.def)             Requested size: 426.79135pt x 159.1076pt.
  [22]
-<section4/4.3/near-intersection.png, id=636, 339.2675pt x 348.30125pt>
+<section4/4.3/near-intersection.png, id=633, 339.2675pt x 348.30125pt>
 File: section4/4.3/near-intersection.png Graphic file (type png)
 <use section4/4.3/near-intersection.png>
-Package pdftex.def Info: section4/4.3/near-intersection.png  used on input line 1139.
+Package pdftex.def Info: section4/4.3/near-intersection.png  used on input line 1110.
 (pdftex.def)             Requested size: 128.0387pt x 131.44704pt.
-<section4/4.3/middle-intersection.png, id=637, 339.2675pt x 348.30125pt>
+<section4/4.3/middle-intersection.png, id=634, 339.2675pt x 348.30125pt>
 File: section4/4.3/middle-intersection.png Graphic file (type png)
 <use section4/4.3/middle-intersection.png>
-Package pdftex.def Info: section4/4.3/middle-intersection.png  used on input line 1146.
+Package pdftex.def Info: section4/4.3/middle-intersection.png  used on input line 1117.
 (pdftex.def)             Requested size: 128.0387pt x 131.44704pt.
-<section4/4.3/far-intersection.png, id=638, 339.2675pt x 348.30125pt>
+<section4/4.3/far-intersection.png, id=635, 339.2675pt x 348.30125pt>
 File: section4/4.3/far-intersection.png Graphic file (type png)
 <use section4/4.3/far-intersection.png>
-Package pdftex.def Info: section4/4.3/far-intersection.png  used on input line 1153.
+Package pdftex.def Info: section4/4.3/far-intersection.png  used on input line 1124.
 (pdftex.def)             Requested size: 128.0387pt x 131.44704pt.
- [23 <./section4/4.3/bsp-tree-example.png> <./section4/4.3/near-intersection.png> <./section4/4.3/middle-intersection.png> <./section4/4.3/far-intersection.png>]
-<section5/plots/view_port_final.png, id=654, 578.16pt x 397.485pt>
+ [23 <./section4/4.3/bsp-tree-example.png> <./section4/4.3/near-intersection.png> <./section4/4.3/middle-intersection.png> <./section4/4.3/far-intersection.png>] [24]
+<section5/plots/view_port_final.png, id=658, 578.16pt x 397.485pt>
 File: section5/plots/view_port_final.png Graphic file (type png)
 <use section5/plots/view_port_final.png>
-Package pdftex.def Info: section5/plots/view_port_final.png  used on input line 1184.
+Package pdftex.def Info: section5/plots/view_port_final.png  used on input line 1155.
 (pdftex.def)             Requested size: 298.75264pt x 205.38937pt.
- [24]
-<section5/plots/naive_csg_lvp.png, id=663, 578.16pt x 397.485pt>
+<section5/plots/naive_csg_lvp.png, id=662, 578.16pt x 397.485pt>
 File: section5/plots/naive_csg_lvp.png Graphic file (type png)
 <use section5/plots/naive_csg_lvp.png>
-Package pdftex.def Info: section5/plots/naive_csg_lvp.png  used on input line 1196.
+Package pdftex.def Info: section5/plots/naive_csg_lvp.png  used on input line 1167.
 (pdftex.def)             Requested size: 298.75264pt x 205.38937pt.
-<section5/plots/naive_csg_mvp.png, id=664, 578.16pt x 397.485pt>
+ [25 <./section5/plots/view_port_final.png>]
+<section5/plots/naive_csg_mvp.png, id=672, 578.16pt x 397.485pt>
 File: section5/plots/naive_csg_mvp.png Graphic file (type png)
 <use section5/plots/naive_csg_mvp.png>
-Package pdftex.def Info: section5/plots/naive_csg_mvp.png  used on input line 1203.
+Package pdftex.def Info: section5/plots/naive_csg_mvp.png  used on input line 1174.
 (pdftex.def)             Requested size: 298.75264pt x 205.38937pt.
- [25 <./section5/plots/view_port_final.png> <./section5/plots/naive_csg_lvp.png>]
-<section5/plots/naive_csg_hvp.png, id=674, 578.16pt x 397.485pt>
+<section5/plots/naive_csg_hvp.png, id=673, 578.16pt x 397.485pt>
 File: section5/plots/naive_csg_hvp.png Graphic file (type png)
 <use section5/plots/naive_csg_hvp.png>
-Package pdftex.def Info: section5/plots/naive_csg_hvp.png  used on input line 1210.
+Package pdftex.def Info: section5/plots/naive_csg_hvp.png  used on input line 1181.
 (pdftex.def)             Requested size: 298.75264pt x 205.38937pt.
-<section5/plots/naive_csg_mean.png, id=675, 578.16pt x 397.485pt>
+ [26 <./section5/plots/naive_csg_lvp.png> <./section5/plots/naive_csg_mvp.png>]
+<section5/plots/naive_csg_mean.png, id=682, 578.16pt x 397.485pt>
 File: section5/plots/naive_csg_mean.png Graphic file (type png)
 <use section5/plots/naive_csg_mean.png>
-Package pdftex.def Info: section5/plots/naive_csg_mean.png  used on input line 1217.
+Package pdftex.def Info: section5/plots/naive_csg_mean.png  used on input line 1188.
 (pdftex.def)             Requested size: 298.75264pt x 205.38937pt.
- [26 <./section5/plots/naive_csg_mvp.png> <./section5/plots/naive_csg_hvp.png>]
-<section5/plots/bin_csg_lvp.png, id=688, 578.16pt x 397.485pt>
+<section5/plots/bin_csg_lvp.png, id=687, 578.16pt x 397.485pt>
 File: section5/plots/bin_csg_lvp.png Graphic file (type png)
 <use section5/plots/bin_csg_lvp.png>
-Package pdftex.def Info: section5/plots/bin_csg_lvp.png  used on input line 1227.
+Package pdftex.def Info: section5/plots/bin_csg_lvp.png  used on input line 1198.
 (pdftex.def)             Requested size: 298.75264pt x 205.38937pt.
-<section5/plots/bin_csg_mvp.png, id=689, 578.16pt x 397.485pt>
+ [27 <./section5/plots/naive_csg_hvp.png> <./section5/plots/naive_csg_mean.png>]
+<section5/plots/bin_csg_mvp.png, id=697, 578.16pt x 397.485pt>
 File: section5/plots/bin_csg_mvp.png Graphic file (type png)
 <use section5/plots/bin_csg_mvp.png>
-Package pdftex.def Info: section5/plots/bin_csg_mvp.png  used on input line 1234.
+Package pdftex.def Info: section5/plots/bin_csg_mvp.png  used on input line 1205.
 (pdftex.def)             Requested size: 298.75264pt x 205.38937pt.
- [27 <./section5/plots/naive_csg_mean.png> <./section5/plots/bin_csg_lvp.png>]
-<section5/plots/bin_csg_hvp.png, id=699, 578.16pt x 397.485pt>
+<section5/plots/bin_csg_hvp.png, id=698, 578.16pt x 397.485pt>
 File: section5/plots/bin_csg_hvp.png Graphic file (type png)
 <use section5/plots/bin_csg_hvp.png>
-Package pdftex.def Info: section5/plots/bin_csg_hvp.png  used on input line 1241.
+Package pdftex.def Info: section5/plots/bin_csg_hvp.png  used on input line 1212.
 (pdftex.def)             Requested size: 298.75264pt x 205.38937pt.
-<section5/plots/bin_csg_mean.png, id=700, 578.16pt x 397.485pt>
+ [28 <./section5/plots/bin_csg_lvp.png> <./section5/plots/bin_csg_mvp.png>]
+<section5/plots/bin_csg_mean.png, id=706, 578.16pt x 397.485pt>
 File: section5/plots/bin_csg_mean.png Graphic file (type png)
 <use section5/plots/bin_csg_mean.png>
-Package pdftex.def Info: section5/plots/bin_csg_mean.png  used on input line 1248.
+Package pdftex.def Info: section5/plots/bin_csg_mean.png  used on input line 1219.
 (pdftex.def)             Requested size: 298.75264pt x 205.38937pt.
- [28 <./section5/plots/bin_csg_mvp.png> <./section5/plots/bin_csg_hvp.png>]
-<section5/plots/optim_csg_lvp.png, id=710, 578.16pt x 397.485pt>
+<section5/plots/optim_csg_lvp.png, id=709, 578.16pt x 397.485pt>
 File: section5/plots/optim_csg_lvp.png Graphic file (type png)
 <use section5/plots/optim_csg_lvp.png>
-Package pdftex.def Info: section5/plots/optim_csg_lvp.png  used on input line 1258.
+Package pdftex.def Info: section5/plots/optim_csg_lvp.png  used on input line 1228.
 (pdftex.def)             Requested size: 298.75264pt x 205.38937pt.
-<section5/plots/optim_csg_mvp.png, id=711, 578.16pt x 397.485pt>
+ [29 <./section5/plots/bin_csg_hvp.png> <./section5/plots/bin_csg_mean.png>]
+<section5/plots/optim_csg_mvp.png, id=719, 578.16pt x 397.485pt>
 File: section5/plots/optim_csg_mvp.png Graphic file (type png)
 <use section5/plots/optim_csg_mvp.png>
-Package pdftex.def Info: section5/plots/optim_csg_mvp.png  used on input line 1265.
+Package pdftex.def Info: section5/plots/optim_csg_mvp.png  used on input line 1235.
 (pdftex.def)             Requested size: 298.75264pt x 205.38937pt.
- [29 <./section5/plots/bin_csg_mean.png> <./section5/plots/optim_csg_lvp.png>]
-<section5/plots/optim_csg_hvp.png, id=721, 578.16pt x 397.485pt>
+<section5/plots/optim_csg_hvp.png, id=720, 578.16pt x 397.485pt>
 File: section5/plots/optim_csg_hvp.png Graphic file (type png)
 <use section5/plots/optim_csg_hvp.png>
-Package pdftex.def Info: section5/plots/optim_csg_hvp.png  used on input line 1272.
+Package pdftex.def Info: section5/plots/optim_csg_hvp.png  used on input line 1242.
 (pdftex.def)             Requested size: 298.75264pt x 205.38937pt.
-<section5/plots/optim_csg_mean.png, id=722, 578.16pt x 397.485pt>
+<section5/plots/optim_csg_mean.png, id=721, 578.16pt x 397.485pt>
 File: section5/plots/optim_csg_mean.png Graphic file (type png)
 <use section5/plots/optim_csg_mean.png>
-Package pdftex.def Info: section5/plots/optim_csg_mean.png  used on input line 1278.
+Package pdftex.def Info: section5/plots/optim_csg_mean.png  used on input line 1248.
 (pdftex.def)             Requested size: 298.75264pt x 205.38937pt.
- [30 <./section5/plots/optim_csg_mvp.png> <./section5/plots/optim_csg_hvp.png>]
-<section5/plots/geo_complexity_lvp.png, id=732, 578.16pt x 397.485pt>
+ [30 <./section5/plots/optim_csg_lvp.png> <./section5/plots/optim_csg_mvp.png>]
+<section5/plots/geo_complexity_lvp.png, id=731, 578.16pt x 397.485pt>
 File: section5/plots/geo_complexity_lvp.png Graphic file (type png)
 <use section5/plots/geo_complexity_lvp.png>
-Package pdftex.def Info: section5/plots/geo_complexity_lvp.png  used on input line 1287.
+Package pdftex.def Info: section5/plots/geo_complexity_lvp.png  used on input line 1257.
 (pdftex.def)             Requested size: 298.75264pt x 205.38937pt.
-<section5/plots/geo_complexity_mvp.png, id=733, 578.16pt x 397.485pt>
+ [31 <./section5/plots/optim_csg_hvp.png> <./section5/plots/optim_csg_mean.png>]
+<section5/plots/geo_complexity_mvp.png, id=740, 578.16pt x 397.485pt>
 File: section5/plots/geo_complexity_mvp.png Graphic file (type png)
 <use section5/plots/geo_complexity_mvp.png>
-Package pdftex.def Info: section5/plots/geo_complexity_mvp.png  used on input line 1294.
+Package pdftex.def Info: section5/plots/geo_complexity_mvp.png  used on input line 1264.
 (pdftex.def)             Requested size: 298.75264pt x 205.38937pt.
- [31 <./section5/plots/optim_csg_mean.png> <./section5/plots/geo_complexity_lvp.png>]
-<section5/plots/geo_complexity_hvp.png, id=742, 578.16pt x 397.485pt>
+<section5/plots/geo_complexity_hvp.png, id=741, 578.16pt x 397.485pt>
 File: section5/plots/geo_complexity_hvp.png Graphic file (type png)
 <use section5/plots/geo_complexity_hvp.png>
-Package pdftex.def Info: section5/plots/geo_complexity_hvp.png  used on input line 1301.
+Package pdftex.def Info: section5/plots/geo_complexity_hvp.png  used on input line 1271.
 (pdftex.def)             Requested size: 298.75264pt x 205.38937pt.
- [32 <./section5/plots/geo_complexity_mvp.png> <./section5/plots/geo_complexity_hvp.png>]
-<section5/plots/union.png, id=762, 1003.75pt x 1003.75pt>
+ [32 <./section5/plots/geo_complexity_lvp.png> <./section5/plots/geo_complexity_mvp.png>]
+<section5/plots/union.png, id=756, 1003.75pt x 1003.75pt>
 File: section5/plots/union.png Graphic file (type png)
 <use section5/plots/union.png>
-Package pdftex.def Info: section5/plots/union.png  used on input line 1311.
+Package pdftex.def Info: section5/plots/union.png  used on input line 1281.
 (pdftex.def)             Requested size: 256.07741pt x 256.08305pt.
-<section5/plots/surface_naive_union.png, id=763, 1336.995pt x 758.835pt>
+ [33 <./section5/plots/geo_complexity_hvp.png>]
+<section5/plots/surface_naive_union.png, id=767, 1336.995pt x 758.835pt>
 File: section5/plots/surface_naive_union.png Graphic file (type png)
 <use section5/plots/surface_naive_union.png>
-Package pdftex.def Info: section5/plots/surface_naive_union.png  used on input line 1318.
+Package pdftex.def Info: section5/plots/surface_naive_union.png  used on input line 1288.
 (pdftex.def)             Requested size: 426.79135pt x 242.23006pt.
-<section5/plots/surface_bin_union.png, id=764, 1336.995pt x 758.835pt>
+<section5/plots/surface_bin_union.png, id=768, 1336.995pt x 758.835pt>
 File: section5/plots/surface_bin_union.png Graphic file (type png)
 <use section5/plots/surface_bin_union.png>
-Package pdftex.def Info: section5/plots/surface_bin_union.png  used on input line 1325.
+Package pdftex.def Info: section5/plots/surface_bin_union.png  used on input line 1295.
 (pdftex.def)             Requested size: 426.79135pt x 242.23006pt.
- [33 <./section5/plots/union.png (PNG copy)> <./section5/plots/surface_naive_union.png>]
-<section5/plots/surface_optim_union.png, id=770, 1336.995pt x 758.835pt>
+ [34 <./section5/plots/union.png (PNG copy)> <./section5/plots/surface_naive_union.png>]
+<section5/plots/surface_optim_union.png, id=774, 1336.995pt x 758.835pt>
 File: section5/plots/surface_optim_union.png Graphic file (type png)
 <use section5/plots/surface_optim_union.png>
-Package pdftex.def Info: section5/plots/surface_optim_union.png  used on input line 1332.
+Package pdftex.def Info: section5/plots/surface_optim_union.png  used on input line 1302.
 (pdftex.def)             Requested size: 426.79135pt x 242.23006pt.
-<section5/plots/speedup_lvp.png, id=772, 578.16pt x 397.485pt>
+<section5/plots/speedup_lvp.png, id=776, 578.16pt x 397.485pt>
 File: section5/plots/speedup_lvp.png Graphic file (type png)
 <use section5/plots/speedup_lvp.png>
-Package pdftex.def Info: section5/plots/speedup_lvp.png  used on input line 1343.
+Package pdftex.def Info: section5/plots/speedup_lvp.png  used on input line 1313.
 (pdftex.def)             Requested size: 128.0387pt x 88.02315pt.
-<section5/plots/speedup_mvp.png, id=773, 578.16pt x 397.485pt>
+<section5/plots/speedup_mvp.png, id=777, 578.16pt x 397.485pt>
 File: section5/plots/speedup_mvp.png Graphic file (type png)
 <use section5/plots/speedup_mvp.png>
-Package pdftex.def Info: section5/plots/speedup_mvp.png  used on input line 1349.
+Package pdftex.def Info: section5/plots/speedup_mvp.png  used on input line 1319.
 (pdftex.def)             Requested size: 128.0387pt x 88.02315pt.
-<section5/plots/speedup_hvp.png, id=774, 578.16pt x 397.485pt>
+<section5/plots/speedup_hvp.png, id=778, 578.16pt x 397.485pt>
 File: section5/plots/speedup_hvp.png Graphic file (type png)
 <use section5/plots/speedup_hvp.png>
-Package pdftex.def Info: section5/plots/speedup_hvp.png  used on input line 1355.
+Package pdftex.def Info: section5/plots/speedup_hvp.png  used on input line 1325.
 (pdftex.def)             Requested size: 128.0387pt x 88.02315pt.
- [34 <./section5/plots/surface_bin_union.png> <./section5/plots/surface_optim_union.png>]
-<section5/plots/test_nesting_rates.png, id=783, 578.16pt x 397.485pt>
+<section5/plots/test_nesting_rates.png, id=779, 578.16pt x 397.485pt>
 File: section5/plots/test_nesting_rates.png Graphic file (type png)
 <use section5/plots/test_nesting_rates.png>
-Package pdftex.def Info: section5/plots/test_nesting_rates.png  used on input line 1370.
+Package pdftex.def Info: section5/plots/test_nesting_rates.png  used on input line 1339.
 (pdftex.def)             Requested size: 256.07741pt x 176.05237pt.
-<section5/plots/test_nesting.png, id=785, 578.16pt x 397.485pt>
+ [35 <./section5/plots/surface_bin_union.png> <./section5/plots/surface_optim_union.png>]
+<section5/plots/test_nesting.png, id=788, 578.16pt x 397.485pt>
 File: section5/plots/test_nesting.png Graphic file (type png)
 <use section5/plots/test_nesting.png>
-Package pdftex.def Info: section5/plots/test_nesting.png  used on input line 1380.
+Package pdftex.def Info: section5/plots/test_nesting.png  used on input line 1349.
 (pdftex.def)             Requested size: 256.07741pt x 176.05237pt.
- [35 <./section5/plots/speedup_lvp.png> <./section5/plots/speedup_mvp.png> <./section5/plots/speedup_hvp.png> <./section5/plots/test_nesting_rates.png>]
-<section5/plots/nesting_speedup.png, id=797, 578.16pt x 397.485pt>
+ [36 <./section5/plots/speedup_lvp.png> <./section5/plots/speedup_mvp.png> <./section5/plots/speedup_hvp.png> <./section5/plots/test_nesting_rates.png>]
+<section5/plots/nesting_speedup.png, id=800, 578.16pt x 397.485pt>
 File: section5/plots/nesting_speedup.png Graphic file (type png)
 <use section5/plots/nesting_speedup.png>
-Package pdftex.def Info: section5/plots/nesting_speedup.png  used on input line 1389.
+Package pdftex.def Info: section5/plots/nesting_speedup.png  used on input line 1358.
 (pdftex.def)             Requested size: 256.07741pt x 176.05237pt.
- [36 <./section5/plots/test_nesting.png> <./section5/plots/nesting_speedup.png>] [37]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1418.
+ [37 <./section5/plots/test_nesting.png> <./section5/plots/nesting_speedup.png>] [38]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1387.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Overfull \hbox (2.53119pt too wide) in paragraph at lines 1419--1419
+Overfull \hbox (2.53119pt too wide) in paragraph at lines 1388--1388
 []\T1/phv/m/n/10.95 Tomas Akenine-Mller, Eric Haines, and Naty Hoff-man. \T1/phv/m/sl/10.95 Real-Time Ren-der-ing, Fourth
  []
 
 
-Overfull \hbox (1.55284pt too wide) in paragraph at lines 1419--1419
+Overfull \hbox (1.55284pt too wide) in paragraph at lines 1388--1388
 [][]$\T1/cmtt/m/n/10.95 https : / / www . sciencedirect . com / science / article / pii / B978012382038900003X$[][]\T1/phv/m/n/10.95 . 
  []
 
 
-Overfull \hbox (4.65993pt too wide) in paragraph at lines 1419--1419
+Overfull \hbox (4.65993pt too wide) in paragraph at lines 1388--1388
 []\T1/phv/m/n/10.95 Florian Kirsch and Jür-gen Döll-ner. ^^P  Ren-der-ing Tech-niques for Hardware-Accelerated
  []
 
 
-Overfull \hbox (18.5711pt too wide) in paragraph at lines 1419--1419
+Overfull \hbox (18.5711pt too wide) in paragraph at lines 1388--1388
 \T1/cmtt/m/n/10.95 / / doi . org / 10 . 1016 / B978 -[] 155860861 -[] 0 / 50009 -[] 2$[][]\T1/phv/m/n/10.95 . \T1/phv/m/sc/10.95 url\T1/phv/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / www . sciencedirect .
  []
 
 
-Overfull \hbox (4.51805pt too wide) in paragraph at lines 1419--1419
+Overfull \hbox (4.51805pt too wide) in paragraph at lines 1388--1388
 []\T1/phv/m/n/10.95 Sylvain Lefeb-vre. ^^P  IceSL: A GPU Ac-cel-er-ated CSG Mod-eler and Slicer^^Q. In: \T1/phv/m/sl/10.95 AEFA'13,
  []
 
-[38] [39] [40] (/Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.aux)
+[39] [40] [41] (/Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1423,18 +1416,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31590 strings out of 478994
- 591881 string characters out of 5858185
- 1112530 words of memory out of 5000000
- 48290 multiletter control sequences out of 15000+600000
+ 31452 strings out of 478994
+ 588513 string characters out of 5858185
+ 1112452 words of memory out of 5000000
+ 48152 multiletter control sequences out of 15000+600000
  454370 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 113i,16n,116p,1922b,1718s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 113i,16n,116p,1921b,1718s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on /Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.pdf (45 pages, 3020812 bytes).
+Output written on /Users/otmanesabir/Desktop/bsc-thesis/thesis/.texpadtmp/main.pdf (46 pages, 3020200 bytes).
 PDF statistics:
- 996 PDF objects out of 1000 (max. 8388607)
- 789 compressed objects within 8 object streams
+ 999 PDF objects out of 1000 (max. 8388607)
+ 791 compressed objects within 8 object streams
  220 named destinations out of 1000 (max. 500000)
  654 words of extra memory for PDF output out of 10000 (max. 10000000)
 
