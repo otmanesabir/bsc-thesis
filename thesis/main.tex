@@ -141,7 +141,7 @@ The journey towards this thesis has been circuitous. Its completion is thanks to
 
 I am tremendously fortunate for my supervisor, Professor Dr. Sergey Kosov, whose expertise was invaluable in the progress of this research. Your theoretical and practical experience remains a central part in understanding the research, architecting the implementation, and analyzing the results.  Your stellar feedback pushed me to sharpen my thinking and opened up different perspectives concerning several matters. I am grateful for the inspiration you have been able to instill in all steps of this study.
 
-Additionally, I am deeply indebted to my parents, my sister, and grandmother for their wise guidance, thoughtful words, and tender care. You are always there for me. Finally, I could not have completed this dissertation without the support of my friends who continuously taught me how to embrace change and strive for the best.  
+Additionally, I am deeply indebted to my parents, my §sister, and my grandmother for their wise guidance, thoughtful words, and tender care. You are always there for me. Finally, I could not have completed this dissertation without the support of my friends, who continuously taught me how to embrace change and strive for the best.  
 
 \newpage
 
@@ -150,7 +150,8 @@ Additionally, I am deeply indebted to my parents, my sister, and grandmother for
 % TODO: add this reference
 % http://www.cs.unc.edu/~fuchs/publications/VisSurfaceGeneration80.pdf
    
-This thesis report presents constructive solid geometry using ray tracing as a way of creating complex geometries for solid modeling. Solid objects are modeled by using different convex geometries and meshes with boolean set operators. By virtue of its simplicity, ray tracing constructive solid geometry is reliable and expandable. The most challenging issue is finding the visible geometry intersections in the fastest and most efficient way. So issues of adequacy and efficiency are addressed here and solutions providing significantly faster rendering of CSG is proposed. The performance is validated by comparing various implementations of the algorithm.   
+This thesis report presents constructive solid geometry using ray tracing as a way of creating complex geometries for solid modeling. Solid objects are modeled using different implicit and explicit geometries (i.e., spheres, tori, boxes) with boolean set operators. By virtue of its simplicity, ray tracing constructive solid geometry is reliable and expandable. The most challenging issue is finding the visible geometry intersections in the fastest and most efficient way. So issues of adequacy and efficiency are addressed here, and we propose solutions providing significantly faster rendering of CSG. We validate the performance by comparing various implementations of the algorithm. 
+The paper has two major parts. In the first, we present the generic method of describing constructively generated geometry. The second is devoted to a study of acceleration of ray tracing constructive solid geometry. We expose algorithms that are both comprehensive and efficient, and the results of the performance are shared.
    
 \newpage
 \tableofcontents
@@ -192,7 +193,7 @@ Constructive Solid Geometry (CSG) is a method used in computer graphics, compute
   
 \subsection{Rendering Algorithms}
   
-Rendering digital photorealistic or non-photorealistic images has been a topic of study since the late 1960s \cite{INITIAL_RENDERING}. Since then, various algorithms came forth that allow achieving different results depending on the required conditions. Inherently all these algorithms strive to solve the same underlying problem by trading-off different aspects, namely speed and realism. This problem is known as the hidden surface problem \cite{hidden-surface-problem}. The hidden surface problem is determining the visible objects in space from a certain point of view. There are two general methods, object-space methods, which try to start from the object space and project the geometries onto the 2D raster, or the image-space ones, which perform the opposite by tracing a ray through each pixel and attempting to locate the closest intersection of that ray with the geometries in the scene. The two methods then give birth to the pair of most famous and widely adopted rendering algorithms: rasterization and ray tracing.
+Rendering digital photorealistic or non-photorealistic images has been a topic of study since the late 1960s \cite{INITIAL_RENDERING}. Since then, various algorithms came forth that allow achieving different results depending on the required conditions. Inherently all these algorithms strive to solve the same underlying problem by trading off other features. This problem is known as the hidden surface problem \cite{hidden-surface-problem}. The hidden surface problem is determining the visible objects in space from a certain point of view. There are two general methods, object-space methods, which try to start from the object space and project the geometries onto the 2D raster, or the image-space ones, which perform the opposite by tracing a ray through each pixel and attempting to locate the closest intersection of that ray with the geometries in the scene. The two methods then give birth to the most famous and widely adopted rendering algorithms: rasterization and ray tracing.
   
 \subsubsection{Rasterization}
     
@@ -200,7 +201,7 @@ Rasterization has very quickly become the predominant approach for interactive a
     
 \subsubsection{Ray Tracing}
      
-Ray tracing simulates the photographic process in reverse. For each pixel on the screen, we shoot a ray and identify objects that intersect the ray. A ray-tracing algorithm makes use of four essential components: the camera, the geometry, the light sources, and the shaders. These components can have different varieties, to state a few, orthographic and perspective cameras, unidirectional and area light sources, and Phong and chrome shaders. Hence, it allows achieving several outcomes depending on the necessities. The main downside has been computational time and the constraints of using such an algorithm in interactive applications. However, ray tracing parallelizes efficiently and trivially. Thus it takes advantage of the continuously rising computational power of the hardware. Many applications have successfully produced real-time ray tracing algorithms and allow for highly photorealistic results in interactive applications \cite{RT_RT1, RT_RT2}.
+Ray tracing simulates the photographic process in reverse. For each pixel on the screen, we shoot a ray and identify objects that intersect the ray. A ray-tracing algorithm utilizes four essential components: the camera, the geometry, the light sources, and the shaders. These components can have different varieties, to state a few, orthographic and perspective cameras, unidirectional and area light sources, and Phong and chrome shaders. Hence, it allows achieving several outcomes depending on the necessities. The main downside has been computational time and the constraints of using such an algorithm in interactive applications. However, ray tracing parallelizes efficiently and trivially. Thus it takes advantage of the continuously rising computational power of the hardware. Many applications have successfully produced real-time ray tracing algorithms and allow for highly photorealistic results in interactive applications \cite{RT_RT1, RT_RT2}.
     
   
 \subsection{Geometric Representations}
@@ -210,7 +211,7 @@ When it comes to computer graphics, we can find numerous types of geometry descr
     
 \subsubsection{Boundary Representation}
     
-Boundary representations are indirect definitions of solids in space using their boundary or limit. This representation is usually a hierarchical composition of different dimensionally complex parts. On the very top, we have definitions of two-dimensional faces, which build on uni-dimensional edges that are subsequently built on dimensionless vertices (Figure \ref{fig2:brep_3d_rect}). A BREP with non-curvilinear edges and planar faces is called a polygon mesh. A triangle is the simplest polygon and has the excellent property of always being co-planar. Additionally, polygons of any complexity are representable by a set of triangles. These qualities make triangular meshes a fundamental component in BREPs. The representations built on triangles are also highly optimized for fast operations. Therefore, we will mainly deal with triangular meshes in OpenRT \cite{openrt}, though it does offer descriptions for tetragon (quadrilateral) meshes.
+Boundary representations are indirect definitions of solids in space using their boundary or limit. This representation is usually a hierarchical composition of different dimensionally complex parts. On the very top, we have definitions of two-dimensional faces, which build on uni-dimensional edges that are subsequently built on dimensionless vertices (Figure \ref{fig2:brep_3d_rect}). A BREP with non-curvilinear edges and planar faces is called a polygon mesh. A triangle is the simplest polygon and has the excellent property of always being co-planar. Polygons of any complexity are representable by a set of triangles. These qualities make triangular meshes a fundamental component in BREPs. The representations built on triangles are also highly optimized for fast operations. Therefore, we will mainly deal with triangular meshes in OpenRT \cite{openrt}, though it does offer descriptions for tetragon (quadrilateral) meshes.
     
     
 \begin{figure}[ht]
@@ -223,7 +224,7 @@ Boundary representations are indirect definitions of solids in space using their
     
 \subsubsection{Constructive Solid Geometry}
 
-Constructive solid geometry takes basis on the fundamental premise that any complex physical object is obtainable from a set of primitive geometries and the base boolean operations. CSG is radically different from BREPs as it does not collect any topological information but instead evaluates the geometries as needed by the case scenario. In other words, there is no explicit description of the boundary of the solid. Contrary to BREPs,  CSG representations are quickly modified and manipulated since incremental changes do not trigger re-computation and evaluation of the boundary of a geometry. Therefore, no topological changes occur when adjusting the geometries. The latter makes it an attractive solution as it provides a high-level specification of the objects in space and permits significantly more straightforward modification and manipulation. In the general constructive solid geometry description, the solids are put in a binary tree, referred to as the CSG tree (Figure \ref{sec3.1:sample-csg-tree}). The root node is the complete composite geometry. The leaf nodes depict the base geometries (cubes, spheres, cylinders, tori, cones, and polygon meshes\footnote{Polygon meshes are usually not considered in CSG algorithms; however, the implementation discussed here allows such flexibility.}) used in the composition. Every node in the tree, besides the leaf nodes, expresses another complete solid and contains information of the set operation of that node.
+Constructive solid geometry takes basis on the fundamental premise that any complex physical object is obtainable from primitive geometries and boolean operations. CSG is radically different from BREPs as it does not collect any topological information but instead evaluates the geometries as needed by the case scenario. In other words, there is no explicit description of the boundary of the solid. Contrary to BREPs,  CSG representations are quickly modified and manipulated since incremental changes do not trigger re-computation and evaluation of the boundary of a geometry. Therefore, no topological changes occur when adjusting the geometries. The latter makes it an attractive solution as it provides a high-level specification of the objects in space and permits significantly more straightforward modification and manipulation. In the general constructive solid geometry description, the solids are put in a binary tree, referred to as the CSG tree (Figure \ref{sec3.1:sample-csg-tree}). The root node is the complete composite geometry. The leaf nodes depict the base geometries (cubes, spheres, cylinders, tori, cones, and polygon meshes\footnote{Polygon meshes are usually not considered in CSG algorithms; however, the implementation discussed here allows such flexibility.}) used in the composition. Every node in the tree, besides the leaf nodes, expresses another complete solid and contains information of the set operation of that node.
 
 \begin{figure}[ht]
 	\begin{center}
@@ -237,49 +238,50 @@ Constructive solid geometry takes basis on the fundamental premise that any comp
   
 We present this CSG implementation in six sections. 1. Introduction;  2. Related Works; 3. Constructive Solid Geometry; 4. Optimization; 5. Evaluation of the results; 6. Conclusions \& Future Works.
 
-The first section was the previous introduction laying a foundation to a few topics we will be addressing. 
+The first section was the previous introduction laying a foundation for a few topics we will be addressing. 
   
 The second section presents works already done, the limitations of the proposed implementations, and solutions to problems related to CSG.
   
-Section 3 defines the algorithm that performs the logic in the ray-tracing framework. We first introduce the ideas behind ray intersection. We then lay a mathematical foundation to boolean algebra and membership classification. Additionally, we dive into the detail of ray classification for constructively generated geometries. 
+Section 3 defines the algorithm that performs the logic in the ray-tracing framework. We first introduce the ideas behind ray intersection. We then lay a mathematical foundation for boolean algebra and membership classification. Additionally, we dive into the detail of ray classification for constructively generated geometries. 
   
-Section 4 discusses efficiency and optimization. The visible surface problem in ray tracing requires a lot of CPU time, and without any optimization, the CSG algorithm significantly increases the payload. Therefore, improvement is much needed to make this method usable and suitable for real-life applications. The speed is a function of the screen resolution and the geometry complexity (the number primitives (e.g., triangles) in the solid, and the number of nested geometries).
+Section 4 discusses efficiency and optimization. The visible surface problem in ray tracing requires a lot of CPU time, and without any optimization, the CSG algorithm significantly increases the payload. Therefore, improvement is much needed to make this method usable and suitable for real-life applications. The speed is a function of the screen resolution and the geometry complexity (the number of primitives (e.g., triangles) in the solid, and the number of nested geometries).
   
-Section 5 describes the different implementations of the CSG algorithm with the various optimization techniques. The first is the naive implementation which we refer to as $NaiCSG$. The second is a variant that uses a binary space partitioning tree to solve the visible surface problem but still naively finds intersections inside the combinatorial geometry, which we will refer to as $BinCSG$. Lastly, we'll introduce our optimized algorithm which uses a binary space partition tree on the outside (solving the visible surface problem) and also inside each composite geometry to direct the rays towards the correct geometries, which we will refer to as $OptimCSG$. We conduct three types of tests. The primary one is a function of time and complexity of the geometry, as we monitor the rendering time following gradual increases in the detail level of two sphere meshes. The second computes the time taken to render a scene after covering different amounts of the view port. Additionally, we conduct a test to check the amount of ray tests conducted per pixel per variant. The final test computes the time variations after increasing the number of nested geometries present in the composite solid while crucially maintaining a consistent view port fill rate.
+Section 5 describes the different implementations of the CSG algorithm with the various optimization techniques. The first is the naive implementation which we refer to as $NaiCSG$. The second uses a binary space partitioning tree to solve the visible surface problem but still naively finds intersections inside the combinatorial geometry, which we will refer to as $BinCSG$. Lastly, we'll introduce our optimized algorithm, which uses a binary space partition tree on the outside (solving the visible surface problem) and also inside each composite geometry to direct the rays towards the correct geometries, which we will refer to as $OptimCSG$. We conduct three types of tests. The primary one is a function of time and complexity of the geometry, as we monitor the rendering time following gradual increases in the detail level of two sphere meshes. The second computes the time taken to render a scene after covering different amounts of the viewport. Additionally, we conduct a test to check the number of ray tests conducted per pixel per variant. The final test computes the time variations after increasing the number of nested geometries present in the composite solid while crucially maintaining a consistent viewport fill rate.
   
   
 \section{Related Work}
   
-I discuss below the techniques most related to ours. However, there is a tremendous body of work in this area and I cannot possibly provide an absolute overview. The goal is instead to outline similarities and differences with some of the widely adopted approaches for CSG modeling.
+I discuss below the techniques most related to ours. However, there is a tremendous body of work in this area, and I cannot possibly provide an overview. The goal is instead to outline similarities and differences with some of the widely adopted approaches for CSG modeling.
 
 Constructive solid geometry has been a subject of study since the late 1970s. It was initially introduced in \cite{GEOMETRIC_MODELING_1977} as a digital solution to help in the design and production activities in the discrete goods industry, this marked the basis for formalizing the method.
   
-A rigorous mathematical foundation of constructive solid geometry was later laid out in \cite{Requicha1978MathematicalFO}. The membership classification function, a generalization of the ray clipping method, is also thoroughly discussed and various formal properties are introduced.
+A rigorous mathematical foundation of constructive solid geometry was later laid out in \cite{Requicha1978MathematicalFO}. The membership classification function, a generalization of the ray clipping method, is also thoroughly discussed, and various formal properties are introduced.
   
-A few years later it was revisited in \cite{ROTH1982109} where \citeauthor{ROTH1982109} et al. (\citeyear{ROTH1982109}) introduced ray casting as a basis for CAD solid modeling systems. Challenges of adequacy and efficiency of ray casting are addressed, and fast picture methods for interactive modeling are introduced to meet the challenges.
+A few years later, it was revisited in \cite{ROTH1982109} where \citeauthor{ROTH1982109} et al. (\citeyear{ROTH1982109}) introduced ray casting as a basis for CAD solid modeling systems. Challenges of adequacy and efficiency of ray casting are addressed, and fast picture methods for interactive modeling are introduced to meet the challenges.
   
-The focus then turned towards different optimizations of CSG algorithms in the setting of ray tracing. A simplistic single hit intersection algorithm is introduced in \cite{kensler_ray_2006}. This suggested mechanism reduces memory load and the number of computations performed for ray classification. Though limitations have to be respected since sub-objects must closed, non-self-intersecting, and have consistently oriented normals. However, this was later proven to be a solution that does not gracefully handle edge cases especially for the difference and intersection operations \cite{csg-xrt-renderer}.
+The focus then turned towards different optimizations of CSG algorithms in the setting of ray tracing. A simplistic single hit intersection algorithm is introduced in \cite{kensler_ray_2006}. This suggested mechanism reduces memory load and the number of computations performed for ray classification. Though limitations have to be respected since sub-objects must closed, non-self-intersecting, and have consistently oriented normals. However, this later proved to be a solution that does not gracefully handle edge cases, especially for the difference and intersection operations \cite{csg-xrt-renderer}.
   
 A "slicing" approach is also proposed in \cite{lefebvre:hal-00926861}. Similar to our proposed solution combinations of meshes and analytical primitives through CSG operations are permissible. Nevertheless, this approach requires one boolean per primitive and a complete evaluation of the CSG expression in each step; therefore, making it simple but limited, and much better approaches are imaginable.
 
 Bound definitions are also a popular way of significantly reducing the time required by CSG algorithms. If the ray and the geometric entities are bound, we first perform a test to see if the ray and the bounding volume around a geometric entity overlap. Only when the boxes overlap does one continue to test whether the ray and the entity do so as well. A submitted S-bounds algorithm is brought forth in \cite{sbounds_csg} as a means of acceleration in solid modeling and CSG.
   
 Techniques that optimize various CSG rendering algorithms, namely the Goldfeather and the layered Goldfeather algorithm, and the Sequenced-Convex- Subtraction (SCS) algorithm are advanced in \cite{hardware_accelerated_image_based_csg.}. Although the work represents a significant improvement towards real-time image-based CSG rendering for complex models,  the main focus is on hardware acceleration.
+
   
 
 \section{Constructive Solid Geometry}
     
-    OpenRT is used to perform our investigations. OpenRT is a C++ free open source ray tracing library \ref{openrt}.  OpenRT has a fast ray tracing engine and all of the functionality we need to describe geometry, shaders, lights, cameras, and samplers. OpenRT also has elegant binary space portioning algorithm definitions, which we will discuss in Section \ref{section:bsp-optimization}.
+OpenRT is used to perform our investigations. OpenRT is a C++ free open-source ray tracing library \cite{openrt}.  OpenRT has a fast ray-tracing engine and all of the functionality we need to describe the geometry, shaders, lights, cameras, and samplers. OpenRT also has elegant binary space portioning algorithm definitions, which we will discuss in Section \ref{section:bsp-optimization}.
     
 \subsection{Ray Intersection}
 \label{section:ray-intersection}
 
-Ray intersection is the essence of all ray tracing systems. We supply the system a ray as input and obtain knowledge on how the ray intersects solids in the scene as an output. In ray tracing engines, one only necessitates computing the nearest intersection to assess the given scene. However, when evaluating CSG models, we require all of the intersections with a geometry for correct classification. With knowledge of all the information in the scene - essentially the camera model and the solids - an evaluation of these intersections is executed with each returning the latter information:
+Ray intersection is the essence of all ray tracing systems. We supply the system a ray as input and obtain knowledge on how the ray intersects solids in the scene as an output. In ray tracing engines, one only necessitates computing the nearest intersection to assess the given scene. However, when evaluating CSG models, we require all of the intersections with geometry for correct classification. With knowledge of all the information in the scene - essentially the camera model and the solids - an evaluation of these intersections is executed with each returning the latter information:
 
 \begin{conditions}
 	\vec{o}     & the origin of the ray (e.g., camera model origin). \\
 	\vec{d}     & the direction of the ray (e.g., direction from camera origin to pixel in raster). \\
-	t     &  the distance to either the closest or furthest intersection. \\
+	t     &  the distance to the intersection. \\
 	prim    &  a pointer holding surface information of the intersected primitive. 
 \end{conditions}
 
@@ -344,7 +346,8 @@ The ray-solid intersection test has four possible outcomes:
 \end{figure}
 
 
-The first case is self-evident. In case 3, we compute both the entering and exiting points normally. The second and fourth case are more intricate to determine as we need to understand whether the intersection is entering or exiting of the solid. We can find that by checking the orientation of the surface normal, $\vec{N}$, at the intersected point. If $\vec{N}\cdot\vec{d} < 0$, then the intersection point is outside. Otherwise, it is inside of the solid.
+The first case is self-evident. In case 3, we compute both the entering and exiting points normally. The second and fourth cases are more intricate to determine as we need to understand whether the intersection is entering or exiting the solid. We resolve that by checking the orientation of the surface normal, $\vec{N}$, at the intersected point. If $\vec{N}\cdot\vec{d} < 0$, then the intersection point is outside. Otherwise, it is inside of the solid.
+
 
 \subsection{Mathematical Formulations}
   
@@ -475,7 +478,7 @@ Topological spaces are a generalization of metric spaces in which the notion of 
     
 \subsubsection{Closed Sets}
 \begin{definition}
-	A subset $X$ of a topological space $(W, T)$ is closed if its complement is open\footnote{This don't mean that closed sets are the opposite of open sets (e.g. the universe $W$ and the null set $\emptyset$ are both open and closed)\cite{mansfield_1987}.}. Closed sets hold the properties \eqref{ts:3.8}, \eqref{ts:3.9}, and \eqref{ts:3.10} which are duals of properties \eqref{ts:3.5} to \eqref{ts:3.7}. (Figure \ref{sec3.2:closed-sets})
+	A subset $X$ of a topological space $(W, T)$ is closed if its complement is open\footnote{This don't mean that closed sets are the opposite of open sets (e.g. the universe $W$ and the null set $\emptyset$ are both open and closed) \cite{mansfield_1987}.}. Closed sets hold the properties \eqref{ts:3.8}, \eqref{ts:3.9}, and \eqref{ts:3.10} which are duals of properties \eqref{ts:3.5} to \eqref{ts:3.7}. (Figure \ref{sec3.2:closed-sets})
 				    
 	\begin{property}
 		\label{ts:3.8}
@@ -678,7 +681,7 @@ We say almost since the subsets are generally not disjoint in the conventional s
 
 \subsubsection{Classification by constructive geometry}
 
-Constructive geometry representations are binary trees whose nonterminal nodes designate regularized set operators and whose terminal nodes designate primitives.  We refer to the specific case of constructive geometry in $E^3$ where regularized compositions are constructed of solid primitives as constructive \textit{solid} geometry. Regular sets are closed under the regularized set operators thus a class of regular sets can be represented constructively as a combination of other more simple (regular) sets. \cite{Requicha1978MathematicalFO} 
+Constructive geometry representations are binary trees whose nonterminal nodes designate regularized set operators and whose terminal nodes designate primitives.  We refer to the specific case of constructive geometry in $E^3$ where regularized compositions are constructed of solid primitives as constructive \textit{solid} geometry. Regular sets are closed under the regularized set operators. Thus, a class of regular sets can be represented constructively as a combination of other more simple (regular) sets. \cite{Requicha1978MathematicalFO}
 
 For example, as illustrated in Figure \ref{sect3:halfplane-csg}, if the universe $W$ is in $E^2$ and we select the class of closed half-planes as our primitives, we could construct any regular set in $E^2$ given that it is bounded by a finite number of straight line segments.
 
@@ -690,7 +693,7 @@ For example, as illustrated in Figure \ref{sect3:halfplane-csg}, if the universe
 	\label{sect3:halfplane-csg}
 \end{figure}
 
-We choose to define the constructively represented regular sets using the divide-and-conquer paradigm as it is a natural approach to compute the value of such a function. Therefore, when a regular set $S$ is not a primitive, a nonterminal node, we convert the problem of evaluating the function $f(S)$ into two simpler instances of $f$ followed by a combine, $g$, step. When $S$ is a primitive, a terminal node, the problem can no longer be divided and an evaluator, $ef$, is used. We can now consider the general function for evaluation $M$ when the reference set $S$ is represented constructively.
+We choose to define the constructively represented regular sets using the divide-and-conquer paradigm as it is a natural approach to compute the value of such a function. Therefore, when a regular set $S$ is not a primitive, a nonterminal node, we convert the problem of evaluating the function $f(S)$ into two instances of $f$ followed by a combine, $g$, step. When $S$ is a primitive, terminal node, the problem can no longer be divided, and an evaluator, $ef$, is used. We can now consider the general function for evaluation $M$ when the reference set $S$ is represented constructively. 
 
 \begin{align}
 	M[X,S]= 
@@ -718,7 +721,7 @@ To customize this general definition to be used in a specific domain, one must d
 \subsection{Ray classification}
 \label{sec3.3:ray-classification}
 
-Given a ray and a solid composition tree, our procedure needs to classify the ray with respect to the solid and return the classification to the caller. As previously defined in Section \ref{section:ray-intersection}, the classification of a ray with respect to a solid is the information describing all ray-solid intersections. The procedure starts at the top of the solid composition tree, recursively descends to the terminal nodes, classifies the ray with respect to the primitives, then returns the array combining the classifications of the left and right subtrees. On the node level, this results in an array containing all possible intersections of a ray with the geometries in its left and right children. We must then sort each of these ray intersections by the distance to the ray origin and label them as entering or exiting. We finally scan through this array and apply the boolean algebra rules in Table \ref{section3:boolean_algebra}. (Figure \ref{sec3.3:classification}).
+Given a ray and a solid composition tree, our procedure needs to classify the ray to the solid and return the classification to the caller. As previously defined in Section \ref{section:ray-intersection}, the classification of a ray to a solid is the information describing all ray-solid intersections. The procedure starts at the top of the solid composition tree, recursively descends to the terminal nodes, classifies the ray to the primitives, then returns the array combining the classifications of the left and right subtrees. On the node level, this results in an array containing all possible intersections of a ray with the geometries in its left and right children. We must then sort each of these ray intersections by the distance to the ray origin and label them as entering or exiting. We finally scan through this array and apply the boolean algebra rules in Table \ref{section3:boolean_algebra}. (Figure \ref{sec3.3:classification}).
 \begin{figure}[ht]
 	\begin{center}
 		\includegraphics[width=0.8\textwidth]{section3/3.3/ray-classifications.png}
@@ -755,45 +758,13 @@ Given a ray and a solid composition tree, our procedure needs to classify the ra
 
 \section{Optimization}
 
-In this section, we will introduce the state-of-the-art CSG algorithm that is implemented in the OpenRT framework. Here we expose all the adjustments and changes we have made to the algorithm in order to maximize its performance and results. We will discuss a minimal hit classification algorithm, box enclosures, and how simple techniques such as "early-outs" can increase performance. Additionally, we discuss the binary space partitioning indexing structure for faster traversal of complex scenes and geometry. Finally, we will put it all together in our version of the CSG algorithm.
+In this section, we will introduce the state-of-the-art CSG algorithm that is implemented in the OpenRT. Here we expose all the adjustments and changes we have made to the algorithm in order to maximize its performance and results. We will discuss a minimal hit classification algorithm, box enclosures, and how simple techniques such as "early-outs" can increase performance. Additionally, we discuss the binary space partitioning indexing structure for faster traversal of complex scenes and geometry. Finally, we will put it all together in our version of the CSG algorithm.
 
 \subsection{Minimal hit CSG classification}
 \label{section:classification-optimization}
 
 
-What we have introduced in the Section \ref{sec3.3:ray-classification} is the typical approach to rendering CSG. However, this approach could be very costly as we nest more geometries in the tree and require lots of memory to store, classify, and combine a long chain of operations and primitives. Additionally, the algorithm could also perform unnecessary checks when used in combination with BREPs. Therefore, we introduce a new approach which we refer to as minimal hit CSG classification. The approach described here computes intersections with binary CSG objects using the single nearest intersections whenever possible. Though a relatively similar algorithm has been introduced in \cite{kensler_ray_2006}, it was proven in \cite{csg-xrt-renderer} to not be functional for the intersection and difference operations. The following implementation addresses those issues and adds a few optimizations to the classification code. The general idea can be thought of as a simple finite state machine. First, we check for the closest intersections with both solids $A$ and $B$. We then classify those evaluations to three potential states: enter, exit, or miss. The enter and exit cases are checked using the same normal computation from before. The miss case is when the intersection distance remains to be the default value. Then depending on the operation, we evaluate the states and decide if we can already return one of them. If so, then we're done with the procedure. If not, we move the origin of the ray to the current viable intersection point and try the same over again. Figure \ref{sec4.1:fsm} illustrates the general FSM behind the procedure.   
-
-\begin{figure}[H]
-	\centering
-	\begin{tikzpicture}[scale=0.2]
-		\tikzstyle{every node}+=[inner sep=0pt]
-		\draw [black] (40.8,-3.9) circle (3.7);
-		\draw (40.8,-3.9) node {$S2$};
-		\draw [black] (40.8,-3.9) circle (3.1);
-		\draw [black] (41.6,-20.6) circle (3.7);
-		\draw (41.6,-20.6) node {$S3$};
-		\draw [black] (41.6,-20.6) circle (3.1);
-		\draw [black] (4,-14) circle (3.7);
-		\draw (4,-14) node {$S0$};
-		\draw [black] (23.9,-14) circle (3.7);
-		\draw (23.9,-14) node {$S1$};
-		\draw [black] (6.445,-11.244) arc (129.44695:50.55305:11.811);
-		\fill [black] (6.45,-11.24) -- (7.38,-11.12) -- (6.75,-10.35);
-		\draw (13.95,-8.05) node [above] {$proceed$};
-		\draw [black] (20.925,-16.183) arc (-61.07091:-118.92909:14.42);
-		\fill [black] (20.93,-16.18) -- (19.98,-16.13) -- (20.47,-17.01);
-		\draw (13.95,-18.48) node [below] {$evaluate$};
-		\draw [black] (27.37,-15.29) -- (38.13,-19.31);
-		\fill [black] (38.13,-19.31) -- (37.56,-18.56) -- (37.21,-19.5);
-		\draw (31.3,-17.84) node [below] {$hit$};
-		\draw [black] (27.08,-12.1) -- (37.62,-5.8);
-		\fill [black] (37.62,-5.8) -- (36.68,-5.78) -- (37.19,-6.64);
-		\draw (34.68,-9.45) node [below] {$miss$};
-	\end{tikzpicture}
-	\caption{Sample state diagram of the CSG procedure.}
-	\label{sec4.1:fsm}
-\end{figure}
-
+What we have introduced in Section \ref{sec3.3:ray-classification} is the typical approach to rendering CSG. However, this method could be very costly as we nest more geometries in the tree and require lots of memory to store, classify, and combine a long chain of operations and primitives. Additionally, the algorithm could also perform additional checks when used in combination with BREPs. Therefore, we introduce a different approach which we refer to as minimal hit CSG classification. The method described here computes intersections with CSG objects using the single nearest intersections whenever possible. Though a relatively similar algorithm has been introduced in \cite{kensler_ray_2006}, it was proven in \cite{csg-xrt-renderer} to not be functional for the intersection and difference operations. The following implementation addresses those issues and adds a few optimizations to the classification code. The general idea can be conceived as a simple finite state machine. First, we investigate the closest intersections with both solids $A$ and $B$. We later classify those evaluations into three potential states: enter, exit, or miss. The enter and exit cases are checked using the surface normal computation from before. The "miss" case is when the intersection distance remains to be the default value. Then depending on the operation, we evaluate the states and decide if we can return one of them. If so, then we're satisfied with the procedure. If not, we move the origin of the ray to the current viable intersection point and try the same over again. 
 There are a few sub-functions that we must also define in this case before introducing the general algorithm (Table \ref{table:procedure-details}).
 
 \begin{table}[H]
@@ -843,11 +814,11 @@ Consider the case of the spheres shown in Figure \ref{sec3.4:sphere-union}. The 
 	\label{sec3.4:sphere-union}
 \end{figure}
 
-For the case where the ray enters both spheres (Figure \ref{sec3.4:union-case1}), our procedure would first get the closest intersections with $A$ and $B$. Both these intersections would be classified as and enter; therefore, we must only find $MIN(A, B)$ in order to conclude which one of the boundaries of the sphere is closest.
+For the case where the ray enters both spheres (Figure \ref{sec3.4:union-case1}), our procedure would first get the closest intersections with $A$ and $B$. Both these intersections would be classified as enter states; therefore, we must only find $MIN(A, B)$ to conclude which one of the boundaries of the sphere is closest.
 
-Let us now examine the case where no intersection is found with one or all of the solids as shown in Figure \ref{sec3.4:union-case2}. If both $A$ and $B$'s states are a miss, we return a miss. Otherwise, if only one of them is a miss then we return the other regardless if it's an enter or exit.
+Let us now examine the case where no intersection is found with one or all of the solids as shown in Figure \ref{sec3.4:union-case2}. If both $A$ and $B$'s states are a miss, we return a miss. Otherwise, if only one of them is a miss, we return the other regardless if it's an enter or exit.
 
-The last set of cases arise when the ray is shot from the interior of the spheres. This is more intricate since we have to teach our ray tracer to neglect the inner sides and only get the outer sides. If the first evaluation returns enter for B and exit for A, then we must check which one of them is closer. If A < B, then we return A. Otherwise, we move our origin to B and start the procedure again. If it is the opposite, then we perform the previous logic but we permute $A$ and $B$. The final case is when the ray exits both A and B. Here, we return $MAX(A, B)$. Algorithm \ref{sec4.1:union-algo} shows the pseudocode for the union logic.
+The last set of cases arise when the ray is shot from the interior of the spheres. This is more intricate since we have to teach our ray tracer to neglect the inner sides and only get the outer sides. If the first evaluation returns enter for $B$ and exit for $A$, then we must check which one of them is closer. If $A < B$, then we return $A$. Otherwise, we move our origin to $B$ and start the procedure again. If it is the opposite, then we perform the previous logic but we permute $A$ and $B$. The final case is when the ray exits both $A$ and $B$. Here, we return $MAX(A, B)$. Algorithm \ref{sec4.1:union-algo} shows the pseudocode for the union logic.
 
 \begin{algorithm}[H]
 	\SetAlgoLined
@@ -919,9 +890,9 @@ We will stick to the same general example; however, we will be performing the in
 
 The intersection of two spheres is their interior without the boundaries. We will apply the same previously defined notations shown in Table \ref{table:procedure-details}. First, we will begin with the obvious case where $A$ or $B$ classify as misses (Figure \ref{sec3.4:intersection-case-1}). By definition, the intersection is the shared area; therefore, if the ray misses one of the solids, we can already evaluate this as a miss.
 
-The second case is when they both have the same classification. If both return an exit state, then we simply take the closest of both. However, if they both return an enter we either advance to A or B depending on which one is closest (Figure \ref{sec3.4:intersection-case-2}).
+The second case is when they both have the same classification. If both return an exit state, then we take the closest of both. However, if they both return an enter we either advance to $A$ or $B$ depending on which one is closest (Figure \ref{sec3.4:intersection-case-2}).
 
-The final case is when the states are not a miss and also different to each other. If the A is an enter state while B is an exit state, then we return $A$ if its closer or move the ray origin to B and advance. We perform the opposite if A is exit and B is enter. Algorithm \ref{sec4.1:intersection-algo} shows the pseudocode for the intersection logic.
+The final case is when the states are not a miss and also different from each other. If $A$ is an enter state while $B$ is an exit state, then we return $A$ if it's closer or moves the ray origin to $B$ and advance. We perform the opposite if $A$ is exit and $B$ is entered. Algorithm \ref{sec4.1:intersection_algo} shows the pseudocode for the intersection logic.
 
 \begin{algorithm}
 	\SetAlgoLined
@@ -958,23 +929,23 @@ The final case is when the states are not a miss and also different to each othe
 \subsubsection{Difference Classification}
 \label{section:minimal_difference_classficiation}
 
-The difference operations are not commutative nor distributive; therefore, the direction of the ray renders completely different results. We shall stick to the same example as the previous two cases and with similar notations (Figure \ref{sec3.4:sphere-difference}).
+The difference operation is not commutative; therefore, the direction of the ray renders completely different results. We shall stick to the same example as the previous two cases and with similar notations (Figure \ref{sec3.4:sphere-difference}).
 
 \begin{figure}[ht]
 	\centering
 	\begin{subfigure}[b]{0.3\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{section4/4.1/difference-case-2.png}
+		\includegraphics[width=\textwidth]{section4/4.1/difference-case-1.png}
 		\caption{Ray misses one of the spheres.}
 		\label{sec3.4:difference-case-1}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.3\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{section4/4.1/difference-case-1.png}
+		\includegraphics[width=\textwidth]{section4/4.1/difference-case-2.png}
 		\caption{Ray goes through both spheres.}
 		\label{sec3.4:difference-case-2}
-	\end{subfigure}
+	\end{subfigure}	
 	\hfill
 	\begin{subfigure}[b]{0.3\textwidth}
 		\centering
@@ -987,11 +958,11 @@ The difference operations are not commutative nor distributive; therefore, the d
 \end{figure}
 
 
-We will first consider the case where a ray misses one of the two spheres, as shown in Figure \ref{sec3.4:difference-case-1}. If the ray only misses A or both, then we consider this a miss. If the ray only misses B, we return A regardless of enter or exit.
+We will first consider the case where a ray misses one of the two spheres, as shown in Figure \ref{sec3.4:difference-case-1}. If the ray only misses $A$ or both, then we consider this a miss. If the ray only misses $B$, we return $A$ regardless of entering or exit.
 
-The second case is when they both have the same classification. If both return an exit state we return B if closer and flip its normal, otherwise, we advance the ray origin to B. However, if they both return an enter we return A if it's closer or advance to the hit point of B.
+The second case is when they both have the same classification. If both return an exit state we return $B$ if closer and flip it's normal, otherwise, we advance the ray origin to $B$. However, if they both return an entry we return $A$ if it's closer or advances to the hit point of $B$.
 
-The last case is when the classifications are different to each other. If the ray enters A and exits B, we return B if it's closer or advance to A. However, if the classifications are the opposite, we advance to whichever is closer and continue. Algorithm \ref{sec4.1:difference-algo} shows the pseudocode for the difference logic.
+The last case is when the classifications are different from each other. If the ray enters $A$ and exits $B$, we return $B$ if it's closer or advances to $A$. However, if the classifications are the opposite, we advance to whichever is closer and continue. Algorithm \ref{sec4.1:difference-algo} shows the pseudocode for the different logic.
 
 \begin{algorithm}[H]
 	\SetAlgoLined
@@ -1031,11 +1002,11 @@ The last case is when the classifications are different to each other. If the ra
 \subsection{Bounding Boxes}
 \label{section:bounding-boxes-optimization}
 
-Bounding boxes are the simplest way to cut down on the number of ray intersection operations and reduce overall rendering time \cite{efficient_csg_meshes}. Let us imagine the situation where a union of two spheres composed of 100 triangles lies in the middle of a 500x500px view of which the composite covers 100x100 pixels. In the former approach, we would examine every single ray with the complete composite. Resulting in a staggering $25.000.000$ intersection checks; though,  we solely necessitate a fifth of that. We introduce a box enclosure to do a preliminary examination before testing the rest of the composite. Hence, with a tight enough box (covering 110x110), the ray tracer would only need to check for $1.460.000$ intersections such that $250.000$ tests are box enclosure ones and the rest $1.210.000$ are ray-solid tests - a decrease of roughly $80\%$. In the worst case, when an enclosure stretches across the entire view, the box enclosure will add additional operations of ray-box intersections on top of completing all the ray-intersection checks. Nevertheless, ray-box tests are fast, and one could dismiss the additional costs of those operations. When this method is used in the context of CSG, this solution essentially turns into an efficient binary tree traversal \cite{ROTH1982109}. 
+Bounding boxes are the easiest way to cut down on the number of ray intersection operations and reduce overall rendering time \cite{efficient_csg_meshes}. Let us imagine the situation where a union of two spheres composed of 100 triangles lies in the middle of a 500x500px view of which the composite covers 100x100 pixels. In the former approach, we would examine every single ray with the complete composite. Resulting in a staggering $25.000.000$ intersection checks; though,  we solely necessitate a fifth of that. We introduce a box enclosure to do a preliminary examination before testing the rest of the composite. Hence, with a tight enough box (covering 110x110), the ray tracer would only need to check for $1.460.000$ intersections such that $250.000$ tests are box enclosure ones and the rest $1.210.000$ are ray-solid tests - a lessening of roughly $80\%$. In the worst case, when an enclosure stretches across the entire view, the box enclosure will add additional operations of ray-box intersections on top of completing all the ray-intersection checks. However, ray-box tests are fast, and one could clear the additional costs of those operations. When this method is used in the context of CSG, this solution essentially turns into an efficient binary tree traversal \cite{ROTH1982109}. 
 
-We can also use many other types of enclosures; however, we choose box enclosures for their numerous advantages. First, one can define an abstract box by only two points (a minimum and maximum point). Because the enclosure definition lies inside every node in the CSG tree, we must ensure that we do not excessively increase the required memory per node. Second, boxes are arguably the tightest types of bounding volumes. Implying that if a ray-box intersection test is positive, there is a high probability the ray will too intersect the geometry inside of the bounding box. Lastly, applying boolean operations on bounding boxes is straightforward \cite{ROTH1982109}. Therefore, in case of operations with less voluminous geometry, parts of the initial primitives piercing outside of the composite's bounds are also ignored.
+We can also use many other types of enclosures; however, we choose box enclosures for their numerous benefits. First, one can define an abstract box by only two points (a minimum and maximum point). Because the enclosure definition lies inside every node in the CSG tree, we must ensure that we do not excessively increase the required memory per node. Second, boxes are arguably the tightest types of bounding volumes. Implying that if a ray-box intersection test is positive, there is a high likelihood the ray will too intersect the geometry inside of the bounding box. Lastly, applying boolean operations on bounding boxes is straightforward \cite{ROTH1982109}. Therefore, in the case of operations with less voluminous geometry, parts of the initial primitives piercing outside of the composite's bounds are also neglected.
 
-A bounding box is a rectangular parallelepiped defined by exactly two points (Figure \ref{sec4.2:box-points}). Each primitive, solid, and composite must be able to define its bounding box. For primitive cases, the bounding box is case-specific. For example, the bounding box of a primitive sphere of radius $r = 1$ located at center point $\vec{o} = (0, 0, 0)$ has a bounding box whose maximum and minimum points are $(r, r, r)$ and $(-r, -r, -r)$. Solids are more complicated as they are composed of many primitives. Hence, one has to create a collapsed bounding box (a bounding box whose $min$ and $max$ coordinates are respectively $+\inf$ and $-\inf$) and slowly start inflating by the primitive's predefined boxes. The inflation step is as simple as checking if the value of a coordinate of the current bounding box is smaller or bigger than that of the primitive's bounding box and either picking the smallest or the greatest value depending on the point being checked. For instance, if our current bounding box has $min(0, 0, 0)$ and $max(1, 1, 3)$ and the current primitives bounding box has $min2(-1, -1, 1)$ and $max2(2, 2, 2)$ then the current values of the points of the inflated bounding box become $min(-1, -1, 0)$ and $max(2, 2, 3)$.
+A bounding box is a rectangular parallelepiped defined by exactly two points (Figure \ref{sec4.2:box-points}). Each primitive, solid, and composite must be able to define its bounding box. For primitive cases, the bounding box is case-specific. For example, the bounding box of a primitive sphere of radius $r = 1$ located at center point $\vec{o} = (0, 0, 0)$ has a bounding box whose maximum and minimum points are $(r, r, r)$ and $(-r, -r, -r)$. Solids are more complicated as they are composed of many primitives. Hence, one has to create a collapsed bounding box (a bounding box whose $min$ and $max$ coordinates are respectively $+\inf$ and $-\inf$) and gradually start inflating using the primitive's predefined boxes. The inflation step is as simple as checking if the value of a coordinate of the current bounding box is smaller or bigger than that of the primitive's bounding box and either picking the smallest or the greatest value depending on the point being checked. For instance, if our current bounding box has $min(0, 0, 0)$ and $max(1, 1, 3)$ and the current primitives bounding box has $min2(-1, -1, 1)$ and $max2(2, 2, 2)$ then the current values of the points of the inflated bounding box become $min(-1, -1, 0)$ and $max(2, 2, 3)$.
 
 
 \begin{figure}[ht]
@@ -1106,13 +1077,13 @@ The dual for the maximum.  For the difference, we have previously mentioned that
 \subsection{Binary Space Partitioning Trees}
 \label{section:bsp-optimization}
 
-One of the most fundamental concepts in ray tracing is spatial or hierarchical data structures built using binary space subdivision to efficiently search for objects in the scene \cite{ray_tracing_BSP2}. A predominant concept in these data structures is binary space partitioning which refers to the successive subdivision of a scene's bounding box with planes until we reach termination criteria. The resulting data structure is called a binary space partition tree or a BSP tree. BSP trees offer the flexibility of using arbitrarily oriented planes to accommodate complex scenes and uneven spatial distributions. Therefore, in theory, BSP trees are a simple, elegant, and efficient solution to our visible-surface problems. In our implementation, we use a variant called KD-trees - which we refer to as BSP here. These are a more "restricted" type of BSP trees in which only axis-aligned splitting planes are allowed. These trees conform much better with computational advantages and memory needs but do not adapt very well to scene complexities. It is relatively easy to generate an inefficient binary tree with non-axis-aligned geometry (e.g., a long skinny cylinder oriented diagonally) \cite{ray_tracing_BSP}. All variations of the algorithms are generally composed of two fundamental parts, building and traversing the tree. How we choose these two core procedures tremendously affects the amount of acceleration achievable. We will discuss our building and traversing procedures. Because the main focus of the work doesn't align with the improvement of building or traversal procedures, the BSP algorithm is unoptimized. However, many algorithms such as surface area heuristic, local greedy SAH, automatic termination criteria, and many more have proved to optimize KD trees \cite{fast_building_kd_trees, parallel_kd_tree_construction}.
+One of the most fundamental concepts in ray tracing is spatial or hierarchical data structures built using binary space subdivision to efficiently search for objects in the scene \cite{ray_tracing_BSP2}. A predominant concept in these data structures is binary space partitioning which refers to the successive subdivision of a scene's bounding box with planes until we reach termination criteria. The resulting data structure is called a binary space partition tree or a BSP tree. BSP trees offer the flexibility of using arbitrarily oriented planes to accommodate complex scenes and uneven spatial distributions. Therefore, in theory, BSP trees are a simple, elegant, and efficient solution to our visible-surface problems. In our implementation, we use a variant called KD-trees - which we refer to as BSP here. These are a more "restricted" type of BSP trees in which only axis-aligned splitting planes are allowed. These trees conform much better with computational advantages and memory needs but do not adapt very well to scene complexities. It is relatively easy to generate an inefficient binary tree with non-axis-aligned geometry (e.g., a long skinny cylinder oriented diagonally) \cite{ray_tracing_BSP}. All variations of the algorithms are generally composed of two fundamental parts, building and traversing the tree. How we choose these two core procedures tremendously affects the amount of acceleration achievable. We will discuss our building and traversing procedures. Because the main focus of the work doesn't align with the improvement of building or traversal procedures, the BSP algorithm remains as is. However, many algorithms such as surface area heuristic, local greedy SAH, automatic termination criteria, and many more have proved to optimize KD trees \cite{fast_building_kd_trees, parallel_kd_tree_construction}.
 
 \subsubsection{Building BSP trees}
 
 The tree is constructed recursively in a top-down manner, making a local greedy decision about the splitting planes. We use axis-aligned bounding boxes to wrap the nodes. We choose the split dimension using the current largest dimension (i.e., if the box is biggest in its $x$ axis then we will pick that as our splitting plane). We then position the plane at the spatial median of the dimension. The subdivision is performed until either the number of primitives in a single node falls below a predefined threshold or the tree depth exceeds a maximum value.  The user provides these stopping criteria. To better illustrate the algorithm, we will utilize the simple two-dimensional KD-tree and the triangles in Figure \ref{sec4.3:example-kd-tree}. Each node in the tree represents a triangle, and each internal node represents an axis-aligned rectangular region with an axis-aligned plane that separates the regions of its two children.
 
-\begin{figure}[ht]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=\textwidth]{section4/4.3/bsp-tree-example.png}
 	\end{center}
@@ -1151,7 +1122,7 @@ The near and far classification uses the direction of the ray and the position o
 	\begin{subfigure}[b]{0.3\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{section4/4.3/far-intersection.png}
-		\caption{Ray goes through near child only.}
+		\caption{Ray goes through far child only.}
 		\label{sec4.3:far-child}
 	\end{subfigure}
 	\hfill
@@ -1161,7 +1132,7 @@ The near and far classification uses the direction of the ray and the position o
 
 \subsection{Optimized CSG}
 
-With all three optimizations from Sections \ref{section:classification-optimization}, \ref{section:bounding-boxes-optimization}, \ref{section:bsp-optimization}, we now have the building blocks for the optimized CSG algorithm. We can deconstruct this algorithm to a hierarchical pipeline of 4 elements. On the very top, we have our entire scene enclosed in a BSP tree. We then have constructively constructed geometries inside of this scene represented using two other BSP trees for their respective left and right geometries\footnote{In case the constructive solid only contains a single primitive element, then the result is a simple tree of depth 1}. The trees can efficiently retrieve the closest intersections of their respective nodes, and have bounding boxes that allow quick tests of ray-solid intersections. Finally, upon retrieval of the ray intersections, the minimal hit algorithm allows for efficient and robust classification of these intersections. Even when nesting constructively generated geometries, one can hold definitions of each sub-tree for each sub-object. Hence, allowing for efficient evaluation of complex and nested geometries.  Such definition inherently means that each solid is reliable for its evaluation and can continually feed the correct and classified intersection information to its parent nodes. Therefore, skipping the step of gathering all evaluations and only processing them on the leaf nodes.
+With all three optimizations from Sections \ref{section:classification-optimization}, \ref{section:bounding-boxes-optimization}, \ref{section:bsp-optimization}, we now have the building blocks for the optimized CSG algorithm. We can deconstruct this algorithm to a hierarchical pipeline composed of three steps. On the very top, we have our entire scene enclosed in a BSP tree. We then have constructively constructed geometries inside of this scene represented using two other BSP trees for their respective left and right geometries\footnote{In case the constructive solid only contains a single primitive element, then the result is a simple tree of depth 1.}. The trees can efficiently retrieve the closest intersections of their respective nodes and have bounding boxes that allow quick tests of ray-solid intersections. Finally, upon retrieval of the ray intersections, the minimal hit algorithm allows for efficient and robust classification of these intersections. Even when nesting constructively generated geometries, one can hold definitions of each sub-tree for each sub-object. Hence, allowing for efficient evaluation of complex and nested geometries.  Such definition intrinsically means that each solid is responsible for its evaluation and can constantly feed the correct and classified intersection information to its parent nodes. Therefore, skipping the step of culling all evaluations and solely processing them on the root nodes.
 
 \section{Evaluation of the results}
 
@@ -1188,7 +1159,7 @@ As previously mentioned, we conduct each of these tests on varying viewport fill
 \end{figure}
 
 
-First, we will start by examining the different operations for the $NaiCSG$ implementation. Figures \ref{sec5.1:naive_operations_lvp} to \ref{sec5.1:naive_operations_hvp} show the performance of each operation in relation to the other. We discern a difference between these operations because ray-solid checks are repeated more often in the intersection and difference operations than the union operation. The difference between these operations remains constant throughout all the other variants as well. $NaiCSG$ variant is also insensitive to changing the viewport fill rate (Figure \ref{sec5.1:naive_operations}) since the computational time can't be reduced by ray-box tests.
+First, we will start by examining the different operations for the $NaiCSG$ implementation. Figures \ref{sec5.1:naive_operations_lvp} to \ref{sec5.1:naive_operations_hvp} show the performance of each operation in relation to the other. We discern a difference between these operations because ray-solid checks are repeated more often in the intersection and difference operations than the union operation. The difference between these operations remains constant throughout all the other variants as well. $NaiCSG$ variant is also sensitive to changing the viewport fill rate (Figure \ref{sec5.1:naive_operations}). This is mainly due to the intersection and different operations since more rays have to enter deeper states of the evaluation before exiting. This is highly dependent on the spatial distribution and is the reason why the union time remains the same in all of the viewport ranges.
 
 
 \begin{figure}[H]
@@ -1250,8 +1221,7 @@ Second, we compare the rendering time of the $BinCSG$ variant. Figure \ref{sec5.
 	\label{sec5.1:bin_operations}
 \end{figure}
 
-%todo update to match latest results.
-We must also analyze the performance of $OptimCSG$ with the different operations. As we can see in Figures \ref{sec5.1:optim_operations_lvp} to \ref{sec5.1:optim_operations_hvp}, $OptimCSG$ shows a much more different performance in terms of the operations. The general curve is also not linear like $NaiCSG$ and $BinCSG$ but follows a rather logarithmic curve. The procedure also increases in time after an increase in the fill rate.
+We must also analyze the performance of $OptimCSG$ with the different operations. As we can see in Figures \ref{sec5.1:optim_operations_lvp} to \ref{sec5.1:optim_operations_hvp}, $OptimCSG$ shows different performance in terms of the operations. The general curve is also not linear but follows a rather logarithmic trend. This can be closely tied to the cost of traversing a binary tree. The procedure also increases in time after an increase in the fill rate.
 
 \begin{figure}[H]
 	\centering
@@ -1280,7 +1250,7 @@ We must also analyze the performance of $OptimCSG$ with the different operations
 	\label{sec5.1:bin_operations}
 \end{figure}
 
-Lastly, we compare the performance of these variants to each other. Figures \ref{sec5.1:geo_complexity_lvp} to \ref{sec5.1:geo_complexity_hvp} show the comparison of the different implementations with low, mid, and high viewport fills. As we can see, $OptimCSG$ outperforms both variants in all cases. $BinCSG$ does outperform $NaiCSG$ in a smaller scenes; however, it scales to the same computational time in more complex ones.
+Lastly, we compare the performance of these variants to each other. Figures \ref{sec5.1:geo_complexity_lvp} to \ref{sec5.1:geo_complexity_hvp} show the comparison of the different implementations with low, mid, and high viewport fills. As we can see, $OptimCSG$ outperforms both variants in all cases. $BinCSG$ does outperform $NaiCSG$ in smaller scenes; however, it scales to the same computational time in more complex ones.
 
 \begin{figure}[H]
 	\centering
@@ -1304,7 +1274,7 @@ Lastly, we compare the performance of these variants to each other. Figures \ref
 \end{figure}
 
 
-We can explain these variations by the number of ray-primitive intersection tests performed by each variant. In the naive implementation, we check for all primitives for all the rays in the scene, which explains why it is not so case-dependent. In $BinCSG$, if the ray-box test is positive, it naively makes the ray-primitive intersections. $OptimCSG$ has a more directed approach as both the left and right geometries in the composite are also split up into smaller boxes and traversed efficiently. Figures \ref{sec5.1:test_count_naive} to \ref{sec5.1:test_count_optim} represent the number of intersections performed in a $1000 \times 1000$ pixel image with two spheres in the scene (Figure \ref{sec5.1:test_count_render}). In Figure \ref{sec5.1:test_count_naive} we can see that we continually make the same number of ray-primitive tests for each pixel. However, Figure \ref{sec5.1:test_count_bin} reveals how $BinCSG$ is capable of avoiding intersections toward the areas where the bounding box is not defined but still performs all tests in pixels overlapping it. Ultimately, $OptimCSG$ (Figure \ref{sec5.1:test_count_optim}) exhibits a much more efficient approach where the number of ray primitive intersections solely grows in areas dense with primitives.
+We can explain these variations by the number of ray-primitive intersection tests performed by each variant. In the naive implementation, we check for all primitives for all the rays in the scene, which explains why it is not so case-dependent. In $BinCSG$, if the ray-box test is positive, it naively makes the ray-primitive intersections. $OptimCSG$ has a more directed approach as both the left and right geometries in the composite are also split up into smaller boxes and traversed efficiently. Figures \ref{sec5.1:test_count_naive} to \ref{sec5.1:test_count_optim} represent the number of intersections performed in a $1000 \times 1000$ pixel image with two spheres in the scene (Figure \ref{sec5.1:test_count_render}). In Figure \ref{sec5.1:test_count_naive} we can see that we continually make the same number of ray-primitive tests for each pixel. However, Figure \ref{sec5.1:test_count_bin} reveals how $BinCSG$ is capable of avoiding intersections toward the areas where the bounding box is not defined but still performs all tests in pixels overlapping it. Ultimately, $OptimCSG$ (Figure \ref{sec5.1:test_count_optim}) exhibits a much more efficient approach where the number of ray primitive intersections solely grows in areas dense with primitives or overlapping bounding boxes.
 
 \begin{figure}[H]
 	\centering
@@ -1316,21 +1286,21 @@ We can explain these variations by the number of ray-primitive intersection test
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{section5/plots/surface_naive_union.png}
-	\caption{Surface plot showing the number of ray-primitive tests on each pixel with $NaiCSG$}
+	\caption{Surface plot showing the number of ray-primitive tests on each pixel with $NaiCSG$.}
 	\label{sec5.1:test_count_naive}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{section5/plots/surface_bin_union.png}
-	\caption{Surface plot showing the number of ray-primitive tests on each pixel with $BinCSG$}
+	\caption{Surface plot showing the number of ray-primitive tests on each pixel with $BinCSG$.}
 	\label{sec5.1:test_count_bin}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{section5/plots/surface_optim_union.png}
-	\caption{Surface plot showing the number of ray-primitive tests on each pixel with $OptimCSG$}
+	\caption{Surface plot showing the number of ray-primitive tests on each pixel with $OptimCSG$.}
 	\label{sec5.1:test_count_optim}
 \end{figure}
 
@@ -1363,7 +1333,6 @@ Figure \ref{sec5:speedup} demonstrates the achieved speedup between all three va
 
 \subsection{Nesting Tests}
 
-An important aspect to observe is how the algorithms handle the nesting of many geometries together. Here we attempt to maintain a relatively steady viewport fill rate as we increase the number of nests. Figure \ref{sec5.2:test_nesting_rates} shows how the viewport fill rate fluctuates with the mean value while conducting these tests.
 
 \begin{figure}[H]
 	\centering
@@ -1373,7 +1342,7 @@ An important aspect to observe is how the algorithms handle the nesting of many 
 \end{figure}
 
 
-Figure \ref{sec5.2:test_nesting} portrays the different performances of each variant. As expected, the naive time grows linearly as we use more geometries. $BinCSG$ is also somewhat linear but is expected to scale to the same time as the naive if we increase the viewport fill rate. On the other hand $OptimCSG$ still follows a logarithmic trend when nesting. 
+Figure \ref{sec5.2:test_nesting} portrays the different performances of each variant. As expected, the naive time grows linearly as we use more geometries. $BinCSG$ is also somewhat linear but is expected to scale to the same time as the naive if we increase the viewport fill rate. On the other hand, $OptimCSG$ still follows a logarithmic trend when nesting.
 
 \begin{figure}[H]
 	\centering
@@ -1382,7 +1351,7 @@ Figure \ref{sec5.2:test_nesting} portrays the different performances of each var
 	\label{sec5.2:test_nesting}
 \end{figure}
 
-Similarly to the geomtric complexity tests, $OptimCSG$ provides a much higher speedup. (Figure \ref{sec5.1:heatmap_nesting})
+Similar to the geomtric complexity tests, $OptimCSG$ provides a much higher speedup. (Figure \ref{sec5.1:heatmap_nesting})
 
 \begin{figure}[H]
 	\centering
