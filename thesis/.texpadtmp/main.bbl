@@ -253,6 +253,58 @@
     \field{year}{2015}
   \endentry
 
+  \entry{kd-tree-review}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HM}{%
+         family={Hapala},
+         familyi={H\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=HV}{%
+         family={Havran},
+         familyi={H\bibinitperiod},
+         given={V.},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \keyw{kd-tree, ray tracing, traversal, I.3.7 Computer Graphics:
+  Three-Dimensional Graphics and Realism—Ray Tracing}
+    \strng{namehash}{HMHV1}
+    \strng{fullhash}{HMHV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{abstract}{%
+    Abstract In this paper we review the traversal algorithms for kd-trees for
+  ray tracing. Ordinary traversal algorithms such as sequential, recursive, and
+  those with neighbour-links have different limitations, which led to several
+  new developments within the last decade. We describe algorithms exploiting
+  ray coherence and algorithms designed with specific hardware architecture
+  limitations such as memory latency and consumption in mind. We also discuss
+  the robustness of traversal algorithms as one issue that has been neglected
+  in previous research.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1111/j.1467-8659.2010.01844.x
+    \endverb
+    \verb{eprint}
+    \verb https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1467-8659.2010.0184
+    \verb 4.x
+    \endverb
+    \field{number}{1}
+    \field{pages}{199\bibrangedash 213}
+    \field{title}{Review: Kd-tree Traversal Algorithms for Ray Tracing}
+    \verb{url}
+    \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-8659.2010.0184
+    \verb 4.x
+    \endverb
+    \field{volume}{30}
+    \field{journaltitle}{Computer Graphics Forum}
+    \field{year}{2011}
+  \endentry
+
   \entry{ray_tracing_BSP}{inproceedings}{}
     \name{author}{3}{}{%
       {{hash=IT}{%
